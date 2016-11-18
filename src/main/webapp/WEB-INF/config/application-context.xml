@@ -44,9 +44,9 @@
 	<bean id="Main" class="com.cinema.main.dao.MainDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-<!-- 	<bean id="member" class="com.cinema.member.dao.MemberDAO"
+	<bean id="member" class="com.cinema.member.dao.MemberDAO"
 		p:sqlSessionTemplate-ref="sst"
-	/> -->
+	/>
 	<bean id="Reserve" class="com.cinema.reserve.dao.ReserveDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
