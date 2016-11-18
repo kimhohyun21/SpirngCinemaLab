@@ -105,17 +105,17 @@ public class Reserve1Controller {
 		if(rType==null)rType="default";
 		String movePage=null;
 		if(rType.equals("default")){
-			movePage="main/main.jsp";
+			movePage="main/main";
 		}else if(rType.equals("daycheck")){
-			movePage="reserve/reserve1_Local.jsp";
+			movePage="reserve/reserve1_Local";
 		}else if(rType.equals("localcheck")){
-			movePage="reserve/reserve1_Theater.jsp";
+			movePage="reserve/reserve1_Theater";
 		}else if(rType.equals("theatercheck")){
-			movePage="reserve/reserve1_MovieList.jsp";
+			movePage="reserve/reserve1_MovieList";
 		}else if(rType.equals("moviecheck")){
-			movePage="reserve/reserve1_MovieTime.jsp";
+			movePage="reserve/reserve1_MovieTime";
 		}else if(rType.equals("timecheck")){
-			movePage="reserve/reserve1_Result.jsp";
+			movePage="reserve/reserve1_Result";
 		}		
 		
 		model.addAttribute("year", year);

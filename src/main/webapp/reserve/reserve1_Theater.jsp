@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve1 Theater</title>
-	<!-- Ajax ½ÇÇà -->					
+	<!-- Ajax ì‹¤í–‰ -->					
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('p.theater').hover(function(){
@@ -28,12 +28,12 @@
 					$('#movieList').html(data);
 				},
 				error:function(data){
-					$.jQueryAlert("½ÇÆÐ");
+					$.jQueryAlert("ì‹¤íŒ¨");
 				}
 			});
 		}; 
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -57,7 +57,7 @@
 	<div align="center">
 		<table id="time_table" width="110px">
 			<tr>
-				<th align="left">Àå</th>
+				<th align="left">ìž¥</th>
 			</tr>
 			<tr>
 				<td align="center" class="theaterList">
@@ -82,7 +82,7 @@
 			</tr>
 		</table>
 		<div id="movieList">
-			<!-- ¿µÈ­¸®½ºÆ®¼³Á¤ -->
+			<!-- ì˜í™”ë¦¬ìŠ¤íŠ¸ì„¤ì • -->
 			<jsp:include page="../reserve/reserve1_MovieList.jsp" />
 		</div>
 	</div>

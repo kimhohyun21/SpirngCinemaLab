@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve Result</title>
 	<script type="text/javascript">
 		function send(){
 			var f=document.frm;
 			if(${movietime==null || movietime==""}){
-				$.jQueryAlert('»ó¿µ½Ã°£À» ¼±ÅÃÇØ ÁÖ¼¼¿ä.');
+				$.jQueryAlert('ìƒì˜ì‹œê°„ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.');
 				return;
 			}
 			location.href="reserve2.do?year=${checkedYear }&month=${checkedMonth }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}"
@@ -19,7 +19,7 @@
 			+"#nav";
 		}
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -43,9 +43,9 @@
 	<div id="reserve">
 		<table class="paymentInfo">
 			<tr>
-				<th width="45%">¿µÈ­</th>
-				<th width="30%">¿¹¸Å Á¤º¸</th>
-				<th width="25%">ÃÑ °áÁ¦ ±İ¾×</th>					
+				<th width="45%">ì˜í™”</th>
+				<th width="30%">ì˜ˆë§¤ ì •ë³´</th>
+				<th width="25%">ì´ ê²°ì œ ê¸ˆì•¡</th>					
 			</tr>
 			<tr>
 				<td width="45%">
@@ -69,25 +69,25 @@
 				<td width="30%">
 					<ul>
 						<li>
-							<strong>»ó¿µÀÏ :</strong> 
+							<strong>ìƒì˜ì¼ :</strong> 
 							<span style="color:#f78824;">
 								${checkedYear }. ${checkedMonth }. ${checkedDay } (${checkedDay2 })
 							</span>
 						</li>
 						<li>
-							<strong>»ó¿µ°ü :</strong> 
+							<strong>ìƒì˜ê´€ :</strong> 
 							<span style="color:#f78824;">	
 								${tname } ${theaterNo } 
-							</span>°ü
+							</span>ê´€
 						</li>
 						<li>
-							<strong>»ó¿µ½Ã°£ :</strong> 
+							<strong>ìƒì˜ì‹œê°„ :</strong> 
 							<span style="color:#f78824;">	
 								${movietime}
 							</span>	
 						</li>						
 						<li>
-							<strong>ÁÂ¼® :</strong>
+							<strong>ì¢Œì„ :</strong>
 							<span style="color:#f78824;">  
 							${seatNo }
 							</span>
@@ -98,7 +98,7 @@
 				<td width="25%">
 					<ul>
 						<li>
-							<strong>¿µÈ­ ¿¹¸Å :</strong>
+							<strong>ì˜í™” ì˜ˆë§¤ :</strong>
 							<span style="color:#f78824;">  
 							<c:if test="${payment!=0 }"> 
 								<fmt:formatNumber value="${payment }" pattern=",000"/> 
@@ -106,7 +106,7 @@
 							<c:if test="${payment==0 }">
 								${payment }
 							</c:if>	
-							</span>¿ø
+							</span>ì›
 						</li>
 					</ul>
 				</td>
@@ -115,10 +115,10 @@
 		<table width="920px" class="btn_table">
 			<tr>
 				<td align="left">
-					<input type="button" value="¢¸ Ã³À½ À¸·Î" class="back_button" onclick="javascript:location.href='main.do';">
+					<input type="button" value="â—€ ì²˜ìŒ ìœ¼ë¡œ" class="back_button" onclick="javascript:location.href='main.do';">
 				</td>
 				<td align="right">
-					<input type="button" value="´ÙÀ½ ´Ü°è ¢º" class="next_button" onclick="send()">
+					<input type="button" value="ë‹¤ìŒ ë‹¨ê³„ â–¶" class="next_button" onclick="send()">
 				</td>
 			</tr>
 		</table>

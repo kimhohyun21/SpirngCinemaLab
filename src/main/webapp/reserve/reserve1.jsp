@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve 1</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
-	<!-- Ajax ½ÇÇà -->					
+	<!-- Ajax ì‹¤í–‰ -->					
 	<script type="text/javascript">	
 		$(document).ready(function(){
 			$('p.day').hover(function(){
@@ -29,12 +29,12 @@
 					$('#localList').html(data);
 				},
 				error:function(data){
-					$.jQueryAlert("½ÇÆÐ");
+					$.jQueryAlert("ì‹¤íŒ¨");
 				}
 			});
 		};
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -58,18 +58,18 @@
 	<div align="center" class="reserve1">
 		<table id="time_table" width="153px">
 			<tr>
-				<th align="center">³¯Â¥</th>
+				<th align="center">ë‚ ì§œ</th>
 			</tr>
 			<tr>
 				<td align="center">
-					<!-- ³â, ¿ù Ç¥½Ã -->
+					<!-- ë…„, ì›” í‘œì‹œ -->
 					<p class="year">${year }</p>
 					<p class="month">${month }</p>
 					<br/>
 					<c:forEach var="c" begin="0" end="6" step="1" items="${strWeek2 }">
 						<c:choose>
 							<c:when test="${month==12 && day7[z]==1 && z!=0}">
-								<!-- 12¿ù 31ÀÏÀÌ¸é ´ÙÀ½³âµµ, 1¿ù·Î Ç¥±â -->
+								<!-- 12ì›” 31ì¼ì´ë©´ ë‹¤ìŒë…„ë„, 1ì›”ë¡œ í‘œê¸° -->
 								<br/>
 								<c:set var="year" value="${year+1 }"/>
 								<c:set var="month" value="1"/>
@@ -77,13 +77,13 @@
 								<p class="month">${month }<br></p>
 							</c:when>
 							<c:when test="${day7[z]==1 && z!=0}">
-							<!-- ´ÙÀ½´Þ·Î ³Ñ¾î°¡°Ô µÇ¸é ´ÙÀ½´Þ Ç¥±â -->
+							<!-- ë‹¤ìŒë‹¬ë¡œ ë„˜ì–´ê°€ê²Œ ë˜ë©´ ë‹¤ìŒë‹¬ í‘œê¸° -->
 								<c:set var="month" value="${month+1 }"/>
 								<br>
 								<p class="month">${month }</p>
 							</c:when>							
 						</c:choose>	
-						<!-- ³¯Â¥ Ç¥½Ã -->
+						<!-- ë‚ ì§œ í‘œì‹œ -->
 						<form id="frm${day7[z] }">
 							<input type="hidden" name="checkedYear" value="${year }">
 							<input type="hidden" name="checkedMonth" value="${month }">
@@ -97,12 +97,12 @@
 						</form>	
 						<a href="javascript:daySelect('${day7[z]}');">									
 							<c:choose>
-								<c:when test="${c eq 'Åä'}">
+								<c:when test="${c eq 'í† '}">
 									<p id="day${day7[z] }" class="day" style="color: blue">
 										<span>${c }</span> ${day7[z] }
 									</p>
 								</c:when>
-								<c:when test="${c eq 'ÀÏ'}">
+								<c:when test="${c eq 'ì¼'}">
 									<p id="day${day7[z] }" class="day" style="color: red">
 										<span>${c }</span> ${day7[z] }
 									</p>
@@ -120,7 +120,7 @@
 			</tr>
 		</table>
 		<div id="localList">
-			<!-- Áö¿ª ¼³Á¤ -->
+			<!-- ì§€ì—­ ì„¤ì • -->
 			<jsp:include page="../reserve/reserve1_Local.jsp" />
 		</div>		
 	</div>		

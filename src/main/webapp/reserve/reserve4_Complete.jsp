@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-	<title>°áÁ¦ ¿Ï·á</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>ê²°ì œ ì™„ë£Œ</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
 	<script type="text/javascript">
 		function reserveCancel(){
@@ -21,12 +21,12 @@
 </head>
 <body>
 	<div align="center" class="finalPaymentInfo">
-		<h2>¿¹¸Å ¿Ï·á ³»¿ª</h2>
+		<h2>ì˜ˆë§¤ ì™„ë£Œ ë‚´ì—­</h2>
 		<table class="paymentInfo">
 			<tr>
-				<th width="33%">¿µÈ­</th>
-				<th width="33%">¿¹¸Å Á¤º¸</th>
-				<th width="33%">ÃÑ °áÁ¦ ±İ¾×</th>					
+				<th width="33%">ì˜í™”</th>
+				<th width="33%">ì˜ˆë§¤ ì •ë³´</th>
+				<th width="33%">ì´ ê²°ì œ ê¸ˆì•¡</th>					
 			</tr>
 			<tr>
 				<td width="40%">
@@ -50,25 +50,25 @@
 				<td width="30%">
 					<ul>
 						<li>
-							<strong>»ó¿µÀÏ :</strong> 
+							<strong>ìƒì˜ì¼ :</strong> 
 							<span style="color:#f78824;">
 								${year }. ${month }. ${checkedDay } (${checkedDay2 })
 							</span>
 						</li>
 						<li>
-							<strong>»ó¿µ½Ã°£ :</strong> 
+							<strong>ìƒì˜ì‹œê°„ :</strong> 
 							<span style="color:#f78824;">	
 								${movietime}
 							</span>	
 						</li>
 						<li>
-							<strong>»ó¿µ°ü :</strong> 
+							<strong>ìƒì˜ê´€ :</strong> 
 							<span style="color:#f78824;">	
 								${tname } ${theaterNo} 
-							</span>°ü
+							</span>ê´€
 						</li>
 						<li>
-							<strong>ÁÂ¼® :</strong>
+							<strong>ì¢Œì„ :</strong>
 							<span style="color:#f78824;">  
 							${seatNo }
 							</span>
@@ -79,7 +79,7 @@
 				<td width="30%">
 					<ul>
 						<li>
-							<strong>¿µÈ­ ¿¹¸Å :</strong>
+							<strong>ì˜í™” ì˜ˆë§¤ :</strong>
 							<span style="color:#f78824;">  
 							<c:if test="${payment!=0 }"> 
 								<fmt:formatNumber value="${payment }" pattern=",000"/> 
@@ -87,14 +87,14 @@
 							<c:if test="${payment==0 }">
 								${payment }
 							</c:if>	
-							</span>¿ø
+							</span>ì›
 						</li>
 					</ul>
 				</td>
 			</tr>
 		</table>
-		<input type="button" value="È®ÀÎ" onclick="javascript:location.href='reserveList.do?no=${mvo.no }'">
-		<input type="button" value="¿¹¸Å Ãë¼Ò" onclick="reserveCancel()">		
+		<input type="button" value="í™•ì¸" onclick="javascript:location.href='reserveList.do?no=${mvo.no }'">
+		<input type="button" value="ì˜ˆë§¤ ì·¨ì†Œ" onclick="reserveCancel()">		
 	</div>
 </body>
 </html>

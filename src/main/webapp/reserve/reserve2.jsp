@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve2 Ticket and Seat</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
 	<link rel="stylesheet" type="text/css" href="jStyles/easydropdown.css">	
@@ -18,7 +18,7 @@
 					$('#result').html(data);
 				},
 				error:function(data){
-					alert("½ÇÆĞ");
+					alert("ì‹¤íŒ¨");
 				}
 			});
 		};	
@@ -38,14 +38,14 @@
 											+'<form name="loginfrm" action="login_ok.do" method="post" "id="loginfrm">'
 											+'<div class="input">'
 											+'<label class="idlabel" for="id">ID</label>'
-											+'<input type="text" placeholder="¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä." name="id" id="id" onkeydown="enter()">'
+											+'<input type="text" placeholder="ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”." name="id" id="id" onkeydown="enter()">'
 											+'</div>'+'<div class="input">'
 											+'<label class="pwlabel" for="pwd">PW</label>'
-											+'<input type="password" placeholder="ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä." name="pwd" id="pwd" onkeydown="enter()">'
+											+'<input type="password" placeholder="íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš”." name="pwd" id="pwd" onkeydown="enter()">'
 											+'</div><input type="hidden" name="loginType" value="reserve">'
 											+'</form><div id="find">'
-											+'<a href="searchId.do">¾ÆÀÌµğ Ã£±â</a>&nbsp;|&nbsp;'
-											+'<a href="searchPwd.do">ºñ¹Ğ¹øÈ£ Ã£±â</a></div>');
+											+'<a href="searchId.do">ì•„ì´ë”” ì°¾ê¸°</a>&nbsp;|&nbsp;'
+											+'<a href="searchPwd.do">ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</a></div>');
 			$("body").append($loginform);
 			
 			$($loginform).dialog({
@@ -65,30 +65,30 @@
 			});
 		}
 		
-		//¿£ÅÍ ·Î±×ÀÎ
+		//ì—”í„° ë¡œê·¸ì¸
 		function enter(){
 			if(window.event.keyCode == 13){
 				login();
 			}
 		}
 		
-		//·Î±×ÀÎ Ã¢ °ªÀÔ·Â Ã¼Å©
+		//ë¡œê·¸ì¸ ì°½ ê°’ì…ë ¥ ì²´í¬
 		function login(){
 			var f=document.loginfrm;	
 			if(f.id.value==""){
-				$.jQueryAlert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+				$.jQueryAlert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 				f.id.focus();
 				return;
 			}
 			if(f.pwd.value==""){
-				$.jQueryAlert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+				$.jQueryAlert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 				f.pwd.focus();
 				return;
 			}
 			f.submit();
 		}
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -111,7 +111,7 @@
 </head>
 <body>
 	<div align="center" class="reserve2">
-		<!-- Æ¼ÄÏ ¸Å¼ö ¼±ÅÃ -->
+		<!-- í‹°ì¼“ ë§¤ìˆ˜ ì„ íƒ -->
 		<div class="ticket">
 			<div class="selectArea">
 				<form id="frm">
@@ -127,7 +127,7 @@
 					<input type="hidden" name="theaterNo" value="${theaterNo}">
 					<input type="hidden" name="movietime" value="${movietime}">
 					<input type="hidden" name="rType" value="seat">				
-					<strong>¾î¸¥</strong>
+					<strong>ì–´ë¥¸</strong>
 					<div class="selectBox">					
 						<select id="adult" class="dropdown" name="adult" onchange="select()">
 							<option selected="selected">0</option>
@@ -136,7 +136,7 @@
 						</c:forEach>					
 						</select>
 					</div>
-					<strong>Ã»¼Ò³â</strong>
+					<strong>ì²­ì†Œë…„</strong>
 					<div class="selectBox">
 						<select id="junior" class="dropdown" name="junior" onchange="select()">
 							<option selected="selected">0</option>
@@ -145,7 +145,7 @@
 						</c:forEach>					
 						</select>
 					</div>	
-					<strong>½Ã´Ï¾î</strong>
+					<strong>ì‹œë‹ˆì–´</strong>
 					<div class="selectBox">
 						<select id="senior" class="dropdown" name="senior" onchange="select()">
 							<option selected="selected">0</option>
@@ -155,15 +155,15 @@
 						</select>
 					</div>			
 				</form>
-				<!-- ¼±ÅÃ ÃÊ±âÈ­ ¹öÆ° -->
+				<!-- ì„ íƒ ì´ˆê¸°í™” ë²„íŠ¼ -->
 				<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}
 				&checkedDay2=${checkedDay2}&local=${local }&tname=${tname }&grade=${grade }&title=${title}
 				&poster=${poster }&theaterNo=${theaterNo}&movietime=${movietime}#nav">
-					<div class="resetBtn">¼±ÅÃÃÊ±âÈ­</div>
+					<div class="resetBtn">ì„ íƒì´ˆê¸°í™”</div>
 				</a>				
 			</div>
 		</div>
-		<!-- ÀÚ¸® ¼±ÅÃ  include-->
+		<!-- ìë¦¬ ì„ íƒ  include-->
 		<div id="result">
 			<jsp:include page="${jsp2 }"></jsp:include>		
 		</div>			

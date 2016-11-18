@@ -1,22 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve3 Payment</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>
 	<script type="text/javascript">	
-		/* °áÁ¦ ¸ğµâ »ç¿ëÀ» À§ÇÑ ÃÊ±âÈ­ */
+		/* ê²°ì œ ëª¨ë“ˆ ì‚¬ìš©ì„ ìœ„í•œ ì´ˆê¸°í™” */
 		window.onload=function(){
 			var IMP = window.IMP;
 			IMP.init('imp74690571'); 
 		}
 		
-		/* °áÁ¦ ¹æ¹ı ¼±ÅÃ¿¡ µû¶ó °áÁ¦ ¹æ¹ı °ª º¯°æ ¹× È­¸é Ç¥½Ã ÀüÈ¯*/
+		/* ê²°ì œ ë°©ë²• ì„ íƒì— ë”°ë¼ ê²°ì œ ë°©ë²• ê°’ ë³€ê²½ ë° í™”ë©´ í‘œì‹œ ì „í™˜*/
 		function display1() {
 			card.style.display='block';
 			account.style.display='none';
@@ -29,24 +29,24 @@
 			return;
 		} 
 		
-		/* °áÁ¦ ¸ğµâ È£Ãâ*/
+		/* ê²°ì œ ëª¨ë“ˆ í˜¸ì¶œ*/
 		function payment(type){
 			IMP.request_pay({
 			    pg : 'html5_inicis',
 			    pay_method : type,
 			    merchant_uid : 'merchant_' + new Date().getTime(),
-			    name : 'Marvel Cinema ${title} ¿¹¸Å',
+			    name : 'Marvel Cinema ${title} ì˜ˆë§¤',
 			    amount : '${payment }',
 			    buyer_name : '${mvo.name }',
 			    buyer_email :''
 			}, function(rsp) {
 			    if ( rsp.success ) {
-			        var msg = '°áÁ¦°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.';
+			        var msg = 'ê²°ì œê°€ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.';
 			        /*
-			        	°íÀ¯ID : rsp.imp_uid
-			        	»óÁ¡ °Å·¡ID : rsp.merchant_uid	
-			       		°áÁ¦ ±İ¾× : rsp.paid_amount
-			        	Ä«µå ½ÂÀÎ¹øÈ£ : rsp.apply_num
+			        	ê³ ìœ ID : rsp.imp_uid
+			        	ìƒì  ê±°ë˜ID : rsp.merchant_uid	
+			       		ê²°ì œ ê¸ˆì•¡ : rsp.paid_amount
+			        	ì¹´ë“œ ìŠ¹ì¸ë²ˆí˜¸ : rsp.apply_num
 			        */
 			        $.jQueryAlert(msg);
 			        var $frmBox = $.parseHTML('<input type="hidden" name="pid" value='+rsp.imp_uid+'>'
@@ -57,22 +57,22 @@
 			        $('#paymentfrm').append($frmBox);
 			        $('#paymentfrm').submit();
 			    } else {
-			        var msg = '°áÁ¦¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.<br/>';
-			        msg += '¿¡·¯³»¿ë : ' + rsp.error_msg+'.';	
+			        var msg = 'ê²°ì œì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.<br/>';
+			        msg += 'ì—ëŸ¬ë‚´ìš© : ' + rsp.error_msg+'.';	
 			        $.jQueryAlert(msg);
 			    }
 			    
 			});
 		}	
 
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
             var $messageBox = $.parseHTML('<div id="alertBox"></div>');
             $("body").append($messageBox);
 
             $($messageBox).dialog({
                 open: $($messageBox).append(msg),
-                title: "Ã³¸® °á°ú",
+                title: "ì²˜ë¦¬ ê²°ê³¼",
                 autoOpen: true,
                 modal: true,
                 resizable:false, 
@@ -95,12 +95,12 @@
 </head>
 <body>
 	<div align="center" class="finalPaymentInfo">
-		<h2>¿¹¸Å È®ÀÎ</h2>
+		<h2>ì˜ˆë§¤ í™•ì¸</h2>
 		<table class="paymentInfo">
 			<tr>
-				<th width="33%">¿µÈ­</th>
-				<th width="33%">¿¹¸Å Á¤º¸</th>
-				<th width="33%">ÃÑ °áÁ¦ ±İ¾×</th>					
+				<th width="33%">ì˜í™”</th>
+				<th width="33%">ì˜ˆë§¤ ì •ë³´</th>
+				<th width="33%">ì´ ê²°ì œ ê¸ˆì•¡</th>					
 			</tr>
 			<tr>
 				<td width="40%">
@@ -124,25 +124,25 @@
 				<td width="30%">
 					<ul>
 						<li>
-							<strong>»ó¿µÀÏ :</strong> 
+							<strong>ìƒì˜ì¼ :</strong> 
 							<span style="color:#f78824;">
 								${year }. ${month }. ${checkedDay } (${checkedDay2 })
 							</span>
 						</li>
 						<li>
-							<strong>»ó¿µ½Ã°£ :</strong> 
+							<strong>ìƒì˜ì‹œê°„ :</strong> 
 							<span style="color:#f78824;">	
 								${movietime}
 							</span>	
 						</li>
 						<li>
-							<strong>»ó¿µ°ü :</strong> 
+							<strong>ìƒì˜ê´€ :</strong> 
 							<span style="color:#f78824;">	
 								${tname } ${theaterNo} 
-							</span>°ü
+							</span>ê´€
 						</li>
 						<li>
-							<strong>ÁÂ¼® :</strong>
+							<strong>ì¢Œì„ :</strong>
 							<span style="color:#f78824;">  
 							${seatNo }
 							</span>
@@ -153,7 +153,7 @@
 				<td width="30%">
 					<ul>
 						<li>
-							<strong>¿µÈ­ ¿¹¸Å :</strong>
+							<strong>ì˜í™” ì˜ˆë§¤ :</strong>
 							<span style="color:#f78824;">  
 							<c:if test="${payment!=0 }"> 
 								<fmt:formatNumber value="${payment }" pattern=",000"/> 
@@ -161,21 +161,21 @@
 							<c:if test="${payment==0 }">
 								${payment }
 							</c:if>	
-							</span>¿ø
+							</span>ì›
 						</li>
 					</ul>
 				</td>
 			</tr>
 		</table>		
-		<h2 class="payment_title">°áÁ¦</h2>
+		<h2 class="payment_title">ê²°ì œ</h2>
 		<table width="700">
 			<tr>
-				<td align="center" id="td1">°áÁ¦Á¤º¸ ÀÔ·Â</td>
+				<td align="center" id="td1">ê²°ì œì •ë³´ ì…ë ¥</td>
 			</tr>
 			<tr>
 				<td align="center" id="td2">
-					<input type="radio" name="pay" value="card" onclick="display1()" checked>½Å¿ëÄ«µå
-					<input type="radio" name="pay" value="account" onclick="display2()">°èÁÂÀÌÃ¼
+					<input type="radio" name="pay" value="card" onclick="display1()" checked>ì‹ ìš©ì¹´ë“œ
+					<input type="radio" name="pay" value="account" onclick="display2()">ê³„ì¢Œì´ì²´
 					<form id="paymentfrm" action="reserve4.do" method="post">
 						<input type="hidden" name="year" value="${year }">
 						<input type="hidden" name="month" value="${month }">
@@ -198,28 +198,28 @@
 			<table width="700" class="payment_table">
 				<tr>
 					<td>
-						½Å¿ëÄ«µå °áÁ¦ ¾È³»<br>
-						1.°áÁ¦³»¿ª È®ÀÎ ÈÄ °áÁ¦ÇÏ±â ¹öÆ°À» Å¬¸¯½Ã, ÆË¾÷Ã¢ÀÌ ³ªÅ¸³³´Ï´Ù.<br>
-						2.ÇØ´ç ÆË¾÷¿¡¼­ ¿øÇÏ´Â Ä«µå»ç¸¦ ¼±ÅÃ ÈÄ °áÁ¦ Á¤º¸¸¦ ÀÔ·ÂÇÏ½Ã¸é µË´Ï´Ù.
-						     ¡Ø ½Å¿ëÄ«µå °áÁ¦ °¡´É ÃÖ¼Ò ±İ¾×Àº 1,000¿ø ÀÌ»ó ÀÔ´Ï´Ù.     
+						ì‹ ìš©ì¹´ë“œ ê²°ì œ ì•ˆë‚´<br>
+						1.ê²°ì œë‚´ì—­ í™•ì¸ í›„ ê²°ì œí•˜ê¸° ë²„íŠ¼ì„ í´ë¦­ì‹œ, íŒì—…ì°½ì´ ë‚˜íƒ€ë‚©ë‹ˆë‹¤.<br>
+						2.í•´ë‹¹ íŒì—…ì—ì„œ ì›í•˜ëŠ” ì¹´ë“œì‚¬ë¥¼ ì„ íƒ í›„ ê²°ì œ ì •ë³´ë¥¼ ì…ë ¥í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
+						     â€» ì‹ ìš©ì¹´ë“œ ê²°ì œ ê°€ëŠ¥ ìµœì†Œ ê¸ˆì•¡ì€ 1,000ì› ì´ìƒ ì…ë‹ˆë‹¤.     
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="Ãë¼Ò" onclick="reback()" class="back_button2">
-			<input type="button" value="°áÁ¦" onclick="javascript:payment('card')" class="next_button2">
+			<input type="button" value="ì·¨ì†Œ" onclick="reback()" class="back_button2">
+			<input type="button" value="ê²°ì œ" onclick="javascript:payment('card')" class="next_button2">
 		</div>
 		<div id="account" style="display:none">
 			<table width="700" class="payment_table">
 				<tr>
 					<td>
-						½Ç½Ã°£ °èÁÂÀÌÃ¼ ¾È³»<br>
-						1.°áÁ¦³»¿ª È®ÀÎ ÈÄ °áÁ¦ÇÏ±â ¹öÆ°À» Å¬¸¯½Ã, ÆË¾÷Ã¢ÀÌ ³ªÅ¸³³´Ï´Ù.<br>
-						2.ÇØ´ç ÆË¾÷¿¡¼­ ¿øÇÏ´Â ÀºÇàÀ» ¼±ÅÃ ÈÄ °èÁÂÀÌÃ¼ Á¤º¸¸¦ ÀÔ·ÂÇÏ½Ã¸é µË´Ï´Ù.
+						ì‹¤ì‹œê°„ ê³„ì¢Œì´ì²´ ì•ˆë‚´<br>
+						1.ê²°ì œë‚´ì—­ í™•ì¸ í›„ ê²°ì œí•˜ê¸° ë²„íŠ¼ì„ í´ë¦­ì‹œ, íŒì—…ì°½ì´ ë‚˜íƒ€ë‚©ë‹ˆë‹¤.<br>
+						2.í•´ë‹¹ íŒì—…ì—ì„œ ì›í•˜ëŠ” ì€í–‰ì„ ì„ íƒ í›„ ê³„ì¢Œì´ì²´ ì •ë³´ë¥¼ ì…ë ¥í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="Ãë¼Ò" onclick="reback()" class="back_button2">
-			<input type="button" value="°áÁ¦" onclick="javascript:payment('trans')" class="next_button2">
+			<input type="button" value="ì·¨ì†Œ" onclick="reback()" class="back_button2">
+			<input type="button" value="ê²°ì œ" onclick="javascript:payment('trans')" class="next_button2">
 		</div>
 	</div>	
 </body>

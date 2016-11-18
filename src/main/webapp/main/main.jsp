@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
 	<title>Marvel Cinema</title>
@@ -26,15 +26,15 @@
 			<div id="mini_nav">
 				<ul>
 				<c:if test="${mvo.name==null }">
-					<li><a href="login.do">·Î±×ÀÎ</a></li>
-					<li><a href="join.do">È¸¿ø°¡ÀÔ</a></li>					
+					<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+					<li><a href="join.do">íšŒì›ê°€ìž…</a></li>					
 				</c:if>
 				<c:if test="${mvo.name!=null }">
-					<li>${mvo.name }´Ô ¹Ý°©½À´Ï´Ù!</li>
-					<li><a href="logout.do">·Î±×¾Æ¿ô</a></li>
-					<li><a href="reserveList.do?no=${mvo.no }">¸¶ÀÌÆäÀÌÁö</a></li>
+					<li>${mvo.name }ë‹˜ ë°˜ê°‘ìŠµë‹ˆë‹¤!</li>
+					<li><a href="logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
+					<li><a href="reserveList.do?no=${mvo.no }">ë§ˆì´íŽ˜ì´ì§€</a></li>
 				</c:if>					
-					<li><a href="customer.do">°í°´¼¾ÅÍ</a></li>
+					<li><a href="customer.do">ê³ ê°ì„¼í„°</a></li>
 				</ul>
 			</div>
 			<br/>
@@ -45,15 +45,15 @@
 		<div id="nav">
 			<ul>
 				<li onclick="javascript:location.href='reserve.do'">
-					<a href="reserve.do">¿¹¸Å</a>
+					<a href="reserve.do">ì˜ˆë§¤</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='movieList.do'">
-					<a href="movieList.do">¿µÈ­</a>
+					<a href="movieList.do">ì˜í™”</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='theater.do'">
-					<a href="theater.do">¿µÈ­°ü</a>
+					<a href="theater.do">ì˜í™”ê´€</a>
 				</li>
 			</ul>
 		</div>

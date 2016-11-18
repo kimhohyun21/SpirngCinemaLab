@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve1 MovieList</title>
-	<!-- Ajax Ω««‡ -->					
+	<!-- Ajax Ïã§Ìñâ -->					
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('p.movie').hover(function(){
@@ -29,12 +29,12 @@
 					$('#movieTime').html(data);
 				},
 				error:function(data){
-					$.jQueryAlert("Ω«∆–");
+					$.jQueryAlert("Ïã§Ìå®");
 				}
 			});
 		}; 
 		
-		/* jQuery Alert √¢ */
+		/* jQuery Alert Ï∞Ω */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -58,7 +58,7 @@
 	<div align="center" class="movieList">
 		<table width="394px" id="time_table">
 			<tr>
-				<th align="center" >øµ»≠</th>
+				<th align="center" >ÏòÅÌôî</th>
 			</tr>
 			<tr>
 				<td class="movie">							
@@ -97,7 +97,7 @@
 			</tr>
 		</table>
 		<div id="movieTime">
-			<!-- ªÛøµΩ√∞£º≥¡§ -->
+			<!-- ÏÉÅÏòÅÏãúÍ∞ÑÏÑ§Ï†ï -->
 			<jsp:include page="../reserve/reserve1_MovieTime.jsp" />
 		</div>		
 	</div>

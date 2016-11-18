@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve2 Seat</title>	
 	<script type="text/javascript">		
 		$(document).ready(function(){
 			seat();			
 		})
 		
-		//ÀÌ¹Ì ¿¹¾àµÈ ÀÚ¸®¸¦ ºñÈ°¼ºÈ­ ½ÃÅ°´Â ÇÔ¼ö
+		//ì´ë¯¸ ì˜ˆì•½ëœ ìë¦¬ë¥¼ ë¹„í™œì„±í™” ì‹œí‚¤ëŠ” í•¨ìˆ˜
 		function seat(){
 			if(${slist}!=null){
 				<c:forEach var="sit" items="${slist}">
@@ -31,10 +31,10 @@
 			}	
 		}		
 		
-		//ÀÚ¸® Ã¼Å©¿¡ µû¸¥ Ajax¿Í ½ºÅ¸ÀÏ ÇÔ¼ö
+		//ìë¦¬ ì²´í¬ì— ë”°ë¥¸ Ajaxì™€ ìŠ¤íƒ€ì¼ í•¨ìˆ˜
 		function check(){
 			if(${adult==0} && ${senior==0} && ${junior==0}){
-				$.jQueryAlert('Æ¼ÄÏ ¸Å¼ö¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.');
+				$.jQueryAlert('í‹°ì¼“ ë§¤ìˆ˜ë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”.');
 				location.href="#";
 				return;
 			}else{				
@@ -46,11 +46,11 @@
 						$('#result2').html(data);
 					},
 					error:function(data){
-						$.jQueryAlert("½ÇÆĞ");
+						$.jQueryAlert("ì‹¤íŒ¨");
 					}
 				});
 				
-				//Ã¼Å©µÈ Ã¼Å©¹Ú½º ½ºÅ¸ÀÏ Àû¿ë
+				//ì²´í¬ëœ ì²´í¬ë°•ìŠ¤ ìŠ¤íƒ€ì¼ ì ìš©
 				var $checked=$('div.line ul li input[type=checkbox]:checked + label.btn');
 				$checked.css({
 					"box-shadow" : "0 0 #ab3c3c",
@@ -58,21 +58,21 @@
 					"top" : "1px"
 				});
 				
-				//Ã¼Å© ÇØÁ¦µÈ Ã¼Å©¹Ú½º ½ºÅ¸ÀÏ Á¦°Å
+				//ì²´í¬ í•´ì œëœ ì²´í¬ë°•ìŠ¤ ìŠ¤íƒ€ì¼ ì œê±°
 				$checked.click(function(){
 					$(this).removeAttr('style');
 				});			
 				
-				//ÀÌ¹Ì ¿¹¾àµÈ ÀÚ¸®¸¦ ºñÈ°¼ºÈ­ ½ÃÅ°´Â ÇÔ¼ö
+				//ì´ë¯¸ ì˜ˆì•½ëœ ìë¦¬ë¥¼ ë¹„í™œì„±í™” ì‹œí‚¤ëŠ” í•¨ìˆ˜
 				seat();				
 				
 				var $checkCount=$('div.line ul li input[type=checkbox]:checked').length;
 				var $nocheck=$('div.line ul li input[type=checkbox]').not(':checked');
 				if(${ticketAll}==$checkCount){
-					//Æ¼ÄÏ ¸Å¼ö´ë·Î ¼±ÅÃÀÌ ¿Ï·áµÇ¸é, ³ª¸ÓÁö ÀÚ¸® Ã¼Å© ºÒ°¡
+					//í‹°ì¼“ ë§¤ìˆ˜ëŒ€ë¡œ ì„ íƒì´ ì™„ë£Œë˜ë©´, ë‚˜ë¨¸ì§€ ìë¦¬ ì²´í¬ ë¶ˆê°€
 					$nocheck.attr('disabled', 'true');
 					
-					//Æ¼ÄÏ ¸Å¼ö´ë·Î ¼±ÅÃÀÌ ¿Ï·áµÇ¸é, Ã¼Å© ºÒ°¡µÈÀÚ¸® ½ºÅ¸ÀÏ Àû¿ë
+					//í‹°ì¼“ ë§¤ìˆ˜ëŒ€ë¡œ ì„ íƒì´ ì™„ë£Œë˜ë©´, ì²´í¬ ë¶ˆê°€ëœìë¦¬ ìŠ¤íƒ€ì¼ ì ìš©
 					var $nochecklabel=$('div.line ul li input[disabled=disabled] + label.btn');
 					$nochecklabel.css({
 						"box-shadow" : "0 0 #ab3c3c",
@@ -85,20 +85,20 @@
 					});
 					
 				}else if(${ticketAll} > $checkCount){
-					//Ã¼Å©ÇØÁ¦ÇÏ¿© ¸Å¼ö¿Í ¼±ÅÃÇÑ ÀÚ¸®¼ö°¡ ÀÏÄ¡ ÇÏÁö ¾ÊÀ» ¶§, Ã¼Å© ºÒ°¡¿´´ø ÀÚ¸® ½ºÅ¸ÀÏ º¹¿ø
+					//ì²´í¬í•´ì œí•˜ì—¬ ë§¤ìˆ˜ì™€ ì„ íƒí•œ ìë¦¬ìˆ˜ê°€ ì¼ì¹˜ í•˜ì§€ ì•Šì„ ë•Œ, ì²´í¬ ë¶ˆê°€ì˜€ë˜ ìë¦¬ ìŠ¤íƒ€ì¼ ë³µì›
 					var $nochecklabel=$('div.line ul li input[disabled=disabled] + label.btn');
 					$nochecklabel.removeAttr('style');
 					
-					//Ã¼Å©ÇØÁ¦ÇÏ¿© ¸Å¼ö¿Í ¼±ÅÃÇÑ ÀÚ¸®¼ö°¡ ÀÏÄ¡ ÇÏÁö ¾ÊÀ» ¶§, Ã¼Å© ºÒ°¡¿´´ø ÀÚ¸® Ã¼Å© °¡´ÉÀ¸·Î ¼Ó¼º º¯È¯
+					//ì²´í¬í•´ì œí•˜ì—¬ ë§¤ìˆ˜ì™€ ì„ íƒí•œ ìë¦¬ìˆ˜ê°€ ì¼ì¹˜ í•˜ì§€ ì•Šì„ ë•Œ, ì²´í¬ ë¶ˆê°€ì˜€ë˜ ìë¦¬ ì²´í¬ ê°€ëŠ¥ìœ¼ë¡œ ì†ì„± ë³€í™˜
 					$nocheck.removeAttr('disabled', 'disabled');
 					
-					//ÀÌ¹Ì ¿¹¾àµÈ ÀÚ¸®¸¦ ºñÈ°¼ºÈ­ ½ÃÅ°´Â ÇÔ¼ö
+					//ì´ë¯¸ ì˜ˆì•½ëœ ìë¦¬ë¥¼ ë¹„í™œì„±í™” ì‹œí‚¤ëŠ” í•¨ìˆ˜
 					seat();	
 				}
 			}
 		};
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);

@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve1 Local</title>
-	<!-- Ajax ½ÇÇà -->					
+	<!-- Ajax ì‹¤í–‰ -->					
 	<script type="text/javascript">	
 		$(document).ready(function(){
 			$('p.local').hover(function(){
@@ -28,12 +28,12 @@
 					$('#theaterList').html(data);
 				},
 				error:function(data){
-					$.jQueryAlert("½ÇÆÐ");
+					$.jQueryAlert("ì‹¤íŒ¨");
 				}
 			});
 		}; 
 		
-		/* jQuery Alert Ã¢ */
+		/* jQuery Alert ì°½ */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
@@ -57,11 +57,11 @@
 	<div align="center">
 		<table id="time_table" width="110px">
 			<tr>
-				<th align="right" class="noborder">±Ø</th>
+				<th align="right" class="noborder">ê·¹</th>
 			</tr>
 			<tr>
 				<td align="center" class="noborder">				
-					<!-- Áö¿ª ¼³Á¤ -->
+					<!-- ì§€ì—­ ì„¤ì • -->
 					<c:forEach var="vo" items="${localList }">
 						<form id="frm2_${vo.local }">
 							<input type="hidden" name="checkedYear" value="${checkedYear }">
@@ -82,7 +82,7 @@
 			</tr>
 		</table>
 		<div id="theaterList">
-			<!-- ±ØÀå ¸®½ºÆ®¼³Á¤ -->
+			<!-- ê·¹ìž¥ ë¦¬ìŠ¤íŠ¸ì„¤ì • -->
 			<jsp:include page="../reserve/reserve1_Theater.jsp" />
 		</div>
 	</div>
