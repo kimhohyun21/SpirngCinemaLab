@@ -5,8 +5,21 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.cinema.main.dao.MainVO" alias="Main"/>
+<!-- 		<typeAlias type="com.cinema.member.dao.MemberVO" alias="member"/>    -->    
+        <typeAlias type="com.cinema.reserve.dao.ReserveVO" alias="Reserve"/>
+<!--         <typeAlias type="com.cinema.movieList.dao.MovieVO" alias="movie"/> -->
+<!--         <typeAlias type="com.cinema.theater.dao.TheaterVO" alias="theater"/> -->
+<!--         <typeAlias type="com.cinema.customer.dao.CustomerVO" alias="customer"/> -->
+<!--         <typeAlias type="com.cinema.member.dao.MemberReserveListVO" alias="memberReserve"/>  -->
+<!--         <typeAlias type="com.cinema.admin.dao.ReserveListVO" alias="reservelist"/> -->
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/cinema/main/dao/main-mapper.xml"/>
+<!-- 		<mapper resource="com/cinema/member/dao/member-mapper.xml"/> -->
+        <mapper resource="com/cinema/reserve/dao/reserve-mapper.xml"/>
+<!--         <mapper resource="com/cinema/movieList/dao/list-mapper.xml"/> -->
+<!--         <mapper resource="com/cinema/customer/dao/customer-mapper.xml"/> -->
+<!--         <mapper resource="com/cinema/theater/dao/theater-mapper.xml"/> -->
+<!--         <mapper resource="com/cinema/admin/dao/admin-mapper.xml"/> -->
 	</mappers>
 </configuration>

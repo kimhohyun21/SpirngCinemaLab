@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.cinema.reserve.dao.reserve-mapper">
+
+	<select id="localData" resultType="Reserve">
+		SELECT tNo,local FROM theaterList WHERE tNo=1 OR tNo=82 OR tNo=163 OR tNo=244 OR tNo=352 ORDER BY tNo ASC
+	</select>
+		
+	<select id="theaterData" parameterType="String" resultType="Reserve">
+		SELECT DISTINCT theater FROM theaterList WHERE local=#{local}
+	</select>
+	
+	<select id="movieData" parameterType="String"  resultType="Reserve">
+		SELECT DISTINCT mNo, grade,title, poster FROM movieList NATURAL JOIN theaterList WHERE theater=#{tname } ORDER BY mNo ASC
+	</select>	
+	
+	<select id="theaterNoData" parameterType="java.util.Map" resultType="int">
+		SELECT DISTINCT theaterNo FROM theaterList NATURAL JOIN movieList WHERE theater=#{tname} AND title=#{title}
+	</select>
+	
+	<select id="timeData" parameterType="java.util.Map" resultType="Reserve">
+		SELECT tNo, movietime FROM theaterList NATURAL JOIN movieList WHERE theater=#{tname} AND title=#{title}
+	</select>
+	
+	<select id="reserveData" parameterType="java.util.Map" resultType="Reserve">
+		SELECT seat FROM reserveList NATURAL JOIN theaterList NATURAL JOIN movieList
+		WHERE rDate=to_date(#{date}, 'YYYY-MM-DD HH24:MI') AND theater=#{theater} AND title=#{title}
+	</select>
+	
+	<select id="getTno" parameterType="java.util.Map" resultType="int">
+		SELECT tNo FROM theaterList WHERE theater=#{theater} AND theaterNo=#{theaterNo} AND movietime=#{movietime}
+	</select>
+	
+	<insert id="regReserve" parameterType="java.util.Map">
+		<selectKey keyProperty="rNo" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(rNo)+1,1) FROM reserveList
+		</selectKey>
+		INSERT INTO reserveList VALUES (#{rNo},to_date(#{rDate}, 'YYYY-MM-DD HH24:MI'),#{seat},#{ticket},
+		#{payType},#{payment},#{paymentId},#{shopId},#{serverPay},#{cardOkNum},'','',#{no},#{tNo})
+	</insert>
+	
+	<select id="getTotalReserve" resultType="int">
+		SELECT COUNT(*) FROM reserveList
+	</select>
+	
+	<select id="getReserveNum" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM reserveList NATURAL JOIN theaterList NATURAL JOIN movieList WHERE title=#{title} AND cancel IS NULL
+	</select>
+	
+	<update id="updateRank" parameterType="java.util.Map">
+		UPDATE movieList SET rank=#{rank} WHERE title=#{title}
+	</update>
+	
+	<select id="getReserveData" parameterType="int" resultType="Reserve">
+		SELECT paymentId, shopId FROM reserveList WHERE rNo=#{rNo}
+	</select>
+	
+	<select id="getRno" parameterType="String" resultType="int">
+		SELECT rNo FROM reserveList WHERE paymentId=#{pid}
+	</select>
+	
+	<update id="updateCancel" parameterType="int">
+		UPDATE reserveList SET seat='null', cancel='취소완료', refund='환불완료' WHERE rNo=#{rNo}
+	</update>
+	
+</mapper>
