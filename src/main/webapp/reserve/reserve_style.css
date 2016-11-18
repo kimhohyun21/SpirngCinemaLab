@@ -538,6 +538,9 @@ table.btn_table{
 	position:relative;
 	top:1px;
 }
-
+textarea {
+    resize: none;
+    width: 100%;
+}
 
 
