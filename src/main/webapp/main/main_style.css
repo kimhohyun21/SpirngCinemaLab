@@ -1,0 +1,169 @@
+@CHARSET "EUC-KR";
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+body{
+	background-image: url("../image/universe_bg3.jpg");
+	background-size: cover;
+}
+#header{
+	height: 200px;
+}
+img.logo{
+	width: 300px;
+	position: relative;
+	top: 40px;
+	left: -6px;
+}
+#mini_nav{
+	float:right;
+	width: 100%;
+}
+#mini_nav ul{
+	list-style: none outside none;
+	height: 30px;
+	float:right;
+	position:relative;
+	left: 0%;
+}
+#mini_nav ul li{
+	display: block;
+	margin: 10px;
+	float: left;
+	color: #ffffff;
+}
+#mini_nav ul li a{
+	color: #ffffff;
+	font-weight: bold;
+}
+#nav{
+	background-color: rgba(0, 1, 2, 0.66);
+	border-top: 2px solid rgba(250, 250, 250, 0.3);
+	border-bottom: 2px solid rgba(250, 250, 250, 0.3);
+	width: 100%;
+	height: 50px;
+}
+#nav ul{
+	list-style: none outside none;
+	position: relative;
+    left: 20px;
+    width: 610px;
+    text-align: center;
+}
+#nav ul li{
+	display: block;
+    position: relative;
+    left: 54px;
+    float: left;
+	padding: 11.5px 51px 11.5px 51px;
+	cursor: pointer;
+}
+#nav ul li.noeffect{
+	color: rgba(250, 250, 250, 0.3);
+	font-weight: bold;
+	padding: 11.5px 0px 11.5px 0px;
+}
+#nav ul li:HOVER{
+	background-color: #3278fa;
+}
+#nav ul li.noeffect:HOVER{
+	background-color: rgba(0, 1, 2, 0.66);
+}
+#nav ul li a{
+	color: white;
+	font-size: 15pt;
+	font-weight: bold;
+}
+#article{
+	min-height: 630px;
+	vertical-align: middle;
+}
+.amazingslider-play-1{
+	position: absolute;
+    left: 50%;
+}
+.posttitle{
+	font-size:15pt;
+	font-weight:bolder;
+	font-style:normal;
+	color:#ffffff;
+	background:#fd2513;
+	border:2px solid #ffffff;
+	text-shadow:0px 3px 5px #808080;
+	box-shadow:0px 0px 6px #454545;
+	-moz-box-shadow:0px 0px 6px #454545;
+	-webkit-box-shadow:0px 0px 6px #454545;
+	border-radius:90px 90px 90px 90px;
+	-moz-border-radius:90px 90px 90px 90px;
+	-webkit-border-radius:90px 90px 90px 90px;
+	width:200px;
+	padding:5px 90px;
+	margin:0 auto;
+}
+#posterSlider-wrapper{
+	display: block;
+}
+#posterSlider-wrapper ul li{
+	float: left;
+}
+#footer{
+	height: 70px;
+	background-color: rgba(0, 1, 2, 0.3);
+	color: white;
+}
+#footer span{
+	position: relative;
+	top: 25px;
+}
+
+/**** 팝업 로그인 창   ***/
+label.idlabel{
+	margin: 5px;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+}
+label.pwlabel{
+	margin: 5px;
+	font-weight: bold;
+}
+input[type=text]#id{
+	margin: 3px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+input[type=password]#pwd{
+	margin: 3px 3px 5px 3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+::-webkit-input-placeholder { /* Webkit browsers */
+	font-size: 10pt;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font-size: 10pt;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font-size: 10pt;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	font-size: 10pt;
+}
+div#find a{
+	font-size: 11pt;
+	font-weight: bold;
+	color: #393939;
+}
+div#find a:HOVER {
+	color: #ea4d00;
+}
+textarea {
+    resize: none;
+    width: 100%;
+}
