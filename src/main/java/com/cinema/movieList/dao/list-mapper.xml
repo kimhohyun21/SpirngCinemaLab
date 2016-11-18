@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cinema.movieList.dao.list-mapper">
+	<select id="Mlist" parameterType="int" resultType="movie">
+		SELECT mNo,poster,title,grade,rank,movieLike,type FROM movieList WHERE type=#{type2 }
+	</select>
+	<select id="Mdetail" parameterType="int" resultType="movie">
+		SELECT mNo,poster,title,openDate,genre,runtime,director,cast,grade,content,trailer,rank,movieLike FROM movieList WHERE mNo=#{mNo }
+	</select>
+	<select id="Mcharacter" parameterType="int" resultType="movie">
+		SELECT cname,img FROM characterList WHERE mNo1=#{mNo } or mNo2=#{mNo } or mNo3=#{mNo } or mNo4=#{mNo } or mNo5=#{mNo }
+	</select>
+	
+	<select id="MReplyData" parameterType="java.util.Map" resultType="movie">
+		SELECT mNo,reNo,score,reContent,regDATE,id,num 
+		FROM(SELECT mNo,reNo,score,reContent,regDATE,id,rownum as num
+  		FROM (SELECT mNo,reNo,score,reContent,regDATE,id
+  		FROM replyList NATURAL JOIN member NATURAL JOIN movieList WHERE mNo=#{mNo} ORDER BY reNo DESC))
+		WHERE num BETWEEN #{start} AND #{end}
+	</select>
+	<insert id="replyInsert" parameterType="movie">
+		INSERT INTO replyList(reNo,score,reContent,regDATE,no,mNo) 
+		VALUES((SELECT NVL(MAX(reNo)+1,1) FROM replyList),#{score},#{reContent},#{regDATE},(SELECT no FROM member WHERE id=#{id}),#{mNo})
+	</insert>
+	<select id="replyTotalPage" parameterType="int" resultType="int">
+		SELECT CEIL(COUNT(*)/5) FROM replyList WHERE mNo=#{mNo}
+	</select>
+	<select id="replyCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM replyList WHERE mNO=#{mNo}
+	</select>
+	<delete id="replyDelete" parameterType="int">
+		DELETE FROM replyList WHERE reNo=#{reNo}
+	</delete>
+	<select id="replyTotalScore" parameterType="int" resultType="int">
+		SELECT NVL(SUM(score), 0) FROM replyList WHERE mNo=#{mNo}
+	</select>
+	<update id="movieLikeUpdate" parameterType="java.util.Map">
+		UPDATE movieList SET movieLike=#{movieLike} WHERE mNo=#{mNo}
+	</update>
+	
+	<select id="replyRecordCheck" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM replyList WHERE mNO=#{mNo} AND no=#{memberNo}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
