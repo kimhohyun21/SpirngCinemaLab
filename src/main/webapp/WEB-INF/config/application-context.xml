@@ -41,7 +41,7 @@
 	</bean>
 	
 	<!-- DB에 연결할 DAO 등록 -->
-	<bean id="main" class="com.cinema.Main.dao.MainDAO"
+	<bean id="main" class="com.cinema.main.dao.MainDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
 	
