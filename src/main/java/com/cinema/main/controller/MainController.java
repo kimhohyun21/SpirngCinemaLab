@@ -1,4 +1,4 @@
-package com.cinema.controller;
+package com.cinema.main.controller;
 
 import java.util.*;
 

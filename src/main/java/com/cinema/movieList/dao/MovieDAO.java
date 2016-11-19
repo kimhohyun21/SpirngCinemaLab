@@ -32,7 +32,6 @@ public class MovieDAO extends SqlSessionDaoSupport{
 	//´ñ±Û »ðÀÔ
 	public void replyInsert(MovieVO vo){
 		getSqlSession().insert("replyInsert",vo);
-		getSqlSession().commit();
 	}
 	
 	//´ñ±Û ÃÑ ÆäÀÌÁö
@@ -50,7 +49,6 @@ public class MovieDAO extends SqlSessionDaoSupport{
 	//´ñ±Û »èÁ¦
 	public void replyDelete(int reNo){
 		getSqlSession().delete("replyDelete",reNo);
-		getSqlSession().commit();
 	}
 	
 	//´ñ±Û ÃÑÆòÁ¡
@@ -62,7 +60,6 @@ public class MovieDAO extends SqlSessionDaoSupport{
 	//´ñ±Û ÆòÁ¡ ¾÷µ¥ÀÌÆ®
 	public void movieLikeUpdate(Map map){
 		getSqlSession().update("movieLikeUpdate", map);
-		getSqlSession().commit();
 	}
 	
 	//´ñ±Û ±â·Ï ¿©ºÎ È®ÀÎ

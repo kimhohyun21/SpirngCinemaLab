@@ -21,7 +21,6 @@ import com.cinema.dao.CreateSqlSessionFactory;*/
 public class MemberDAO extends SqlSessionDaoSupport{
 	public void memberInsert(MemberVO vo){
 		getSqlSession().insert("memberInsert",vo);
-		getSqlSession().commit();
 	}
 	
 	public int memberIdCheck(String id){
@@ -53,7 +52,6 @@ public class MemberDAO extends SqlSessionDaoSupport{
 	
 	public void memberDelete(MemberVO vo){
 		int i=getSqlSession().delete("memberDelete",vo);
-		getSqlSession().commit();
 	}
 	
 	public int memberOverlab(String id){
@@ -68,12 +66,10 @@ public class MemberDAO extends SqlSessionDaoSupport{
 	
 	public void memberModify(MemberVO vo){
 		getSqlSession().update("memberModify",vo);
-		getSqlSession().commit();
 	}
 	
 	public void memberChangePwd(MemberVO vo){
 		getSqlSession().update("memberChangePwd",vo);
-		getSqlSession().commit();
 	}
 	
 	public List<MemberReserveListVO> memberWhatchData(int no){
