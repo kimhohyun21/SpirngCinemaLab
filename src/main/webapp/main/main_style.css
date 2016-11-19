@@ -60,7 +60,7 @@ img.logo{
     position: relative;
     left: 54px;
     float: left;
-	padding: 11.5px 51px 11.5px 51px;
+	padding: 12px 51px 12px 51px;
 	cursor: pointer;
 }
 #nav ul li.noeffect{
@@ -162,8 +162,4 @@ div#find a{
 }
 div#find a:HOVER {
 	color: #ea4d00;
-}
-textarea {
-    resize: none;
-    width: 100%;
 }
