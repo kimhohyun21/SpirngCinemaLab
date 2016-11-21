@@ -28,6 +28,6 @@ public class MemberIDOverLabModel {
 				check=1;
 		}
 		model.addAttribute("check", check);
-		return "join/join_ok.jsp";
+		return "join/join_ok";
 	}
 }

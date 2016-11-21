@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberLogoutModel {
 	@RequestMapping("logout.do")
 	public String logout(HttpServletRequest request,Model model){
-		HttpSession session=request.getSession();		
+		HttpSession session=request.getSession();
 		if(session !=null){
 			//历厘等 技记力芭
-			session.invalidate();			
+			session.invalidate();
 		}
-		return "main.do";
+		model.addAttribute("logout","out");
+		return "login/login_ok";
 	}
 }

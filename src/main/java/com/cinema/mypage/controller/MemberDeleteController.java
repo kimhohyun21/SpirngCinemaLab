@@ -11,6 +11,6 @@ public class MemberDeleteController {
 		
 		model.addAttribute("jsp", "../mypage/mypage.jsp");
 		model.addAttribute("jsp2", "../mypage/delete.jsp");
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

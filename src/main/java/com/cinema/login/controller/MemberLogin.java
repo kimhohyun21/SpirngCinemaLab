@@ -12,6 +12,6 @@ public class MemberLogin {
 	public String login(Model model){
 		model.addAttribute("jsp", "../login/login.jsp");
 		
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

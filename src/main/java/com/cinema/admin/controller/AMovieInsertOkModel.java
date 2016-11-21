@@ -18,24 +18,21 @@ public class AMovieInsertOkModel {
 	
 	@RequestMapping("AmovieInsert_ok.do")
 	public String movieInsert_ok(Model model,String title,String poster,String grade,
-			String stype,String runtime, String year, String month, String day, String content,
+			String type,String runtime, String year, String month, String day, String content,
 			String director, String genre, String cast, String trailer) {
 		try {
 			//model.setCharacterEncoding("UTF-8");
-			
 			// opendate만들기
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date opendate = sdf.parse(sopendate);
-			
-			
 
 			// 저장
 			MovieVO vo = new MovieVO();			
 			vo.setTitle(title);
 			vo.setPoster(poster);
 			vo.setGrade(grade);
-			vo.setType(Integer.parseInt(stype));
+			vo.setType(Integer.parseInt(type));
 			vo.setRuntime(runtime + "분");
 			vo.setContent(content);
 			vo.setDirector(director);
@@ -49,6 +46,6 @@ public class AMovieInsertOkModel {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
-		return "adminpage/station.jsp";
+		return "adminpage/station";
 	}
 }

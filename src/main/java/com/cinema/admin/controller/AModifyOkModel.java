@@ -3,6 +3,7 @@ package com.cinema.admin.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,14 +13,16 @@ import com.cinema.movieList.dao.MovieVO;
 
 @Controller
 public class AModifyOkModel {
+	@Autowired
+	AdminDAO dao;
+	
 	@RequestMapping("Amodify_Ok.do")
-	public String modifyOk(Model model, String sno, String title, String poster,
+	public String modifyOk(Model model, String no, String title, String poster,
 			String grade, String type, String runtime, String year, String month, String day,
 			String content, String director, String genre, String cast, String trailer) {
 		try {
 			//request.setCharacterEncoding("EUC-KR");
-			int no=Integer.parseInt(sno);
-			System.out.println(no+"   1");
+			int no2=Integer.parseInt(no);
 						
 			// opendate만들기
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
@@ -28,7 +31,7 @@ public class AModifyOkModel {
 			
 			// 저장
 			MovieVO vo=new MovieVO();
-			vo.setmNo(no);
+			vo.setmNo(no2);
 			vo.setTitle(title);
 			vo.setPoster(poster);
 			vo.setGrade(grade);
@@ -40,7 +43,7 @@ public class AModifyOkModel {
 			vo.setCast(cast);
 			vo.setTrailer(trailer);
 			vo.setOpendate(opendate);			
-			AdminDAO.adminMovieModify(vo);			
+			dao.adminMovieModify(vo);			
 			
 			model.addAttribute("no", no);
 			
@@ -50,7 +53,7 @@ public class AModifyOkModel {
 		
 		
 			
-		return "adminpage/station.jsp";
+		return "adminpage/station";
 	}
 }
 

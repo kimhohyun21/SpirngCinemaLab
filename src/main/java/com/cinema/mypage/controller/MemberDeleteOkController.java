@@ -38,6 +38,6 @@ public class MemberDeleteOkController {
 		}
 		
 		
-		return "mypage/delete_ok.jsp";
+		return "mypage/delete_ok";
 	}
 }

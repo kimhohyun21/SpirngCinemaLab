@@ -52,6 +52,6 @@ public class MemberLoginOkModel {
 		model.addAttribute("check", check);		
 		
 		
-		return "login/login_ok.jsp";		
+		return "login/login_ok";		
 	}
 }

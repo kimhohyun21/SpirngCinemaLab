@@ -49,7 +49,7 @@ public class ReserveListModel{
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/reservelist.jsp");
 		
-		return "main/main.jsp";
+		return "main/main";
 	}
 	
 }

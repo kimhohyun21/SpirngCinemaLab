@@ -16,7 +16,7 @@ public class ACharUpdateModel {
 	private AdminDAO dao;
 	
 	@RequestMapping("AcharUpdate.do")
-	public String charInsert(Model model,String no){		
+	public String charInsert(Model model,String no){
 		//
 		List<MovieVO> list=dao.AcharAllData();
 		
@@ -24,6 +24,6 @@ public class ACharUpdateModel {
 		model.addAttribute("list", list);
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/charupdate.jsp");
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

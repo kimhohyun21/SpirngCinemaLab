@@ -21,6 +21,6 @@ public class AMovieInsertModel {
 		
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/movieInsert.jsp");
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

@@ -17,12 +17,11 @@ public class AModifyMovieListModel {
 	private AdminDAO dao;
 	
 	@RequestMapping("Amodifymovielist.do")
-	public String modifyMovieList(Model model,String sno){
-		int no = Integer.parseInt(sno);		
-		
-		
+	public String modifyMovieList(Model model,String no){
+		System.out.println(no+"@@@@@@");
 		//영화정보들 가져오기
-		MovieVO vo=dao.adminMovieData(no);
+		int no2=Integer.parseInt(no);
+		MovieVO vo=dao.adminMovieData(no2);
 		
 		//년도,월,일 분리
 		SimpleDateFormat yearF=new SimpleDateFormat("yyyy");
@@ -32,17 +31,21 @@ public class AModifyMovieListModel {
 		String month = monthF.format(vo.getOpendate());
 		String day = dayF.format(vo.getOpendate());
 		
-		// 상영시간 '분'빼기
-		String runtime=vo.getRuntime().replaceAll("분", "");
-		vo.setRuntime(runtime);
+		//상영예정영화 수정 에러방지
+		String runtime=vo.getRuntime();
+		if(runtime != null){
+			// 상영시간 '분'빼기
+			runtime.replaceAll("분", "");
+			vo.setRuntime(runtime);
+		}
 		
-		model.addAttribute("no", no);
+		model.addAttribute("no", no2);
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);
 		model.addAttribute("day", day);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/moviemodify.jsp");
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

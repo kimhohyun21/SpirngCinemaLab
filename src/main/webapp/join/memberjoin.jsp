@@ -111,6 +111,11 @@ function checkID(){
 		f.id.focus();
 		return;
 	}
+	if(f.id.value=="" || f.id.value.length<5){
+		alert("ID는 5자 이상 입력해 주세요");
+		f.id.focus();
+		return;
+	}
 	location.href="idOverlab.do?id="+id; 
 }
 

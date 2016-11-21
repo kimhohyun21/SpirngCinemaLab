@@ -10,7 +10,7 @@
 <body>
 	<center>
 		<br>
-			<a href="Amovielist.do">
+			<a href="Amovielist.do?sPage=${page }">
 				<button class="menubar">영화리스트</button>
 			</a>
 			<a href="reservelist.do">

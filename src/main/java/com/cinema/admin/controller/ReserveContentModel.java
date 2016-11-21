@@ -23,7 +23,7 @@ public class ReserveContentModel{
 		model.addAttribute("jsp", "reservelist.jsp");
 		model.addAttribute("jsp", "../adminpage/reservecontent.jsp");
 		
-		return "main/main.jsp";
+		return "main/main";
 		
 	}
 

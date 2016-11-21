@@ -11,6 +11,6 @@ public class MemberJoinModel {
 	public String join(Model model){
 		
 		model.addAttribute("jsp", "../join/memberjoin.jsp");		
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

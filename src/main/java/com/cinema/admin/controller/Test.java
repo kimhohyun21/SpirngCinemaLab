@@ -1,4 +1,4 @@
-package com.cinema.admin.controller;
+/*package com.cinema.admin.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -17,3 +17,4 @@ public class Test {
 		}
 	}
 }
+*/
