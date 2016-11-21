@@ -42,6 +42,6 @@ public class MemberModifyOkController {
 		}
 		model.addAttribute("pCheck", pCheck);
 		
-		return "mypage/modify_ok.jsp";
+		return "mypage/modify_ok";
 	}
 }

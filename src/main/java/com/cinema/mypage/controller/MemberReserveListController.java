@@ -20,9 +20,9 @@ public class MemberReserveListController {
 	private MemberDAO dao;
 	
 	@RequestMapping("reserveList.do")
-	public String reserveList(Model model, String strno, String type, String sPage) {
+	public String reserveList(Model model, String no, String type, String sPage) {
 		//예매내역,관람내역 구분
-		int no = Integer.parseInt(strno);
+		int ino = Integer.parseInt(no);
 		List<MemberReserveListVO> list;
 		
 		//페이지 재료
@@ -42,14 +42,14 @@ public class MemberReserveListController {
 			type = "0";
 		
 		if (type.equals("1")) {	// 관람내역			
-			list = dao.memberWhatchData(no);
+			list = dao.memberWhatchData(ino);
 			//마지막페이지
-			rowCount=dao.ReserveCount(no);
+			rowCount=dao.ReserveCount(ino);
 			
 		} else {		//예매내역
-			list = dao.memberReserveList(no);
+			list = dao.memberReserveList(ino);
 			//마지막페이지
-			rowCount=dao.ReserveCount2(no);
+			rowCount=dao.ReserveCount2(ino);
 		}
 		
 		//날짜형식 바꾸기 )yyyy-MM-dd HH:mm:ss -> yyyy.MM.dd
@@ -92,6 +92,6 @@ public class MemberReserveListController {
 		model.addAttribute("jsp", "../mypage/mypage.jsp");
 		model.addAttribute("jsp2", "../mypage/reserveList.jsp");
 
-		return "main/main.jsp";
+		return "main/main";
 	}
 }

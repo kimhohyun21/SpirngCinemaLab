@@ -59,9 +59,9 @@
 	<bean id="customer" class="com.cinema.customer.dao.CustomerDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-<!-- 	<bean id="admin" class="com.cinema.admin.dao.AdminDAO"
+	<bean id="admin" class="com.cinema.admin.dao.AdminDAO"
 		p:sqlSessionTemplate-ref="sst"
-	/> -->
+	/>
 	
 	<!-- viewResolver 등록 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
