@@ -72,6 +72,26 @@ public class Reserve1Controller {
 		if(checkedMonth==null)checkedMonth=sm; //선택이 없을 경우 초기값
 		if(checkedDay==null)checkedDay=sd; //선택이 없을 경우 초기값
 		if(checkedDay2==null)checkedDay2=ss; //선택이 없을 경우 초기값
+		int y=Integer.parseInt(checkedYear);
+		int m=Integer.parseInt(checkedMonth);
+		int d=Integer.parseInt(checkedDay);
+		
+		//새벽 시간 날짜 설정
+		if(movietime!=null){
+			String time=movietime.substring(0, movietime.lastIndexOf(":"));			
+			if(lastDay[m-1]==d && time.equals("1")){
+				if(m==12){
+					y+=1;
+					m=1;
+				}else{
+					m+=1;
+				}			
+				d=1;
+			}else if(time.equals("1")){
+				d+=1;
+			}
+			System.out.println(d);
+		}		
 		
 		//지역 리스트 받기 
 		List<ReserveVO> localList=dao.localData();
@@ -124,9 +144,9 @@ public class Reserve1Controller {
 		model.addAttribute("strWeek2", strWeek2);
 		model.addAttribute("day7", day7);
 		model.addAttribute("z", z);
-		model.addAttribute("checkedYear", checkedYear);
-		model.addAttribute("checkedMonth", checkedMonth);
-		model.addAttribute("checkedDay", checkedDay);
+		model.addAttribute("checkedYear", y);
+		model.addAttribute("checkedMonth", m);
+		model.addAttribute("checkedDay", d);
 		model.addAttribute("checkedDay2", checkedDay2);
 		model.addAttribute("localList", localList);
 		model.addAttribute("local", local);
