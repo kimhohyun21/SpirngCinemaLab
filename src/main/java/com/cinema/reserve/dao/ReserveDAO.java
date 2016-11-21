@@ -53,7 +53,6 @@ public class ReserveDAO extends SqlSessionDaoSupport{
 	//예매 데이터 업데이트
 	public void regReserve(Map map){
 		getSqlSession().insert("regReserve", map);
-		getSqlSession().commit();
 	}
 	
 	//전체 예매 수 가져오기
@@ -71,7 +70,6 @@ public class ReserveDAO extends SqlSessionDaoSupport{
 	//예매율 업데이트
 	public void updateRank(Map map){
 		getSqlSession().update("updateRank", map);
-		getSqlSession().commit();
 	}
 	
 	//취소 정보 가져오기
@@ -89,7 +87,6 @@ public class ReserveDAO extends SqlSessionDaoSupport{
 	//취소 정보 업데이트
 	public void updateCancel(int rNo){
 		getSqlSession().update("updateCancel", rNo);
-		getSqlSession().commit();
 	}
 }
 
