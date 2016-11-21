@@ -20,11 +20,11 @@ public class Reserve4Controller {
 	public ReserveDAO dao;
 	
 	@RequestMapping("reserve4.do")
-	public String Reserve4(Model model, String year, String month, String checkedDay, String checkedDay2, String tname,
+	public String Reserve4(Model model, int year, int month, int checkedDay, String checkedDay2, String tname,
 							String grade, String title, String poster, String theaterNo, String movietime, String ticketAll,
-							String payment, String seatNo, HttpSession session, String paymentId, HttpServletRequest request,
-							String shopId, String serverPay, String cardOkNum, String paytype){
-		try{
+							String payment, String seatNo, String paymentId, String shopId, String serverPay, String cardOkNum, 
+							String paytype, HttpSession session, HttpServletRequest request){
+
 			MemberVO mvo=(MemberVO) session.getAttribute("mvo");
 			
 			//¿Ã¿¸ ∆‰¿Ã¡ˆ ¡÷º“ »πµÊ
@@ -88,10 +88,7 @@ public class Reserve4Controller {
 			model.addAttribute("sid", shopId);
 			
 			model.addAttribute("jsp", "../reserve/reserve4_Complete.jsp");		
-		}catch(Exception e){
-			e.printStackTrace();
-		}		
-		
+
 		return "main/main";
 	}
 

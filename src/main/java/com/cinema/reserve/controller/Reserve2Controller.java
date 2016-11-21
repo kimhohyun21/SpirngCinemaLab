@@ -19,7 +19,7 @@ public class Reserve2Controller {
 	private ReserveDAO dao;
 	
 	@RequestMapping("reserve2.do")
-	public String reserve2(Model model, String year, String month, String checkedDay, 
+	public String reserve2(Model model, int year, int month, int checkedDay, 
 							String checkedDay2, String local, String tname, String grade, 
 							String title, String poster, String theaterNo, String movietime,
 							String adult, String senior, String junior, String[] seat, String rType,

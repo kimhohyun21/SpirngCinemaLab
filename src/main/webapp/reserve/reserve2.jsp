@@ -24,13 +24,13 @@
 		};	
 	
 		$('document').ready(function(){
-			$('div.selectBox').click(function(){
+			 $('div.selectBox').click(function(){
 				if(${mvo==null}){
 					$.jQueryLogin();
 					return;
-				}
+				} 
 			});
-		});				
+		});			
 				
 		/*jQuery Login*/
 		jQuery.jQueryLogin = function (){
