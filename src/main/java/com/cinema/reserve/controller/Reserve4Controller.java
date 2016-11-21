@@ -24,7 +24,7 @@ public class Reserve4Controller {
 							String grade, String title, String poster, String theaterNo, String movietime, String ticketAll,
 							String payment, String seatNo, HttpSession session, String paymentId, HttpServletRequest request,
 							String shopId, String serverPay, String cardOkNum, String paytype){
-		try{
+
 			MemberVO mvo=(MemberVO) session.getAttribute("mvo");
 			
 			//¿Ã¿¸ ∆‰¿Ã¡ˆ ¡÷º“ »πµÊ
@@ -87,10 +87,7 @@ public class Reserve4Controller {
 			request.setAttribute("pid", paymentId);
 			request.setAttribute("sid", shopId);
 			
-			request.setAttribute("jsp", "../reserve/reserve4_Complete.jsp");		
-		}catch(Exception e){
-			e.printStackTrace();
-		}		
+			request.setAttribute("jsp", "../reserve/reserve4_Complete.jsp");			
 		
 		return "main/main";
 	}
