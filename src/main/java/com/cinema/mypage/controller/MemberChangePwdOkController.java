@@ -37,6 +37,6 @@ public class MemberChangePwdOkController {
 		}
 		model.addAttribute("pCheck", pCheck);
 
-		return "mypage/change_pwd_ok.jsp";
+		return "mypage/change_pwd_ok";
 	}
 }

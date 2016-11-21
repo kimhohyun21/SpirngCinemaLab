@@ -92,6 +92,6 @@ public class MemberReserveListController {
 		model.addAttribute("jsp", "../mypage/mypage.jsp");
 		model.addAttribute("jsp2", "../mypage/reserveList.jsp");
 
-		return "main/main.jsp";
+		return "main/main";
 	}
 }
