@@ -10,6 +10,7 @@
    <link rel="stylesheet" type="text/css" href="movie/style.css">
 </head>
 <body>
+	<!-- 영화 상세 정보 불러오기 -->
 	<!-- 관리자로 로그인했을 시 영화 정보 수정하기 버튼 띄우기 -->
 	<c:if test="${mvo.admin eq '1' }">
 		<div align="right">
@@ -18,7 +19,6 @@
 			</a>
 		</div>
 	</c:if>	
-	<!-- 영화 상세 정보 불러오기 -->
    <div class="detail">
       <div class="detail2">
          <div id="poster_div">
@@ -86,7 +86,7 @@
                <td colspan="10">
                		<c:if test="${mvo.admin eq '1' }">
 						<div align="right">
-							<a href="Amodifymovielist.do?no=${no }">
+							<a href="AcharUpdate.do?no=${no }">
 								<b style="color: red;">출연진 수정하기</b>
 							</a>
 						</div>

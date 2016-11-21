@@ -18,7 +18,6 @@ public class AModifyMovieListModel {
 	
 	@RequestMapping("Amodifymovielist.do")
 	public String modifyMovieList(Model model,String no){
-		System.out.println(no+"@@@@@@");
 		//영화정보들 가져오기
 		int no2=Integer.parseInt(no);
 		MovieVO vo=dao.adminMovieData(no2);

@@ -17,14 +17,6 @@ function send(){
 	
 	f.submit();
 }
-
-function yesnoCheck() {
-    if (document.getElementById('yesCheck').checked) {
-        document.getElementById('yesCheck').style.visibility = 'visible';
-    } else {
-        document.getElementById('yesCheck').style.visibility = 'hidden';
-    }
-}
 </script>
 </head>
 <body>
@@ -33,8 +25,7 @@ function yesnoCheck() {
 		<form name="frm" method="post" action="delete_ok.do?strno=${mvo.no }">
 			비밀번호 : <input type="password" name="pwd"><br/>
 		<div>
-			<input type="button" onclick="yesnoCheck()" value="삭제" class="btn">
-			<input type="hidden" onclick="#" value="삭제" class="btn" id="yesCheck">
+			<input type="button" onclick="send()" value="삭제" class="btn">
 		</div>
 		</form>
 	</center>

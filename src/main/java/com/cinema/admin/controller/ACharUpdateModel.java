@@ -17,10 +17,13 @@ public class ACharUpdateModel {
 	
 	@RequestMapping("AcharUpdate.do")
 	public String charInsert(Model model,String no){
-		//
+		
 		List<MovieVO> list=dao.AcharAllData();
+		List<MovieVO> actor=dao.movieCharName(Integer.parseInt(no));
 		
-		
+		model.addAttribute("i",0); //카운팅용
+		model.addAttribute("actor",actor);
+		model.addAttribute("no",no);
 		model.addAttribute("list", list);
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/charupdate.jsp");
