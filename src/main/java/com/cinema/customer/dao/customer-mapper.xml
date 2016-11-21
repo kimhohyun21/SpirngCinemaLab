@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cinema.customer.dao.customer-mapper">
+
+	<select id="CList" parameterType="java.util.Map" resultType="customer">
+		SELECT qno,qsubject,name,qregdate,qhit,group_tab,num
+		FROM (SELECT qno,qsubject,name,qregdate,qhit,group_tab,Rownum as num
+		FROM(SELECT qno,qsubject,name,qregdate,qhit,group_tab
+		FROM qna, member WHERE qna.no=member.no ORDER BY group_id DESC,group_step ASC))
+		WHERE num BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="CTotal" resultType="int">
+		SELECT CEIL(COUNT(*)/10) FROM qna
+	</select>
+	
+	<insert id="CInsert" parameterType="customer">
+		<selectKey keyProperty="qno" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(qno)+1,1) as no FROM qna
+		</selectKey>
+		INSERT INTO qna(qno,qsubject,qcontent,no,group_id) 
+		VALUES(#{qno},#{qsubject},#{qcontent},#{no},
+		(SELECT NVL(MAX(group_id)+1,1) FROM qna))
+	</insert>
+	
+	<update id="CHit" parameterType="int">
+		UPDATE qna SET qhit=qhit+1 WHERE qno=#{no}
+	</update>
+	
+	<select id="CContent" resultType="customer" parameterType="int">
+		SELECT qno,name,qsubject,qcontent,qregdate,qhit FROM qna NATURAL JOIN member where qno=#{no}
+	</select>
+	
+	<update id="CUpdate" parameterType="customer">
+		UPDATE qna SET qsubject=#{qsubject},qcontent=#{qcontent} WHERE qno=#{qno}
+	</update>
+	
+	<delete id="CDelete" parameterType="customer">
+		Delete FROM qna WHERE qno=#{qno}
+	</delete>
+	
+	<select id="GroupData" parameterType="int" resultType="customer">
+		SELECT group_id, group_step, group_tab FROM qna WHERE qno=#{qno}
+	</select>
+	
+	<insert id="CReply" parameterType="customer">
+		<selectKey keyProperty="qno" resultType="int" order="BEFORE">
+			SELECT NVL(MAX(qno)+1,1) FROM qna
+		</selectKey>
+		INSERT INTO qna (qno, qsubject, qcontent, group_id, group_step, group_tab, no, root)
+		VALUES(#{qno},#{qsubject},#{qcontent},#{group_id},#{group_step},#{group_tab},#{no},#{root})
+	</insert>
+	
+	<update id="StepUpdate" parameterType="customer">
+		UPDATE qna SET group_step=group_step+1 WHERE group_id=#{group_id} and group_step>#{group_step}
+	</update>
+	
+	<select id="faqlist" resultType="customer">
+		SELECT question, answer FROM faq
+	</select>
+	
+</mapper>

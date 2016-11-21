@@ -2,19 +2,17 @@ package com.cinema.movieList.controller;
 
 import java.util.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
+import org.springframework.ui.*;
+import org.springframework.web.bind.annotation.*;
 import com.cinema.movieList.dao.*;
 
 @Controller
 public class MovieListController {
-	
 	@Autowired
 	private MovieDAO dao;
-/*	
+	
 	@RequestMapping("movieList.do")
 	public String movieList(Model model, String type){
 				
@@ -26,5 +24,5 @@ public class MovieListController {
 		model.addAttribute("jsp", "../movie/movieList.jsp");
 		
 		return "main/main";
-	}*/
+	}
 }

@@ -167,8 +167,8 @@
 					<div align="left" id="score">
 						&nbsp;${vo.score }
 						<!-- 달린 댓글에 별점 표시 -->
-						<div style="CLEAR: both;	PADDING-RIGHT: 0px;	PADDING-LEFT: 0px;	BACKGROUND: url(movie/img/icon_star2.gif) 0px 0px;	FLOAT: left;	PADDING-BOTTOM: 0px;	MARGIN: 0px;	WIDTH: 90px;	PADDING-TOP: 0px;	HEIGHT: 18px;">
-							<p style="WIDTH: ${vo.score*10}%; PADDING-RIGHT:0px;	PADDING-LEFT:0px;	BACKGROUND: url(movie/img/icon_star.gif) 0px 0px;	PADDING-BOTTOM: 0px;	MARGIN: 0px;	PADDING-TOP: 0px;	HEIGHT: 18px;"></p>
+						<div style="CLEAR: both;	PADDING-RIGHT: 0px;	PADDING-LEFT: 0px;	BACKGROUND: url(movie/img/icon_star2.png) 0px 0px;	FLOAT: left;	PADDING-BOTTOM: 0px;	MARGIN: 0px;	WIDTH: 89px;	PADDING-TOP: 0px;	HEIGHT: 18px;">
+							<p style="WIDTH: ${vo.score*10}%; PADDING-RIGHT:0px;	PADDING-LEFT:0px;	BACKGROUND: url(movie/img/icon_star.png) 0px 0px;	PADDING-BOTTOM: 0px;	MARGIN: 0px;	PADDING-TOP: 0px;	HEIGHT: 18px;"></p>
 						</div>
 					</div>
 					<div align="left" id="reContent">
