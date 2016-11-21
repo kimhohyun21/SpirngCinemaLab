@@ -26,7 +26,7 @@ public class ACharUpdateOkController {
 		List<MovieVO> mnoList=dao.AgetActorMno(Integer.parseInt(actor1));
 		for(MovieVO vo:mnoList){
 			int i=1;
-			System.out.println(vo.getMno1()+"    ^^");
+			System.out.println(vo.getMno1()+"    ^^"+"<-");
 		}
 		return null;
 	}
