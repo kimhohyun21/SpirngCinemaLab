@@ -25,6 +25,32 @@ public class Reserve2Controller {
 							String adult, String senior, String junior, String[] seat, String rType,
 							String cType, HttpSession session, HttpServletRequest request){
 		
+		int[] lastDay={31,28,31,30,31,30,31,31,30,31,30,31}; // 월별 마지막 날짜 배열 
+		if((year%4==0 && year%100!=0)||(year%400==0)){       // 윤달에 따른 2월 마지막 날 설정
+			lastDay[1]=29;
+		}else{
+			lastDay[1]=28;
+		}		
+		
+		//새벽 시간 날짜 설정
+		if(movietime!=null){
+			String time=movietime.substring(0, movietime.lastIndexOf(":"));			
+			if(lastDay[month-1]==checkedDay && time.equals("1")){
+				if(month==12){
+					year+=1;
+					month=1;
+				}else{
+					month+=1;
+				}			
+				checkedDay=1;
+			}else if(time.equals("1")){
+				checkedDay+=1;
+			}
+			System.out.println(checkedDay);
+		}		
+		
+		
+		
 		//예매 시간
 		String date=year+"-"+month+"-"+checkedDay+" "+movietime;
 		
