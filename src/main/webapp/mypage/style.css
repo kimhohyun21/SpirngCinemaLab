@@ -1,7 +1,36 @@
 @CHARSET "EUC-KR";
 b{
-	color: white;
+	color: black;
 }
+
+.modify{
+	position: relative;
+    left: 99px;
+    top: -31px;
+    background-color: white;
+    width: 772px;
+	height: 800px;
+}
+
+#notice{
+	position: relative;
+	top: 20px;
+	right: 33px;
+	color: red;
+	font-weight: bold;
+}
+
+#modify_table{
+	border: 1px black;
+	border-collapse: collapse;
+	position: relative;
+	right: 41px;
+}
+
+#modify_table td{
+	border-bottom: 1px solid;
+}
+
 .btn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;

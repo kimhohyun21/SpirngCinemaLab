@@ -45,36 +45,37 @@
 </head>
 <body>
 	<center>
-		<b style="color: red;">정보수정은 이름,생년월일,전화번호만 수정하실수 있습니다.</b>
+	<div class="modify">
+		<b id="notice">정보수정은 이름,생년월일,전화번호만 수정하실수 있습니다.</b>
 		<form action="modify_ok.do?strno=${mvo.no }" method="post" name="frm">
-			<table id="modify_table" width="450" height="350">
+			<table id="modify_table" width="500" height="350">
 				<tr>
-					<td align="right">
-						<b>이름:</b>
+					<td align="center">
+						<b>이름</b>
 					</td>
 					<td>
 						 <input type="text" placeholder="이름" name="name" value="${name }">																	
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
-						<b>생년월일:</b> 
+					<td align="center">
+						<b>생년월일</b> 
 					</td>
 					<td>
 						<input type="text" placeholder="생년월일" name="birth" value="${birth }">				
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
-						<b>전화번호:</b> 
+					<td align="center">
+						<b>전화번호</b> 
 					</td>
 					<td>
 						<input type="text" placeholder="전화번호 '-'는 빼고 써주세요" name="phone" id="phone" value="${phone }">			
 					</td>
 				</tr>
 				<tr>
-					<td align="right">
-						<b>비밀번호:</b> 
+					<td align="center">
+						<b>비밀번호</b> 
 					</td>
 					<td>
 						<input type="password" placeholder="꼭 입력해 주세요" name="pwd">
@@ -84,6 +85,7 @@
 		</form>		
 		<input class="btn" type="button" value="수정" onclick="send()">&nbsp;&nbsp;&nbsp;					
 		<input class="btn" type="button" value="뒤로" onclick="javascript:history.back()">
+	</div>
 	</center>
 </body>
 </html>
