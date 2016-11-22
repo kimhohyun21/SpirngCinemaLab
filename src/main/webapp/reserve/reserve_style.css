@@ -223,7 +223,7 @@ table.paymentInfo td ul{
 }
 
 #time_table th{
-	background-color: #ea0000;
+	background-color: #ab3c3c;
 	color:white;
 	font-size: 18px;
 	font-weight: bold;
@@ -424,12 +424,13 @@ table.btn_table{
 /* 결제 테이블 */
 .payment_title{ /* 예매내역, 결제 헤드라인 */
 	margin-top: 25px;
-	margin-bottom: 11px;
-	border: 2px solid #bfbfbf;
-	width: 920px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	background-color: #f2f2f2;	
+    /* margin-bottom: 11px; */
+    border-bottom: 1px solid #f8f6f6;
+    width: 920px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: white;
+    background: #ab3c3c;
 }
 
 #td1{
