@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 	<title>Main Default</title>
 	<!-- Responsive Slider Library -->
     <script src="sliderengine/amazingslider.js"></script>
@@ -20,14 +20,14 @@
             <ul class="amazingslider-slides" style="display:none;">
             <c:forEach var="vo" items="${plist2 }">
                 <li>
-                	<img src="https://img.youtube.com/vi/${vo.trailer }/maxresdefault.jpg" alt="ë§ˆë¸”&apos;s ${vo.title }"  title="ë§ˆë¸”&apos;s ${vo.title }"/>
+                	<img src="https://img.youtube.com/vi/${vo.trailer }/maxresdefault.jpg" alt="¸¶ºí&apos;s ${vo.title }"  title="¸¶ºí&apos;s ${vo.title }"/>
                 	<video preload="none" src="https://www.youtube.com/embed/${vo.trailer }" ></video>
                 </li>
             </c:forEach>
             </ul>
             <ul class="amazingslider-thumbnails" style="display:none;">
             <c:forEach var="vo" items="${plist2 }">
-                <li><img src="https://img.youtube.com/vi/${vo.trailer }/mqdefault.jpg" alt="ë§ˆë¸”&apos;s ${vo.title }" title="ë§ˆë¸”&apos;s ${vo.title }" /></li>
+                <li><img src="https://img.youtube.com/vi/${vo.trailer }/mqdefault.jpg" alt="¸¶ºí&apos;s ${vo.title }" title="¸¶ºí&apos;s ${vo.title }" /></li>
             </c:forEach>
             </ul>
         <div class="amazingslider-engine">Marvel Cinema</div>

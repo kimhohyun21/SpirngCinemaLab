@@ -1,15 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
 	<title>Marvel Cinema</title>
 	<script type="text/javascript" src="sliderengine/jquery.js"></script>
-	<script type="text/javascript" src="jStyles/jquery-ui.min.js"></script>	
+	<script type="text/javascript" src="jStyles/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>	
 	<link rel="stylesheet" type="text/css" href="jStyles/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="jStyles/jquery-ui.structure.css">
 	<link rel="stylesheet" type="text/css" href="jStyles/jquery-ui.theme.css">
@@ -17,7 +18,114 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-ico" />
 	<link rel="icon" href="favicon.ico" type="image/x-ico" />	
 	<script type="text/javascript">
+		/* °áÁ¦ ¸ğµâ »ç¿ëÀ» À§ÇÑ ÃÊ±âÈ­ ¹× ¼¼¼Ç ½Ã°£°ü¸® ¸Ş¼­µå È£Ãâ*/
+	 	window.onload=function(){
+	 		var IMP = window.IMP;
+			IMP.init('imp74690571');
+			if(${mvo.name != null}){
+	 			sessionCheck();
+				return;
+			}	
+	 	}		
 		
+	 	//¼¼¼Ç ½Ã°£ °ü¸®
+		var minute = 0;
+		var second = 59;
+		var counter= 9;
+		var timer;
+		var timer1;
+		var timer2;	
+		function sessionCheck(){			
+			timer=setInterval("timeclock()", 1000);
+			timer1=setTimeout("outMove()", 49000);
+		}	
+		
+		//Á¢¼Ó ½Ã°£ Ç¥½Ã
+		function timeclock() {
+			if (second == 00) {
+				minute = minute - 1;
+				second = 59 ;
+			} else {
+				second = second - 1;
+			}
+			if (minute < 10 && minute >= 0) {
+				$('#txtMins').val(0 +minute.toString());
+			} else {
+				$('#txtMins').val(minute);
+			}			
+			if (second < 10) {
+				$('#txtSecs').val(0 + second.toString());
+			} else {
+				$('#txtSecs').val(second);
+			}
+			if(minute<0 && second <0){     
+				return;
+			}			
+		}
+		
+		//10ÃÊ ³²¾ÒÀ» ¶§ ¿¬Àå È¤Àº ÀÚµ¿ ·Î±× ¾Æ¿ô
+		function outMove(){			
+			$.jQueryTimer();			
+		}
+		
+		/* jQuery Timer Ã¢ */
+		jQuery.jQueryTimer = function () {			
+            var $messageBox = $.parseHTML('<div id="alertBox">'
+            								+'<span id="tchecker"></span>&nbsp;ÃÊ ÈÄ '	
+            								+'Á¢¼Ó½Ã°£ÀÌ ¸¸·áµÉ ¿¹Á¤ÀÔ´Ï´Ù...'
+						            		+'</div>');
+            $("body").append($messageBox);         
+            
+            $($messageBox).dialog({
+            	open:function(){
+            		if(counter==9){
+            			shutDown();
+           				timer2=setInterval("shutDown()", 1000);	
+            		}       				
+            	},
+                autoOpen: true,
+                modal: true,
+                resizable:false,
+				width: 400,
+				close: function(){
+					clearInterval(timer2);
+					reloadTime();
+				},
+                buttons: {
+                	¿¬Àå:function(){    		               		
+                		$(this).dialog('close');
+                	}
+                },
+            });
+        };
+        
+		//¼¼¼Ç Á¾·á Ä«¿îÆ® ´Ù¿î
+   		function shutDown(){
+			if(counter!=0){
+				$('span#tchecker').html(counter);
+			}else if(counter==0){
+				$('div#alertBox').html('Á¢¼ÓÀ» Á¾·áÇÕ´Ï´Ù.');
+   				$.ajax({
+   					url: "logout.do",   				
+   					async: true
+   				});
+   				window.location="main.do";
+   			}
+   			counter-=1;
+   		}
+		
+		//½Ã°£ ¿¬Àå
+		function reloadTime(){
+			clearInterval(timer1);
+			minute = 0;
+			second = 59;
+			counter= 9;
+			$.ajax({
+				url: "main.do",
+				async: true
+			});
+			timer1=setTimeout("outMove()", 49000);
+		}      		
 	</script>
 </head>
 <body>
@@ -26,15 +134,24 @@
 			<div id="mini_nav">
 				<ul>
 				<c:if test="${mvo.name==null }">
-					<li><a href="login.do">ë¡œê·¸ì¸</a></li>
-					<li><a href="join.do">íšŒì›ê°€ì…</a></li>					
+					<li><a href="login.do">·Î±×ÀÎ</a></li>
+					<li><a href="join.do">È¸¿ø°¡ÀÔ</a></li>					
 				</c:if>
-				<c:if test="${mvo.name!=null }">
-					<li>${mvo.name }ë‹˜ ë°˜ê°‘ìŠµë‹ˆë‹¤!</li>
-					<li><a href="logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
-					<li><a href="reserveList.do?no=${mvo.no }">ë§ˆì´í˜ì´ì§€</a></li>
+				<c:if test="${mvo.name!=null }">					
+					<li>${mvo.name }´Ô ¹İ°©½À´Ï´Ù!</li>
+					<li>
+						<font class="conn">Á¢¼ÓÁß</font> 
+						<span class="timezone">
+						<input id="txtMins" placeholder="00" readonly="readonly"> 
+						<font>:</font> 
+						<input id="txtSecs" placeholder="00" readonly="readonly">
+						</span>
+						<button class="refresh" onclick="reloadTime()">¿¬Àå</button> 
+					</li>					
+					<li><a href="logout.do">·Î±×¾Æ¿ô</a></li>
+					<li><a href="reserveList.do?no=${mvo.no }">¸¶ÀÌÆäÀÌÁö</a></li>
 				</c:if>					
-					<li><a href="customer.do">ê³ ê°ì„¼í„°</a></li>
+					<li><a href="customer.do">°í°´¼¾ÅÍ</a></li>
 				</ul>
 			</div>
 			<br/>
@@ -45,15 +162,15 @@
 		<div id="nav">
 			<ul>
 				<li onclick="javascript:location.href='reserve.do'">
-					<a href="reserve.do">ì˜ˆë§¤</a>
+					<a href="reserve.do">¿¹¸Å</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='movieList.do'">
-					<a href="movieList.do">ì˜í™”</a>
+					<a href="movieList.do">¿µÈ­</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='theater.do'">
-					<a href="theater.do">ì˜í™”ê´€</a>
+					<a href="theater.do">¿µÈ­°ü</a>
 				</li>
 			</ul>
 		</div>
