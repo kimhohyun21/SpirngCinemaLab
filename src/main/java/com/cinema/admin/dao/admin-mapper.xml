@@ -45,4 +45,10 @@
 	<select id="Aactortest" parameterType="int" resultType="movie">
 		SELECT cname FROM characterList WHERE mNo1=#{no } or mNo2=#{no } or mNo3=#{no } or mNo4=#{no } or mNo5=#{no }
 	</select>
+	<select id="AgetActorMno" parameterType="int" resultType="movie">
+		SELECT mno1,mno2,mno3,mno4,mno5 FROM CHARACTERLIST WHERE cno=#{cno}
+	</select>
+	<!-- <update id="">
+		UPDATE CHARACTERLIST SET #{mno}=#{no}
+	</update> -->
 </mapper>
