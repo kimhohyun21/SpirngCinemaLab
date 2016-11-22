@@ -69,24 +69,6 @@ public class Reserve4Controller {
 			map.put("rank", rank);
 			dao.updateRank(map);			
 			
-			request.setAttribute("url", url);
-			request.setAttribute("year", year);
-			request.setAttribute("month", month);
-			request.setAttribute("checkedDay", checkedDay);
-			request.setAttribute("checkedDay2", checkedDay2);
-			request.setAttribute("tname", tname);
-			request.setAttribute("grade", grade);
-			request.setAttribute("title", title);
-			request.setAttribute("poster", poster);
-			request.setAttribute("theaterNo", theaterNo);
-			request.setAttribute("movietime", movietime);
-			request.setAttribute("ticketAll", ticketAll);
-			request.setAttribute("payment", payment);
-			request.setAttribute("seatNo", seatNo);
-			request.setAttribute("mvo", mvo);
-			request.setAttribute("pid", paymentId);
-			request.setAttribute("sid", shopId);
-			
 			model.addAttribute("url", url);
 			model.addAttribute("year", year);
 			model.addAttribute("month", month);
@@ -105,8 +87,8 @@ public class Reserve4Controller {
 			model.addAttribute("pid", paymentId);
 			model.addAttribute("sid", shopId);
 			
-			model.addAttribute("jsp", "../reserve/reserve4_Complete.jsp");			
-		
+			model.addAttribute("jsp", "../reserve/reserve4_Complete.jsp");		
+
 		return "main/main";
 	}
 

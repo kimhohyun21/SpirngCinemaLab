@@ -94,7 +94,7 @@
 </head>
 <body>
 	<div align="center" class="finalPaymentInfo">
-		<h2>예매 확인</h2>
+		<h2 class="payment_title">예매 확인</h2>
 		<table class="paymentInfo">
 			<tr>
 				<th width="33%">영화</th>
@@ -167,7 +167,7 @@
 			</tr>
 		</table>		
 		<h2 class="payment_title">결제</h2>
-		<table width="700">
+		<table width="924">
 			<tr>
 				<td align="center" id="td1">결제정보 입력</td>
 			</tr>
@@ -194,7 +194,7 @@
 			</tr>
 		</table>
 		<div id="card">
-			<table width="700" class="payment_table">
+			<table width="920" class="payment_table">
 				<tr>
 					<td>
 						신용카드 결제 안내<br>
@@ -204,11 +204,19 @@
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="취소" onclick="reback()" class="back_button2">
-			<input type="button" value="결제" onclick="javascript:payment('card')" class="next_button2">
+			<table width="920" class="btn">
+				<tr>
+					<td>
+						<input type="button" value="취소" onclick="reback()" class="back_button">
+					</td>
+					<td align="right">
+						<input type="button" value="결제" onclick="javascript:payment('card')" class="next_button">
+					</td>
+				</tr>
+			</table>	
 		</div>
 		<div id="account" style="display:none">
-			<table width="700" class="payment_table">
+			<table width="920" class="payment_table">
 				<tr>
 					<td>
 						실시간 계좌이체 안내<br>
@@ -217,13 +225,21 @@
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="취소" onclick="reback()" class="back_button2">
-			<input type="button" value="결제" onclick="javascript:payment('trans')" class="next_button2">
+			<table width="920" class="btn">
+				<tr>
+					<td>
+						<input type="button" value="취소" onclick="reback()" class="back_button">
+					</td>
+					<td align="right">
+						<input type="button" value="결제" onclick="javascript:payment('trans')" class="next_button">
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>	
 </body>
 </html>
-
+				
 
 
 

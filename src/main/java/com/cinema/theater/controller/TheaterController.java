@@ -97,7 +97,7 @@ public class TheaterController {
 
 		if(checkedDay==null)checkedDay=sd;
 		if(checkedDay2==null)checkedDay2=ss;
-		
+	
 		//영화 선택
 		List<TheaterVO> movieList = dao.movieData2(theater);
 		

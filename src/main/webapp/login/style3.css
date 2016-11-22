@@ -17,7 +17,11 @@ form{
 	padding-top: 30px;
 }
 .mrList	{
-	padding-bottom: 30px;
+	/* margin-top: 60px;
+	padding-bottom: 30px; */
+	background-color: white;
+	width: 700px;
+	
 }
 .mrList_btn {
    border: 1px solid #0a3c59;
@@ -113,8 +117,8 @@ form{
 	top:1px;
 }
 #find a{
-		color: gray;
-		text-decoration: none;
+	color: gray;
+	text-decoration: none;
 }
 #find a:HOVER {
 	color: #CD426B;
@@ -131,3 +135,56 @@ input{
 #pwd{
 	margin-bottom: 10px;
 }
+
+/* 마이페이지 */
+.menubar ul{
+	list-style: none outside none;
+	text-align: center;
+	width: 200px;
+	position: relative;
+	left: 10px;
+	top:-10px;
+	float: left;
+	
+}
+
+.menubar ul li{
+	display: block;
+    padding: 15px 45px 15px 45px;
+    cursor: pointer;
+    background-color: rgba(18, 44, 90, 0.85);
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.menubar ul li a{
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
