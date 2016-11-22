@@ -42,13 +42,19 @@
 	<select id="AcharAllData" resultType="movie">
 		SELECT cno,cname,img FROM characterlist
 	</select>
-	<select id="Aactortest" parameterType="int" resultType="movie">
-		SELECT cname FROM characterList WHERE mNo1=#{no } or mNo2=#{no } or mNo3=#{no } or mNo4=#{no } or mNo5=#{no }
+	<select id="AmovieActorData" parameterType="int" resultType="movie">
+		SELECT cname,cno,mno1,mno2,mno3,mno4,mno5
+		 FROM characterList WHERE mNo1=#{no } or mNo2=#{no } or mNo3=#{no } or mNo4=#{no } or mNo5=#{no }
 	</select>
-	<select id="AgetActorMno" parameterType="int" resultType="movie">
-		SELECT mno1,mno2,mno3,mno4,mno5 FROM CHARACTERLIST WHERE cno=#{cno}
+	<select id="AactorMno" resultType="int" parameterType="java.util.Map">
+	 <![CDATA[
+		SELECT NVL(${mno}, 0) FROM characterList WHERE cno=#{cno}
+	 ]]>
 	</select>
-	<!-- <update id="">
-		UPDATE CHARACTERLIST SET #{mno}=#{no}
-	</update> -->
+	<update id="AactorDeleteMno" parameterType="java.util.Map">
+		UPDATE characterList SET ${mno}=null WHERE cno=#{cno}
+	</update>
+	<update id="AactorInsertMno" parameterType="java.util.Map">
+		UPDATE characterList SET ${mno}=#{movieNo} WHERE cno=#{cno}
+	</update>
 </mapper>

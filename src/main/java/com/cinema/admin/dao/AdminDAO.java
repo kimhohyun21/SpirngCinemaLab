@@ -59,13 +59,21 @@ public class AdminDAO extends SqlSessionDaoSupport{
 		return list;
 	}
 	
-	public List<MovieVO> movieCharName(int no){		
-		List<MovieVO> list=getSqlSession().selectList("Aactortest",no);		
+	public List<MovieVO> movieCharData(int no){		
+		List<MovieVO> list=getSqlSession().selectList("AmovieActorData",no);		
 		return list;
 	}
 	
-	public List<MovieVO> AgetActorMno(int cno){
-		List<MovieVO> mnoList=getSqlSession().selectList("AgetActorMno", cno);
-		return mnoList;
+	public int AactorMno(Map map){
+		int mno=getSqlSession().selectOne("AactorMno",map);
+		return mno;
+	}
+	
+	public void AactorDeleteMno(Map map){
+		getSqlSession().update("AactorDeleteMno",map);		
+	}
+	
+	public void AactorInsertMno(Map map){
+		getSqlSession().update("AactorInsertMno",map);		
 	}
 }

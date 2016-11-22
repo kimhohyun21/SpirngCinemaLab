@@ -18,7 +18,7 @@
 				<b class="modify">수정하기</b>
 			</a>
 		</div>
-	</c:if>	
+	</c:if>
    <div class="detail">
       <div class="detail2">
          <div id="poster_div">
@@ -86,7 +86,7 @@
                <td colspan="10">
                		<c:if test="${mvo.admin eq '1' }">
 						<div align="right">
-							<a href="AcharUpdate.do?no=${no }">
+							<a href="AcharUpdate.do?no=${no }&type=${type }">
 								<b style="color: red;">출연진 수정하기</b>
 							</a>
 						</div>
