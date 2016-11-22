@@ -29,15 +29,15 @@
 	 	}		
 		
 	 	//세션 시간 관리
-		var minute = 0;
+		var minute = 29;
 		var second = 59;
-		var counter= 9;
+		var counter= 59;
 		var timer;
 		var timer1;
 		var timer2;	
 		function sessionCheck(){			
 			timer=setInterval("timeclock()", 1000);
-			timer1=setTimeout("outMove()", 49000);
+			timer1=setTimeout("outMove()", 1739000);
 		}	
 		
 		//접속 시간 표시
@@ -78,7 +78,7 @@
             
             $($messageBox).dialog({
             	open:function(){
-            		if(counter==9){
+            		if(counter==59){
             			shutDown();
            				timer2=setInterval("shutDown()", 1000);	
             		}       				
@@ -117,14 +117,14 @@
 		//시간 연장
 		function reloadTime(){
 			clearInterval(timer1);
-			minute = 0;
+			minute = 29;
 			second = 59;
-			counter= 9;
+			counter= 59;
 			$.ajax({
 				url: "main.do",
 				async: true
 			});
-			timer1=setTimeout("outMove()", 49000);
+			timer1=setTimeout("outMove()", 1739000);
 		}      		
 	</script>
 </head>
