@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
 	<title>Marvel Cinema</title>
@@ -18,7 +18,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-ico" />
 	<link rel="icon" href="favicon.ico" type="image/x-ico" />	
 	<script type="text/javascript">
-		/* °áÁ¦ ¸ğµâ »ç¿ëÀ» À§ÇÑ ÃÊ±âÈ­ ¹× ¼¼¼Ç ½Ã°£°ü¸® ¸Ş¼­µå È£Ãâ*/
+		/* ê²°ì œ ëª¨ë“ˆ ì‚¬ìš©ì„ ìœ„í•œ ì´ˆê¸°í™” ë° ì„¸ì…˜ ì‹œê°„ê´€ë¦¬ ë©”ì„œë“œ í˜¸ì¶œ*/
 	 	window.onload=function(){
 	 		var IMP = window.IMP;
 			IMP.init('imp74690571');
@@ -28,7 +28,7 @@
 			}	
 	 	}		
 		
-	 	//¼¼¼Ç ½Ã°£ °ü¸®
+	 	//ì„¸ì…˜ ì‹œê°„ ê´€ë¦¬
 		var minute = 29;
 		var second = 59;
 		var counter= 59;
@@ -40,7 +40,7 @@
 			timer1=setTimeout("outMove()", 1739000);
 		}	
 		
-		//Á¢¼Ó ½Ã°£ Ç¥½Ã
+		//ì ‘ì† ì‹œê°„ í‘œì‹œ
 		function timeclock() {
 			if (second == 00) {
 				minute = minute - 1;
@@ -63,16 +63,16 @@
 			}			
 		}
 		
-		//10ÃÊ ³²¾ÒÀ» ¶§ ¿¬Àå È¤Àº ÀÚµ¿ ·Î±× ¾Æ¿ô
+		//10ì´ˆ ë‚¨ì•˜ì„ ë•Œ ì—°ì¥ í˜¹ì€ ìë™ ë¡œê·¸ ì•„ì›ƒ
 		function outMove(){			
 			$.jQueryTimer();			
 		}
 		
-		/* jQuery Timer Ã¢ */
+		/* jQuery Timer ì°½ */
 		jQuery.jQueryTimer = function () {			
             var $messageBox = $.parseHTML('<div id="alertBox">'
-            								+'<span id="tchecker"></span>&nbsp;ÃÊ ÈÄ '	
-            								+'Á¢¼Ó½Ã°£ÀÌ ¸¸·áµÉ ¿¹Á¤ÀÔ´Ï´Ù...'
+            								+'<span id="tchecker"></span>&nbsp;ì´ˆ í›„ '	
+            								+'ì ‘ì†ì‹œê°„ì´ ë§Œë£Œë  ì˜ˆì •ì…ë‹ˆë‹¤...'
 						            		+'</div>');
             $("body").append($messageBox);         
             
@@ -92,19 +92,19 @@
 					reloadTime();
 				},
                 buttons: {
-                	¿¬Àå:function(){    		               		
+                	ì—°ì¥:function(){    		               		
                 		$(this).dialog('close');
                 	}
                 },
             });
         };
         
-		//¼¼¼Ç Á¾·á Ä«¿îÆ® ´Ù¿î
+		//ì„¸ì…˜ ì¢…ë£Œ ì¹´ìš´íŠ¸ ë‹¤ìš´
    		function shutDown(){
 			if(counter!=0){
 				$('span#tchecker').html(counter);
 			}else if(counter==0){
-				$('div#alertBox').html('Á¢¼ÓÀ» Á¾·áÇÕ´Ï´Ù.');
+				$('div#alertBox').html('ì ‘ì†ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.');
    				$.ajax({
    					url: "logout.do",   				
    					async: true
@@ -114,7 +114,7 @@
    			counter-=1;
    		}
 		
-		//½Ã°£ ¿¬Àå
+		//ì‹œê°„ ì—°ì¥
 		function reloadTime(){
 			clearInterval(timer1);
 			minute = 29;
@@ -134,24 +134,24 @@
 			<div id="mini_nav">
 				<ul>
 				<c:if test="${mvo.name==null }">
-					<li><a href="login.do">·Î±×ÀÎ</a></li>
-					<li><a href="join.do">È¸¿ø°¡ÀÔ</a></li>					
+					<li><a href="login.do">ë¡œê·¸ì¸</a></li>
+					<li><a href="join.do">íšŒì›ê°€ì…</a></li>					
 				</c:if>
 				<c:if test="${mvo.name!=null }">					
-					<li>${mvo.name }´Ô ¹İ°©½À´Ï´Ù!</li>
+					<li>${mvo.name }ë‹˜ ë°˜ê°‘ìŠµë‹ˆë‹¤!</li>
 					<li>
-						<font class="conn">Á¢¼ÓÁß</font> 
+						<font class="conn">ì ‘ì†ì¤‘</font> 
 						<span class="timezone">
 						<input id="txtMins" placeholder="00" readonly="readonly"> 
 						<font>:</font> 
 						<input id="txtSecs" placeholder="00" readonly="readonly">
 						</span>
-						<button class="refresh" onclick="reloadTime()">¿¬Àå</button> 
+						<button class="refresh" onclick="reloadTime()">ì—°ì¥</button> 
 					</li>					
-					<li><a href="logout.do">·Î±×¾Æ¿ô</a></li>
-					<li><a href="reserveList.do?no=${mvo.no }">¸¶ÀÌÆäÀÌÁö</a></li>
+					<li><a href="logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
+					<li><a href="reserveList.do?no=${mvo.no }">ë§ˆì´í˜ì´ì§€</a></li>
 				</c:if>					
-					<li><a href="customer.do">°í°´¼¾ÅÍ</a></li>
+					<li><a href="customer.do">ê³ ê°ì„¼í„°</a></li>
 				</ul>
 			</div>
 			<br/>
@@ -162,15 +162,15 @@
 		<div id="nav">
 			<ul>
 				<li onclick="javascript:location.href='reserve.do'">
-					<a href="reserve.do">¿¹¸Å</a>
+					<a href="reserve.do">ì˜ˆë§¤</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='movieList.do'">
-					<a href="movieList.do">¿µÈ­</a>
+					<a href="movieList.do">ì˜í™”</a>
 				</li>
 				<li class="noeffect">|</li>
 				<li onclick="javascript:location.href='theater.do'">
-					<a href="theater.do">¿µÈ­°ü</a>
+					<a href="theater.do">ì˜í™”ê´€</a>
 				</li>
 			</ul>
 		</div>
