@@ -19,14 +19,13 @@
 	</script>
 </head>
 <body>
-	<div class="mrList">
+	<div class="mrList" align="center">
 		<a href="reserveList.do?no=${mvo.no }">
 			<span class="mrList_btn">예매내역</span>
 		</a>
 		<a href="reserveList.do?no=${mvo.no }&type=1">
 			<span class="mrList_btn">관람내역</span>
 		</a>
-	</div>
 	<table>
 	<c:if test="${list == '[]' }">
 		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNHUKwbax2uYSi3cF5wrdrj5YNSLLx-xNQCj4aj1Ajn2duwk-tUw">
@@ -176,5 +175,6 @@
 			</tr>
 		</table>
 	</c:if>
+	</div>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class MovieReplyController {
 	private MovieDAO dao;
 	
 	@RequestMapping("replyCheck.do")
-	public String HandlerRequest(Model model, String no, HttpSession session, String sco, String reContent, String rno, String page){
+	public String HandlerRequest(Model model, String no, HttpSession session, String star_input, String content, String rno, String page){
 		
 		try {
 			
@@ -31,11 +31,11 @@ public class MovieReplyController {
 			int score=0;
 			
 			//평점 값을 받아온 경우
-			if(sco!=null){ 
-				score = Integer.parseInt(sco);
+			if(star_input!=null){ 
+				score = Integer.parseInt(star_input);
 				MovieVO vo2 = new MovieVO();
 				vo2.setScore(score);
-				vo2.setReContent(reContent);
+				vo2.setReContent(content);
 				vo2.setRegDATE(regDATE);
 				vo2.setId(id);
 				vo2.setmNo(mNo);

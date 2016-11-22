@@ -23,7 +23,7 @@ public class Reserve2Controller {
 							String checkedDay2, String local, String tname, String grade, 
 							String title, String poster, String theaterNo, String movietime,
 							String adult, String senior, String junior, String[] seat, String rType,
-							HttpSession session, HttpServletRequest request){
+							String cType,HttpSession session, HttpServletRequest request){
 		
 		//예매 시간
 		String date=year+"-"+month+"-"+checkedDay+" "+movietime;
@@ -105,6 +105,7 @@ public class Reserve2Controller {
 		model.addAttribute("size", size);
 		model.addAttribute("slist", slist);
 		model.addAttribute("vo", vo);
+		model.addAttribute("cType", cType);
 
 		model.addAttribute("jsp", "../reserve/reserve2.jsp");
 		model.addAttribute("jsp2", "../reserve/reserve2_Seat.jsp");

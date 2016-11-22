@@ -158,7 +158,7 @@ input[type=password]#pwd{
 div#find a{
 	font-size: 11pt;
 	font-weight: bold;
-	color: #393939;
+	color: gray;
 }
 div#find a:HOVER {
 	color: #ea4d00;
