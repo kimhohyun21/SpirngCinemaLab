@@ -28,51 +28,60 @@ public class ACharUpdateOkController {
 		int actor2 = Integer.parseInt(actor.substring(2, 3));
 		int actor3 = Integer.parseInt(actor.substring(4, 5));
 
+		// no=영화번호,actor=출연진번호
 		List<MovieVO> beforeAL = dao.movieCharData(no);
 		int[] afterAL = { actor1, actor2, actor3 };
 		Map map = new HashMap();
-		int check=0;
-
-		// no=영화번호,actor=출연진번호
-		int i = 0;
+		
+		
+		//이전 출연진 삭제
 		for (MovieVO vo : beforeAL) {
-			map.put("cno", afterAL[i]);
+			map.put("cno", vo.getCno());
 			for (int j = 1; j < 6; j++) {
+				//mno1~mno5 가져오기
 				String mno = "mno" + j;
 				map.put("mno", mno);
-				// 출연진의 mno+j 값 가져오기
 				int db_mno = dao.AactorMno(map);
-
+				
+				//가져온 번호랑 영화번호랑 같으면 삭제
 				if (db_mno == no) {
 					dao.AactorDeleteMno(map);
-					System.out.print("삭제  ");
 					break;
 				}
 			}
-			i++;
 		}
 		
-		//출연진이 중복될 경우
-		/*for (MovieVO vo : afterAL[i]) {
-			System.out.println(vo.getMno2());
-			if (vo.getMno1() == no || vo.getMno2() == no || vo.getMno3() == no 
-					|| vo.getMno4() == no	|| vo.getMno5() == no) {
-				break;
-			}
-		}*/
+		
 		System.out.println();
+		
+		//입력받은 출연진 업데이트
 		for (int cno : afterAL) {
+			//중복체크용
+			int check=0;
 			map.put("cno", cno);
 			for (int j = 1; j < 6; j++) {
 				String mno = "mno" + j;
 				map.put("mno", mno);
 				int db_mno = dao.AactorMno(map);
-
-				if (db_mno == 0) {					
+				
+				//출연진이 중복될 경우 break
+				if(j==1){
+					List<MovieVO> mnoL=dao.AactorAllMno(cno);					
+					for(MovieVO vo:mnoL){
+						if(vo.getMno1()==no || vo.getMno2()==no || 
+								vo.getMno3()==no || vo.getMno4()==no || 
+								vo.getMno5()==no){
+							check=1;
+						}
+					}
+				}
+				
+				//insert
+				if (db_mno == 0 && check==0) {			
 					map.put("movieNo", no);
 					dao.AactorInsertMno(map);
 					break;
-				}
+				}				
 			}
 		}
 

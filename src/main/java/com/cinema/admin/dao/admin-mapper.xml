@@ -57,4 +57,7 @@
 	<update id="AactorInsertMno" parameterType="java.util.Map">
 		UPDATE characterList SET ${mno}=#{movieNo} WHERE cno=#{cno}
 	</update>
+	<select id="AactorAllMno" parameterType="int" resultType="movie">
+		SELECT mno1,mno2,mno3,mno4,mno5 FROM characterList WHERE cno=#{cno}
+	</select>
 </mapper>

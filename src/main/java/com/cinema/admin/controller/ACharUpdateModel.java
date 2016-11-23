@@ -25,11 +25,8 @@ public class ACharUpdateModel {
 		switch(actor.size()){
 		case 0:
 			actor.add(list.get(0));
-			//actor.add(list.get(1));
-			//actor.add(list.get(1));
 		case 1:
 			actor.add(list.get(0));
-			//actor.add(list.get(1));
 		case 2:
 			actor.add(list.get(0));
 		}
