@@ -37,7 +37,7 @@
 				<c:if test="${mvo.admin == 1 }">
 				<li>
 					<a href="Amovielist.do">
-						<b>비밀의 방</b>
+						비밀의 방
 					</a>	
 				</li>
 				</c:if>
