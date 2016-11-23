@@ -72,4 +72,7 @@
 	<select id="AtitleToMno" parameterType="String" resultType="int">
 		SELECT mno FROM movieList WHERE title=#{title}
 	</select>
+	<select id="AmovieAllData" resultType="movie">
+		SELECT mno,title FROM movieList
+	</select>
 </mapper>

@@ -102,4 +102,9 @@ public class AdminDAO extends SqlSessionDaoSupport{
 		int mno=getSqlSession().selectOne("AtitleToMno",title);
 		return mno;
 	}
+	
+	public List<MovieVO> AmovieAllData(){
+		List<MovieVO> list=getSqlSession().selectOne("AmovieAllData");
+		return list;
+	}
 }

@@ -18,7 +18,11 @@ public class ACharListController {
 	@RequestMapping("ACList.do")
 	public String charList(Model model, String page) {
 
+		//해당배우 정보
 		List<MovieVO> list = dao.AcharAllData();
+		//영화제목들
+		List<MovieVO> mList = dao.AmovieAllData();
+		
 		// 페이지 재료들
 		if (page == null)
 			page = "1";
@@ -35,7 +39,8 @@ public class ACharListController {
 			totalPage = totalPage - 1;
 		if (toPage > totalPage)
 			toPage = totalPage;
-
+		
+		model.addAttribute("mList",mList);
 		model.addAttribute("page", ipage);
 		model.addAttribute("start", start);
 		model.addAttribute("end", end);
