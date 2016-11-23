@@ -12,7 +12,7 @@ import com.cinema.admin.dao.AdminDAO;
 import com.cinema.movieList.dao.MovieVO;
 
 @Controller
-public class AModifyOkModel {
+public class AMovieModifyOkController {
 	@Autowired
 	AdminDAO dao;
 	

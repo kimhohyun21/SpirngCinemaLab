@@ -11,16 +11,16 @@ import com.cinema.admin.dao.AdminDAO;
 
 
 @Controller
-public class AMovieInsertModel {
+public class AMovieInsertController {
 	@Autowired
 	private AdminDAO dao;
 	
 	@RequestMapping("AmovieInsert.do")
 	public String movieInsert(Model model){
 		
-		model.addAttribute("jsp", "../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp3", "../adminpage/movieInsert.jsp");
+		
+		model.addAttribute("jsp", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp2", "../adminpage/movieInsert.jsp");
 		return "main/main";
 	}
 }

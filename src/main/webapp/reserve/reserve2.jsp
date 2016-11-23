@@ -74,25 +74,44 @@
 		
 		//로그인 창 값입력 체크
 		function login(){
-			var f=document.loginfrm;	
-			if(f.id.value==""){
+			var id=$('#id').val();	
+			if(id==""){
 				$.jQueryAlert("아이디를 입력하세요");
-				f.id.focus();
+				$('#id').focus();
 				return;
 			}
-			if(f.pwd.value==""){
+			var pwd=$('#pwd').val();
+			if(pwd==""){
 				$.jQueryAlert("비밀번호를 입력하세요");
-				f.pwd.focus();
+				$('#pwd').focus();
 				return;
 			}
-			f.submit();
+			
+			$.ajax({
+				type: "POST",
+				url: "login_ok.do",
+				data:$('form').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.check=="ok"){
+						window.location.reload(true);
+					}else if(data.check=="pwdnot"){
+						$.jQueryAlert("패스워드가 잘못 되었습니다.");
+					}else if(data.check=="idnot"){
+						$.jQueryAlert("아이디가 잘못 되었습니다.");
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
 		}
 		
 		/* jQuery Alert 창 */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
-	
+			
 	        $($messageBox).dialog({
 	            open: $($messageBox).append(msg),
 	            autoOpen: true,
@@ -106,6 +125,11 @@
 	            }
 	        });
 	    };
+	    
+	    //선택 초기화
+	    function reloadpage(){
+	    	window.location.reload(true);	
+	    }	    
 	</script>
 	<script src="jStyles/jquery.easydropdown.js"></script>
 </head>
@@ -156,11 +180,7 @@
 					</div>			
 				</form>
 				<!-- 선택 초기화 버튼 -->
-				<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}
-				&checkedDay2=${checkedDay2}&local=${local }&tname=${tname }&grade=${grade }&title=${title}
-				&poster=${poster }&theaterNo=${theaterNo}&movietime=${movietime}#nav">
-					<div class="resetBtn">선택초기화</div>
-				</a>				
+				<div class="resetBtn" onclick="reloadpage()">선택초기화</div>			
 			</div>
 		</div>
 		<!-- 자리 선택  include-->

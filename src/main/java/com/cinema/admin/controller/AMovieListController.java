@@ -9,11 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cinema.admin.dao.AdminDAO;
-import com.cinema.movieList.*;
 import com.cinema.movieList.dao.MovieVO;
 
 @Controller
-public class AMovieListModel {
+public class AMovieListController {
 	@Autowired
 	AdminDAO dao;
 	
@@ -52,10 +51,8 @@ public class AMovieListModel {
 		model.addAttribute("fromPage",fromPage);
 		model.addAttribute("toPage",toPage);
 		model.addAttribute("list",list);
-		model.addAttribute("jsp","../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp3", "../adminpage/movielist.jsp");
-		
+		model.addAttribute("jsp","../adminpage/menubar.jsp");
+		model.addAttribute("jsp2", "../adminpage/movielist.jsp");
 		return "main/main";
 	}
 }

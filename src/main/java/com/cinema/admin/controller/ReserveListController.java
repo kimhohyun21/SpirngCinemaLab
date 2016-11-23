@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cinema.admin.dao.*;
 
 @Controller
-public class ReserveListModel{
+public class ReserveListController{
 	@Autowired
 	AdminDAO dao;
 
@@ -46,9 +46,8 @@ public class ReserveListModel{
 		model.addAttribute("list", list);
 		model.addAttribute("page", curpage);
 		model.addAttribute("totalpage", totalpage);
-		model.addAttribute("jsp", "../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp3", "../adminpage/reservelist.jsp");
+		model.addAttribute("jsp", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp2", "../adminpage/reservelist.jsp");
 		
 		return "main/main";
 	}
