@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cinema.admin.dao.AdminDAO;
-import com.cinema.movieList.*;
 import com.cinema.movieList.dao.MovieVO;
 
 @Controller

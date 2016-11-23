@@ -14,7 +14,7 @@ import com.cinema.admin.dao.AdminDAO;
 import com.cinema.movieList.dao.MovieVO;
 
 @Controller
-public class ACharUpdateOkController {
+public class AMovieCharUpdateOkController {
 	@Autowired
 	private AdminDAO dao;
 
