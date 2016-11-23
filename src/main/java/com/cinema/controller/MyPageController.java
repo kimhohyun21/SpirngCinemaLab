@@ -1,4 +1,4 @@
-package com.cinema.mypage.controller;
+package com.cinema.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
