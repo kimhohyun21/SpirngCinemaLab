@@ -46,6 +46,9 @@ public class AMovieInsertOkModel {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
+		
+		model.addAttribute("go","AML");
+		
 		return "adminpage/station";
 	}
 }

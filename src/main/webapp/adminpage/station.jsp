@@ -2,4 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:redirect url="Amovielist.do"/>
+<c:if test="${go eq 'AML' }">
+	<c:redirect url="Amovielist.do"/>
+</c:if>
+<c:if test="${go eq 'MD' }">
+	<c:redirect url="moviedetail.do?no=${no }&type=${type }"/>
+</c:if>

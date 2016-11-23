@@ -17,7 +17,12 @@ form{
 	padding-top: 30px;
 }
 .mrList	{
-	padding-bottom: 30px;
+    position: relative;
+    left: 99px;
+    top: -31px;
+    background-color: white;
+    width: 772px;
+	height: 800px;
 }
 .mrList_btn {
    border: 1px solid #0a3c59;
@@ -36,12 +41,15 @@ form{
    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
    text-shadow: #7ea4bd 0 1px 0;
-   color: #06426c;
+   color: #052c48;
    font-size: 16px;
    font-family: helvetica, serif;
    text-decoration: none;
    vertical-align: middle;
-   }
+   position: relative;
+   top: 20px;
+   left: -25px;
+}
 .mrList_btn:hover {
    border: 1px solid #0a3c59;
    text-shadow: #1e4158 0 1px 0;
@@ -53,7 +61,7 @@ form{
    background: -o-linear-gradient(top, #65a9d7, #3e779d);
    background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
    color: #fff;
-   }
+}
 .mrList_btn:active {
    text-shadow: #1e4158 0 1px 0;
    border: 1px solid #0a3c59;
@@ -65,12 +73,36 @@ form{
    background: -o-linear-gradient(top, #3e779d, #65a9d7);
    background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
    color: #fff;
-   }
+}
+
+#lion_img img{
+	position: relative;
+	top: 66px;
+	right: 42px;
+}
+
+#lion_img p{
+	width:140px;
+	position:relative;
+	top: 90px;
+	left: 12px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#type_0, #type_1{
+	position: relative;
+	top: 120px;
+
+	
+}
+
 .bg{
 	background-color: rgba(250,250,250,0.9);
 	width: 1000px;
 	margin: 10px;
 	padding: 10px;
+	height: 900px;
 }
 .btn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -113,8 +145,8 @@ form{
 	top:1px;
 }
 #find a{
-		color: gray;
-		text-decoration: none;
+	color: gray;
+	text-decoration: none;
 }
 #find a:HOVER {
 	color: #CD426B;
@@ -131,3 +163,56 @@ input{
 #pwd{
 	margin-bottom: 10px;
 }
+
+/* 마이페이지 */
+.menubar ul{
+	list-style: none outside none;
+	text-align: center;
+	width: 200px;
+	position: relative;
+	left: 10px;
+	top:-10px;
+	float: left;
+	
+}
+
+.menubar ul li{
+	display: block;
+    padding: 15px 45px 15px 45px;
+    cursor: pointer;
+    background-color: rgba(18, 44, 90, 0.85);
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.menubar ul li a{
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

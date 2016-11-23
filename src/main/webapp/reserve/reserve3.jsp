@@ -9,13 +9,7 @@
 	<title>Reserve3 Payment</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>
-	<script type="text/javascript">	
-		/* 결제 모듈 사용을 위한 초기화 */
-		window.onload=function(){
-			var IMP = window.IMP;
-			IMP.init('imp74690571'); 
-		}
-		
+	<script type="text/javascript">			
 		/* 결제 방법 선택에 따라 결제 방법 값 변경 및 화면 표시 전환*/
 		function display1() {
 			card.style.display='block';
@@ -94,7 +88,7 @@
 </head>
 <body>
 	<div align="center" class="finalPaymentInfo">
-		<h2>예매 확인</h2>
+		<h3 class="payment_title">예매 확인</h3>
 		<table class="paymentInfo">
 			<tr>
 				<th width="33%">영화</th>
@@ -166,8 +160,8 @@
 				</td>
 			</tr>
 		</table>		
-		<h2 class="payment_title">결제</h2>
-		<table width="700">
+		<h3 class="payment_title">결제</h3>
+		<table width="924">
 			<tr>
 				<td align="center" id="td1">결제정보 입력</td>
 			</tr>
@@ -194,21 +188,29 @@
 			</tr>
 		</table>
 		<div id="card">
-			<table width="700" class="payment_table">
+			<table width="920" class="payment_table">
 				<tr>
 					<td>
 						신용카드 결제 안내<br>
 						1.결제내역 확인 후 결제하기 버튼을 클릭시, 팝업창이 나타납니다.<br>
-						2.해당 팝업에서 원하는 카드사를 선택 후 결제 정보를 입력하시면 됩니다.
+						2.해당 팝업에서 원하는 카드사를 선택 후 결제 정보를 입력하시면 됩니다.<br>
 						     ※ 신용카드 결제 가능 최소 금액은 1,000원 이상 입니다.     
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="취소" onclick="reback()" class="back_button2">
-			<input type="button" value="결제" onclick="javascript:payment('card')" class="next_button2">
+			<table width="920" class="btn">
+				<tr>
+					<td>
+						<input type="button" value="취소" onclick="reback()" class="back_button">
+					</td>
+					<td align="right">
+						<input type="button" value="결제" onclick="javascript:payment('card')" class="next_button">
+					</td>
+				</tr>
+			</table>	
 		</div>
 		<div id="account" style="display:none">
-			<table width="700" class="payment_table">
+			<table width="920" class="payment_table">
 				<tr>
 					<td>
 						실시간 계좌이체 안내<br>
@@ -217,13 +219,21 @@
 					</td>
 				</tr>
 			</table>
-			<input type="button" value="취소" onclick="reback()" class="back_button2">
-			<input type="button" value="결제" onclick="javascript:payment('trans')" class="next_button2">
+			<table width="920" class="btn">
+				<tr>
+					<td>
+						<input type="button" value="취소" onclick="reback()" class="back_button">
+					</td>
+					<td align="right">
+						<input type="button" value="결제" onclick="javascript:payment('trans')" class="next_button">
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>	
 </body>
 </html>
-
+				
 
 
 

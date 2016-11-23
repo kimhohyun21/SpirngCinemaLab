@@ -6,28 +6,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="adminpage/test.css">
+<script type="text/javascript">
+	function re(){
+		top.document.location.reload();
+	}
+</script>
 </head>
 <body>
+	<input type="hidden" value="${no }">
+	<input type="hidden" value="${type }">
 	<div align="center">
-		<form method="post" action="AcharUpdate">
-			<select id="actor1">
-				<option>선택</option>
-				<c:forEach var="list" items="${list }">
-					<option value="${list.cno }">${list.cname }</option>
+		<form method="post" action="AcharUpdate_ok.do?sno=${no }&type=${type }">		
+			<table width="700" class="type02">
+				<c:forEach var="actor" items="${actor }">
+					<tr>
+						<th align="center" colspan="2">배우${i=i+1 }
+							<select name="actor">
+								<c:forEach var="vo" items="${list }">
+									<c:if test="${actor.cname==vo.cname }">
+										<option selected="selected" value="${vo.cno }">${vo.cname }</option>
+									</c:if>
+									<c:if test="${actor.cname!=vo.cname }">
+										<option value="${vo.cno }">${vo.cname }</option>
+									</c:if>
+								</c:forEach>
+							</select>
+						</th>
+					</tr>
 				</c:forEach>
-			</select>
-			<select id="actor2">
-				<option>선택</option>
-				<c:forEach var="list" items="${list }">
-					<option value="${list.cno }">${list.cname }</option>
-				</c:forEach>
-			</select>
-			<select id="actor3">
-				<option>선택</option>
-				<c:forEach var="list" items="${list }">
-					<option value="${list.cno }">${list.cname }</option>
-				</c:forEach>
-			</select>			
+				<tr>
+					<td align="center" colspan="2">
+						<input type="button" value="초기화" onclick="re()" class="table_btn">
+						<input type="submit" value="수정" class="table_btn">
+						<input type="button" value="취소" onclick="javascript:history.back()" class="table_btn">
+					</td>
+				</tr>
+			</table>			
 		</form>
 	</div>
 </body>

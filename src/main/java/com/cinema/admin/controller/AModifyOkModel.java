@@ -36,7 +36,7 @@ public class AModifyOkModel {
 			vo.setPoster(poster);
 			vo.setGrade(grade);
 			vo.setType(Integer.parseInt(type));
-			vo.setRuntime(runtime+"Ка");
+			vo.setRuntime(runtime);
 			vo.setContent(content);
 			vo.setDirector(director);
 			vo.setGenre(genre);
@@ -51,8 +51,8 @@ public class AModifyOkModel {
 			System.out.println(ex.getMessage());
 		}
 		
+		model.addAttribute("go","AML");
 		
-			
 		return "adminpage/station";
 	}
 }

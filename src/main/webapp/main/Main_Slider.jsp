@@ -23,9 +23,6 @@
 					<c:forEach var="vo" items="${plist2 }">
 						<li class="amazingcarousel-item">
 							<div class="amazingcarousel-item-container">
-							<script>
-								console.log('${vo.mNo}');
-							</script>
 								<div class="amazingcarousel-image" id="${vo.mNo}">
 									<a href="#" class="html5lightbox"> 
 										<img src="${vo.poster }"/>
