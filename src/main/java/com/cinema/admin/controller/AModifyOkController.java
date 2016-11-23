@@ -12,36 +12,40 @@ import com.cinema.admin.dao.AdminDAO;
 import com.cinema.movieList.dao.MovieVO;
 
 @Controller
-public class AMovieInsertOkModel {
+public class AModifyOkController {
 	@Autowired
 	AdminDAO dao;
 	
-	@RequestMapping("AmovieInsert_ok.do")
-	public String movieInsert_ok(Model model,String title,String poster,String grade,
-			String type,String runtime, String year, String month, String day, String content,
-			String director, String genre, String cast, String trailer) {
+	@RequestMapping("Amodify_Ok.do")
+	public String modifyOk(Model model, String no, String title, String poster,
+			String grade, String type, String runtime, String year, String month, String day,
+			String content, String director, String genre, String cast, String trailer) {
 		try {
-			//model.setCharacterEncoding("UTF-8");
+			//request.setCharacterEncoding("EUC-KR");
+			int no2=Integer.parseInt(no);
+						
 			// opendate만들기
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date opendate = sdf.parse(sopendate);
-
+			
 			// 저장
-			MovieVO vo = new MovieVO();			
+			MovieVO vo=new MovieVO();
+			vo.setmNo(no2);
 			vo.setTitle(title);
 			vo.setPoster(poster);
 			vo.setGrade(grade);
 			vo.setType(Integer.parseInt(type));
-			vo.setRuntime(runtime + "분");
+			vo.setRuntime(runtime);
 			vo.setContent(content);
 			vo.setDirector(director);
 			vo.setGenre(genre);
 			vo.setCast(cast);
 			vo.setTrailer(trailer);
-			vo.setOpendate(opendate);
+			vo.setOpendate(opendate);			
+			dao.adminMovieModify(vo);			
 			
-			dao.adminMovieInsert(vo);
+			model.addAttribute("no", no);
 			
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -52,3 +56,4 @@ public class AMovieInsertOkModel {
 		return "adminpage/station";
 	}
 }
+

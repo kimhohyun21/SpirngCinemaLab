@@ -11,7 +11,7 @@ import com.cinema.admin.dao.AdminDAO;
 
 
 @Controller
-public class AMovieInsertModel {
+public class AMovieInsertController {
 	@Autowired
 	private AdminDAO dao;
 	

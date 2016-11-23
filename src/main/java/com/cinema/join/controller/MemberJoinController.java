@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MemberJoinModel {
+public class MemberJoinController {
 	
 	@RequestMapping("join.do") //회원가입 뷰로~
 	public String join(Model model){

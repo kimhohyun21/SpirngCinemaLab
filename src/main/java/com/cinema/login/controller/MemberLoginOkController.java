@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cinema.member.dao.*;
 
 @Controller
-public class MemberLoginOkModel {
+public class MemberLoginOkController {
 	@Autowired
 	MemberDAO dao;
 	

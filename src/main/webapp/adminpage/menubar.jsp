@@ -16,8 +16,8 @@
 			<a href="reservelist.do">
 				<button class="menubar">고객센터</button>
 			</a>
-			<a>
-				<button class="menubar"></button>
+			<a href="AcharList.do">
+				<button class="menubar">배우리스트</button>
 			</a>
 		<div id="Ainclude">
 		<br>
