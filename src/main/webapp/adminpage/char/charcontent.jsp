@@ -43,27 +43,77 @@
 					출연영화
 				</th>
 				<td>
-					<input type="text" value="${title1 }" name="title1" size="40">
+					<select name="mno1">
+						<option value="0">영화선택</option>						
+						<c:forEach var="mList" items="${mList }">
+							<c:if test="${mList.mno == vo.mno1 }">
+								<option selected="selected" value="${mList.mno }">${mList.title }</option>
+							</c:if>
+							<c:if test="${mList.mno != vo.mno1 }">
+								<option value="${mList.mno }">${mList.title }</option>
+							</c:if>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" value="${title2 }" name="title2" size="40">
+					<select name="mno2">
+						<option value="0">영화선택</option>
+						<c:forEach var="mList" items="${mList }">
+							<c:if test="${mList.mno == vo.mno2 }">
+								<option selected="selected" value="${mList.mno }">${mList.title }</option>
+							</c:if>
+							<c:if test="${mList.mno != vo.mno2 }">
+								<option value="${mList.mno }">${mList.title }</option>
+							</c:if>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" value="${title3 }" name="title3" size="40">
+					<select name="mno3">
+						<option value="0">영화선택</option>
+						<c:forEach var="mList" items="${mList }">
+							<c:if test="${mList.mno == vo.mno3 }">
+								<option selected="selected" value="${mList.mno }">${mList.title }</option>
+							</c:if>
+							<c:if test="${mList.mno != vo.mno3 }">
+								<option value="${mList.mno }">${mList.title }</option>
+							</c:if>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" value="${title4 }" name="title4" size="40">
+					<select name="mno4">
+						<option value="0">영화선택</option>
+						<c:forEach var="mList" items="${mList }">
+							<c:if test="${mList.mno == vo.mno4 }">
+								<option selected="selected" value="${mList.mno }">${mList.title }</option>
+							</c:if>
+							<c:if test="${mList.mno != vo.mno4 }">
+								<option value="${mList.mno }">${mList.title }</option>
+							</c:if>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="text" value="${title5 }" name="title5" size="40">
+					<select name="mno5">
+						<option value="0">영화선택</option>
+						<c:forEach var="mList" items="${mList }">
+							<c:if test="${mList.mno == vo.mno5 }">
+								<option selected="selected" value="${mList.mno }">${mList.title }</option>
+							</c:if>
+							<c:if test="${mList.mno != vo.mno5 }">
+								<option value="${mList.mno }">${mList.title }</option>
+							</c:if>
+						</c:forEach>
+					</select>
 				</td>
 			</tr>
 			<tr>

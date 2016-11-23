@@ -107,4 +107,8 @@ public class AdminDAO extends SqlSessionDaoSupport{
 		List<MovieVO> list=getSqlSession().selectOne("AmovieAllData");
 		return list;
 	}
+	
+	public void ACmodify(Map map){
+		getSqlSession().update("ACmodify",map);
+	}
 }

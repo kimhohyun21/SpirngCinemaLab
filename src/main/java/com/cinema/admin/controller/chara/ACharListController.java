@@ -20,8 +20,6 @@ public class ACharListController {
 
 		//해당배우 정보
 		List<MovieVO> list = dao.AcharAllData();
-		//영화제목들
-		List<MovieVO> mList = dao.AmovieAllData();
 		
 		// 페이지 재료들
 		if (page == null)
@@ -40,7 +38,6 @@ public class ACharListController {
 		if (toPage > totalPage)
 			toPage = totalPage;
 		
-		model.addAttribute("mList",mList);
 		model.addAttribute("page", ipage);
 		model.addAttribute("start", start);
 		model.addAttribute("end", end);
