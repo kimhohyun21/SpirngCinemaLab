@@ -4,7 +4,7 @@
 	width: 1000px;
 	margin: 10px;
 	padding: 10px;
-	min-height: 660px;
+	min-height: 586px;
 }
 
 .bg2{
@@ -14,7 +14,7 @@
     background-color: white;
     width: 732px;
     padding: 20px;
-    min-height: 680px;
+    min-height: 576px;
 }
 
 .input{
@@ -169,7 +169,7 @@ b{
 	font-weight: bold;
 }
 
-#type_0, #type_1{
+#type_0{
 	position: relative;
 	top: 120px;
 }
@@ -198,5 +198,13 @@ b{
 	text-align: center;
 	background-color: #cce6ff;
 }
+
+/* 마이페이지-관람내역 */
+.reservelist{
+	position: relative;
+	top:70px;
+}
+
+
 
 
