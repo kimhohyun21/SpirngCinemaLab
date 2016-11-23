@@ -133,7 +133,7 @@ button.menubar:active {
 	bottom: 127px;
 	background-color: #dcdcd1;
 	height: 50px;
-	border-top: 2px solid #CCC;
+	border-top: 2px solid white;
 }
 
 /* 영화리스트 테이블 */
@@ -142,7 +142,7 @@ table.type01 {
     border-collapse: collapse;
     text-align: left;
     line-height: 1.5;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid white;
     margin: 20px 10px;
     position: relative;
     bottom: 148px;
@@ -164,31 +164,59 @@ table.type01 tbody th {
 table.type01 td {
     padding: 10px;
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid white;
 }
 
 table.type01 tr:HOVER{
 	background-color:#d8d3d8;
 }
 
-table.type02 input{
-	padding: 2px;
+/* 영화등록 페이지 */
+.type02 input{
+	padding: 7px;
 }
-table.type02 {
+.type02 {
 	background-color: #dcdcd1;
     border-collapse: collapse;
     line-height: 1.5;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid white;
     margin: 20px 10px;
 	vertical-align:top;
 }
-table.type02 td {
-    padding: 10px;
+.type02 td {
+    padding: 12px;
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid white;
 }
 
-/* 영화등록 페이지 */
+.type02{
+	position: relative;
+	bottom: 130px;
+}
+
+.type02 th{
+	background-color: #c8c8b6;
+	border-bottom: 1px solid white;
+}
+
+.type02 input.table_btn{
+	margin: 3px 38px 11px 50px;
+	padding: 8px 17px 8px 17px;
+}
+.type02 thead{
+	font-size: 20px;
+	font-weight:bold;
+	color:red;
+    -webkit-box-shadow: 0px 2px 0px #e4ceb4;
+  	-moz-box-shadow: 0px 2px 0px #e4ceb4;
+  	box-shadow: 0px 2px 0px #e4ceb4;
+}
+
+.type02 select{
+	width: 58px;
+	height: 30px;
+}
+
 .table_btn {
 	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
@@ -228,24 +256,6 @@ table.type02 td {
 .table_btn:active {
 	position:relative;
 	top:1px;
-}
-
-.type02{
-	position: relative;
-	bottom: 130px;
-}
-
-.type02 input.table_btn{
-	margin: 3px 38px 11px 50px;
-	padding: 8px 17px 8px 17px;
-}
-table.type02 thead{
-	font-size: 20px;
-	font-weight:bold;
-	color:red;
-    -webkit-box-shadow: 0px 2px 0px #e4ceb4;
-  	-moz-box-shadow: 0px 2px 0px #e4ceb4;
-  	box-shadow: 0px 2px 0px #e4ceb4;
 }
 
 /* 예매내역 관리 테이블 */
