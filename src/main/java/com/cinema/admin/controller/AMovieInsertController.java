@@ -19,8 +19,9 @@ public class AMovieInsertController {
 	public String movieInsert(Model model){
 		
 		
-		model.addAttribute("jsp", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/movieInsert.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+	    model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+	    model.addAttribute("jsp3", "../adminpage/movieInsert.jsp");
 		return "main/main";
 	}
 }
