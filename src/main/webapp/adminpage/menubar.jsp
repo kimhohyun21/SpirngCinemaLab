@@ -16,7 +16,7 @@
 			<a href="aReserveList.do">
 				<button class="menubar">예매 내역 관리</button>
 			</a>
-			<a>
+			<a href="ACList.do">
 				<button class="menubar">출연진 관리</button>
 			</a>
 			<a>

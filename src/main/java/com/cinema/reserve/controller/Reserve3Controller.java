@@ -11,7 +11,7 @@ import com.cinema.member.dao.MemberVO;
 @Controller
 public class Reserve3Controller {
 	
-	@RequestMapping("reserve3.do")
+	/*@RequestMapping("reserve3.do")
 	public String Reserve3(Model model, String year, String month, String checkedDay, String checkedDay2,
 							String tname, String grade, String title, String poster, String theaterNo,
 							String movietime, String ticketAll, String payment, String seatNo, HttpSession session){
@@ -39,5 +39,5 @@ public class Reserve3Controller {
 			e.printStackTrace();
 		}		
 		return "main/main";
-	}
+	}*/
 }

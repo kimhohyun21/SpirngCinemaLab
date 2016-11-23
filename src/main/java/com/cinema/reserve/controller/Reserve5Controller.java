@@ -25,7 +25,7 @@ public class Reserve5Controller {
 	@Autowired
 	public ReserveDAO dao;
 	
-	@RequestMapping("reserve5_Cancel.do")
+	/*@RequestMapping("reserve5_Cancel.do")
 	@ResponseBody
 	public Map reserve5_Cancel(Model model, String rno, String pid, String title, HttpSession session){
 		//요청정보 받아오기
@@ -52,7 +52,7 @@ public class Reserve5Controller {
 		if(auth_response.getResponse()!=null){
 			CancelData cancel_data = new CancelData(pid, true);
 			IamportResponse<Payment> payment_response = client.cancelPaymentByImpUid(cancel_data);
-			/*if(payment_response.getResponse()!=null){*/ //개발자 모드에서 하루 지나면 자동 취소 되는 경우 때문에 주석처리
+			if(payment_response.getResponse()!=null){ //개발자 모드에서 하루 지나면 자동 취소 되는 경우 때문에 주석처리
 				cancelCheck=true;
 				
 				//예매 내역 삭제 처리
@@ -69,10 +69,10 @@ public class Reserve5Controller {
 				map.put("rank", rank);
 				dao.updateRank(map);	
 				
-			/*}else{
+			}else{
 				cancelMsg=payment_response.getResponse().getFailReason();				
 			  }			  
-			 */				
+			 				
 		}
 		
 		//세션 정보 얻기
@@ -84,5 +84,5 @@ public class Reserve5Controller {
 		map.put("cancelCheck", cancelCheck);
 		
 		return map;
-	}
+	}*/
 }

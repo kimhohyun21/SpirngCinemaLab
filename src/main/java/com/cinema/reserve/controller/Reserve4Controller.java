@@ -19,7 +19,7 @@ public class Reserve4Controller {
 	@Autowired
 	public ReserveDAO dao;
 	
-	@RequestMapping("reserve4.do")
+/*	@RequestMapping("reserve4.do")
 	public String Reserve4(Model model, int year, int month, int checkedDay, String checkedDay2, String tname,
 							String grade, String title, String poster, String theaterNo, String movietime, String ticketAll,
 							String payment, String seatNo, String paymentId, String shopId, String serverPay, String cardOkNum, 
@@ -91,5 +91,5 @@ public class Reserve4Controller {
 
 		return "main/main";
 	}
-
+*/
 }

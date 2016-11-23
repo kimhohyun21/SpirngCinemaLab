@@ -87,7 +87,7 @@
 							<c:if test="${vo.rdate > today}">
 								<div align="right">
 									<form id="cancelfrm">
-										<input type="hidden" name="rNo" value="${vo.rNo}">
+										<input type="hidden" name="rno" value="${vo.rNo}">
 										<input type="hidden" name="title" value="${vo.title}">
 									</form>
 									<input type="button" value="예매취소" onclick="reserveCancel()">

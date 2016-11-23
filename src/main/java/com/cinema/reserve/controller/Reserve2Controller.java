@@ -18,7 +18,7 @@ public class Reserve2Controller {
 	@Autowired
 	private ReserveDAO dao;
 	
-	@RequestMapping("reserve2.do")
+	/*@RequestMapping("reserve2.do")
 	public String reserve2(Model model, int year, int month, int checkedDay, 
 							String checkedDay2, String local, String tname, String grade, 
 							String title, String poster, String theaterNo, String movietime,
@@ -112,5 +112,5 @@ public class Reserve2Controller {
 		model.addAttribute("jsp3", "../reserve/reserve2_Result.jsp");
 		
 		return movePage;
-	}
+	}*/
 }
