@@ -17,9 +17,13 @@ public class ACharContentController {
 
 	@RequestMapping("ACContent.do")
 	public String charContent(Model model, String cno) {
+		//해당 캐릭터 정보
 		MovieVO vo = dao.AcharContent(Integer.parseInt(cno));
 		
-		//캐릭터 출연영화이름 가져오기
+		//영화제목들
+		List<MovieVO> mList = dao.AmovieAllData();
+		
+		/*//캐릭터 출연영화이름 가져오기
 		//mno=영화번호 리스트
 		List<MovieVO> mno = dao.AactorAllMno(Integer.parseInt(cno));
 		for(MovieVO voo : mno){
@@ -39,9 +43,10 @@ public class ACharContentController {
 			String title5=dao.AcharMovieTitle(voo.getMno5());
 			if(title5 != null)
 				model.addAttribute("title5",title5);
-		}
+		}*/
 		
-
+		
+		model.addAttribute("mList",mList);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/char/charcontent.jsp");

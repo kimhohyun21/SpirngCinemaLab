@@ -8,3 +8,6 @@
 <c:if test="${go eq 'MD' }">
 	<c:redirect url="moviedetail.do?no=${no }&type=${type }"/>
 </c:if>
+<c:if test="${go eq 'AKL' }">
+	<c:redirect url="ACList.do"/>
+</c:if>
