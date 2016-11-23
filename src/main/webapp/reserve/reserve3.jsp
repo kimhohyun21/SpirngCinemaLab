@@ -161,14 +161,14 @@
 			</tr>
 		</table>		
 		<h3 class="payment_title">결제</h3>
-		<table width="924">
+		<table class="paymentWay">
 			<tr>
-				<td align="center" id="td1">결제정보 입력</td>
+				<td align="center" id="td1">결제 방법 선택</td>
 			</tr>
 			<tr>
 				<td align="center" id="td2">
-					<input type="radio" name="pay" value="card" onclick="display1()" checked>신용카드
-					<input type="radio" name="pay" value="account" onclick="display2()">계좌이체
+					<input type="radio" name="pay" value="card" onclick="display1()" checked>&nbsp;신용카드
+					<input type="radio" name="pay" value="account" onclick="display2()">&nbsp;계좌이체
 					<form id="paymentfrm" action="reserve4.do" method="post">
 						<input type="hidden" name="year" value="${year }">
 						<input type="hidden" name="month" value="${month }">
@@ -190,8 +190,8 @@
 		<div id="card">
 			<table width="920" class="payment_table">
 				<tr>
-					<td>
-						신용카드 결제 안내<br>
+					<td id="td3">
+						<font>&lt;신용카드 결제 안내&gt;</font><br>
 						1.결제내역 확인 후 결제하기 버튼을 클릭시, 팝업창이 나타납니다.<br>
 						2.해당 팝업에서 원하는 카드사를 선택 후 결제 정보를 입력하시면 됩니다.<br>
 						     ※ 신용카드 결제 가능 최소 금액은 1,000원 이상 입니다.     
@@ -212,8 +212,8 @@
 		<div id="account" style="display:none">
 			<table width="920" class="payment_table">
 				<tr>
-					<td>
-						실시간 계좌이체 안내<br>
+					<td id="td3">
+						<font>&lt;실시간 계좌이체 안내&gt;</font><br>
 						1.결제내역 확인 후 결제하기 버튼을 클릭시, 팝업창이 나타납니다.<br>
 						2.해당 팝업에서 원하는 은행을 선택 후 계좌이체 정보를 입력하시면 됩니다.
 					</td>
