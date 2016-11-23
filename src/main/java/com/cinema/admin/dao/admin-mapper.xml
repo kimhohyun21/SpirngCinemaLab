@@ -66,16 +66,13 @@
 	<select id="AcharContent" parameterType="int" resultType="movie">
 		SELECT cno,cname,img,mno1,mno2,mno3,mno4,mno5 FROM characterlist WHERE cno=#{cno}
 	</select>
-	<select id="AcharMovieTitle" parameterType="int" resultType="String">
-		SELECT title FROM movieList WHERE mno=#{mno}
-	</select>
-	<select id="AtitleToMno" parameterType="String" resultType="int">
-		SELECT mno FROM movieList WHERE title=#{title}
-	</select>
 	<select id="AmovieAllData" resultType="movie">
-		SELECT mno,title FROM movieList
+		SELECT mNo,title FROM movieList
 	</select>
 	<update id="ACmodify" parameterType="java.util.Map">
 		UPDATE characterList SET cname=#{cname}, img=#{img} WHERE cno=#{cno} 
 	</update>
+	<select id="AcnoToMnos">
+	
+	</select>
 </mapper>

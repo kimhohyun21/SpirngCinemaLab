@@ -93,16 +93,6 @@ public class AdminDAO extends SqlSessionDaoSupport{
 		return vo;
 	}
 	
-	public String AcharMovieTitle(int mno){
-		String title=getSqlSession().selectOne("AcharMovieTitle",mno);
-		return title;
-	}
-	
-	public int AtitleToMno(String title){
-		int mno=getSqlSession().selectOne("AtitleToMno",title);
-		return mno;
-	}
-	
 	public List<MovieVO> AmovieAllData(){
 		List<MovieVO> list=getSqlSession().selectList("AmovieAllData");
 		return list;
