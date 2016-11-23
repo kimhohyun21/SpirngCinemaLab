@@ -73,7 +73,7 @@
 		SELECT mno FROM movieList WHERE title=#{title}
 	</select>
 	<select id="AmovieAllData" resultType="movie">
-		SELECT mno,title FROM movieList
+		SELECT mNo,title FROM movieList
 	</select>
 	<update id="ACmodify" parameterType="java.util.Map">
 		UPDATE characterList SET cname=#{cname}, img=#{img} WHERE cno=#{cno} 
