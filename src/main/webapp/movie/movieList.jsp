@@ -9,7 +9,7 @@
 	<meta content="BlendTrans(Duration=0.9) http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.9)" http-equiv="Page-exit">
 	<title>Marvel Cinema</title>
-	<link rel="stylesheet" type="text/css" href="movie/style.css">
+	<link rel="stylesheet" type="text/css" href="movie/movie_style.css">
 </head>
 <body>	
 	<div class="movielist">   
@@ -47,7 +47,7 @@
 	           <table border="0" id="movie">
 	              <tr>
 	                 <td colspan="2">
-	                    <a href="moviedetail.do?no=${vo.mNo }&type=${vo.type}">
+	                    <a href="movieDetail.do?no=${vo.mNo }&type=${vo.type}">
 	                       <img src="${vo.poster}" width="200" height="270">
 	                    </a>
 	                 </td>
