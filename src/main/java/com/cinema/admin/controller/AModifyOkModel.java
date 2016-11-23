@@ -51,8 +51,8 @@ public class AModifyOkModel {
 			System.out.println(ex.getMessage());
 		}
 		
+		model.addAttribute("go","AML");
 		
-			
 		return "adminpage/station";
 	}
 }

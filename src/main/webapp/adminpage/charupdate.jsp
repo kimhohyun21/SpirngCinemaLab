@@ -15,8 +15,9 @@
 </head>
 <body>
 	<input type="hidden" value="${no }">
+	<input type="hidden" value="${type }">
 	<div align="center">
-		<form method="post" action="AcharUpdate_ok.do?sno=${no }">
+		<form method="post" action="AcharUpdate_ok.do?sno=${no }&type=${type }">		
 			<table width="700" class="type02">
 				<c:forEach var="actor" items="${actor }">
 					<tr>

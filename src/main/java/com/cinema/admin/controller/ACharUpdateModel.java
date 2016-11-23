@@ -16,14 +16,29 @@ public class ACharUpdateModel {
 	private AdminDAO dao;
 	
 	@RequestMapping("AcharUpdate.do")
-	public String charInsert(Model model,String no){
+	public String charInsert(Model model,String no,String type){
 		
 		List<MovieVO> list=dao.AcharAllData();
-		List<MovieVO> actor=dao.movieCharName(Integer.parseInt(no));
+		List<MovieVO> actor=dao.movieCharData(Integer.parseInt(no));
+		
+		//출연진이 없거나 1,2명일 경우
+		switch(actor.size()){
+		case 0:
+			actor.add(list.get(0));
+			//actor.add(list.get(1));
+			//actor.add(list.get(1));
+		case 1:
+			actor.add(list.get(0));
+			//actor.add(list.get(1));
+		case 2:
+			actor.add(list.get(0));
+		}
+		
 		
 		model.addAttribute("i",0); //카운팅용
 		model.addAttribute("actor",actor);
 		model.addAttribute("no",no);
+		model.addAttribute("type",type);
 		model.addAttribute("list", list);
 		model.addAttribute("jsp", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp2", "../adminpage/charupdate.jsp");
