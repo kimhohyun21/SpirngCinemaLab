@@ -8,7 +8,7 @@ div.reserve2, div.finalPaymentInfo, div.reserve1{
 }
 div.ticket{
 	background-color: #fdedcc;
-	width: 900px;
+	width: 910px;
 	min-height: 50px;
 	padding: 5px;
 	margin-top:40px;
@@ -86,11 +86,13 @@ div.resetBtn a{
 
 /*주의 문구*/
 div.alertSent{
-	width: 900px;
+	width: 725px;
     display: inline-block;
     position: relative;
     top: -15px;
     margin: 12px 0px 0px 0px;
+    border-top: 1px solid gray;
+    padding-top: 20px;
 }
 div.sent{
 	display: inline-block;
