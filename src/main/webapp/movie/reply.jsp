@@ -80,30 +80,49 @@
 	function enter(){
 		if(window.event.keyCode == 13){
 			login();
-		}
+		}										  
 	}
 	
 	//로그인 창 값 입력 체크
 	function login(){
-		var f=document.loginfrm;	
-		if(f.id.value==""){
+		var id=$('#id').val();	
+		if(id==""){
 			$.jQueryAlert("아이디를 입력하세요");
-			f.id.focus();
+			$('#id').focus();
 			return;
 		}
-		if(f.pwd.value==""){
+		var pwd=$('#pwd').val();
+		if(pwd==""){
 			$.jQueryAlert("비밀번호를 입력하세요");
-			fs.pwd.focus();
+			$('#pwd').focus();
 			return;
 		}
-		f.submit();
+		
+		$.ajax({
+			type: "POST",
+			url: "login_ok.do",
+			data:$('form').serialize(),
+			dataType: "json",
+			success:function(data){
+				if(data.check=="ok"){
+					window.location.reload(true);
+				}else if(data.check=="pwdnot"){
+					$.jQueryAlert("패스워드가 잘못 되었습니다.");
+				}else if(data.check=="idnot"){
+					$.jQueryAlert("아이디가 잘못 되었습니다.");
+				}
+			},
+			error:function(data){
+				$.jQueryAlert("실패");
+			}
+		});
 	}
 	
 	/* jQuery Alert 창 */
 	jQuery.jQueryAlert = function (msg) {
         var $messageBox = $.parseHTML('<div id="alertBox"></div>');
         $("body").append($messageBox);
-
+		
         $($messageBox).dialog({
             open: $($messageBox).append(msg),
             autoOpen: true,
