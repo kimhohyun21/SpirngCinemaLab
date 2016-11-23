@@ -1,36 +1,6 @@
 @CHARSET "EUC-KR";
-b{
-	color: black;
-}
 
-.modify{
-	position: relative;
-    left: 99px;
-    top: -31px;
-    background-color: white;
-    width: 772px;
-	height: 800px;
-}
-
-#notice{
-	position: relative;
-	top: 20px;
-	right: 33px;
-	color: red;
-	font-weight: bold;
-}
-
-#modify_table{
-	border: 1px black;
-	border-collapse: collapse;
-	position: relative;
-	right: 41px;
-}
-
-#modify_table td{
-	border-bottom: 1px solid;
-}
-
+/* 로그인 창, 아이디 찾기, 비밀번호 찾기 */
 .btn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -43,9 +13,9 @@ b{
 	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
 	background-color:#ffec64;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
 	border:1px solid #ffaa22;
 	display:inline-block;
 	cursor:pointer;
@@ -53,7 +23,7 @@ b{
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:32px 34px;
+	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
 }
@@ -72,13 +42,55 @@ b{
 	top:1px;
 }
 
+#find a{
+	color: gray;
+	text-decoration: none;
+}
+#find a:HOVER {
+	color: #CD426B;
+}
+ 
+#pwd{
+	margin-bottom: 10px;
+}
 
-.btn{
-	padding-top:10px;	
+form{
+	padding-top:50px;
 }
-#frm{
-	padding-top: 60px;
-}
+
 input{
-	margin:30px;
+	padding:0px;
+	height: 35px;
+	width: 200px;
+	font-size: 10pt;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

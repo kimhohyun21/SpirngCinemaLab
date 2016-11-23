@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="login/style3.css">
+<link rel="stylesheet" type="text/css" href="login/login_style.css">
 	<c:if test="${join eq '가입성공' }">
 		<script type="text/javascript">
 			alert("회원가입이 완료되었습니다");

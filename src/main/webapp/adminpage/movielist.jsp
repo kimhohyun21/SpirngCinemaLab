@@ -10,15 +10,17 @@
 </head>
 <body>
 	<center>
-		<table width="700" class="type01">
-		<thead>
-			<tr class="nhover">
+		<table width="700" class="reg_btn">
+			<tr>
 				<td>
 					<a href="AmovieInsert.do">
 						<button class="menu_insert">영화등록</button>						
 					</a>
 				</td>
 			</tr>
+		</table>
+		<table width="700" class="type01">
+		<thead>
 			<tr>
 				<th align="center">
 					제목
@@ -62,7 +64,7 @@
 				</tr>
 			</c:forEach>
 		</tbody>
-			<tr class="nhover">
+			<tr>
 				<td colspan="5" align="right">
 					<c:if test="${page>block }">
 						<a href="Amovielist.do?page=1">
