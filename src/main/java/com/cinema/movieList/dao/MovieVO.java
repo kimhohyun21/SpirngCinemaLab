@@ -27,7 +27,12 @@ public class MovieVO {
 	private int no;
 	private String id;
 	private String date;//리스트에 뽑아낼 날짜
-	
+	private int cno;
+	private int mno1;
+	private int mno2;
+	private int mno3;
+	private int mno4;
+	private int mno5;
 	public int getmNo() {
 		return mNo;
 	}
@@ -166,4 +171,41 @@ public class MovieVO {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	public int getCno() {
+		return cno;
+	}
+	public void setCno(int cno) {
+		this.cno = cno;
+	}
+	public int getMno1() {
+		return mno1;
+	}
+	public void setMno1(int mno1) {
+		this.mno1 = mno1;
+	}
+	public int getMno2() {
+		return mno2;
+	}
+	public void setMno2(int mno2) {
+		this.mno2 = mno2;
+	}
+	public int getMno3() {
+		return mno3;
+	}
+	public void setMno3(int mno3) {
+		this.mno3 = mno3;
+	}
+	public int getMno4() {
+		return mno4;
+	}
+	public void setMno4(int mno4) {
+		this.mno4 = mno4;
+	}
+	public int getMno5() {
+		return mno5;
+	}
+	public void setMno5(int mno5) {
+		this.mno5 = mno5;
+	}
+	
 }

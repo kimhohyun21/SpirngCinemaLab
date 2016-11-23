@@ -143,3 +143,6 @@ table.type01 tr:HOVER{
 	border-top: 2px solid gray;
 	border-bottom: 1px solid gray;
 }
+table.type01.nhover tr:HOVER{
+	background-color: #dcdcd1;
+}

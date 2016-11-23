@@ -17,6 +17,12 @@
 			f.name.focus();
 			return;
 		}
+		var kor=/^[a-z A-Z 가-힝]*$/;
+		 if (!kor.test(f.name.value) ){
+		     alert("이름에 특수문자,숫자는 입력 할 수 없습니다. \n ex) HoHyunMansae");
+		     f.name.focus();
+		     return;
+		}
 		if(f.phone.value==""){
 			alert("전화번호를 입력하세요");
 			f.content.focus();
@@ -30,7 +36,7 @@
 		        return;
 		   }
 		 if (f.phone.value.search(number)!=-1 || f.phone.value.length == 0 || f.phone.value.length != 11){
-		        alert("전화번호를 제대로 입력해주세요. \n전화번호는 숫자만 입력하실 수 있습니다 \n ex)01015771577");
+		        alert("전화번호는 '-'빼고 입력해주시기 바랍니다. \n전화번호는 숫자만 입력하실 수 있습니다 \n ex)01015771577");
 		        f.phone.focus();
 		        return;
 		   }

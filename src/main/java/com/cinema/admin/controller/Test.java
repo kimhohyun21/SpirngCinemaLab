@@ -1,4 +1,4 @@
-/*package com.cinema.admin.controller;
+package com.cinema.admin.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -9,12 +9,9 @@ import com.cinema.movieList.dao.MovieVO;
 public class Test {
 	public static void main(String[] args) {
 
-		List<MovieVO> list = AdminDAO.movieCharName(5);
-		for (MovieVO vo : list) {
-			String[] actor={vo.getCname()};
-			System.out.println(actor[0]);
-			System.out.println(actor);
-		}
+		String a="¿Í¿ì";
+		int b=2;
+		String c=a+b;
+		System.out.println(c);
 	}
 }
-*/
