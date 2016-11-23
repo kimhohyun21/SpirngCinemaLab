@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="mypage/style.css">
+<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
 <script src="sliderengine/jquery.js"></script>
 <script type="text/javascript">
 	function send(){
@@ -51,40 +51,40 @@
 </head>
 <body>
 	<center>
-	<div class="modify">
+	<div class="bg2">
 		<b id="notice">정보수정은 이름,생년월일,전화번호만 수정하실수 있습니다.</b>
 		<form action="modify_ok.do?strno=${mvo.no }" method="post" name="frm">
 			<table id="modify_table" width="500" height="350">
 				<tr>
-					<td align="center">
+					<td class="modify_td">
 						<b>이름</b>
 					</td>
 					<td>
-						 <input type="text" placeholder="이름" name="name" value="${name }">																	
+						 <input type="text" placeholder="이름" name="name" value="${name }" class="input">																	
 					</td>
 				</tr>
 				<tr>
-					<td align="center">
+					<td class="modify_td">
 						<b>생년월일</b> 
 					</td>
 					<td>
-						<input type="text" placeholder="생년월일" name="birth" value="${birth }">				
+						<input type="text" placeholder="생년월일" name="birth" value="${birth }" class="input">				
 					</td>
 				</tr>
 				<tr>
-					<td align="center">
+					<td class="modify_td">
 						<b>전화번호</b> 
 					</td>
 					<td>
-						<input type="text" placeholder="전화번호 '-'는 빼고 써주세요" name="phone" id="phone" value="${phone }">			
+						<input type="text" placeholder="전화번호 '-'는 빼고 써주세요" name="phone" id="phone" value="${phone }" class="input">			
 					</td>
 				</tr>
 				<tr>
-					<td align="center">
+					<td class="modify_td">
 						<b>비밀번호</b> 
 					</td>
 					<td>
-						<input type="password" placeholder="꼭 입력해 주세요" name="pwd">
+						<input type="password" placeholder="꼭 입력해 주세요" name="pwd" class="input">
 					</td>
 				</tr>
 			</table>

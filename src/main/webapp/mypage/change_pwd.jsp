@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="mypage/style.css">
+<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
 <script src="sliderengine/jquery.js"></script>
 <script type="text/javascript">
 function send(){
@@ -42,13 +42,38 @@ function send(){
 </head>
 <body>
 	<center>
+		<div class="bg2">
 		<form method="post" action="changepwd_ok.do?strno=${mvo.no }" name="frm">
-			현재 비밀번호:<input type="password" name="pwd"><br>
-			바꿀 비밀번호:<input type="password" name="change_pwd"><br>
-			비밀번호 확인:<input type="password" name="check_pwd"><br>
-			<input type="button" onclick="send()" value="변경" class="btn">
+			<table id="modify_table" width="500" height="270">
+				<tr>
+					<td class="modify_td">
+						<b>현재 비밀번호</b>
+					</td>
+					<td>
+						<input type="password" name="pwd" class="input">
+					</td>
+				</tr>
+				<tr>
+					<td class="modify_td">
+						<b>바꿀 비밀번호</b>
+					</td>
+					<td>
+						<input type="password" name="change_pwd" class="input">
+					</td>
+				</tr>
+				<tr>
+					<td class="modify_td">
+						<b>비밀번호 확인</b>
+					</td>
+					<td>
+						<input type="password" name="check_pwd" class="input">
+					</td>
+				</tr>
+			</table>
+			<input type="button" onclick="send()" value="변경" class="btn">&nbsp;&nbsp;&nbsp;
 			<input type="button" onclick="javascript:history.back()" value="뒤로" class="btn">			
 		</form>
+		</div>
 	</center>
 </body>
 </html>

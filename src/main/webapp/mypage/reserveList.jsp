@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="login/style3.css">
+	<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
 	<style type="text/css">
 		tr,td{
 			padding: 10px;
@@ -19,10 +19,11 @@
 	</script>
 </head>
 <body>
-	<div class="mrList" align="center">
+	<div class="bg2" align="center">
 		<a href="reserveList.do?no=${mvo.no }">
 			<span class="mrList_btn">예매내역</span>
 		</a>
+		&nbsp;&nbsp;&nbsp;
 		<a href="reserveList.do?no=${mvo.no }&type=1">
 			<span class="mrList_btn">관람내역</span>
 		</a>
