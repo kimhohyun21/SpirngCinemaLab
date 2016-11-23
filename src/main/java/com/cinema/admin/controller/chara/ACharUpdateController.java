@@ -1,6 +1,7 @@
 package com.cinema.admin.controller.chara;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cinema.admin.dao.AdminDAO;
+import com.cinema.movieList.dao.MovieVO;
 
 @Controller
 public class ACharUpdateController {
@@ -42,15 +44,29 @@ public class ACharUpdateController {
 		}
 		int i=0;
 		for(int t:title){
+			//이미 영화번호가 들어가 있을때
+			List<MovieVO> mnoList=dao.AactorAllMno(Integer.parseInt(cno));
+			int check=0;		
+			for(MovieVO vo:mnoList){
+				if(vo.getMno1()==t || vo.getMno2()==t || vo.getMno3()==t
+						|| vo.getMno4()==t || vo.getMno5()==t){
+					check=1;
+				}
+			}
+			if(check==1){
+				break;
+			}
 			i++;			
 			//영화를 안골랐을때
-			if(t==0)
+			if(t==0){
 				break;
+			}
 			map.put("movieNo", t);
 			String mno="mno"+i;
 			map.put("mno", mno);
 			dao.AactorInsertMno(map);
 		}
+		
 		
 		model.addAttribute("go","AKL");
 		return "adminpage/station";
