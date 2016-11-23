@@ -1,0 +1,28 @@
+@CHARSET "EUC-KR";
+*{
+	margin: 0;
+	padding: 0;
+}
+a.main_link{
+	text-decoration: none;
+	color: #ff3131;
+}
+a.main_link:HOVER{
+	color: #6060ff;
+}
+body{
+	background-image: url("../image/universe_bg3.jpg");
+	background-size: cover;
+}
+div.error{
+	background-color: rgba(250,250,250,0.5);
+	width: inherit;
+	margin: 10px;
+	padding: 10px;
+	min-height: 610px;
+	position: relative;
+	top:10px;
+	vertical-align: middle;
+	font-size: 25pt;
+	padding: 300px 0px 0px 0px;
+}

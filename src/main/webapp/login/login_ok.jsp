@@ -19,6 +19,6 @@
 		history.back();
 	</script>
 </c:if>
-<<c:if test="${logout eq 'out'}">
+<c:if test="${logout eq 'out'}">
 	<c:redirect url="main.do"/>
 </c:if>
