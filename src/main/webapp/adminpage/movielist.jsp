@@ -22,21 +22,11 @@
 		<table width="700" class="type01">
 		<thead>
 			<tr>
-				<th align="center">
-					제목
-				</th>
-				<th align="center">
-					개봉일
-				</th>
-				<th align="center">
-					상영정보
-				</th>
-				<th align="center">
-					순위
-				</th>
-				<th align="center">
-					좋아요
-				</th>
+				<th>제목</th>
+				<th>개봉일</th>
+				<th>상영정보</th>
+				<th>순위</th>
+				<th>좋아요</th>
 			</tr>
 		</thead>
 		<tbody>
