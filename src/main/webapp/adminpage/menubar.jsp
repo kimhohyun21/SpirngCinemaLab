@@ -13,7 +13,7 @@
 			<a href="Amovielist.do?sPage=${page }">
 				<button class="menubar">영화리스트 관리</button>
 			</a>
-			<a href="reservelist.do">
+			<a href="adminReserveList.do">
 				<button class="menubar">예매내역 관리</button>
 			</a>
 			<a>

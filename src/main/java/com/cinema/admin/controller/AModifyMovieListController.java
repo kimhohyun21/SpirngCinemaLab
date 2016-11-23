@@ -38,6 +38,10 @@ public class AModifyMovieListController {
 			vo.setRuntime(runtime);
 		}
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("no", no2);
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);

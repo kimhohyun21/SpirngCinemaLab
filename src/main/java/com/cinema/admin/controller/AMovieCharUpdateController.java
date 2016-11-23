@@ -31,7 +31,10 @@ public class AMovieCharUpdateController {
 			actor.add(list.get(0));
 		}
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
 		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("i",0); //카운팅용
 		model.addAttribute("actor",actor);
 		model.addAttribute("no",no);

@@ -17,6 +17,10 @@ public class ReserveContentController{
 		
 		ReserveListVO vo = dao.reserveContent(Integer.parseInt(no));
 
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("no", no);
 		model.addAttribute("page", page);
 		model.addAttribute("vo", vo);

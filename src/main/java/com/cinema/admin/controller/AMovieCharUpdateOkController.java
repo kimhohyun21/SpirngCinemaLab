@@ -113,7 +113,7 @@ public class AMovieCharUpdateOkController {
 		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno5(vo); break;
 		 * } }
 		 */
-
+		
 		model.addAttribute("no", no);
 		model.addAttribute("type", type);
 		model.addAttribute("go", "MD");

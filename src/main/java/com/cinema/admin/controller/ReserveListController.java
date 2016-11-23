@@ -15,7 +15,7 @@ public class ReserveListController{
 	@Autowired
 	AdminDAO dao;
 
-	@RequestMapping("reservelist.do")
+	@RequestMapping("adminReserveList.do")
 	public String qnaList(Model model,String page){
 		
 		if(page == null) page = "1";
@@ -40,6 +40,10 @@ public class ReserveListController{
 		if(toPage > totalpage)
 			toPage = totalpage;
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("fromPage", fromPage);
 		model.addAttribute("toPage", toPage);
 		model.addAttribute("block", block);

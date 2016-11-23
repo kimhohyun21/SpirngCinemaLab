@@ -43,7 +43,7 @@ function send(){
 <body>
 	<center>
 		<div class="bg2">
-		<form method="post" action="changepwd_ok.do?strno=${mvo.no }" name="frm">
+		<form method="post" action="MemeberChangePwd_ok.do?strno=${mvo.no }" name="frm">
 			<table id="modify_table" width="500" height="270">
 				<tr>
 					<td class="modify_td">
