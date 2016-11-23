@@ -35,14 +35,14 @@
 				</tr>
 			</thead>
 			<tr class="br">
-				<th align="right">
+				<th>
 					<input type="hidden" value="${no }"	name="no">
 					제목
 				</th>
 				<td align="left">
 					<input type="text" value="${vo.title }" name="title" style="width: 60%">					
 				</td>
-				<th align="right">
+				<th>
 					시청연령
 				</th>
 				<td align="left">
@@ -69,7 +69,7 @@
 			</tr>
 			
 			<tr>
-				<th align="right">
+				<th>
 					포스터 URL
 				</th>
 				<td align="left" colspan="3">
@@ -78,7 +78,7 @@
 			</tr>
 			
 			<tr>
-				<th align="right">
+				<th>
 					상영일
 				</th>
 				<td align="left">					
@@ -86,7 +86,7 @@
 					<b>- </b><input type="text" value="${month }" name="month" size="1" placeholder="월" onkeypress="num()">
 					<b>- </b><input type="text" value="${day }" name="day" width="10"  size="1" placeholder="일" onkeypress="num()">
 				</td>
-				<th align="right">
+				<th>
 					상영종류
 				</th>
 				<td align="left">
@@ -112,13 +112,13 @@
 			</tr>
 			
 			<tr>
-				<th align="right">
+				<th>
 					감독
 				</th>
 				<td align="left">
 					<input type="text" value="${vo.director }" name="director" style="width: 60%">
 				</td>
-				<th align="right">
+				<th>
 					상영시간
 				</th>
 				<td align="left">
@@ -126,7 +126,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right">
+				<th>
 					장르
 				</th>
 				<td colspan="3">
@@ -134,7 +134,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right">
+				<th>
 					예고편
 				</th>
 				<td align="left" colspan="3">
@@ -142,7 +142,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right">
+				<th>
 					출연인물
 				</th>
 				<td align="left" colspan="3">
@@ -150,7 +150,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right">
+				<th>
 					줄거리
 				</th>
 				<td colspan="3">

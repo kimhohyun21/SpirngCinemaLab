@@ -20,8 +20,9 @@ public class ReserveContentController{
 		model.addAttribute("no", no);
 		model.addAttribute("page", page);
 		model.addAttribute("vo", vo);
-		model.addAttribute("jsp", "reservelist.jsp");
-		model.addAttribute("jsp", "../adminpage/reservecontent.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/reservecontent.jsp");
 		
 		return "main/main";
 		

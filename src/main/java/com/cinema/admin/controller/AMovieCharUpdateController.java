@@ -30,15 +30,15 @@ public class AMovieCharUpdateController {
 		case 2:
 			actor.add(list.get(0));
 		}
-		
-		
+
 		model.addAttribute("i",0); //카운팅용
 		model.addAttribute("actor",actor);
 		model.addAttribute("no",no);
 		model.addAttribute("type",type);
 		model.addAttribute("list", list);
-		model.addAttribute("jsp", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/charupdate.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/charupdate.jsp");
 		return "main/main";
 	}
 }

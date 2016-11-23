@@ -43,8 +43,9 @@ public class AModifyMovieListController {
 		model.addAttribute("month", month);
 		model.addAttribute("day", day);
 		model.addAttribute("vo", vo);
-		model.addAttribute("jsp", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/moviemodify.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/moviemodify.jsp");
 		return "main/main";
 	}
 }

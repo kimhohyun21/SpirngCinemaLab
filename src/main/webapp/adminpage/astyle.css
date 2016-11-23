@@ -4,6 +4,7 @@
 	width: 1000px;
 	margin: 10px;
 	padding: 10px;
+	min-height: 586px;
 }
 
 .bg2{
@@ -13,7 +14,7 @@
     background-color: white;
     width: 732px;
     padding: 20px;
-    min-height: 680px;
+    min-height: 576px;
 }
 
 .tb{
@@ -51,7 +52,6 @@ button.menubar {
    	text-shadow: #7ea4bd 0 1px 0;
    	color: #052c48;
    	font-size: 16px;
-   	font-family: helvetica, serif;
    	text-decoration: none;
    	vertical-align: middle;
    	position: relative;
@@ -182,16 +182,13 @@ table.type01 tr:HOVER{
     border-left: 1px solid white;
     margin: 20px 10px;
 	vertical-align:top;
+	position: relative;
+	bottom: 130px;
 }
 .type02 td {
     padding: 12px;
     vertical-align: top;
     border-bottom: 1px solid white;
-}
-
-.type02{
-	position: relative;
-	bottom: 130px;
 }
 
 .type02 th{
@@ -216,6 +213,8 @@ table.type01 tr:HOVER{
 	width: 58px;
 	height: 30px;
 }
+
+
 
 .table_btn {
 	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
@@ -283,3 +282,92 @@ table.type01 tr:HOVER{
 	position: relative;
 	bottom: 127px;
 }
+
+/* 출연진 수정 페이지 */
+
+.type03 {
+	background-color: #dcdcd1;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border-left: 1px solid white;
+    margin: 20px 10px;
+	vertical-align:top;
+	position: relative;
+	bottom: 123px;
+}
+
+.char_title{
+	color: red; 
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+.type03 td {
+    padding: 12px;
+    vertical-align: top;
+    border-bottom: 1px solid white;
+}
+
+.type03 th{
+	background-color: #c8c8b6;
+	border-bottom: 1px solid white;
+	height: 55px;
+}
+
+.type03 input.table_btn{
+	margin: 3px 38px 11px 50px;
+	padding: 8px 17px 8px 17px;
+}
+
+
+.type03 .char_select{
+	width: 168px;
+	height: 30px;
+}
+
+/* 예매내역 상세 */
+.type04 {
+	background-color: #dcdcd1;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border-left: 1px solid white;
+    margin: 20px 10px;
+	vertical-align:top;
+	position: relative;
+	top:33px;
+	right: 34px;
+}
+
+.type04 td {
+    padding: 12px;
+    vertical-align: top;
+    border-bottom: 1px solid white;
+}
+
+.type04 th{
+	background-color: #c8c8b6;
+	border-bottom: 1px solid white;
+	height: 55px;
+}
+
+.type04 input.table_btn{
+	margin: 3px 38px 11px 50px;
+	padding: 8px 17px 8px 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
