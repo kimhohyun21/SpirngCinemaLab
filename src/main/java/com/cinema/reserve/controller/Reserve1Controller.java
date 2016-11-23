@@ -78,7 +78,8 @@ public class Reserve1Controller {
 		
 		//새벽 시간 날짜 설정
 		if(movietime!=null){
-			String time=movietime.substring(0, movietime.lastIndexOf(":"));			
+			String time=movietime.substring(0, movietime.lastIndexOf(":"));	
+			System.out.println(time);
 			if(lastDay[m-1]==d && time.equals("1")){
 				if(m==12){
 					y+=1;

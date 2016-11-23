@@ -113,7 +113,7 @@
 						</td>
 					</tr>
 					<tr id="movietime_tr">
-						<td>
+						<td class="movietime">
 							<jsp:include page="movie&time.jsp"></jsp:include>
 						</td>
 					</tr>

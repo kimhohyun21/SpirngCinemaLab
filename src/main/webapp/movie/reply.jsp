@@ -26,7 +26,7 @@
 		} 
     	/*평점체크*/    	
     	var f=document.frm;
-    	if($(':input[name=star-input]:radio:checked').val()==null){
+    	if($(':input[name=star_input]:radio:checked').val()==null){
     		$.jQueryAlert('평점을 체크해 주세요.');
     		return;
     	}
@@ -131,18 +131,18 @@
 						평점<br>
 						<span class="star-input">
 							<span class="input">
-								<input type="radio" name="star-input" id="p1" value="1"><label for="p1">1</label>
-								<input type="radio" name="star-input" id="p2" value="2"><label for="p2">2</label>
-								<input type="radio" name="star-input" id="p3" value="3"><label for="p3">3</label>
-								<input type="radio" name="star-input" id="p4" value="4"><label for="p4">4</label>
-								<input type="radio" name="star-input" id="p5" value="5"><label for="p5">5</label>
-								<input type="radio" name="star-input" id="p6" value="6"><label for="p6">6</label>
-								<input type="radio" name="star-input" id="p7" value="7"><label for="p7">7</label>
-								<input type="radio" name="star-input" id="p8" value="8"><label for="p8">8</label>
-								<input type="radio" name="star-input" id="p9" value="9"><label for="p9">9</label>
-								<input type="radio" name="star-input" id="p10" value="10"><label for="p10">10</label>
+								<input type="radio" name="star_input" id="p1" value="1"><label for="p1">1</label>
+								<input type="radio" name="star_input" id="p2" value="2"><label for="p2">2</label>
+								<input type="radio" name="star_input" id="p3" value="3"><label for="p3">3</label>
+								<input type="radio" name="star_input" id="p4" value="4"><label for="p4">4</label>
+								<input type="radio" name="star_input" id="p5" value="5"><label for="p5">5</label>
+								<input type="radio" name="star_input" id="p6" value="6"><label for="p6">6</label>
+								<input type="radio" name="star_input" id="p7" value="7"><label for="p7">7</label>
+								<input type="radio" name="star_input" id="p8" value="8"><label for="p8">8</label>
+								<input type="radio" name="star_input" id="p9" value="9"><label for="p9">9</label>
+								<input type="radio" name="star_input" id="p10" value="10"><label for="p10">10</label>
 					   		</span><br>
-					   		<output for="star-input"><b name="score">0</b>점</output>
+					   		<output for="star_input"><b name="score">0</b>점</output>
 				  		</span>	
 					</td>
 					<td width="69%">
@@ -232,21 +232,21 @@
 	<!-- 별점 -->
 	<script type="text/javascript">	
 		var starRating = function() {
-			var $star = $(".star-input"), $result = $star.find("output>b");
-			$(document).on("focusin", ".star-input>.input", function() {
+			var $star = $(".star_input"), $result = $star.find("output>b");
+			$(document).on("focusin", ".star_input>.input", function() {
 				$(this).addClass("focus");
-			}).on("focusout", ".star-input>.input", function() {
+			}).on("focusout", ".star_input>.input", function() {
 				var $this = $(this);
 				setTimeout(function() {
 					if ($this.find(":focus").length === 0) {
 						$this.removeClass("focus");
 					}
 				}, 100);
-			}).on("change", ".star-input :radio", function() {
+			}).on("change", ".star_input :radio", function() {
 				$result.text($(this).next().text());
-			}).on("mouseover", ".star-input label", function() {
+			}).on("mouseover", ".star-_input label", function() {
 				$result.text($(this).text());
-			}).on("mouseleave", ".star-input>.input", function() {
+			}).on("mouseleave", ".star_input>.input", function() {
 				var $checked = $star.find(":checked");
 				if ($checked.length === 0) {
 					$result.text("0");
