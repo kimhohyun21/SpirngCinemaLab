@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cinema.admin.dao.*;
 
 @Controller
-public class ReserveContentModel{
+public class ReserveContentController{
 	@Autowired
 	AdminDAO dao;
 

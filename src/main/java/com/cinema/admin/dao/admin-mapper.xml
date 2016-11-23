@@ -40,7 +40,7 @@
 		SELECT COUNT(*) FROM movieList
 	</select>
 	<select id="AcharAllData" resultType="movie">
-		SELECT cno,cname,img FROM characterlist
+		SELECT cno,cname,img,mno1,mno2,mno3,mno4,mno5 FROM characterlist
 	</select>
 	<select id="AmovieActorData" parameterType="int" resultType="movie">
 		SELECT cname,cno,mno1,mno2,mno3,mno4,mno5
@@ -57,4 +57,19 @@
 	<update id="AactorInsertMno" parameterType="java.util.Map">
 		UPDATE characterList SET ${mno}=#{movieNo} WHERE cno=#{cno}
 	</update>
+	<select id="AactorAllMno" parameterType="int" resultType="movie">
+		SELECT mno1,mno2,mno3,mno4,mno5 FROM characterList WHERE cno=#{cno}
+	</select>
+	<select id="AcharCount" resultType="int">
+		SELECT COUNT(*) FROM characterList
+	</select>
+	<select id="AcharContent" parameterType="int" resultType="movie">
+		SELECT cno,cname,img,mno1,mno2,mno3,mno4,mno5 FROM characterlist WHERE cno=#{cno}
+	</select>
+	<select id="AcharMovieTitle" parameterType="int" resultType="String">
+		SELECT title FROM movieList WHERE mno=#{mno}
+	</select>
+	<select id="AtitleToMno" parameterType="String" resultType="int">
+		SELECT mno FROM movieList WHERE title=#{title}
+	</select>
 </mapper>
