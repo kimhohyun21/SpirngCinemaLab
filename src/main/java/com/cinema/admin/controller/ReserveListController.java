@@ -15,7 +15,7 @@ public class ReserveListController{
 	@Autowired
 	AdminDAO dao;
 
-	@RequestMapping("adminReserveList.do")
+	@RequestMapping("aReserveList.do")
 	public String qnaList(Model model,String page){
 		
 		if(page == null) page = "1";
