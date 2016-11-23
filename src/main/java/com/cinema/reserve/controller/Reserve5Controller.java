@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cinema.member.dao.MemberVO;
 import com.cinema.reserve.dao.ReserveDAO;
@@ -25,7 +26,8 @@ public class Reserve5Controller {
 	public ReserveDAO dao;
 	
 	@RequestMapping("reserve5_Cancel.do")
-	public String reserve5_Cancel(Model model, String rno, String pid, String title, HttpSession session){
+	@ResponseBody
+	public Map reserve5_Cancel(Model model, String rno, String pid, String title, HttpSession session){
 		//요청정보 받아오기
 		int rNo=0;
 		if(pid!=null)rNo=dao.getRno(pid);
@@ -76,10 +78,11 @@ public class Reserve5Controller {
 		//세션 정보 얻기
 		MemberVO mvo=(MemberVO) session.getAttribute("mvo");
 		
-		model.addAttribute("no", mvo.getNo());
-		model.addAttribute("cancelMsg", cancelMsg);
-		model.addAttribute("cancelCheck", cancelCheck);
+		Map map=new HashMap();
+		map.put("no", mvo.getNo());
+		map.put("cancelMsg", cancelMsg);
+		map.put("cancelCheck", cancelCheck);
 		
-		return "reserve/reserve5_Cancel";
+		return map;
 	}
 }

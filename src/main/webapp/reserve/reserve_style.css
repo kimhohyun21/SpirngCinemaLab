@@ -94,6 +94,10 @@ div.alertSent{
     border-top: 1px solid gray;
     padding-top: 20px;
 }
+img.grade18{
+	position: inherit;
+    top: -20px;
+}
 div.sent{
 	display: inline-block;
     position: relative;

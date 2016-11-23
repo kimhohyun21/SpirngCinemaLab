@@ -26,14 +26,13 @@ public class MyPageController {
 		List<MemberReserveListVO> list;
 		
 		//페이지 재료
-		if(sPage==null) sPage="1";
-		
-		int page=Integer.parseInt(sPage);	// 현재페이지
-		int start;							// 처음번호
-		int end;							// 마지막번호
-		int row=3;							// 컬럼 사이즈
+		if(sPage==null || sPage.equals("0")) sPage="1";
+		int curpage=Integer.parseInt(sPage);	// 현재페이지
+		int rowSize=5;						//컬럼사이즈
+		int start;						
+		int end;							// 마지막번호						
 		int rowCount;						// 총 내역
-		int totalPage=1;					// 총 페이지
+		int totalPage;					// 총 페이지
 		int block;
 		int fromPage;
 		int toPage;
@@ -64,14 +63,15 @@ public class MyPageController {
 		}
 		
 		//페이지 구하기	
-		start = (page*row)-(row); // 0, 3, 6...
-		end = (page*row)-1; // 2, 5, 8
-		totalPage=(rowCount/row)+1;
+		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...
+		end = curpage*rowSize; // 2, 5, 8
+		totalPage=(rowCount/rowSize)+1;
+		if(totalPage==0) curpage=0;
 		
 		//페이지 넘버링
 		block=5;
-		fromPage=((page-1)/block*block)+1;
-		toPage=((page-1)/block*block)+block;
+		fromPage=((curpage-1)/block*block)+1;
+		toPage=((curpage-1)/block*block)+block;
 		
 		if(toPage>totalPage)
 			toPage=totalPage;
@@ -89,7 +89,7 @@ public class MyPageController {
 		model.addAttribute("start", start);
 		model.addAttribute("end", end);
 		model.addAttribute("totalPage", totalPage);
-		model.addAttribute("page", page);		
+		model.addAttribute("curpage", curpage);		
 		model.addAttribute("today", today);	
 		model.addAttribute("type", type);
 		model.addAttribute("list", list);

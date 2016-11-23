@@ -10,7 +10,7 @@
 <body>
 	<center>
 		<div class="bg2">
-			<a href="Amovielist.do?sPage=${page }">
+			<a href="aMovieList.do?sPage=${page }">
 				<button class="menubar">영화리스트 관리</button>
 			</a>
 			<a href="adminReserveList.do">

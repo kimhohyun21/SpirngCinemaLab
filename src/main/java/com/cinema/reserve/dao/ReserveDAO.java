@@ -88,6 +88,12 @@ public class ReserveDAO extends SqlSessionDaoSupport{
 	public void updateCancel(int rNo){
 		getSqlSession().update("updateCancel", rNo);
 	}
+	
+	//영화 번호 받아오기
+	public int getMno(String title){
+		int nMo=getSqlSession().selectOne("getMno", title);
+		return nMo;
+	}
 }
 
 

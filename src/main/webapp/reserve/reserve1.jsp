@@ -11,6 +11,10 @@
 	<!-- Ajax 실행 -->					
 	<script type="text/javascript">	
 		$(document).ready(function(){
+			$("p#day${day7[0] }").attr("class", "daySelected");
+			$("p#local${local }").attr("class", "localSelected");
+			$("p#theater${tname }").attr("class", "theaterSelected");
+			$('p#movie${nMo }').attr("class", "movieSelected");
 			$('p.day').hover(function(){
 				$(this).css("background", "");
 				$(this).toggleClass("active").next().stop(true, true).slideToggle();

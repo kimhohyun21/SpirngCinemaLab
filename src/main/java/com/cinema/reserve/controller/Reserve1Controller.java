@@ -107,6 +107,7 @@ public class Reserve1Controller {
 		
 		//영화 선택값 받기
 		if(title==null) title=movieList.get(0).getTitle();  //선택이 없을 경우 초기값	
+		int nMo=dao.getMno(title);
 		
 		//영화관 및 영화 선택에 따른 영화 상영관 및 상영시간 받기
 		Map map=new HashMap();
@@ -160,6 +161,7 @@ public class Reserve1Controller {
 		model.addAttribute("poster", poster);
 		model.addAttribute("payment", payment);
 		model.addAttribute("movietime", movietime);
+		model.addAttribute("nMo", nMo);
 		
 		model.addAttribute("jsp", "../reserve/reserve1.jsp");
 	

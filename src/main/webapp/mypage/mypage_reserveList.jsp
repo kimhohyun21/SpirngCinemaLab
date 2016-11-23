@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>MyPage ReserveList</title>
 	<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
 	<style type="text/css">
 		tr,td{
@@ -14,8 +14,44 @@
 	</style>
 	<script type="text/javascript">
 		function reserveCancel(){
-			$('#cancelfrm').submit();
+			$.ajax({
+				type: "POST",
+				url: "reserve5_Cancel.do",
+				data:$('#cancelfrm').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.cancelCheck==true){
+						$.jQueryAlert("성공 : "+data.cancelMsg);
+						location.href="reserveList.do?no="+data.no;
+					}else{
+						$.jQueryAlert("실패 : "+data.cancelMsg);
+						location.href="reserveList.do?no="+data.no;
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("통신 실패");
+				}
+			});
 		}
+		
+		/* jQuery Alert 창 */
+		jQuery.jQueryAlert = function (msg) {
+	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+	        $("body").append($messageBox);
+			
+	        $($messageBox).dialog({
+	            open: $($messageBox).append(msg),
+	            autoOpen: true,
+	            modal: true,
+	            resizable:false, 
+				width: 400,
+	            buttons: {
+	                OK: function () {
+	                    $(this).dialog("close");
+	                }
+	            }
+	        });
+	    };
 	</script>
 </head>
 <body>
@@ -33,12 +69,13 @@
 				<p>내역이 없습니다.</p>
 			</c:if>
 		</div>
-		<table>
+		<div class="reservelist">
+		<table class="reserve_detail">
 			<c:forEach var="vo" items="${list }" begin="${start }" end="${end }" step="1">
 					<tr>
 						<td>
 							<a href="moviedetail.do?no=${vo.mno }">
-								<img src="${vo.poster}" width="250" height="350">
+								<img src="${vo.poster}" width="200" height="300">
 							</a>
 						</td>
 						<td>
@@ -49,7 +86,7 @@
 							결제방식: ${vo.paytype } / 금액: ${vo.payment }원 
 							<c:if test="${vo.rdate > today}">
 								<div align="right">
-									<form id="cancelfrm" action="reserve5_Cancel.do" method="post">
+									<form id="cancelfrm">
 										<input type="hidden" name="rNo" value="${vo.rNo}">
 										<input type="hidden" name="title" value="${vo.title}">
 									</form>
@@ -66,55 +103,49 @@
 			<table id="type_1">
 				<tr>
 					<td align="right">
-						<c:if test="${page>block }">
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=1">
-								처음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${fromPage-1 }">
-								이전
-							</a>&nbsp;
+						<a href="reserveList.do?no=${mvo.no }&page=${1}">
+							<img src="movie/img/begin.gif">
+						</a>
+						<c:if test="${curpage>block }">
+							<a href="reserveList.do?no=${mvo.no }&page=${1}">
+								<img src="movie/img/prev.gif">
+							</a>
 						</c:if>
 							
-						<c:if test="${page<=block }">
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=1">
-								처음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${page>1?page-1:page }">
-								이전
-							</a>&nbsp;
+						<c:if test="${curpage<=block }">
+							<a href="reserveList.do?no=${mvo.no }&page=${curpage>1 ? curpage-1 : 1}">
+								<img src="movie/img/prev.gif">
+							</a>
 						</c:if>
 							
 						<c:forEach var="i" begin="${fromPage }" end="${toPage }">
 							[
-							<c:if test="${page==i }">
+							<c:if test="${curpage==i }">
 								<span style="color:red">${i }</span>
 							</c:if>
-							<c:if test="${page!=i }">
-								<a href="reserveList.do?no=${mvo.no }&type=1&page=${i }">${i }</a>
+							<c:if test="${curpage!=i }">
+								<a href="reserveList.do?no=${mvo.no }&page=${i }">${i }</a>
 							</c:if>
 							]
 						</c:forEach>
 							
 						<c:if test="${toPage<totalPage }">
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${toPage+1 }">
-								다음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${totalPage }">
-								마지막
+							<a href="reserveList.do?no=${mvo.no }&page=${toPage+1 }">
+								<img src="movie/img/next.gif">
 							</a>
 						</c:if>
 							
 						<c:if test="${toPage>=totalPage }">
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${page<totalPage?page+1:page }">
+							<a href="reserveList.do?no=${mvo.no }&page=${curpage<totalPage?curpage+1:totalPage }">
 													<!-- A < B ? 만족시 : 불만족시 -->
-								다음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&type=1&page=${totalPage }">
-								마지막
+								<img src="movie/img/next.gif">
 							</a>
-						</c:if>
-						&nbsp;&nbsp;
-						${page }page / ${totalPage }pages
+						</c:if>			
+						<a href="reserveList.do?no=${mvo.no }&page=${totalPage }">
+							<img src="movie/img/end.gif">
+						</a>							
+						&nbsp;
+						${curpage }page / ${totalPage }pages
 					</td>
 				</tr>
 			</table>
@@ -125,30 +156,27 @@
 			<table id="type_0">
 				<tr>
 					<td align="right">
-						<c:if test="${page>block }">
-							<a href="reserveList.do?no=${mvo.no }&page=1">
-								처음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&page=${fromPage-1 }">
-								이전
-							</a>&nbsp;
+						<a href="reserveList.do?no=${mvo.no }&page=${1}">
+							<img src="movie/img/begin.gif">
+						</a>
+						<c:if test="${curpage>block }">
+							<a href="reserveList.do?no=${mvo.no }&page=${1}">
+								<img src="movie/img/prev.gif">
+							</a>
 						</c:if>
 							
-						<c:if test="${page<=block }">
-							<a href="reserveList.do?no=${mvo.no }&page=1">
-								처음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&page=${page>1?page-1:page }">
-								이전
-							</a>&nbsp;
+						<c:if test="${curpage<=block }">
+							<a href="reserveList.do?no=${mvo.no }&page=${curpage>1 ? curpage-1 : 1}">
+								<img src="movie/img/prev.gif">
+							</a>
 						</c:if>
 							
 						<c:forEach var="i" begin="${fromPage }" end="${toPage }">
 							[
-							<c:if test="${page==i }">
+							<c:if test="${curpage==i }">
 								<span style="color:red">${i }</span>
 							</c:if>
-							<c:if test="${page!=i }">
+							<c:if test="${curpage!=i }">
 								<a href="reserveList.do?no=${mvo.no }&page=${i }">${i }</a>
 							</c:if>
 							]
@@ -156,28 +184,26 @@
 							
 						<c:if test="${toPage<totalPage }">
 							<a href="reserveList.do?no=${mvo.no }&page=${toPage+1 }">
-								다음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&page=${totalPage }">
-								마지막
+								<img src="movie/img/next.gif">
 							</a>
 						</c:if>
 							
 						<c:if test="${toPage>=totalPage }">
-							<a href="reserveList.do?no=${mvo.no }&page=${page<totalPage?page+1:page }">
+							<a href="reserveList.do?no=${mvo.no }&page=${curpage<totalPage?curpage+1:totalPage }">
 													<!-- A < B ? 만족시 : 불만족시 -->
-								다음
-							</a>&nbsp;
-							<a href="reserveList.do?no=${mvo.no }&page=${totalPage }">
-								마지막
+								<img src="movie/img/next.gif">
 							</a>
-						</c:if>										
-						&nbsp;&nbsp;
-						${page }page / ${totalPage }pages
+						</c:if>			
+						<a href="reserveList.do?no=${mvo.no }&page=${totalPage }">
+							<img src="movie/img/end.gif">
+						</a>							
+						&nbsp;
+						${curpage }page / ${totalPage }pages
 					</td>
 				</tr>
 			</table>
 		</c:if>
+		</div>
 	</div>
 </body>
 </html>

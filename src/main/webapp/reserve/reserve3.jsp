@@ -72,7 +72,7 @@
 				width: 400,
                 buttons: {
                     OK: function () {
-                        $('div #alertBox').dialog("close");
+                        $(this).dialog("close");
                     }
                 }
             });

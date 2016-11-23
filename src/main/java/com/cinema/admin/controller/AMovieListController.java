@@ -58,6 +58,7 @@ public class AMovieListController {
 		model.addAttribute("jsp","../mypage/mypage.jsp");
 		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
 		model.addAttribute("jsp3", "../adminpage/movielist.jsp");
+		
 		return "main/main";
 	}
 }

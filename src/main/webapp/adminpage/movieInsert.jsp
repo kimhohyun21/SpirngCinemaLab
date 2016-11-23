@@ -39,9 +39,7 @@
 				<td align="left">
 					<input type="text" name="title" size="30">					
 				</td>
-				<th>
-					시청연령
-				</th>
+				<th>시청연령</th>
 				<td align="left">
 					<select name="grade">
 						<option>선택</option>	
@@ -54,9 +52,7 @@
 			</tr>
 			
 			<tr>
-				<th>
-					포스터 URL
-				</th>
+				<th>포스터 URL</th>
 				<td align="left" colspan="3">
 					<input type="text" name="poster" style="width:95%" 
 					placeholder="ex)http://movie.phinf.naver.net/20111223_44/1324635585945KDOJ5_JPEG/movie_image.jpg">
@@ -72,9 +68,7 @@
 					<input type="text" name="month" size="1" placeholder="월" onkeypress="num()"><b>- </b>
 					<input type="text" name="day" width="10"  size="1" placeholder="일" onkeypress="num()">
 				</td>
-				<th>
-					상영종류
-				</th>
+				<th>상영종류</th>
 				<td align="left">
 					<select name="type">
 						<option>선택</option>
@@ -86,48 +80,36 @@
 			</tr>
 			
 			<tr>
-				<th>
-					감독
-				</th>
+				<th>감독</th>
 				<td align="left">
 					<input type="text" name="director">
 				</td>
-				<th>
-					상영시간
-				</th>
+				<th>상영시간</th>
 				<td align="left">
 					<input type="text" size="1" name="runtime" onkeypress="num()">분
 				</td>
 			</tr>
 			<tr>
-				<th>
-					장르
-				</th>
+				<th>장르</th>
 				<td colspan="3">
 					<input type="text" name="genre" style="width: 90%" placeholder="ex)액션,판타지,SF,모험">
 				</td>
 			</tr>
 			<tr>
-				<th>
-					예고편
-				</th>
+				<th>예고편</th>
 				<td align="left" colspan="3">
 					<input type="text" name="trailer" style="width:90%" placeholder="ex)https://youtu.be/awyG1-xvqFY">
 				</td>
 			</tr>
 			<tr>
-				<th>
-					출연인물
-				</th>
+				<th>출연인물</th>
 				<td align="left" colspan="3">
 					<input type="text" name="cast" style="width:90%"
 					placeholder="ex)크리스 헴스워스(토르), 나탈리 포트만(제인 포스터), 톰 히들스턴(로키) 등">
 				</td>
 			</tr>
 			<tr>
-				<th>
-					줄거리
-				</th>
+				<th>줄거리</th>
 				<td colspan="3">
 					<pre><textarea style="width: 95%" cols="50" rows="10" name="content"></textarea></pre>
 				</td>
