@@ -57,19 +57,19 @@
 			<tr>
 				<td colspan="5" align="right">
 					<c:if test="${page>block }">
-						<a href="Amovielist.do?page=1">
+						<a href="aMovieList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="Amovielist.do?page=${fromPage-1 }">
+						<a href="aMovieList.do?page=${fromPage-1 }">
 							이전
 						</a>&nbsp;
 					</c:if>
 					
 					<c:if test="${page<=block }">
-						<a href="Amovielist.do?page=1">
+						<a href="aMovieList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="Amovielist.do?page=${page>1?page-1:page }">
+						<a href="aMovieList.do?page=${page>1?page-1:page }">
 							이전
 						</a>&nbsp;
 					</c:if>
@@ -80,26 +80,26 @@
 							<span style="color:red">${i }</span>
 						</c:if>
 						<c:if test="${page!=i }">
-							<a href="Amovielist.do?page=${i }">${i }</a>
+							<a href="aMovieList.do?page=${i }">${i }</a>
 						</c:if>
 						]
 					</c:forEach>
 					
 					<c:if test="${toPage<totalPage }">
-						<a href="Amovielist.do?page=${toPage+1 }">
+						<a href="aMovieList.do?page=${toPage+1 }">
 							다음
 						</a>&nbsp;
-						<a href="Amovielist.do?page=${totalPage }">
+						<a href="aMovieList.do?page=${totalPage }">
 							마지막
 						</a>
 					</c:if>
 					
 					<c:if test="${toPage>=totalPage }">
-						<a href="Amovielist.do?page=${page<totalPage?page+1:page }">
+						<a href="aMovieList.do?page=${page<totalPage?page+1:page }">
 												<!-- A < B ? 만족시 : 불만족시 -->
 							다음
 						</a>&nbsp;
-						<a href="Amovielist.do?page=${totalPage }">
+						<a href="aMovieList.do?page=${totalPage }">
 							마지막
 						</a>
 					</c:if>										

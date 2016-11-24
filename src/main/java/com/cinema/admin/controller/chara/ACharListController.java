@@ -18,7 +18,9 @@ public class ACharListController {
 	@RequestMapping("ACList.do")
 	public String charList(Model model, String page) {
 
+		//해당배우 정보
 		List<MovieVO> list = dao.AcharAllData();
+		
 		// 페이지 재료들
 		if (page == null)
 			page = "1";
@@ -35,7 +37,7 @@ public class ACharListController {
 			totalPage = totalPage - 1;
 		if (toPage > totalPage)
 			toPage = totalPage;
-
+		
 		model.addAttribute("page", ipage);
 		model.addAttribute("start", start);
 		model.addAttribute("end", end);
@@ -44,8 +46,9 @@ public class ACharListController {
 		model.addAttribute("fromPage", fromPage);
 		model.addAttribute("toPage", toPage);
 		model.addAttribute("list", list);
-		model.addAttribute("jsp", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/char/charlist.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+	    model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+	    model.addAttribute("jsp3", "../adminpage/char/charlist.jsp");
 		return "main/main";
 	}
 }

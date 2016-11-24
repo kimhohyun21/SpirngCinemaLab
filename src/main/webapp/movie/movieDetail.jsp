@@ -6,20 +6,18 @@
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <title>영화 상세</title>
-   <link rel="stylesheet" type="text/css" href="movie/style.css">
+   <title>Movie Detail</title>
+   <link rel="stylesheet" type="text/css" href="movie/movie_style.css">
 </head>
 <body>
-	<!-- 영화 상세 정보 불러오기 -->
-	<!-- 관리자로 로그인했을 시 영화 정보 수정하기 버튼 띄우기 -->
-	<c:if test="${mvo.admin eq '1' }">
-		<div align="right">
-			<a href="Amodifymovielist.do?no=${no }">
-				<b class="modify">수정하기</b>
-			</a>
-		</div>
-	</c:if>
+	<!-- 영화 상세 정보 불러오기 -->	
    <div class="detail">
+   <!-- 관리자로 로그인했을 시 영화 정보 수정하기 버튼 띄우기 -->
+	<c:if test="${mvo.admin eq '1' }">
+		<a href="Amodifymovielist.do?no=${no }">
+			<b class="modify">영화 수정 </b>
+		</a>
+	</c:if>
       <div class="detail2">
          <div id="poster_div">
             <img align="left" src="${vo.poster}" width="200" height="270" id="poster"><br>
@@ -85,11 +83,9 @@
                <td><span >출연진</span></td>
                <td colspan="10">
                		<c:if test="${mvo.admin eq '1' }">
-						<div align="right">
-							<a href="AcharUpdate.do?no=${no }&type=${type }">
-								<b style="color: red;">출연진 수정하기</b>
-							</a>
-						</div>
+						<a href="AcharUpdate.do?no=${no }&type=${type }">
+							<b class="castmodify">배우 수정</b>
+						</a>
 					</c:if>
                </td>
             </tr>
@@ -103,12 +99,12 @@
             </tr>
          </table>
       </div>
-      <iframe width="900" height="400" src="http://www.youtube.com/embed/${url }" frameborder="0" allowfullscreen id="youtube">
-         해당 브라우저는 iframe을 지원하지 않습니다. IE9 이상, 크롬, 파이어폭스를 이용해주세요.
-      </iframe>
+      <iframe marginheight="0" style="display:inline-block;"  width="900" height="400" src="http://www.youtube.com/embed/${url }" frameborder="0" allowfullscreen>
+	           해당 브라우저는 iframe을 지원하지 않습니다. IE9 이상, 크롬, 파이어폭스를 이용해주세요.
+	  </iframe>	  
       <!-- 댓글 페이지 --> 
-      <div align="center">
-         <jsp:include page="reply.jsp"></jsp:include>
+      <div align="center" class="replydiv">
+         <jsp:include page="movieReply.jsp"></jsp:include>
       </div>
    </div>
 </body>

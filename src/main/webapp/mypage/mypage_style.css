@@ -97,9 +97,16 @@ b{
     background-color: rgba(18, 44, 90, 0.85);
     text-align: center;
     border-bottom: 1px solid white;
+    color: white;
 }
 
-.menubar ul li a{
+/* 선택된 메뉴의 css*/
+.menubar ul li.liSelected{
+	background-color: white;
+	color: black;	
+}
+.menubar ul li:HOVER{
+	background-color: black;
 	color: white;
 }
 
@@ -204,7 +211,4 @@ b{
 	position: relative;
 	top:70px;
 }
-
-
-
 
