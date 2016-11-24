@@ -20,22 +20,12 @@ public class MemberReserveListController {
 	private MemberDAO dao;
 	
 	@RequestMapping("reserveList.do")
-	public String reserveList(Model model, String no, String type, String sPage) {
+	public String reserveList(Model model, String no, String type, String page) {
 		//예매내역,관람내역 구분
 		int ino = Integer.parseInt(no);
 		List<MemberReserveListVO> list;
-		
-		//페이지 재료
-		if(sPage==null || sPage.equals("0")) sPage="1";
-		int curpage=Integer.parseInt(sPage);	// 현재페이지
-		int rowSize=5;						//컬럼사이즈
-		int start;						
-		int end;							// 마지막번호						
-		int rowCount;						// 총 내역
-		int totalPage;					// 총 페이지
-		int block;
-		int fromPage;
-		int toPage;
+			
+		int rowCount;						//예매/관람 내역 총 개수
 		
 		if (type == null)
 			type = "0";
@@ -47,6 +37,7 @@ public class MemberReserveListController {
 			
 		} else {		//예매내역
 			list = dao.memberReserveList(ino);
+			
 			//마지막페이지
 			rowCount=dao.ReserveCount2(ino);
 		}
@@ -63,16 +54,17 @@ public class MemberReserveListController {
 		}
 		
 		//페이지 구하기	
-		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...
-		end = curpage*rowSize; // 2, 5, 8
-		totalPage=(rowCount/rowSize)+1;
+		if(page==null || page.equals("0")) page="1";
+		int curpage=Integer.parseInt(page);			// 현재페이지
+		int rowSize=5;								//컬럼사이즈
+		int start= (curpage*rowSize)-(rowSize-1);	// 0, 3, 6...				
+		int end= curpage*rowSize;					// 2, 5, 8	
+		int totalPage=(rowCount/rowSize)+1;			// 총 페이지
+		int block=5;
+		int fromPage=((curpage-1)/block*block)+1;
+		int toPage=((curpage-1)/block*block)+block;
+		
 		if(totalPage==0) curpage=0;
-		
-		//페이지 넘버링
-		block=5;
-		fromPage=((curpage-1)/block*block)+1;
-		toPage=((curpage-1)/block*block)+block;
-		
 		if(toPage>totalPage)
 			toPage=totalPage;
 		

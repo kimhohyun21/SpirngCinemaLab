@@ -34,20 +34,43 @@
 			</c:if>
 		</div>
 		<div class="reservelist">
-		<table class="reserve_detail">
-			<c:forEach var="vo" items="${list }" begin="${start }" end="${end }" step="1">
+		<c:forEach var="vo" items="${list }" begin="${start }" end="${end }" step="1">
+			<table class="reserve_detail" border="1">
+			
 					<tr>
-						<td>
+						<td rowspan="5">
 							<a href="moviedetail.do?no=${vo.mno }">
 								<img src="${vo.poster}" width="200" height="300">
 							</a>
 						</td>
 						<td>
-							<h3>${vo.title }</h3><br><br>
-							상영날짜: ${vo.listdate }<br>
-							상영정보: ${vo.movietime }&nbsp;${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관<br>
-							좌석: ${vo.seat }<br>
-							결제방식: ${vo.paytype } / 금액: ${vo.payment }원 
+							<table >
+								<tr>
+									<td>
+										<h3>${vo.title }</h3>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										상영날짜: ${vo.listdate }
+									</td>
+								</tr>
+								<tr>
+									<td>
+										상영정보: ${vo.movietime }&nbsp;${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관
+									</td>
+								</tr>
+								<tr>
+									<td>
+										좌석: ${vo.seat }
+									</td>
+								</tr>
+								<tr>
+									<td>
+										결제방식: ${vo.paytype } / 금액: ${vo.payment }원 
+									</td>
+								</tr>
+							</table>
 							<c:if test="${vo.rdate > today}">
 								<div align="right">
 									<form id="cancelfrm" action="reserve5_Cancel.do" method="post">
@@ -59,8 +82,9 @@
 							</c:if>
 						</td>
 					</tr>
-			</c:forEach>
-		</table>
+			
+			</table>
+		</c:forEach>
 		
 		<!-- 관람내역 일때 -->
 		<c:if test="${type eq '1' }">
