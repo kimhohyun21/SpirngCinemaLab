@@ -2,6 +2,7 @@ package com.cinema.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.*;
 
 import javax.servlet.http.HttpSession;
@@ -23,12 +24,13 @@ public class MyPageController {
 	public String reserveList(Model model, String no, String type, String page) {
 		//예매내역,관람내역 구분
 		int ino = Integer.parseInt(no);
+
 		List<MemberReserveListVO> list=new ArrayList<>();
 		
 		//페이지 재료
 		if(page==null || page.equals("0")) page="1";
 		int curpage=Integer.parseInt(page);	// 현재페이지
-		int rowSize=5;						//컬럼사이즈
+		int rowSize=4;						//컬럼사이즈
 		int start;						
 		int end;							// 마지막번호						
 		double rowCount;						// 총 내역
@@ -40,7 +42,7 @@ public class MyPageController {
 		if (type == null)
 			type = "0";
 		
-		if (type.equals("1")) {	// 관람내역			
+		if (type.equals("1")) {	// 관람내역	
 			list = dao.memberWhatchData(ino);
 			//마지막페이지
 			rowCount=dao.ReserveCount(ino);
@@ -48,8 +50,8 @@ public class MyPageController {
 		} else {		//예매내역
 			list = dao.memberReserveList(ino);
 			//마지막페이지
-			rowCount=dao.ReserveCount2(ino);			
-		}		
+			rowCount=dao.ReserveCount2(ino);
+		}
 		
 		//페이지 구하기	
 		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...

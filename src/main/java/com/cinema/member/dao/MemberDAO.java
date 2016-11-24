@@ -77,7 +77,7 @@ public class MemberDAO extends SqlSessionDaoSupport{
 		return list;		
 	}
 	
-	public List<MemberReserveListVO> memberReserveList(int no){//@@@@@@@@@@@
+	public List<MemberReserveListVO> memberReserveList(int no){
 		List<MemberReserveListVO> list=getSqlSession().selectList("memberReserveList",no);
 		return list;		
 	}

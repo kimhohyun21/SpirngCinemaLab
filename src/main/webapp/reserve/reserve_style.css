@@ -339,7 +339,7 @@ p.movietime, p.timeSelected{
 
 p.timeSelected, p.movieSelected, p.theaterSelected, 
 p.localSelected, p.daySelected{
-	background: #ef7e23;	
+	background: #f39e58;
 }
 
 p.day.active, p.local.active, p.theater.active, 

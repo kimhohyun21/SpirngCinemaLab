@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/test.css">
+<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
 <script type="text/javascript">
 	function send(){
 		var f=document.frm;
@@ -29,9 +29,9 @@
 		<table width="700" height="280" class="type02">
 			<thead>
 				<tr>
-					<td align="center" colspan="4">
+					<th align="center" colspan="4" class="char_title">
 						영화수정
-					</td>
+					</th>
 				</tr>
 			</thead>
 			<tr class="br">

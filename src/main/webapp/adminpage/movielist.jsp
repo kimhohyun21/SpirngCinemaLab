@@ -10,7 +10,7 @@
 </head>
 <body>
 	<center>
-		<table width="700" class="reg_btn">
+		<table width="699" class="reg_btn">
 			<tr>
 				<td>
 					<a href="AmovieInsert.do">
@@ -56,53 +56,24 @@
 		</tbody>
 			<tr>
 				<td colspan="5" align="right">
-					<c:if test="${page>block }">
-						<a href="aMovieList.do?page=1">
-							처음
-						</a>&nbsp;
-						<a href="aMovieList.do?page=${fromPage-1 }">
-							이전
-						</a>&nbsp;
-					</c:if>
+					<a href="aMovieList.do?page=${page>1?page-1:page}" style="color: red">
+						이전
+					</a>&nbsp;
 					
-					<c:if test="${page<=block }">
-						<a href="aMovieList.do?page=1">
-							처음
-						</a>&nbsp;
-						<a href="aMovieList.do?page=${page>1?page-1:page }">
-							이전
-						</a>&nbsp;
-					</c:if>
-					
-					<c:forEach var="i" begin="${fromPage }" end="${toPage }">
-						[
-						<c:if test="${page==i }">
-							<span style="color:red">${i }</span>
-						</c:if>
-						<c:if test="${page!=i }">
-							<a href="aMovieList.do?page=${i }">${i }</a>
-						</c:if>
-						]
+					<c:forEach var="i" begin="${fromPage}" end="${toPage}">
+						&nbsp;[
+					 	<c:if test="${page == i}">
+					 		<span style="color:red">${i}</span>
+					 	</c:if>
+					 	<c:if test="${page != i}">
+					 		<a href="aMovieList.do?page=${i }">${i }</a>
+					 	</c:if>
+					 	]&nbsp;
 					</c:forEach>
-					
-					<c:if test="${toPage<totalPage }">
-						<a href="aMovieList.do?page=${toPage+1 }">
-							다음
-						</a>&nbsp;
-						<a href="aMovieList.do?page=${totalPage }">
-							마지막
-						</a>
-					</c:if>
-					
-					<c:if test="${toPage>=totalPage }">
-						<a href="aMovieList.do?page=${page<totalPage?page+1:page }">
-												<!-- A < B ? 만족시 : 불만족시 -->
-							다음
-						</a>&nbsp;
-						<a href="aMovieList.do?page=${totalPage }">
-							마지막
-						</a>
-					</c:if>										
+				 	&nbsp;
+				 	<a href="aMovieList.do?page=${page<totalPage?page+1:page}" style="color: blue">
+				 		다음
+				 	</a>							
 					&nbsp;&nbsp;
 					${page }page / ${totalPage }pages
 				</td>

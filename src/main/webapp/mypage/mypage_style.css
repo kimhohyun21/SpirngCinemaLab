@@ -110,55 +110,45 @@ b{
 	color: white;
 }
 
-/*마이페이지 예매내역 */
+/*마이페이지 예매 / 관람 내역 */
 .mrList_btn {
-   border: 1px solid #0a3c59;
-   background: #3e779d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
-   padding: 11px 22px;
-   -webkit-border-radius: 6px;
-   -moz-border-radius: 6px;
-   border-radius: 6px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   text-shadow: #7ea4bd 0 1px 0;
-   color: #052c48;
-   font-size: 16px;
-   text-decoration: none;
-   vertical-align: middle;
-   position: relative;
-   top: 20px;
-   left: -25px;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:13px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;	
+   	position: relative;
+   	top: 20px;
+   	right: 35px;
 }
 .mrList_btn:hover {
-   border: 1px solid #0a3c59;
-   text-shadow: #1e4158 0 1px 0;
-   background: #3e779d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
-   color: #fff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
 }
 .mrList_btn:active {
-   text-shadow: #1e4158 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #65a9d7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
-   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-   background: -o-linear-gradient(top, #3e779d, #65a9d7);
-   background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
-   color: #fff;
+    position:relative;
+	top:19px;
 }
 
 #lion_img img{
@@ -176,9 +166,44 @@ b{
 	font-weight: bold;
 }
 
-#type_0{
+/* #type_0{
 	position: relative;
 	top: 120px;
+}
+
+#type_1{
+	position: relative;
+	bottom: 85px;
+} */
+
+.detail{
+	background-color: #e6f2ff;
+	border-radius: 10px;
+	padding-left: 5px;
+}
+
+.detail_h3{
+	font-size: 25px;
+}
+
+.detail h3{
+	text-align: center;
+}
+
+.div1{
+	margin-top:50px;
+	position: relative;
+	right: 38px;
+}
+
+.reservelist{
+	position: relative;
+	right: 28px;
+}
+
+.page, .page1{
+	margin-top: 1px;
+	margin-bottom: 10px;
 }
 
 /* 마이페이지-회원정보 수정 */
@@ -206,9 +231,5 @@ b{
 	background-color: #cce6ff;
 }
 
-/* 마이페이지-관람내역 */
-.reservelist{
-	position: relative;
-	top:70px;
-}
+
 

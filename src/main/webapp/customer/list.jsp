@@ -149,11 +149,10 @@
 				<th width="20%" align="center">작성일</th>
 				<th width="10%" align="center">조회수</th>
 			</tr>
-		<c:forEach var="vo" items="${list}">
-			<tr>
+			<c:forEach var="vo" items="${list}">
+			<tr class="list_tr">
 				<td width="10%" align="center">${vo.qno}</td>
 				<td width="45%" align="left" class="subject">
-					
 					<c:if test="${vo.group_tab!=0}">
 						<c:forEach var="i" begin="1" end="${vo.group_tab}">
 							&nbsp;&nbsp;

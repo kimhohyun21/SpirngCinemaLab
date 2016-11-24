@@ -73,7 +73,7 @@
 			<tr>
 				<td colspan="4" align="center">
 					<a href="reservelist.do">
-						<input type="button" value="돌아가기" class="table_btn">
+						<input type="button" value="돌아가기" class="table_btn" onclick="javascript:history.back()">
 					</a>
 				</td>
 			</tr>
