@@ -25,6 +25,7 @@ public class MovieController {
 			type="1";
 		int type2=Integer.parseInt(type);
 		List<MovieVO> list=dao.getmovieList(type2);
+		model.addAttribute("type", type);
 		model.addAttribute("list", list);
 		model.addAttribute("jsp", "../movie/movieList.jsp");
 		

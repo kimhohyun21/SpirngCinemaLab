@@ -10,6 +10,11 @@
 	<meta content="BlendTrans(Duration=0.9)" http-equiv="Page-exit">
 	<title>Marvel Cinema</title>
 	<link rel="stylesheet" type="text/css" href="movie/movie_style.css">
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn${type }').attr("class", "selectedBtn");
+		});
+	</script>
 </head>
 <body>	
 	<div class="movielist">   
@@ -17,17 +22,17 @@
 		<tr>
 			<td class="movieBtn">
 	      		<a href="movieList.do?type=0">
-	            	<button class="list_btn">
+	            	<button class="list_btn" id="btn0">
 						<span class="list">상영 종료 영화</span>
 					</button>
 				</a>
 				<a href="movieList.do?type=1">
-					<button class="list_btn">
+					<button class="list_btn" id="btn1">
 						<span class="list">현재 상영 영화</span>
 					</button>
 				</a>
 				<a href="movieList.do?type=2">
-					<button class="list_btn">
+					<button class="list_btn" id="btn2">
 						<span class="list">상영 예정 영화</span>
 					</button>
 		      	</a>
