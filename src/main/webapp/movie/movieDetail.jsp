@@ -81,7 +81,7 @@
          <table width="1000">
             <tr>
                <td><span >출연진</span></td>
-               <td colspan="10">
+               <td colspan="10" align="right">
                		<c:if test="${mvo.admin eq '1' }">
 						<a href="AcharUpdate.do?no=${no }&type=${type }">
 							<b class="castmodify">배우 수정</b>
