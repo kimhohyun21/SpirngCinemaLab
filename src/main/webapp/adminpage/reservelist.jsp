@@ -46,20 +46,24 @@
 		</tbody>
 			<tr>
 				<td align="right" colspan="6">
-					<a href="aReserveList.do?page=${page>1?page-1:page}" style="color: red">이전</a>
-					&nbsp;
+					<a href="aReserveList.do?page=${page>1?page-1:page}" style="color: red">
+						이전
+					</a>&nbsp;
+					
 					<c:forEach var="i" begin="${fromPage}" end="${toPage}">
 						&nbsp;[
-					 	<c:if test="${Page == i}">
+					 	<c:if test="${page == i}">
 					 		<span style="color:red">${i}</span>
 					 	</c:if>
-					 	<c:if test="${Page != i}">
+					 	<c:if test="${page != i}">
 					 		<a href="aReserveList.do?page=${i}">${i}</a>
 					 	</c:if>
 					 	]&nbsp;
 					</c:forEach>
-				 	&nbsp;&nbsp;
-					<a href="aReserveList.do?page=${page<totalpage?page+1:page}" style="color: blue">다음</a>
+				 	&nbsp;
+					<a href="aReserveList.do?page=${page<totalpage?page+1:page}" style="color: blue">
+						다음
+					</a>
 					&nbsp;&nbsp;
 					${page} page / ${totalpage} pages
 				</td>

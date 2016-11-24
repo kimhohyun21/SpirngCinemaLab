@@ -92,17 +92,17 @@
 				<tr>
 					<td align="right">
 						<a href="reserveList.do?no=${mvo.no }&page=${1}">
-							<img src="image/begin.gif">
+							<!-- <img src="image/begin.gif"> -->처음
 						</a>
 						<c:if test="${curpage>block }">
 							<a href="reserveList.do?no=${mvo.no }&page=${1}">
-								<img src="image/prev.gif">
+								<!-- <img src="image/prev.gif"> -->이전
 							</a>
 						</c:if>
 							
 						<c:if test="${curpage<=block }">
 							<a href="reserveList.do?no=${mvo.no }&page=${curpage>1 ? curpage-1 : 1}">
-								<img src="image/prev.gif">
+								<!-- <img src="image/prev.gif"> -->이전
 							</a>
 						</c:if>
 							
@@ -119,18 +119,18 @@
 							
 						<c:if test="${toPage<totalPage }">
 							<a href="reserveList.do?no=${mvo.no }&page=${toPage+1 }">
-								<img src="image/next.gif">
+								<!-- <img src="image/next.gif"> -->다음
 							</a>
 						</c:if>
 							
 						<c:if test="${toPage>=totalPage }">
 							<a href="reserveList.do?no=${mvo.no }&page=${curpage<totalPage?curpage+1:totalPage }">
 													<!-- A < B ? 만족시 : 불만족시 -->
-								<img src="image/next.gif">
+								<!-- <img src="image/next.gif"> -->다음
 							</a>
 						</c:if>			
 						<a href="reserveList.do?no=${mvo.no }&page=${totalPage }">
-							<img src="image/end.gif">
+							<!-- <img src="image/end.gif"> -->마지막
 						</a>							
 						&nbsp;
 						${curpage }page / ${totalPage }pages

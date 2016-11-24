@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/test.css">
+<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
 <script type="text/javascript">
 	function send(){
 		var f=document.frm;
@@ -21,9 +21,12 @@
 <body>
 	<div align="center">
 	<form action="ACUpdate.do?cno=${vo.cno }" name="frm" method="post">
-		<table width="550" height="280" class="type02">
+		<table width="550" height="280" class="type05">
 			<tr>
-				<th align="right">
+				<th align="center" colspan="2" class="char_title">배우 상세</th>
+			</tr>
+			<tr>
+				<th>
 					이름
 				</th>
 				<td align="left">
@@ -31,7 +34,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right">
+				<th>
 					이미지URL
 				</th>
 				<td align="left">
@@ -39,7 +42,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="right" rowspan="5" valign="baseline">
+				<th rowspan="5" >
 					출연영화
 				</th>
 				<td>
