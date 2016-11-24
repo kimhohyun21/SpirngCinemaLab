@@ -31,7 +31,7 @@ public class MyPageController {
 		int rowSize=5;						//컬럼사이즈
 		int start;						
 		int end;							// 마지막번호						
-		int rowCount;						// 총 내역
+		double rowCount;						// 총 내역
 		int totalPage;					// 총 페이지
 		int block;
 		int fromPage;
@@ -48,14 +48,14 @@ public class MyPageController {
 		} else {		//예매내역
 			list = dao.memberReserveList(ino);
 			//마지막페이지
-			rowCount=dao.ReserveCount2(ino);
+			rowCount=dao.ReserveCount2(ino);			
 		}		
 		
 		//페이지 구하기	
 		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...
 		end = curpage*rowSize; // 2, 5, 8
 		totalPage=(int) Math.ceil(rowCount/rowSize);
-		
+		System.out.println(totalPage);
 		if(totalPage==0) curpage=0;
 
 		//페이지 넘버링
@@ -75,7 +75,6 @@ public class MyPageController {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		System.out.println(today);
 		//메뉴 선택 구분인자
 		String menuType="reserveList";
 		

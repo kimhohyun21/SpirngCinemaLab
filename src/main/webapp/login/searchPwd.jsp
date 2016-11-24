@@ -57,7 +57,7 @@
 </head>
 <body>
 	<div align="center" class="searchBg">
-		<form action="searchId_ok.do" method="post" name="frm" id="frm">
+		<form action="searchPwd_ok.do" method="post" name="frm" id="frm">
 			<h2 class="id" id="selectedBg">
 				<a href="searchId.do">아이디 찾기</a>
 			</h2>
@@ -74,7 +74,7 @@
 				<tr>
 					<td align="right">
 						<label for="id" class="inputlabel">아이디 :</label>
-						<input type="text" placeholder="생년월일" name="id" id="id" onkeydown="enter()">				
+						<input type="text" placeholder="아이디" name="id" id="id" onkeydown="enter()">				
 					</td>
 				</tr>
 				<tr>

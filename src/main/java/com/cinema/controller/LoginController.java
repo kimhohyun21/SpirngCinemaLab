@@ -83,7 +83,6 @@ public class LoginController {
 	//아이디 검색 완료
 	@RequestMapping("searchId_ok.do")
 	public String searchId_ok(Model model, String phone, String birth, String name){
-		System.out.println(name+" "+birth+" "+phone);
 		MemberVO vo=new MemberVO();
 		phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
 		birth=birth.substring(0, 4)+"-"+birth.substring(4,6)+"-"+birth.substring(6,8);
@@ -91,8 +90,9 @@ public class LoginController {
 		vo.setName(name);
 		vo.setBirth(birth);
 		vo.setPhone(phone);
-		
+		System.out.println(name+birth+phone);
 		String id=dao.memberFindId(vo);
+		System.out.println(id);
 		model.addAttribute("pwd", "패스");
 		model.addAttribute("id", id);
 		model.addAttribute("jsp", "../login/giveInfo.jsp");

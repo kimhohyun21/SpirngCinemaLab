@@ -12,20 +12,16 @@ public class CustomerUpdateOkController {
 	private CustomerDAO dao;
 	
 	@RequestMapping("update_ok.do")
-	public String handlerRequest(Model model, String content, String subject, String strNo, String strPage){
-		try{
-			int no=Integer.parseInt(strNo);
-			CustomerVO vo = new CustomerVO();
-			vo.setQcontent(content);
-			vo.setQsubject(subject);
-			vo.setQno(no);
-			
-			dao.customerUpdate_ok(vo);
-			
-			model.addAttribute("page", strPage);
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}
+	public String handlerRequest(Model model, String content, String subject, int no, String page){
+		
+		CustomerVO vo = new CustomerVO();
+		vo.setQcontent(content);
+		vo.setQsubject(subject);
+		vo.setQno(no);
+		
+		dao.customerUpdate_ok(vo);
+		
+		model.addAttribute("page", page);
 		
 		return "customer/update_ok";
 	}

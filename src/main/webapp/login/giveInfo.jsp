@@ -6,15 +6,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="login/login_style.css">
-	<title>Give Info</title>
-		<c:if test="${id eq null || pwd eq null}">
-			<script type="text/javascript">
-				$.jQueryAlert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
-				history.back();
-			</script>
-		</c:if>
-		
+	<title>Give Info</title>	
 	<script type="text/javascript">
+		$(document).ready(function(){
+			if(${pwd==null || id==null}){
+				$.jQueryAlert('입력하신 정보가 틀리거나 요청하신 정보가 존재하지 않습니다');
+			}
+		});
+	
 		/* jQuery Alert 창 */
 		jQuery.jQueryAlert = function (msg) {
 		    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
@@ -26,8 +25,11 @@
 		        modal: true,
 		        resizable:false, 
 				width: 400,
+				beforeClose:function(){
+					history.back();
+				},
 		        buttons: {
-		            OK: function () {
+		            OK: function(){
 		                $(this).dialog("close");
 		            }
 		        }

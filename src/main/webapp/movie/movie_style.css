@@ -91,7 +91,7 @@ div.replydiv{
    padding-bottom: 8px;
 }
 
-#cast_div span{
+#cast_div span.cast{
    font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -278,7 +278,6 @@ div.detail{
    top:29px;
 }
 
-
 /* 별점 */
 .star-input>.input, .star-input>.input>label:hover, .star-input>.input>input:focus+label,
    .star-input>.input>input:checked+label {
@@ -390,7 +389,7 @@ div.detail{
    text-align: right;
 }
 
-.star-input>output>b.starSco {
+.star-input>output>b {
    font: bold 18px Helvetica, Arial, sans-serif;
    vertical-align: middle;
 }
@@ -399,8 +398,13 @@ div.detail{
    border: 1px solid;
 }
 
+table.btnArea{
+	position: relative;
+    top: 10px;
+}
+
 /* 관리자 수정하기 버튼 */
-.modify{
+span.modify{
 	position: relative;
 	left: 450px;
 	top: 10px;
@@ -412,8 +416,13 @@ div.detail{
 	background:#c0c0c0;
 	border-radius: 10px;
 	padding: 5px;
+	font-weight:bold;
 }
-.castmodify{
+span.modify:HOVER{
+	background: black;
+	color:white;
+}
+span.castmodify{
 	position: relative;
 	right: 10px;
     top: 5px;
@@ -425,13 +434,12 @@ div.detail{
 	background:#c0c0c0;
 	border-radius: 10px;
 	padding: 5px;
+	font-weight:bold;
 }
-table.btnArea{
-	position: relative;
-    top: 10px;
+span.castmodify:HOVER{
+	background: black;
+	color:white;
 }
-
-
 
 
 

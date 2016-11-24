@@ -20,10 +20,16 @@ div.loginBg h2{
     background: rgba(255, 255, 255, 0.54);
     z-index: 1;
 }
+div.loginBg h2.join{
+	position: relative;
+    top: 24px;
+    left: -24px;
+}
+
 div.searchBg h2{
 	position: relative;
     top: 66px;
-    left: 22px;
+    left: -9px;
     width: 170px;
     height: 30px;
     border-top: 1px solid rgba(105, 37, 35, 0.66);
@@ -38,7 +44,7 @@ div.searchBg h2{
 div.searchBg h2.pwd{
 	position: relative;
     top: 24px;
-    left: 207px;    
+    left: 182px;    
 }
 #selectedBg{
 	background: #999;
@@ -53,7 +59,16 @@ div.loginMain{
     height: 140px;
     padding: 20px;;
     position: relative;
-    top: 65px;
+    top: 23px;
+}
+div.joinMain{
+	border: 1px solid rgba(105, 37, 35, 0.66);
+    background: rgba(255, 255, 255, 0.54);
+    width: 380px;
+    min-height: 400px;
+    padding: 20px;;
+    position: relative;
+    top: 23px;
 }
 form#frm{
     width: 356px;
@@ -86,6 +101,7 @@ table#search_table{
     padding: 50px;;
     position: relative;
     top: 23px;	
+    left: -25px;
 }
 div.find{
 	margin: 5px;
