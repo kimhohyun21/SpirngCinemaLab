@@ -66,7 +66,7 @@
 	</error-page>
 	
 	<error-page>
-		<exception-type>String index out of range</exception-type>
+		<exception-type>java.lang.StringIndexOutOfBoundsException</exception-type>
 		<location>/error/errorRange.jsp</location>
 	</error-page>
 </web-app>

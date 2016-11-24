@@ -5,22 +5,42 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="login/login_style.css">
 	<title>Give Info</title>
 		<c:if test="${id eq null || pwd eq null}">
 			<script type="text/javascript">
-				alert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
+				$.jQueryAlert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
 				history.back();
 			</script>
 		</c:if>
+		
+	<script type="text/javascript">
+		/* jQuery Alert 창 */
+		jQuery.jQueryAlert = function (msg) {
+		    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+		    $("body").append($messageBox);
+		
+		    $($messageBox).dialog({
+		        open: $($messageBox).append(msg),
+		        autoOpen: true,
+		        modal: true,
+		        resizable:false, 
+				width: 400,
+		        buttons: {
+		            OK: function () {
+		                $(this).dialog("close");
+		            }
+		        }
+		    });
+		};			
+	</script>
 </head>
 <body>
-	<div align="center">
-		<div id="find">
+	<div align="center" class="searchBg">
+		<div class="find">
 			<c:if test="${id != '패스' }">
 				<h3>
-				입력하신 정보의 ID는<br/>
-				<b>${id }</b><br/>
-				입니다
+				입력하신 정보의 ID는<font style="color:red; font-weight:bold;">${id }</font>입니다.
 				</h3>
 				<a href="searchPwd.do">비밀번호 찾기</a>
 			</c:if>

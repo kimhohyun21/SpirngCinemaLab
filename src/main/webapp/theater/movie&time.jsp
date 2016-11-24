@@ -16,7 +16,7 @@
 			<c:if test="${vo.grade=='0'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_all.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -35,7 +35,7 @@
 			<c:if test="${vo.grade=='12'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_12.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -54,7 +54,7 @@
 			<c:if test="${vo.grade=='15'}">
 				<tr>
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_15.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -73,7 +73,7 @@
 			<c:if test="${vo.grade=='18'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 					 		<img src="image/bg_grade_18.png">&nbsp;${vo.title}
 						</a>
 					</td>

@@ -23,7 +23,7 @@ div.loginBg h2{
 div.searchBg h2{
 	position: relative;
     top: 66px;
-    left: -66px;
+    left: 22px;
     width: 170px;
     height: 30px;
     border-top: 1px solid rgba(105, 37, 35, 0.66);
@@ -33,6 +33,17 @@ div.searchBg h2{
     padding: 5px;
     background: rgba(255, 255, 255, 0.54);
     z-index: 1;
+    float: left;
+}
+div.searchBg h2.pwd{
+	position: relative;
+    top: 24px;
+    left: 207px;    
+}
+#selectedBg{
+	background: #999;
+	border-bottom: 1px solid rgba(105, 37, 35, 0.66);
+	z-index: 0;
 }
 
 div.loginMain{
@@ -68,16 +79,22 @@ label.inputlabel{
     font-weight: bold;
 }
 table#search_table{
-	width: 346px;
+	width: 406px;
 	height: 230px;
 	border: 1px solid rgba(105, 37, 35, 0.66);
     background: rgba(255, 255, 255, 0.54);
-    padding: 20px;;
+    padding: 50px;;
     position: relative;
-    top: 65px;	
+    top: 23px;	
 }
 div.find{
 	margin: 5px;
+	border: 1px solid rgba(105, 37, 35, 0.66);
+    background: rgba(255, 255, 255, 0.54);
+    position: relative;
+    top: 23px;	
+    width: 406px;
+	height: 230px;
 }
 input.btn, .searchBtn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;

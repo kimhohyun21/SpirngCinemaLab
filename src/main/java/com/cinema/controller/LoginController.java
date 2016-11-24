@@ -40,7 +40,7 @@ public class LoginController {
 		if(idcheck==0){
 			check="idnot";
 		}else{
-			MemberVO vo = dao.memberGetImfor(id);			
+			MemberVO vo = dao.memberGetInfo(id);			
 			if(pwd.equals(vo.getPwd())){
 				HttpSession session=request.getSession();
 				//패스워드 초기화
@@ -83,23 +83,20 @@ public class LoginController {
 	//아이디 검색 완료
 	@RequestMapping("searchId_ok.do")
 	public String searchId_ok(Model model, String phone, String birth, String name){
-		try{
-			MemberVO vo=new MemberVO();
-			phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
-			birth=birth.substring(0, 4)+"-"+birth.substring(4,6)+"-"+birth.substring(6,8);
-			
-			vo.setName(name);
-			vo.setBirth(birth);
-			vo.setPhone(phone);
-			
-			String id=dao.memberFindId(vo);
-			model.addAttribute("pwd", "패스");
-			model.addAttribute("id", id);
-			model.addAttribute("jsp", "../login/giveInfo.jsp");
-			
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}
+		System.out.println(name+" "+birth+" "+phone);
+		MemberVO vo=new MemberVO();
+		phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
+		birth=birth.substring(0, 4)+"-"+birth.substring(4,6)+"-"+birth.substring(6,8);
+		
+		vo.setName(name);
+		vo.setBirth(birth);
+		vo.setPhone(phone);
+		
+		String id=dao.memberFindId(vo);
+		model.addAttribute("pwd", "패스");
+		model.addAttribute("id", id);
+		model.addAttribute("jsp", "../login/giveInfo.jsp");
+		
 		return "main/main";
 	}
 	
