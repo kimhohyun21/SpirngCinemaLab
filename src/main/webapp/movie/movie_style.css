@@ -390,7 +390,7 @@ div.detail{
    text-align: right;
 }
 
-.star-input>output>b {
+.star-input>output>b.starSco {
    font: bold 18px Helvetica, Arial, sans-serif;
    vertical-align: middle;
 }
