@@ -52,7 +52,7 @@
 	 ]]>
 	</select>
 	<update id="AactorDeleteMno" parameterType="java.util.Map">
-		UPDATE characterList SET ${mno}=null WHERE cno=#{cno}
+		UPDATE characterList SET ${mno}=0 WHERE cno=#{cno}
 	</update>
 	<update id="AactorInsertMno" parameterType="java.util.Map">
 		UPDATE characterList SET ${mno}=#{movieNo} WHERE cno=#{cno}
@@ -72,7 +72,8 @@
 	<update id="ACmodify" parameterType="java.util.Map">
 		UPDATE characterList SET cname=#{cname}, img=#{img} WHERE cno=#{cno} 
 	</update>
-	<select id="AcnoToMnos">
-	
-	</select>
+	<insert id="ACharInsert" parameterType="java.util.Map">
+		INSERT INTO characterList VALUES((SELECT NVL(MAX(CNO+1),1) FROM characterList),
+		#{name},#{img},0,0,0,0,0)
+	</insert>
 </mapper>

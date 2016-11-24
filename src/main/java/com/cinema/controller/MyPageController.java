@@ -1,8 +1,8 @@
 package com.cinema.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,14 +20,14 @@ public class MyPageController {
 	
 	//예매 내역 리스트
 	@RequestMapping("reserveList.do")
-	public String reserveList(Model model, String no, String type, String sPage) {
+	public String reserveList(Model model, String no, String type, String page) {
 		//예매내역,관람내역 구분
 		int ino = Integer.parseInt(no);
-		List<MemberReserveListVO> list;
+		List<MemberReserveListVO> list=new ArrayList<>();
 		
 		//페이지 재료
-		if(sPage==null || sPage.equals("0")) sPage="1";
-		int curpage=Integer.parseInt(sPage);	// 현재페이지
+		if(page==null || page.equals("0")) page="1";
+		int curpage=Integer.parseInt(page);	// 현재페이지
 		int rowSize=5;						//컬럼사이즈
 		int start;						
 		int end;							// 마지막번호						
@@ -49,25 +49,15 @@ public class MyPageController {
 			list = dao.memberReserveList(ino);
 			//마지막페이지
 			rowCount=dao.ReserveCount2(ino);
-		}
-		
-		//날짜형식 바꾸기 )yyyy-MM-dd HH:mm:ss -> yyyy.MM.dd
-		try {
-			for (MemberReserveListVO vo : list) {
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-				String sDate = sdf.format(vo.getRdate());
-				vo.setListdate(sDate);
-			}			
-		} catch (Exception e) {
-				System.out.println(e.getMessage());
-		}
+		}		
 		
 		//페이지 구하기	
 		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...
 		end = curpage*rowSize; // 2, 5, 8
-		totalPage=(rowCount/rowSize)+1;
-		if(totalPage==0) curpage=0;
+		totalPage=(int) Math.ceil(rowCount/rowSize);
 		
+		if(totalPage==0) curpage=0;
+
 		//페이지 넘버링
 		block=5;
 		fromPage=((curpage-1)/block*block)+1;
@@ -77,8 +67,15 @@ public class MyPageController {
 			toPage=totalPage;
 		
 		//예매취소 비교용
-		Date today=new Date();
-		
+		Date today=new Date();		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String source=sdf.format(today);
+		try {
+			today=sdf.parse(source);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		System.out.println(today);
 		//메뉴 선택 구분인자
 		String menuType="reserveList";
 		
@@ -104,7 +101,7 @@ public class MyPageController {
 	@RequestMapping("memberModify.do")
 	public String memberModify(Model model, String strno){
 		int no=Integer.parseInt(strno);		
-		MemberVO vo=dao.memberGetAllImfor(no);
+		MemberVO vo=dao.memberGetAllInfo(no);
 		String birth=vo.getBirth();
 		String phone=vo.getPhone();
 		String name=vo.getName();
@@ -133,7 +130,7 @@ public class MyPageController {
 								  String phone, String birth, HttpSession session){
 		int no=Integer.parseInt(strno);		
 		// DB값
-		MemberVO vo=dao.memberGetAllImfor(no);		
+		MemberVO vo=dao.memberGetAllInfo(no);		
 		String db_pwd=vo.getPwd();
 	
 		boolean pCheck=false;
@@ -176,7 +173,7 @@ public class MyPageController {
 	@RequestMapping("MemeberChangePwd.do")
 	public String ChangePwdOk(Model model, String strno, String pwd, String change_pwd) {
 		int no=Integer.parseInt(strno);
-		MemberVO vo=dao.memberGetAllImfor(no);
+		MemberVO vo=dao.memberGetAllInfo(no);
 
 		// DB값 가져오기
 		String db_pwd = vo.getPwd();
@@ -214,7 +211,7 @@ public class MyPageController {
 	public String delete_ok(Model model, String strno, String pwd, HttpSession session){
 		try{
 			int no=Integer.parseInt(strno);
-			MemberVO vo=dao.memberGetAllImfor(no);
+			MemberVO vo=dao.memberGetAllInfo(no);
 			//DB값
 			String db_pwd=vo.getPwd();			
 			

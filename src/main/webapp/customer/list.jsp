@@ -70,7 +70,25 @@
 				fs.pwd.focus();
 				return;
 			}
-			f.submit();
+			
+			$.ajax({
+				type: "POST",
+				url: "login_ok.do",
+				data:$('form').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.check=="ok"){
+						window.location.reload(true);
+					}else if(data.check=="pwdnot"){
+						$.jQueryAlert("패스워드가 잘못 되었습니다.");
+					}else if(data.check=="idnot"){
+						$.jQueryAlert("아이디가 잘못 되었습니다.");
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
 		}
 		
 		/* jQuery Alert 창 */

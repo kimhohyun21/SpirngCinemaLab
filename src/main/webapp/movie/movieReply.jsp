@@ -161,7 +161,7 @@
 								<input type="radio" name="star_input" id="p9" value="9"><label for="p9">9</label>
 								<input type="radio" name="star_input" id="p10" value="10"><label for="p10">10</label>
 					   		</span><br>
-					   		<output for="star_input"><b name="score">0</b>점</output>
+					   		<output for="star_input"><b class="starSco" name="score">0</b>점</output>
 				  		</span>	
 					</td>
 					<td width="69%">
@@ -249,7 +249,7 @@
 	<!-- 별점 -->
 	<script type="text/javascript">	
 		var starRating = function() {
-			var $star = $(".star_input"), $result = $star.find("output>b");
+			var $star = $(".star_input"), $result = $star.find("output>b.starSco");
 			$(document).on("focusin", ".star_input>.input", function() {
 				$(this).addClass("focus");
 			}).on("focusout", ".star_input>.input", function() {

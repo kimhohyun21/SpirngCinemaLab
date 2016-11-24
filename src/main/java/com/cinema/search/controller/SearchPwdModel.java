@@ -12,9 +12,9 @@ public class SearchPwdModel {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("searchPwd.do")
+	/*@RequestMapping("searchPwd.do")
 	public String searchPwd(Model model){
 		model.addAttribute("jsp", "../search/searchpwd.jsp");
 		return "main/main";
-	}
+	}*/
 }

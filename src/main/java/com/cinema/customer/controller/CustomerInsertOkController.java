@@ -12,15 +12,15 @@ public class CustomerInsertOkController {
 	private CustomerDAO dao;
 	
 	@RequestMapping("insert_ok.do")
-	public String handlerRequest(Model model, String strno, String name, String content, String subject){		
+	public String handlerRequest(Model model, String no, String name, String content, String subject){		
 		try {
 			
-			int no=Integer.parseInt(strno);
+			int intno=Integer.parseInt(no);
 			
 			//vo 껍데기에 컬럼 넣기
 			CustomerVO vo = new CustomerVO();
 			vo.setName(name);
-			vo.setNo(no);
+			vo.setNo(intno);
 			vo.setQsubject(subject);
 			vo.setQcontent(content);
 			dao.customerInsert(vo);

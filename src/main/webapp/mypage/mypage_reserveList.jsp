@@ -7,11 +7,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>MyPage ReserveList</title>
 	<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
-	<style type="text/css">
-		tr,td{
-			padding: 10px;
-		}
-	</style>
 	<script type="text/javascript">
 		function reserveCancel(){
 			$.ajax({
@@ -64,37 +59,37 @@
 			<span class="mrList_btn">관람내역</span>
 		</a>
 		<div id="lion_img">
-			<c:if test="${list == '[]' }">
+			<c:if test="${list == null}">
 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNHUKwbax2uYSi3cF5wrdrj5YNSLLx-xNQCj4aj1Ajn2duwk-tUw">
 				<p>내역이 없습니다.</p>
 			</c:if>
 		</div>
 		<div class="reservelist">
 		<table class="reserve_detail">
-			<c:forEach var="vo" items="${list }" begin="${start }" end="${end }" step="1">
-					<tr>
-						<td>
-							<a href="moviedetail.do?no=${vo.mno }">
-								<img src="${vo.poster}" width="200" height="300">
-							</a>
-						</td>
-						<td>
-							<h3>${vo.title }</h3><br><br>
-							상영날짜: ${vo.listdate }<br>
-							상영정보: ${vo.movietime }&nbsp;${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관<br>
-							좌석: ${vo.seat }<br>
-							결제방식: ${vo.paytype } / 금액: ${vo.payment }원 
-							<c:if test="${vo.rdate > today}">
-								<div align="right">
-									<form id="cancelfrm">
-										<input type="hidden" name="rno" value="${vo.rNo}">
-										<input type="hidden" name="title" value="${vo.title}">
-									</form>
-									<input type="button" value="예매취소" onclick="reserveCancel()">
-								</div>
-							</c:if>
-						</td>
-					</tr>
+			<c:forEach var="vo" items="${list }" begin="${start-1 }" end="${end-1 }">				
+				<tr>
+					<td>
+						<a href="movieDetail.do?no=${vo.mno }">
+							<img src="${vo.poster}" width="200" height="300">
+						</a>
+					</td>
+					<td>
+						<h3>${vo.title }</h3><br><br>
+						상영날짜: ${vo.listdate }<br>
+						상영정보: ${vo.movietime }&nbsp;${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관<br>
+						좌석: ${vo.seat }<br>
+						결제방식: ${vo.paytype } / 금액: ${vo.payment }원 
+						<c:if test="${vo.rdate > today}">
+							<div align="right">
+								<form id="cancelfrm">
+									<input type="hidden" name="rno" value="${vo.rNo}">
+									<input type="hidden" name="title" value="${vo.title}">
+								</form>
+								<input type="button" value="예매취소" onclick="reserveCancel()">
+							</div>
+						</c:if>
+					</td>
+				</tr>
 			</c:forEach>
 		</table>
 		

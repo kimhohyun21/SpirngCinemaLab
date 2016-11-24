@@ -33,7 +33,7 @@
 			<c:forEach items="${list }" var="vo" begin="${start }" end="${end }">
 				<tr>
 					<td align="left">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							${vo.title }
 						</a>						
 					</td>
