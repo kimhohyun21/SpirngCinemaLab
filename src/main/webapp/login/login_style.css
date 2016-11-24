@@ -1,5 +1,5 @@
 @CHARSET "EUC-KR";
-div.loginBg{
+div.loginBg, div.searchBg{
 	background-color: rgba(250,250,250,0.7);
 	width: 1000px;
 	margin: 10px;
@@ -20,6 +20,21 @@ div.loginBg h2{
     background: rgba(255, 255, 255, 0.54);
     z-index: 1;
 }
+div.searchBg h2{
+	position: relative;
+    top: 66px;
+    left: -66px;
+    width: 170px;
+    height: 30px;
+    border-top: 1px solid rgba(105, 37, 35, 0.66);
+    border-left: 1px solid rgba(105, 37, 35, 0.66);
+    border-right: 1px solid rgba(105, 37, 35, 0.66);
+    border-bottom: 1px solid rgb(218, 217, 217);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.54);
+    z-index: 1;
+}
+
 div.loginMain{
 	border: 1px solid rgba(105, 37, 35, 0.66);
     background: rgba(255, 255, 255, 0.54);
@@ -38,16 +53,33 @@ div.inputType, div.buttonType{
 	display: inline-block;
 	float: left;
 }
-input#id, input#pwd{
+input#id, input#pwd, input[type=text]{
 	padding:0px;
 	height: 35px;
 	width: 200px;
 	font-size: 10pt;
+	margin: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+label.inputlabel{
+	margin: 5px;
+    font-weight: bold;
+}
+table#search_table{
+	width: 346px;
+	height: 300px;
+	border: 1px solid rgba(105, 37, 35, 0.66);
+    background: rgba(255, 255, 255, 0.54);
+    padding: 20px;;
+    position: relative;
+    top: 65px;	
 }
 div.find{
 	margin: 5px;
 }
-input.btn {
+input.btn, .searchBtn {
 	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
 	box-shadow:inset 0px 1px 0px 0px #fff6af;
@@ -79,7 +111,11 @@ input.btn {
     position: relative;
     top: 1px;
 }
-.btn:hover {
+.searchBtn{
+	width: 100px;
+    height: 30px;
+}
+.btn:hover, .searchBtn:HOVER {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
 	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
 	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
@@ -90,7 +126,7 @@ input.btn {
 	background-color:#ffab23;
 }
 
-.btn:active {
+.btn:active, .searchBtn:ACTIVE {
 	position:relative;
 	top:1px;
 }

@@ -72,4 +72,61 @@ public class LoginController {
 		}
 		return "redirect:main.do";
 	}
+	
+	//아이디 검색
+	@RequestMapping("searchId.do")
+	public String searchID(Model model){
+		model.addAttribute("jsp", "../login/searchId.jsp");
+		return "main/main";
+	}
+	
+	//아이디 검색 완료
+	@RequestMapping("searchId_ok.do")
+	public String searchId_ok(Model model, String phone, String birth, String name){
+		try{
+			MemberVO vo=new MemberVO();
+			
+			vo.setName(name);
+			vo.setBirth(birth);
+			vo.setPhone(phone);
+			
+			String id=dao.memberFindId(vo);
+			model.addAttribute("pwd", "패스");
+			model.addAttribute("id", id);
+			model.addAttribute("jsp", "../login/giveInfo.jsp");
+			
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		return "main/main";
+	}
+	
+	//패스워드 검색
+	@RequestMapping("searchPwd.do")
+	public String searchPwd(Model model){
+		model.addAttribute("jsp", "../login/searchPwd.jsp");
+		return "main/main";
+	}
+	
+	//패스워드 검색 완료
+	@RequestMapping("searchPwd_ok.do")
+	public String searchPwd_ok(Model model, String phone, String id, String name){
+		try{
+			MemberVO vo=new MemberVO();
+				
+			phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
+			
+			vo.setPhone(phone);
+			vo.setName(name);
+			vo.setId(id);
+			String pwd=dao.memberFindPwd(vo);
+			model.addAttribute("id", "패스");
+			model.addAttribute("pwd", pwd);
+			model.addAttribute("jsp", "../login/giveInfo.jsp");
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		
+		return "main/main";
+	}
 }

@@ -11,7 +11,7 @@ public class SearchIdOkController {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("searchId_ok.do")
+	/*@RequestMapping("searchId_ok.do")
 	public String searchId_ok(Model model, String phone, String birth, String name){
 		try{
 			MemberVO vo=new MemberVO();
@@ -29,5 +29,5 @@ public class SearchIdOkController {
 			System.out.println(ex.getMessage());
 		}
 		return "main/main";
-	}
+	}*/
 }
