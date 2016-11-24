@@ -44,7 +44,6 @@
 				</tr>
 			</c:forEach>
 		</tbody>
-		<!-- <table width="700" class="list_page"> -->
 			<tr>
 				<td align="right" colspan="6">
 					<a href="aReserveList.do?page=${page>1?page-1:page}" style="color: red">이전</a>
