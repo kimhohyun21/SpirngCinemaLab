@@ -25,7 +25,7 @@ function send(){
 	        f.birth.focus();
 	        return;
 	   }
-	 if (f.phone.value.search(number)!=-1 || f.phone.value.length == 0 ){
+	 if (f.phone.value.search(number)!=-1 || f.phone.value.length < 11 || f.phone.value.length > 11){
 	        alert("전화번호는 숫자만 입력하실 수 있습니다 ex)01015771577");	        
 	        f.phone.focus();
 	        return;
