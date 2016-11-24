@@ -22,6 +22,7 @@
 	width: 1000px;
 	margin: 10px;
 	padding: 10px;
+	min-height: 586px;
 }
 
 .insert {
@@ -91,6 +92,7 @@
 }
 
 h3{
+	margin-top: 20px;
 	margin-bottom: 15px;
 }
 
@@ -102,20 +104,29 @@ h3{
 	background-color: white;
 }
 
-.insert_td{
-	border-right: 1px solid gray;
-	border-collapse: collapse;
-	height: 35px;
+#insert_table td{
+	border-bottom: 1px solid #d9d9d9;
+	padding: 15px;
 }
 
-#insert_table input,textarea{
+#insert_table th{
+	border-bottom: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+	border-collapse: collapse;
+	height: 40px;
+}
+
+#insert_table input{
+	height: 25px;
 	position: relative;
 	left: 10px;
 	background-color: #f2f2f2;
 }
 
-#insert_table textarea{
-	margin-bottom: 10px;
+.content{
+	margin-left: 15px;
+	width: 400px;
+	background-color: #f2f2f2;
 }
 
 #content_table{

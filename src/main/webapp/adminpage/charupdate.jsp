@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/test.css">
+<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
 <script type="text/javascript">
 	function re(){
 		top.document.location.reload();
@@ -16,23 +16,27 @@
 <body>
 	<input type="hidden" value="${no }">
 	<input type="hidden" value="${type }">
-	<div align="center">
+	<div>
 		<form method="post" action="AcharUpdate_ok.do?sno=${no }&type=${type }">		
-			<table width="700" class="type02">
+			<table width="700" class="type03">
+				<tr>
+					<th colspan="2" class="char_title">출연진 수정</th>
+				</tr>
 				<c:forEach var="actor" items="${actor }">
-					<tr>
-						<th align="center" colspan="2">배우${i=i+1 }
-							<select name="actor">
-								<c:forEach var="vo" items="${list }">
-									<c:if test="${actor.cname==vo.cname }">
-										<option selected="selected" value="${vo.cno }">${vo.cname }</option>
-									</c:if>
-									<c:if test="${actor.cname!=vo.cname }">
-										<option value="${vo.cno }">${vo.cname }</option>
-									</c:if>
-								</c:forEach>
-							</select>
-						</th>
+					<tr height="35">
+						<th align="center">배우${i=i+1 }</th>
+						<td>
+							<select name="actor" class="char_select">
+							<c:forEach var="vo" items="${list }">
+								<c:if test="${actor.cname==vo.cname }">
+									<option selected="selected" value="${vo.cno }">${vo.cname }</option>
+								</c:if>
+								<c:if test="${actor.cname!=vo.cname }">
+									<option value="${vo.cno }">${vo.cname }</option>
+								</c:if>
+							</c:forEach>
+						</select>
+						</td>
 					</tr>
 				</c:forEach>
 				<tr>

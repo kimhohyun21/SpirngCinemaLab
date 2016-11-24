@@ -1,0 +1,431 @@
+@CHARSET "EUC-KR";
+.list_btn{
+    width: 143px;
+    height: 42px;
+    background: url(../image/list_btn.gif) no-repeat center center;
+    background-size: cover;
+}
+.reserve_btn{
+    width: 210px;
+    height: 42px;
+    background: url(../image/list_btn.gif) no-repeat center center;
+    background-size: cover;
+    cursor: pointer; 
+    position: relative;
+    left: 0px;
+    margin-top: 5px;
+    border: 3px solid gray;
+}
+
+/* 영화 리스트 */
+.list{
+   font-size:17px;
+   font-weight:bold;
+   color: white;
+}
+.movielist{
+   background-color: rgba(250,250,250,0.9);
+   width: 1000px;
+   margin: 10px;
+}
+.tb{
+   border-collapse: separate;
+   border-spacing: 35px;
+}
+
+#cont td{
+   max-width: 291px;
+}
+
+#cont span{
+   font-weight : bold;
+   margin-left: 5px;
+}
+pre{
+   font-size: 12pt;
+    font-family: 맑은고딕;
+}
+#cont{
+   position:relative;
+   top: 15px;
+   width: 875px;
+   margin-bottom: 9px;
+}
+.movieBtn{
+   max-width: none;
+}
+#youtube{
+   margin-bottom: 500px;
+}
+
+div.replydiv{
+	min-height: 230px;
+    margin-top: 50px;
+}
+
+#movieContent{
+   font-size: 20px;
+   font-weight: bold;
+}
+
+#cast_div table{
+   padding-top: 8px;
+   padding-bottom: 8px;
+}
+
+#cast_div span{
+   font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    left: 63px;
+}
+
+#cast_div{
+   margin-bottom: 46px;
+   background-color: #d9d9d9;
+}
+
+#poster{
+   border: 5px solid;   
+}
+
+/* 영화 리스트 */
+#movie{
+   border: 1px solid #9E9E9E;
+   border-collapse: collapse;
+   max-width: 200px;
+}
+.title{
+   border-bottom: 1px solid #9E9E9E;
+   border-top: 1px solid #9E9E9E;
+   border-collapse: collapse;
+}
+
+.grade_image{
+   position: relative;
+   top:2px;
+}
+
+.td{
+   border-right: 1px solid #9E9E9E;
+}
+
+#poster_div{
+   float: left;
+}
+
+#title{
+   position:relative;
+   float: left;
+   position: relative;
+   left: 25px;
+}
+
+.title_2{
+   font-size: 25px;
+}
+.detail2{
+   padding: 25px 55px 25px 55px;
+}
+
+#content{
+   position: relative;
+   top: 20px;
+   background-color: #d9d9d9;
+   width: 660px;
+   border-radius: 8px 8px 8px 8px;
+   padding: 8px 5px 14px 5px;
+}
+
+#content table tr{
+   height: 40px;   
+}
+
+/* 댓글부분 css */
+#reply_table{
+   border: 1px solid #9E9E9E;
+   border-collapse: collapse;
+}
+
+#reply_table td{
+   border-left: 1px solid #9E9E9E;
+   border-collapse: collapse;
+}
+#reply{
+   bottom: 430px;   
+   width: 1000px;
+   min-height: 230px;
+}
+#reply h3{
+   
+   margin-bottom: 20px;
+}
+
+#send{
+   width: 108px;
+    height: 91px;
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#reply ul li{
+   position: relative;
+   top:20px;
+   margin-left: 10px;
+   list-style: none;
+   border-bottom: 1px solid;
+   margin-bottom: 30px;
+}
+.replyList{
+	border-bottom: 1px solid #c9c9c9;
+	min-height: 70px;
+	max-width: 1000px;
+	padding: 10px;
+	margin: 2px 0px;
+	background: rgba(232, 232, 232, 0.57);
+}
+#score{
+	display:inline-block;
+	float: left;
+	position: relative;
+    top: 2px;
+}
+
+#reContent{
+	display:inline-block;
+	float: left;
+	font-size: 20px;
+	position: relative;
+	left: 15px;
+	padding: 0px 10px;
+}
+.nameDate{
+	display:inline-block;
+	float: right;
+}
+.deleteBtn{
+	display:inline-block;
+	float: right;
+}
+div.detail{
+   background-color: rgba(250,250,250,0.95);
+   width: 1000px;
+   margin: 10px;
+   padding: 10px;
+}
+.replyDeleteBtn {
+   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+   box-shadow:inset 0px 1px 0px 0px #ffffff;
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+   background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+   background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+   background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+   background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+   background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+   background-color:#f9f9f9;
+   -moz-border-radius:6px;
+   -webkit-border-radius:6px;
+   border-radius:6px;
+   border:1px solid #dcdcdc;
+   display:inline-block;
+   cursor:pointer;
+   color:#666666;
+   font-family:Arial;
+   font-size:14px;
+   font-weight:bold;
+   padding:6px 5px;
+   text-decoration:none;
+   text-shadow:0px 1px 0px #ffffff; 
+   position: relative;
+   top: 30px;
+   left: 135px;
+   margin: 10px 0px;
+}
+.replyDeleteBtn:hover {
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+   background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+   background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+   background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+   background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+   background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+   background-color:#e9e9e9;
+}
+.replyDeleteBtn:active {
+   position:relative;
+   top:29px;
+}
+
+
+/* 별점 */
+.star-input>.input, .star-input>.input>label:hover, .star-input>.input>input:focus+label,
+   .star-input>.input>input:checked+label {
+   display: inline-block;
+   vertical-align: top;
+   background: url(../image/star.png) no-repeat;
+}
+
+.star-input {
+   white-space: nowrap;
+}
+
+.star-input>.input {
+   display: inline-block;
+   width: 100px;
+   background-size: 100px;
+   height: 19px;
+   white-space: nowrap;
+   overflow: hidden;
+   position: relative;
+}
+
+.star-input>.input>input {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   opacity: 0;
+}
+
+.star-input>.input.focus {
+   outline: 1px dotted #ddd;
+}
+
+.star-input>.input>label {
+   width: 10px;
+   height: 0;
+   padding: 19px 0 0 0;
+   overflow: hidden;
+   float: left;
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.star-input>.input>label:hover, .star-input>.input>input:focus+label,
+   .star-input>.input>input:checked+label {
+   background-size: 100px;
+   background-position: 0 bottom;
+}
+
+.star-input>.input>label:hover ~label{
+   background-image: none;
+}
+
+.star-input>.input>label[for="p1"] {
+   width: 10px;
+   z-index: 10;
+}
+
+.star-input>.input>label[for="p2"] {
+   width: 20px;
+   z-index: 9;
+}
+
+.star-input>.input>label[for="p3"] {
+   width: 30px;
+   z-index: 8;
+}
+
+.star-input>.input>label[for="p4"] {
+   width: 40px;
+   z-index: 7;
+}
+
+.star-input>.input>label[for="p5"] {
+   width: 50px;
+   z-index: 6;
+}
+
+.star-input>.input>label[for="p6"] {
+   width: 60px;
+   z-index: 5;
+}
+
+.star-input>.input>label[for="p7"] {
+   width: 70px;
+   z-index: 4;
+}
+
+.star-input>.input>label[for="p8"] {
+   width: 80px;
+   z-index: 3;
+}
+
+.star-input>.input>label[for="p9"] {
+   width: 90px;
+   z-index: 2;
+}
+
+.star-input>.input>label[for="p10"] {
+   width: 100px;
+   z-index: 1;
+}
+
+.star-input>output {
+   display: inline-block;
+   width: 36px;
+   text-align: right;
+}
+
+.star-input>output>b {
+   font: bold 18px Helvetica, Arial, sans-serif;
+   vertical-align: middle;
+}
+
+#star{
+   border: 1px solid;
+}
+
+/* 관리자 수정하기 버튼 */
+.modify{
+	position: relative;
+	left: 450px;
+	top: 10px;
+	font-size: 20px;
+	color: red;
+	width: 70px;
+	height: 30px;
+	border: 1px solid #c0c0c0;
+	background:#c0c0c0;
+	border-radius: 10px;
+	padding: 5px;
+}
+.castmodify{
+	position: relative;
+	right: 10px;
+    top: 5px;
+	font-size: 20px;
+	color: red;
+	width: 70px;
+	height: 30px;
+	border: 1px solid #c0c0c0;
+	background:#c0c0c0;
+	border-radius: 10px;
+	padding: 5px;
+}
+table.btnArea{
+	position: relative;
+    top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -65,4 +65,8 @@
 		UPDATE reserveList SET seat='null', cancel='취소완료', refund='환불완료' WHERE rNo=#{rNo}
 	</update>
 	
+	<select id="getMno" parameterType="String" resultType="int">
+		SELECT mNo FROM movieList WHERE title=#{title}
+	</select>
+	
 </mapper>

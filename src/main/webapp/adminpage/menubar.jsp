@@ -9,20 +9,21 @@
 </head>
 <body>
 	<center>
-		<br>
-			<a href="Amovielist.do?sPage=${page }">
-				<button class="menubar">영화리스트</button>
+		<div class="bg2">
+			<a href="aMovieList.do?sPage=${page }">
+				<button class="menubar">영화 리스트 관리</button>
 			</a>
-			<a href="reservelist.do">
-				<button class="menubar">고객센터</button>
+			<a href="aReserveList.do">
+				<button class="menubar">예매 내역 관리</button>
+			</a>
+			<a href="ACList.do">
+				<button class="menubar">출연진 관리</button>
 			</a>
 			<a>
-				<button class="menubar"></button>
-			</a>
-		<div id="Ainclude">
-		<br>
-			<jsp:include page="${jsp2 }"></jsp:include>
-		</div>
+				<button class="menubar">FAQ 관리</button>
+			</a>			
+			<jsp:include page="${jsp3 }"></jsp:include>
+		</div>		
 	</center>
 </body>
 </html>

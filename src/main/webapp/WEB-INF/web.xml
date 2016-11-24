@@ -61,7 +61,7 @@
 	</error-page>
 	
 	<error-page>
-		<exception-type>java.lang.NullPionterException</exception-type>
+		<exception-type>java.lang.NullPointerException</exception-type>
 		<location>/error/errorNull.jsp</location>
 	</error-page>
 </web-app>

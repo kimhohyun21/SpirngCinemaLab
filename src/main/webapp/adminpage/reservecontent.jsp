@@ -11,8 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center" class="bg">
-		<table id="table_content" width="501" class="tb">
+	<div align="center">
+		<table width="600" class="type04">
+			<tr>
+				<th colspan="4" class="char_title">예매내역 상세</th>
+			</tr>
 			<tr>
 				<th width="20%" align="center">예약일</th>
 				<td width="80%" align="center" colspan="3">
@@ -67,14 +70,15 @@
 				<th width="20%" align="center">환불</th>
 				<td width="30%" align="center">${vo.refund}</td>
 			</tr>
-		</table>
-		<table>
-			<tr align="right">
-				<td>
-					<a href="reservelist.do">돌아가기</a>
+			<tr>
+				<td colspan="4" align="center">
+					<a href="reservelist.do">
+						<input type="button" value="돌아가기" class="table_btn">
+					</a>
 				</td>
 			</tr>
 		</table>
 	</div>
 </body>
 </html>
+			

@@ -10,18 +10,55 @@
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
 	<script type="text/javascript">
 		function reserveCancel(){
-			var cancelfrom=$.parseHTML('<form id="cancelfrm" action="reserve5_Cancel.do" method="post">'
+			var cancelfrom=$.parseHTML('<form id="cancelfrm">'
 										+'<input type="hidden" name="pid" value="${pid}">'
 										+'<input type="hidden" name="title" value="${title}">'
 										+'</form>');
 			$('body').append(cancelfrom);
-			$('#cancelfrm').submit();
+			
+			$.ajax({
+				type: "POST",
+				url: "reserve5_Cancel.do",
+				data:$('#cancelfrm').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.cancelCheck==true){
+						$.jQueryAlert("성공 : "+data.cancelMsg);
+						location.href="reserveList.do?no="+data.no;
+					}else{
+						$.jQueryAlert("실패 : "+data.cancelMsg);
+						location.href="reserveList.do?no="+data.no;
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("통신 실패");
+				}
+			});
 		}
+		
+		/* jQuery Alert 창 */
+		jQuery.jQueryAlert = function (msg) {
+	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+	        $("body").append($messageBox);
+			
+	        $($messageBox).dialog({
+	            open: $($messageBox).append(msg),
+	            autoOpen: true,
+	            modal: true,
+	            resizable:false, 
+				width: 400,
+	            buttons: {
+	                OK: function () {
+	                    $(this).dialog("close");
+	                }
+	            }
+	        });
+	    };
 	</script>
 </head>
 <body>
 	<div align="center" class="finalPaymentInfo">
-		<h2>예매 완료 내역</h2>
+		<h3 class="payment_title">예매 완료 내역</h3>
 		<table class="paymentInfo">
 			<tr>
 				<th width="33%">영화</th>
@@ -93,8 +130,16 @@
 				</td>
 			</tr>
 		</table>
-		<input type="button" value="확인" onclick="javascript:location.href='reserveList.do?no=${mvo.no }'">
-		<input type="button" value="예매 취소" onclick="reserveCancel()">		
+		<table width="920" class="btn">
+			<tr>
+				<td>
+					<input type="button" value="확인" onclick="javascript:location.href='reserveList.do?no=${mvo.no }'" class="back_button">
+				</td>
+				<td align="right">
+					<input type="button" value="예매 취소" onclick="reserveCancel()" class="next_button">
+				</td>
+			</tr>
+		</table>				
 	</div>
 </body>
 </html>
