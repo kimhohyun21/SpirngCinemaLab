@@ -68,7 +68,7 @@ public class ACharUpdateController {
 		}
 		
 		
-		model.addAttribute("go","AKL");
+		model.addAttribute("go","ACL");
 		return "adminpage/station";
 	}
 }

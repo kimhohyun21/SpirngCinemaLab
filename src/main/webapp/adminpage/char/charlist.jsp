@@ -14,7 +14,7 @@
 		<thead>
 			<tr class="nhover">
 				<td>
-					<a href="#">
+					<a href="ACharInsert.do">
 						<button class="menu_insert">배우등록</button>						
 					</a>
 				</td>

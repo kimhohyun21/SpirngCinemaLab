@@ -6,8 +6,8 @@
 	<c:redirect url="Amovielist.do"/>
 </c:if>
 <c:if test="${go eq 'MD' }">
-	<c:redirect url="moviedetail.do?no=${no }&type=${type }"/>
+	<c:redirect url="movieDetail.do?no=${no }&type=${type }"/>
 </c:if>
-<c:if test="${go eq 'AKL' }">
+<c:if test="${go eq 'ACL' }">
 	<c:redirect url="ACList.do"/>
 </c:if>

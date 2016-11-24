@@ -6,21 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-	<c:if test="${id==null || pwd==null}">
+	<c:if test="${id eq null || pwd eq null}">
 		<script type="text/javascript">
 			alert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
 			history.back();
 		</script>
 	</c:if>
-<style type="text/css">
-	#find a{
-		color: gray;
-		text-decoration: none;
-	}
-	#find a:HOVER {
-		color: #CD426B;
-}
-</style>
 </head>
 <body>
 	<div align="center">
