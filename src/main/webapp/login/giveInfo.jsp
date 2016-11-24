@@ -4,23 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-	<c:if test="${id==null || pwd==null}">
-		<script type="text/javascript">
-			alert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
-			history.back();
-		</script>
-	</c:if>
-<style type="text/css">
-	#find a{
-		color: gray;
-		text-decoration: none;
-	}
-	#find a:HOVER {
-		color: #CD426B;
-}
-</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Give Info</title>
+		<c:if test="${id eq null || pwd eq null}">
+			<script type="text/javascript">
+				alert('입력하신 정보가 틀리거나 ID가 존재하지 않습니다');
+				history.back();
+			</script>
+		</c:if>
 </head>
 <body>
 	<div align="center">

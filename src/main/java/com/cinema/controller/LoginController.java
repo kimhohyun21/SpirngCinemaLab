@@ -85,6 +85,8 @@ public class LoginController {
 	public String searchId_ok(Model model, String phone, String birth, String name){
 		try{
 			MemberVO vo=new MemberVO();
+			phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
+			birth=birth.substring(0, 4)+"-"+birth.substring(4,6)+"-"+birth.substring(6,8);
 			
 			vo.setName(name);
 			vo.setBirth(birth);
@@ -111,21 +113,18 @@ public class LoginController {
 	//패스워드 검색 완료
 	@RequestMapping("searchPwd_ok.do")
 	public String searchPwd_ok(Model model, String phone, String id, String name){
-		try{
-			MemberVO vo=new MemberVO();
-				
-			phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
-			
-			vo.setPhone(phone);
-			vo.setName(name);
-			vo.setId(id);
-			String pwd=dao.memberFindPwd(vo);
-			model.addAttribute("id", "패스");
-			model.addAttribute("pwd", pwd);
-			model.addAttribute("jsp", "../login/giveInfo.jsp");
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}
+		
+		MemberVO vo=new MemberVO();
+		
+		phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
+		
+		vo.setPhone(phone);
+		vo.setName(name);
+		vo.setId(id);
+		String pwd=dao.memberFindPwd(vo);
+		model.addAttribute("id", "패스");
+		model.addAttribute("pwd", pwd);
+		model.addAttribute("jsp", "../login/giveInfo.jsp");
 		
 		return "main/main";
 	}

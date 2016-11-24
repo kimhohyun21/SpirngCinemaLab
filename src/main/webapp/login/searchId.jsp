@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		function enter(){
 			if(window.event.keyCode == 13){
-				login();
+				send();
 			}
 		}
 		

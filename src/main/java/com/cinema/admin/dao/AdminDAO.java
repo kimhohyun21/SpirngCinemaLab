@@ -101,4 +101,8 @@ public class AdminDAO extends SqlSessionDaoSupport{
 	public void ACmodify(Map map){
 		getSqlSession().update("ACmodify",map);
 	}
+	
+	public void ACharInsert(Map map){
+		getSqlSession().insert("ACharInsert",map);
+	}
 }

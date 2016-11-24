@@ -49,9 +49,6 @@ public class AMovieCharUpdateOkController {
 			}
 		}
 		
-		
-		System.out.println();
-		
 		//입력받은 출연진 업데이트
 		for (int cno : afterAL) {
 			//중복체크용
@@ -82,35 +79,6 @@ public class AMovieCharUpdateOkController {
 				}				
 			}
 		}
-
-		/*
-		 * //이전의 출연진 for(MovieVO vo: beforeActor){
-		 * System.out.println(vo.getCno()+"==이전 배우요"); //지금의 출연진이랑 다르면 삭제
-		 * if(vo.getCno()!=Integer.parseInt(actor1)){ for(int i=1;i<6;i++){
-		 * String m="mno"+i; String c=vo.getCno(); SELECT m FROM CharacterList
-		 * WHERE cno=
-		 * 
-		 * Map map=new HashMap(); map.put("mno", "mno"+i); map.put("sno", sno);
-		 * 
-		 * } } }
-		 */
-		/*
-		 * //배우1의 mno1~mno5 가져오기 List<MovieVO>
-		 * mnoList1=dao.AgetActorMno(Integer.parseInt(actor1)); for(MovieVO
-		 * vo:mnoList1){ // 이미 출연진에 있는경우 if(vo.getMno1()==no || vo.getMno2()==no
-		 * || vo.getMno3()==no || vo.getMno4()==no || vo.getMno5()==no){ break;
-		 * } if(vo.getMno1() == 0){ // no=>영화번호, actor=>배우번호 vo.setMno1(no);
-		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno1(vo); break;
-		 * }else if(vo.getMno2() == 0){ vo.setMno2(no);
-		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno2(vo); break;
-		 * }else if(vo.getMno3() == 0){ vo.setMno3(no);
-		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno3(vo); break;
-		 * } else if(vo.getMno4() == 0){ vo.setMno4(no);
-		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno4(vo); break;
-		 * } else if(vo.getMno5() == 0){ vo.setMno5(no);
-		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno5(vo); break;
-		 * } }
-		 */
 		
 		model.addAttribute("no", no);
 		model.addAttribute("type", type);
