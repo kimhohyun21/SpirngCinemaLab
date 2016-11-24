@@ -24,7 +24,7 @@
 				$.jQueryLogin();
 				return;
 			} 
-	    	/*평점체크*/    	
+			/*평점체크*/    	
 	    	var f=document.frm;
 	    	if($(':input[name=star_input]:radio:checked').val()==null){
 	    		$.jQueryAlert('평점을 체크해 주세요.');
@@ -148,7 +148,7 @@
 				<tr>
 					<td width="20%" align="center">
 						평점<br>
-						<span class="star-input">
+						<span class="star_input">
 							<span class="input">
 								<input type="radio" name="star_input" id="p1" value="1"><label for="p1">1</label>
 								<input type="radio" name="star_input" id="p2" value="2"><label for="p2">2</label>
@@ -261,7 +261,7 @@
 				}, 100);
 			}).on("change", ".star_input :radio", function() {
 				$result.text($(this).next().text());
-			}).on("mouseover", ".star-_input label", function() {
+			}).on("mouseover", ".star_input label", function() {
 				$result.text($(this).text());
 			}).on("mouseleave", ".star_input>.input", function() {
 				var $checked = $star.find(":checked");
