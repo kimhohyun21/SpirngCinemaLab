@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="mypage/style.css">
+<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
 <script src="sliderengine/jquery.js"></script>
 <script type="text/javascript">
 function send(){
@@ -21,13 +21,22 @@ function send(){
 </head>
 <body>
 	<center>
-		<b style="color:red;">탈퇴한 아이디는 복구할 수 없습니다</b>
-		<form name="frm" method="post" action="delete_ok.do?strno=${mvo.no }">
-			비밀번호 : <input type="password" name="pwd"><br/>
-		<div>
-			<input type="button" onclick="send()" value="삭제" class="btn">
+		<div class="bg2">
+			<b id="notice">탈퇴한 아이디는 복구할 수 없습니다</b>
+			<form name="frm" method="post" action="delete_ok.do?strno=${mvo.no }">
+				<table id="modify_table" width="400" height="80">
+					<tr>
+						<td class="modify_td">
+							<b>비밀번호</b>
+						</td>
+						<td>
+							<input type="password" name="pwd" class="input">
+						</td>
+					</tr>
+				</table>
+				<input type="button" onclick="send()" value="삭제" class="btn" style="position: relative; right: 50px;">
+			</form>
 		</div>
-		</form>
 	</center>
 </body>
 </html>

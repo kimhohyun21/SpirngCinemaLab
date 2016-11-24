@@ -1,9 +1,6 @@
 package com.cinema.admin.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +21,10 @@ public class AMovieCharUpdateOkController {
 		int no = Integer.parseInt(sno);
 		// 배우번호 나누기 현재 actor=1,2,3
 		System.out.println(actor);
-		int actor1 = Integer.parseInt(actor.substring(0, 1));
-		int actor2 = Integer.parseInt(actor.substring(2, 3));
-		int actor3 = Integer.parseInt(actor.substring(4, 5));
+		StringTokenizer st=new StringTokenizer(actor, ",");		
+		int actor1 = Integer.parseInt(st.nextToken());
+		int actor2 = Integer.parseInt(st.nextToken());
+		int actor3 = Integer.parseInt(st.nextToken());
 
 		// no=영화번호,actor=출연진번호
 		List<MovieVO> beforeAL = dao.movieCharData(no);
@@ -113,7 +111,7 @@ public class AMovieCharUpdateOkController {
 		 * vo.setNo(Integer.parseInt(actor1)); dao.AactorInsertMno5(vo); break;
 		 * } }
 		 */
-
+		
 		model.addAttribute("no", no);
 		model.addAttribute("type", type);
 		model.addAttribute("go", "MD");

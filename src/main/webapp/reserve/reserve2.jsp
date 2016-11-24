@@ -74,25 +74,44 @@
 		
 		//로그인 창 값입력 체크
 		function login(){
-			var f=document.loginfrm;	
-			if(f.id.value==""){
+			var id=$('#id').val();	
+			if(id==""){
 				$.jQueryAlert("아이디를 입력하세요");
-				f.id.focus();
+				$('#id').focus();
 				return;
 			}
-			if(f.pwd.value==""){
+			var pwd=$('#pwd').val();
+			if(pwd==""){
 				$.jQueryAlert("비밀번호를 입력하세요");
-				f.pwd.focus();
+				$('#pwd').focus();
 				return;
 			}
-			f.submit();
+			
+			$.ajax({
+				type: "POST",
+				url: "login_ok.do",
+				data:$('form').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.check=="ok"){
+						window.location.reload(true);
+					}else if(data.check=="pwdnot"){
+						$.jQueryAlert("패스워드가 잘못 되었습니다.");
+					}else if(data.check=="idnot"){
+						$.jQueryAlert("아이디가 잘못 되었습니다.");
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
 		}
 		
 		/* jQuery Alert 창 */
 		jQuery.jQueryAlert = function (msg) {
 	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
 	        $("body").append($messageBox);
-	
+			
 	        $($messageBox).dialog({
 	            open: $($messageBox).append(msg),
 	            autoOpen: true,
@@ -106,6 +125,11 @@
 	            }
 	        });
 	    };
+	    
+	    //선택 초기화
+	    function reloadpage(){
+	    	window.location.reload(true);	
+	    }	    
 	</script>
 	<script src="jStyles/jquery.easydropdown.js"></script>
 </head>
@@ -156,12 +180,28 @@
 					</div>			
 				</form>
 				<!-- 선택 초기화 버튼 -->
-				<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}
-				&checkedDay2=${checkedDay2}&local=${local }&tname=${tname }&grade=${grade }&title=${title}
-				&poster=${poster }&theaterNo=${theaterNo}&movietime=${movietime}#nav">
-					<div class="resetBtn">선택초기화</div>
-				</a>				
+				<div class="resetBtn" onclick="reloadpage()">선택초기화</div>					
 			</div>
+			
+			<c:if test="${grade=='12'}">
+				<div class="alertSent">
+					<img src="image/bg_grade_12.png">
+					<div class="sent">만 12세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 성인 보호자의 동반하에 관람이 가능합니다.</div>					
+				</div>
+			</c:if>
+			<c:if test="${grade=='15'}">
+				<div class="alertSent">
+					<img src="image/bg_grade_15.png">
+					<div class="sent">만 15세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 성인 보호자의 동반하에 관람이 가능합니다.</div>
+				</div>
+			</c:if>
+			<c:if test="${grade=='18'}">
+				<div class="alertSent">
+					<img src="image/bg_grade_18.png" class="grade18">
+					<div class="sent">만 18세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 보호자의 동반하여도 관람이 불가합니다.<br> 
+					만 18세 이상이지만 초/중/고 재학중 고객님은 영화관람이 불가합니다. 영화 관람 시, <br>신분증을 지참하여 주시기 바랍니다.</div>
+				</div>
+			</c:if>											
 		</div>
 		<!-- 자리 선택  include-->
 		<div id="result">

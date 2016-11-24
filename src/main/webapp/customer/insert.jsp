@@ -29,24 +29,24 @@
 	<div align="center" class="bg">
 		<h3>글쓰기</h3>
 		<form action="insert_ok.do" method="post" name="frm">
-			<table width="500" id="insert_table">
+			<table width="600" id="insert_table">
 				<tr height="27">
-					<td width="20%" align="center" class="insert_td">이름</td>
+					<th width="20%" align="center">이름</th>
 					<td width="80%" align="left">
-						<input type="text" size="10" name="name" value="${mvo.name}">
-						<input type="hidden" size="10" name="no" value="${mvo.no}">
+						<input type="text" name="name" value="${mvo.name}">
+						<input type="hidden" name="no" value="${mvo.no}">
 					</td>
 				</tr>
 				<tr height="27">
-					<td width="20%" align="center" class="insert_td">제목</td>
+					<th width="20%" align="center">제목</th>
 					<td width="80%" align="left">
-						<input type="text" size="45" name="subject">
+						<input type="text" name="subject">
 					</td>
 				</tr>
 				<tr height="27">
-					<td width="20%" align="center" class="insert_td">내용</td>
+					<th width="20%" align="center">내용</th>
 					<td width="80%" align="left">
-						<textarea rows="8" cols="50" name="content"></textarea>
+						<textarea rows="8" cols="50" name="content" class="content"></textarea>
 					</td>
 				</tr>
 			</table>

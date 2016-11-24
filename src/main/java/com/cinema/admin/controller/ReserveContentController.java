@@ -17,11 +17,16 @@ public class ReserveContentController{
 		
 		ReserveListVO vo = dao.reserveContent(Integer.parseInt(no));
 
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("no", no);
 		model.addAttribute("page", page);
 		model.addAttribute("vo", vo);
-		model.addAttribute("jsp", "reservelist.jsp");
-		model.addAttribute("jsp", "../adminpage/reservecontent.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/reservecontent.jsp");
 		
 		return "main/main";
 		

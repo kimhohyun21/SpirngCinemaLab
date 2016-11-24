@@ -39,19 +39,19 @@
 			<tr class="nhover">
 				<td colspan="5" align="right">
 					<c:if test="${page>block }">
-						<a href="AcharList.do?page=1">
+						<a href="ACList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="AcharList.do?page=${fromPage-1 }">
+						<a href="ACList.do?page=${fromPage-1 }">
 							이전
 						</a>&nbsp;
 					</c:if>
 					
 					<c:if test="${page<=block }">
-						<a href="AcharList.do?page=1">
+						<a href="ACList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="AcharList.do?page=${page>1?page-1:page }">
+						<a href="ACList.do?page=${page>1?page-1:page }">
 							이전
 						</a>&nbsp;
 					</c:if>
@@ -62,25 +62,25 @@
 							<span style="color:red">${i }</span>
 						</c:if>
 						<c:if test="${page!=i }">
-							<a href="AcharList.do?page=${i }">${i }</a>
+							<a href="ACList.do?page=${i }">${i }</a>
 						</c:if>
 						]
 					</c:forEach>
 					
 					<c:if test="${toPage<totalPage }">
-						<a href="AcharList.do?page=${toPage+1 }">
+						<a href="ACList.do?page=${toPage+1 }">
 							다음
 						</a>&nbsp;
-						<a href="AcharList.do?page=${totalPage }">
+						<a href="ACList.do?page=${totalPage }">
 							마지막
 						</a>
 					</c:if>
 					
 					<c:if test="${toPage>=totalPage }">
-						<a href="AcharList.do?page=${page<totalPage?page+1:page }">
+						<a href="ACList.do?page=${page<totalPage?page+1:page }">
 							다음
 						</a>&nbsp;
-						<a href="AcharList.do?page=${totalPage }">
+						<a href="ACList.do?page=${totalPage }">
 							마지막
 						</a>
 					</c:if>										

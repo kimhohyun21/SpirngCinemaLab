@@ -16,7 +16,7 @@ public class AMovieListController {
 	@Autowired
 	AdminDAO dao;
 	
-	@RequestMapping("Amovielist.do")
+	@RequestMapping("aMovieList.do")
 	public String movieList(Model model,String page){
 		//무비 리스트 뽑아오기
 		List<MovieVO> list=dao.adminMovieAllList();
@@ -43,6 +43,10 @@ public class AMovieListController {
 		if(toPage>totalPage)
 			toPage=totalPage;
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("page",ipage);
 		model.addAttribute("start",start);
 		model.addAttribute("end",end);
@@ -51,8 +55,10 @@ public class AMovieListController {
 		model.addAttribute("fromPage",fromPage);
 		model.addAttribute("toPage",toPage);
 		model.addAttribute("list",list);
-		model.addAttribute("jsp","../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/movielist.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/movielist.jsp");
+		
 		return "main/main";
 	}
 }

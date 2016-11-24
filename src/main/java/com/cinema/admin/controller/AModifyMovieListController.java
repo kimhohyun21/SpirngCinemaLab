@@ -38,13 +38,18 @@ public class AModifyMovieListController {
 			vo.setRuntime(runtime);
 		}
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("no", no2);
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);
 		model.addAttribute("day", day);
 		model.addAttribute("vo", vo);
-		model.addAttribute("jsp", "../adminpage/menubar.jsp");
-		model.addAttribute("jsp2", "../adminpage/moviemodify.jsp");
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/moviemodify.jsp");
 		return "main/main";
 	}
 }

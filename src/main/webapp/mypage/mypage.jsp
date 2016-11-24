@@ -4,9 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="login/style3.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>My Page</title>
+	<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
+	<script type="text/javascript">
+		$(document).ready(function () {
+	 		$(".menubar ul li#${menuType }").attr("class", "liSelected");
+	 	});		
+	</script>
 </head>
 <body>
 	<div class="bg">
@@ -14,31 +19,21 @@
 		<div align="center" class="menubar">
 			<br>
 			<ul>
-				<li>
-					<a href="reserveList.do?no=${mvo.no }">
-						예매내역
-					</a>
+				<li id="reserveList" onclick="location.href='reserveList.do?no=${mvo.no }'">
+					예매내역
 				</li>
-				<li>
-					<a href="memberModify.do?strno=${mvo.no }">
-						회원정보 수정
-					</a>
+				<li id="memberModify" onclick="location.href='memberModify.do?strno=${mvo.no }'">
+					회원정보 수정
 				</li>
-				<li>
-					<a href="memberChangepwd.do">
-						비밀번호 수정
-					</a>
+				<li id="memberChangePwd" onclick="location.href='memberChangePwd.do'">
+					비밀번호 수정
 				</li>
-				<li>
-					<a href="memberDelete.do?no=${mvo.no }">
-						회원탈퇴
-					</a>
+				<li id="memberDelete" onclick="location.href='memberDelete.do?no=${mvo.no }'">
+					회원탈퇴
 				</li>
 				<c:if test="${mvo.admin == 1 }">
-				<li>
-					<a href="Amovielist.do">
-						비밀의 방
-					</a>	
+				<li id="admin" onclick="location.href='aMovieList.do'">
+					비밀의 방	
 				</li>
 				</c:if>
 			</ul>		
