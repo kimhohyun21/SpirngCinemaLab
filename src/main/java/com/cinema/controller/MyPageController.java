@@ -170,7 +170,7 @@ public class MyPageController {
 	}
 	
 	//비밀 번호 수정 OK
-	@RequestMapping("MemeberChangePwd.do")
+	@RequestMapping("MemeberChangePwd_ok.do")
 	public String ChangePwdOk(Model model, String strno, String pwd, String change_pwd) {
 		int no=Integer.parseInt(strno);
 		MemberVO vo=dao.memberGetAllInfo(no);

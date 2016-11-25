@@ -155,9 +155,9 @@
 				<td width="45%" align="left" class="subject">
 					<c:if test="${vo.group_tab!=0}">
 						<c:forEach var="i" begin="1" end="${vo.group_tab}">
-							&nbsp;&nbsp;
-							<img alt="reply" src="customer/img/icon_reply.gif">
+							&nbsp;&nbsp;							
 						</c:forEach>
+						<img alt="reply" src="customer/img/icon_reply.gif">
 					</c:if>
 					<c:if test="${msg eq vo.qsubject}">
 					<span>${vo.qsubject}</span>
