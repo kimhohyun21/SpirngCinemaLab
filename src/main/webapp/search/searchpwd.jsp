@@ -32,7 +32,7 @@ function send(){
 </head>
 <body>
 	<center>		
-		<form action="searchPwd_ok.do" method="post" id="frm">
+		<form action="searchPwd_ok.do" method="post" name="frm">
 			<table id="join_table" width="450" height="200">
 				<tr>
 					<td align="right">

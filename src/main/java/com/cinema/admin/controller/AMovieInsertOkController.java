@@ -21,7 +21,6 @@ public class AMovieInsertOkController {
 			String type,String runtime, String year, String month, String day, String content,
 			String director, String genre, String cast, String trailer) {
 		try {
-			//model.setCharacterEncoding("UTF-8");
 			// opendate¸¸µé±â
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

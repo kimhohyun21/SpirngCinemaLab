@@ -22,13 +22,6 @@
 	}
 </style>
 <script type="text/javascript">
-  window.onload=function(){	
-	 <%
-		HttpSession abc=request.getSession(); 
-		abc.removeAttribute("ok");
-		abc.removeAttribute("join");
-	%>
-} 
 function send(){
 	 var f=document.frm;
 	 var pwd=f.pwd.value;
