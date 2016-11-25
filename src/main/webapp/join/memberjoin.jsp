@@ -10,44 +10,38 @@
 	<script type="text/javascript">		
 		function send(){
 			var f=document.frm;
-			var pwd=f.pwd.value;
+			
 			var pwdCheck=f.pwd_check.value;
 			var eng=/^[0-9 a-z A-Z]*$/;
 			  if (!eng.test(f.id.value) ){
 				 $.jQueryAlert("아이디는 영어 및 숫자만 입력 할 수 있습니다. \n ex) HoHyunMansae");
-			     f.id.focus();
 			     return;
 			}
 			 if(f.id.value=="" || f.id.value.length<5){
 				 $.jQueryAlert("ID는 5자 이상 입력해 주세요");
-				f.id.focus();
 				return;
 			}
 			 var kor=/^[a-z A-Z 가-힝]*$/;
 			 if (!kor.test(f.name.value) ){
 				 $.jQueryAlert("이름에 특수문자,숫자는 입력 할 수 없습니다. \n ex) HoHyunMansae");
-			     f.name.focus();
 			     return;
 			}
 			if(f.name.value=="" || f.name.value.length<2){
 				$.jQueryAlert("성과이름 모두 써주시기 바랍니다");
-				f.name.focus();
 				return;
 			}
-			if(f.pwd.value==""){
+			 if(f.pwd.value==""){
 				$.jQueryAlert("비밀번호를 입력하세요");
-				f.pwd.focus();
-				return;
-			}
-			var tp=/^[0-9a-zA-Z]*$/;
-			if(tp.test(f.pwd.value) || pwd.length<8){
-				$.jQueryAlert("비밀번호는 숫자, 영문, 특수문자를 조합해서\n8자리이상 쓰셔야 가능합니다");
-				f.pwd.focus();
 				return;
 			} 
+			var tp=/^[0-9a-zA-Z]*$/;
+			if(tp.test(f.pwd.value) || f.pwd.value.length<8){
+				alert("머냐");
+				/* $.jQueryAlert("비밀번호는 숫자, 영문, 특수문자를 조합해서\n8자리이상 쓰셔야 가능합니다"); */
+				return;
+			}
 			if(f.pwd_check.value==""){
 				$.jQueryAlert("비밀번호를 한번 더 입력하세요");
-				f.pwd_check.focus();
 				return;
 			}
 			if(pwd!=pwdCheck){
@@ -57,13 +51,11 @@
 			 var number = /[^0-9]/;
 			 if (f.birth.value.search(number)!=-1 || f.birth.value.length != 8 || f.birth.value==""){
 				 	$.jQueryAlert("생년월일은 숫자만 8자리를 입력해 주시기 바랍니다 "
-			        		+"\n ex)20161018");	        
-			        f.birth.focus();
+			        		+"\n ex)20161018");
 			        return;
 			   }
 			 if (f.phone.value.search(number)!=-1 || f.phone.value.length == 0 || f.phone.value.length != 11){
 				 	$.jQueryAlert("전화번호는 11자리 숫자만 입력하실 수 있습니다 \n ex)01015771577");
-			        f.phone.focus();
 			        return;
 			   } 	
 			 var $vvvv="${vvvv }";	   
@@ -157,7 +149,7 @@
 					<tr>
 						<td align="right">
 							<label for="pwd" class="inputlabel">비밀번호 :</label>
-							<input type="password" placeholder="비밀번호" name="pwd" id="pwd" onkeydown="NORTHFACE();enter();">
+							<input type="password" placeholder="비밀번호" name="pwd" id="pwd">
 						</td>
 					</tr>
 					<tr>
