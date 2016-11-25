@@ -194,7 +194,7 @@ public class AdminController{
 		return "adminpage/station";
 	}
 	
-	//캐릭터 수정
+	//영화 별 캐릭터 수정
 	@RequestMapping("AcharUpdate.do")
 	public String charInsert(Model model,String no,String type){
 		
@@ -226,7 +226,7 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//캐릭터 수정 OK
+	//영화 별 캐릭터 수정 OK
 	@RequestMapping("AcharUpdate_ok.do")
 	public String charUpdateOk(Model model, String sno, String actor, String type) {
 
@@ -298,6 +298,139 @@ public class AdminController{
 
 		return "adminpage/station";
 	}
+	
+	//캐릭터 관리 리스트 페이지
+	@RequestMapping("ACList.do")
+	public String charList(Model model, String page) {
+
+		//해당배우 정보
+		List<MovieVO> list = dao.AcharAllData();
+		
+		// 페이지 재료들
+		if (page == null)
+			page = "1";
+		int ipage = Integer.parseInt(page);
+		int row = 10;
+		int start = (row * ipage) - (row);
+		int end = (row * ipage) - 1;
+		int rowCount = dao.ACharCount();
+		int totalPage = (rowCount / row) + 1;
+		int block = 5;
+		int fromPage = ((ipage - 1) / block * block) + 1;
+		int toPage = ((ipage - 1) / block * block) + block;
+		if (rowCount % row == 0)
+			totalPage = totalPage - 1;
+		if (toPage > totalPage)
+			toPage = totalPage;
+		
+		model.addAttribute("page", ipage);
+		model.addAttribute("start", start);
+		model.addAttribute("end", end);
+		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("block", block);
+		model.addAttribute("fromPage", fromPage);
+		model.addAttribute("toPage", toPage);
+		model.addAttribute("list", list);
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+	    model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+	    model.addAttribute("jsp3", "../adminpage/char/charlist.jsp");
+		return "main/main";
+	}
+	
+	//캐릭터 상세 내용 보기
+	@RequestMapping("ACContent.do")
+	public String charContent(Model model, String cno) {
+		//해당 캐릭터 정보
+		MovieVO vo = dao.AcharContent(Integer.parseInt(cno));
+		
+		//영화제목들
+		List<MovieVO> mList = dao.AmovieAllData();
+		
+		model.addAttribute("mList",mList);
+		model.addAttribute("vo", vo);
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+	    model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+	    model.addAttribute("jsp3", "../adminpage/char/charcontent.jsp");
+		return "main/main";
+	}
+	
+	//캐릭터 등록
+	@RequestMapping("ACharInsert.do")
+	public String charInsert(Model model){
+		
+				
+		model.addAttribute("jsp","../adminpage/char/charInsert.jsp");
+		return "main/main";
+	}
+	
+	//캐릭터 등록 ok
+	@RequestMapping("ACharInsert_ok.do")
+	public String charInsertOk(Model model, String name, String img){
+		Map map=new HashMap();
+		map.put("name", name);
+		map.put("img",img);
+		
+		dao.ACharInsert(map);
+		model.addAttribute("go","ACL");
+		return "adminpage/station";
+	}	
+	
+	//캐릭터 상세 내용 수정 페이지
+	@RequestMapping("ACUpdate.do")
+	public String charUpdate(Model model, String name, String img,
+			String cno, String mno1, String mno2, 
+			String mno3, String mno4, String mno5){
+		int title1=Integer.parseInt(mno1);
+		int title2=Integer.parseInt(mno2);
+		int title3=Integer.parseInt(mno3);
+		int title4=Integer.parseInt(mno4);
+		int title5=Integer.parseInt(mno5);
+		int title[]={title1,title2,title3,title4,title5};
+			
+		Map map = new HashMap();
+		map.put("cno", Integer.parseInt(cno));
+		map.put("cname", name);
+		map.put("img", img);
+		
+		//이름,이미지 수정
+		dao.ACmodify(map);
+		
+		//이전 mno1~mno5 삭제
+		for(int i=1 ; i<6 ; i++){
+			String mno="mno"+i;
+			map.put("mno", mno);
+			dao.AactorDeleteMno(map);
+		}
+		int i=0;
+		for(int t:title){
+			//이미 영화번호가 들어가 있을때
+			List<MovieVO> mnoList=dao.AactorAllMno(Integer.parseInt(cno));
+			int check=0;		
+			for(MovieVO vo:mnoList){
+				if(vo.getMno1()==t || vo.getMno2()==t || vo.getMno3()==t
+						|| vo.getMno4()==t || vo.getMno5()==t){
+					check=1;
+				}
+			}
+			if(check==1){
+				break;
+			}
+			i++;			
+			//영화를 안골랐을때
+			if(t==0){
+				break;
+			}
+			map.put("movieNo", t);
+			String mno="mno"+i;
+			map.put("mno", mno);
+			dao.AactorInsertMno(map);
+		}
+		
+		
+		model.addAttribute("go","ACL");
+		return "adminpage/station";
+	}
+	
 	
 	//예매 리스트 
 	@RequestMapping("aReserveList.do")
