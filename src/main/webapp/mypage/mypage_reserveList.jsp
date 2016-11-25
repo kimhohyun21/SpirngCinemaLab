@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,13 +52,13 @@
 </head>
 <body>
 	<div class="bg2">
-		<div>
+		<div class="reserve_btn">
 			<a href="reserveList.do?no=${mvo.no }">
-				<span class="mrList_btn">예매내역</span>
+				<input type="button" class="mrList_btn" value="예매내역">
 			</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href="reserveList.do?no=${mvo.no }&type=1">
-				<span class="mrList_btn">관람내역</span>
+				<input type="button" class="mrList_btn" value="관람내역">
 			</a>
 		</div>
 		
@@ -78,10 +78,11 @@
 			</div>
 		</c:if>
 		
+		<c:if test="${list != '[]' }">
 		<div class="reservelist" >
+			<table class="div2">
 			<c:set var="i" value="1"/>
 			<c:set var="j" value="2"/>
-			<table class="div2">
 	        <c:forEach var="vo" items="${list }" begin="${start-1 }" end="${end-1 }" step="1">
 	        <c:if test="${i==1 }">
 	        	<tr>
@@ -89,26 +90,26 @@
 	         		<td>
 	         			<table width="390" cellspacing="8">
 	         				<tr>
-			                  <td class="poster">
+			                  <td class="poster" width="150">
 			                     <a href="movieDetail.do?no=${vo.mno }">
 			                        <img src="${vo.poster}" width="150" height="250">
 			                     </a>
 			                  </td>
-			                  <td class="detail">
+			                  <td class="detail" width="240">
 			                     <h3>${vo.title }</h3> <br>
-			                     <b>상영날짜:</b><fmt:formatDate value="${vo.rdate }" pattern="yyyy-MM-dd"/><br>
+			                     <b>상영날짜:</b> <fmt:formatDate value="${vo.rdate }" pattern="yyyy-MM-dd"/><br>
 			                     <b>상영시간:</b> ${vo.movietime }<br>
 			                     <b>상영장소:</b>${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관<br>
 			                     <b>좌석:</b> ${vo.seat }<br>
 			                     <b>결제방식:</b> ${vo.paytype }<br>
 			                     <b>금액:</b> ${vo.payment }원<br>
 			                     <c:if test="${vo.rdate > today}">
-			                        <div align="right">
+			                        <div class="cancel"align="right">
 			                           <form id="cancelfrm">
 			                              <input type="hidden" name="rno" value="${vo.rNo}">
 			                              <input type="hidden" name="title" value="${vo.title}">
 			                           </form>
-			                           <input type="button" value="예매취소" onclick="reserveCancel()">
+			                           <input type="button" value="예매취소" class="reserve_cancel" onclick="reserveCancel()">
 			                        </div>
 			                     </c:if>
 			                  </td>
@@ -123,10 +124,12 @@
 	        </c:forEach>
       		</table>
       	</div>
+      	</c:if>
 		
-		<div class="page">
-		<!-- 관람내역 일때 -->
+		
 		<c:if test="${type eq '1' }">
+		<!-- 관람내역 일때 -->
+		<div class="page">
 			<table id="type_1" align="right">
 				<tr>
 					<td>
@@ -176,12 +179,12 @@
 					</td>
 				</tr>
 			</table>
-		</c:if>
 		</div>
+		</c:if>
 	
-		<div class="page1">
-		<!-- 예매내역일때 -->
 		<c:if test="${type eq '0' }">
+		<!-- 예매내역일때 -->
+		<div class="page1">
 			<table id="type_0" align="right">
 				<tr>
 					<td>
@@ -231,8 +234,8 @@
 					</td>
 				</tr>
 			</table>
-		</c:if>
 		</div>
+		</c:if>
 	</div>
 </body>
 </html>

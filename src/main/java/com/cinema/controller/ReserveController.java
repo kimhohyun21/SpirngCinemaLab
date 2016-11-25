@@ -41,8 +41,12 @@ public class ReserveController {
 		String sm=st.nextToken(); 
 		int month=Integer.parseInt(sm);  //월
 		String sd=st.nextToken(); 
-		int day=Integer.parseInt(sd);    //일		
+		int day=Integer.parseInt(sd);    //일	
 		String ss=st.nextToken();        //요일
+		
+		//오늘 시간 얻기
+		String todayTime=new SimpleDateFormat("HHmm").format(new Date());
+		int todayTime2=Integer.parseInt(todayTime);
 		
 		//오늘의 요일부터 7일까지만 배열에 넣어주기
 		String[] strWeek={"일","월","화","수","목","금","토"}; //요일 배열
@@ -74,7 +78,7 @@ public class ReserveController {
 			day++;
 			if(day>lastDay2) day=1;
 		}
-		
+		day=Integer.parseInt(sd);
 		//날짜 출력을 위한 변수
 		int z=0;
 		
@@ -125,7 +129,32 @@ public class ReserveController {
 		map.put("tname", tname);
 		map.put("title", title);
 		int theaterNo2=dao.theaterNoData(map);
-		List<ReserveVO> timeList=dao.timeData(map);		
+		
+		List<ReserveVO> timeList=dao.timeData(map);
+		List<ReserveVO> timelist2=new ArrayList<>();
+		ReserveVO vo2=new ReserveVO();
+		
+		if(d==day){
+			for(ReserveVO vo:timeList){
+				String movietime2=vo.getMovietime();
+				StringTokenizer time=new StringTokenizer(movietime2,":");
+				String si=time.nextToken();
+				String bun=time.nextToken();
+				String sibun=si+bun;
+				int sibun2=Integer.parseInt(sibun);
+
+				if(sibun2>700){
+					if(todayTime2<sibun2){
+						vo.setMovietime(movietime2);
+						timelist2.add(vo);
+					}
+				}
+			}
+			model.addAttribute("timeList", timelist2);
+		}
+		else{
+			model.addAttribute("timeList", timeList);
+		}
 		
 		//나머지 정보 값 받기 
 		if(grade==null)grade=movieList.get(0).getGrade();
@@ -166,7 +195,6 @@ public class ReserveController {
 		model.addAttribute("movieList", movieList);
 		model.addAttribute("title", title);
 		model.addAttribute("theaterNo2", theaterNo2);
-		model.addAttribute("timeList", timeList);
 		model.addAttribute("grade", grade);
 		model.addAttribute("theaterNo", theaterNo);
 		model.addAttribute("poster", poster);
@@ -386,7 +414,6 @@ public class ReserveController {
 	@ResponseBody
 	public Map reserve5_Cancel(Model model, String rno, String pid, String title, HttpSession session){
 		//요청정보 받아오기
-		System.out.println(rno);
 		int rNo=0;
 		if(pid!=null)rNo=dao.getRno(pid);
 		if(rno!=null){
