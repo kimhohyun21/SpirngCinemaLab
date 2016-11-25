@@ -49,7 +49,7 @@
 	<select id="memberReserveList" parameterType="int" resultType="memberReserve">
 		SELECT rNo, rDate, seat, ticket, payType, payment, local, theater, theaterNo, movieTime, title,poster,mno
 		FROM reserveList NATURAL JOIN theaterList NATURAL JOIN MOVIELIST
-		WHERE no=#{no} AND rDate>to_char(sysdate) AND cancel IS NULL ORDER BY rDate ASC
+		WHERE no=#{no} AND rDate>to_char(sysdate) AND cancel IS NULL ORDER BY rDate DESC
 	</select>
 	<select id="ReserveCount" parameterType="int" resultType="int">
 		SELECT COUNT(*) FROM reserveList WHERE no=#{no} AND cancel IS null

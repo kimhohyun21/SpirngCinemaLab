@@ -133,7 +133,8 @@ b{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;	
    	position: relative;
-   	top: 20px;
+   	/*top: 20px; */
+   	padding-bottom:10px;
    	right: 35px;
 }
 .mrList_btn:hover {
@@ -148,33 +149,22 @@ b{
 }
 .mrList_btn:active {
     position:relative;
-	top:19px;
+	top:2px;
 }
 
-#lion_img img{
-	position: relative;
-	top: 66px;
-	right: 42px;
+.reserve_btn{
+	margin-top: 20px;
+	height: 42px;
+}
+
+#lion_img{
+	margin-top: 30px;
 }
 
 #lion_img p{
-	width:140px;
-	position:relative;
-	top: 90px;
-	left: 12px;
 	font-size: 18px;
 	font-weight: bold;
 }
-
-/* #type_0{
-	position: relative;
-	top: 120px;
-}
-
-#type_1{
-	position: relative;
-	bottom: 85px;
-} */
 
 .detail{
 	background-color: #e6f2ff;
@@ -191,19 +181,80 @@ b{
 }
 
 .div1{
-	margin-top:50px;
+	margin-top:18px;
+	margin-bottom: 20px;
 	position: relative;
 	right: 38px;
 }
 
 .reservelist{
+	display: inline-table;
 	position: relative;
+	top:-38px;
 	right: 28px;
+	width: 786px;
+	height: 538px;
+}
+
+.div2{
+	display: table-footer-group;
+	position: relative;
+	bottom: 34px;
 }
 
 .page, .page1{
 	margin-top: 1px;
-	margin-bottom: 10px;
+	height: 27px;
+}
+
+.cancel{
+	height: 35px;
+}
+
+.reserve_cancel{
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	position: relative;
+	right: 3px;
+	bottom: 41px;
+}
+
+.reserve_cancel:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+
+.reserve_cancel:active {
+	position:relative;
+	top:1px;
 }
 
 /* 마이페이지-회원정보 수정 */

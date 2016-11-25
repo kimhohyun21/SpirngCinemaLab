@@ -57,7 +57,6 @@ public class MyPageController {
 		start = (curpage*rowSize)-(rowSize-1); // 0, 3, 6...
 		end = curpage*rowSize; // 2, 5, 8
 		totalPage=(int) Math.ceil(rowCount/rowSize);
-		System.out.println(totalPage);
 		if(totalPage==0) curpage=0;
 
 		//페이지 넘버링
