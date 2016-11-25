@@ -4,8 +4,8 @@
 <c:if test="${check == 1 }">
 	<script type="text/javascript">
 		alert('그동안 이용해 주셔서 감사합니다');
+		location.href="main.do";
 	</script>
-	<c:redirect url="main.do"/>
 </c:if>
 <c:if test="${check == 0 }">
 	<script type="text/javascript">

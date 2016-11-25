@@ -67,7 +67,7 @@
 			        return;
 			   } 	
 			 var $vvvv="${vvvv }";	   
-			 if($vvvv == "체크완료"){
+			 if($vvvv != "체크완료"){
 				 	$.jQueryAlert("중복체크를 해주세요") 
 			 		return;
 			  }

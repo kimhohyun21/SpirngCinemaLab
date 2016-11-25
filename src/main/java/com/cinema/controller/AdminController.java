@@ -17,19 +17,20 @@ public class AdminController{
 	@Autowired
 	AdminDAO dao;
 	
-	//¿µÈ­ ¸®½ºÆ®
+	//ì˜í™” ë¦¬ìŠ¤íŠ¸
 	@RequestMapping("aMovieList.do")
 	public String movieList(Model model,String page){
-		//¹«ºñ ¸®½ºÆ® »Ì¾Æ¿À±â
+		//ë¬´ë¹„ ë¦¬ìŠ¤íŠ¸ ë½‘ì•„ì˜¤ê¸°
 		List<MovieVO> list=dao.adminMovieAllList();
 		
-		// yyyy-MM-dd 00:00:00  µŞºÎºĞ ½Ã°£ Áö¿ì±â
+		// yyyy-MM-dd 00:00:00  ë’·ë¶€ë¶„ ì‹œê°„ ì§€ìš°ê¸°
 		for(MovieVO vo:list){
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 			String Date = sdf.format(vo.getOpendate());
-			vo.setDate(Date);		}
+			vo.setDate(Date);		
+		}
 		
-		//ÆäÀÌÁö Àç·áµé
+		//í˜ì´ì§€ ì¬ë£Œë“¤
 		if(page==null)page="1";
 		int ipage=Integer.parseInt(page);
 		int row=10;
@@ -45,7 +46,7 @@ public class AdminController{
 		if(toPage>totalPage)
 			toPage=totalPage;
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -64,11 +65,11 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//¿µÈ­ µî·Ï
+	//ì˜í™” ë“±ë¡
 	@RequestMapping("AmovieInsert.do")
 	public String movieInsert(Model model){
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -78,25 +79,25 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//¿µÈ­ µî·Ï OK
+	//ì˜í™” ë“±ë¡ OK
 	@RequestMapping("AmovieInsert_ok.do")
 	public String movieInsert_ok(Model model,String title,String poster,String grade,
 			String type,String runtime, String year, String month, String day, String content,
 			String director, String genre, String cast, String trailer) {
 		try {
 			//model.setCharacterEncoding("UTF-8");
-			// opendate¸¸µé±â
+			// opendateë§Œë“¤ê¸°
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date opendate = sdf.parse(sopendate);
 
-			// ÀúÀå
+			// ì €ì¥
 			MovieVO vo = new MovieVO();			
 			vo.setTitle(title);
 			vo.setPoster(poster);
 			vo.setGrade(grade);
 			vo.setType(Integer.parseInt(type));
-			vo.setRuntime(runtime + "ºĞ");
+			vo.setRuntime(runtime + "ë¶„");
 			vo.setContent(content);
 			vo.setDirector(director);
 			vo.setGenre(genre);
@@ -115,14 +116,14 @@ public class AdminController{
 		return "adminpage/station";
 	}
 	
-	//¿µÈ­ Á¤º¸ ¼öÁ¤
+	//ì˜í™” ì •ë³´ ìˆ˜ì •
 	@RequestMapping("Amodifymovielist.do")
 	public String modifyMovieList(Model model,String no){
-		//¿µÈ­Á¤º¸µé °¡Á®¿À±â
+		//ì˜í™”ì •ë³´ë“¤ ê°€ì ¸ì˜¤ê¸°
 		int no2=Integer.parseInt(no);
 		MovieVO vo=dao.adminMovieData(no2);
 		
-		//³âµµ,¿ù,ÀÏ ºĞ¸®
+		//ë…„ë„,ì›”,ì¼ ë¶„ë¦¬
 		SimpleDateFormat yearF=new SimpleDateFormat("yyyy");
 		SimpleDateFormat monthF=new SimpleDateFormat("MM");
 		SimpleDateFormat dayF=new SimpleDateFormat("dd");
@@ -130,15 +131,15 @@ public class AdminController{
 		String month = monthF.format(vo.getOpendate());
 		String day = dayF.format(vo.getOpendate());
 		
-		//»ó¿µ¿¹Á¤¿µÈ­ ¼öÁ¤ ¿¡·¯¹æÁö
+		//ìƒì˜ì˜ˆì •ì˜í™” ìˆ˜ì • ì—ëŸ¬ë°©ì§€
 		String runtime=vo.getRuntime();
 		if(runtime != null){
-			// »ó¿µ½Ã°£ 'ºĞ'»©±â
-			runtime.replaceAll("ºĞ", "");
+			// ìƒì˜ì‹œê°„ 'ë¶„'ë¹¼ê¸°
+			runtime.replaceAll("ë¶„", "");
 			vo.setRuntime(runtime);
 		}
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -153,7 +154,7 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//¿µÈ­ ¼öÁ¤ OK
+	//ì˜í™” ìˆ˜ì • OK
 	@RequestMapping("Amodify_Ok.do")
 	public String modifyOk(Model model, String no, String title, String poster,
 			String grade, String type, String runtime, String year, String month, String day,
@@ -162,12 +163,12 @@ public class AdminController{
 			//request.setCharacterEncoding("EUC-KR");
 			int no2=Integer.parseInt(no);
 						
-			// opendate¸¸µé±â
+			// opendateë§Œë“¤ê¸°
 			String sopendate = year + "-" + month + "-" + day + " 00:00:00";
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date opendate = sdf.parse(sopendate);
 			
-			// ÀúÀå
+			// ì €ì¥
 			MovieVO vo=new MovieVO();
 			vo.setmNo(no2);
 			vo.setTitle(title);
@@ -194,14 +195,14 @@ public class AdminController{
 		return "adminpage/station";
 	}
 	
-	//¿µÈ­ º° Ä³¸¯ÅÍ ¼öÁ¤
+	//ì˜í™” ë³„ ìºë¦­í„° ìˆ˜ì •
 	@RequestMapping("AcharUpdate.do")
 	public String charInsert(Model model,String no,String type){
 		
 		List<MovieVO> list=dao.AcharAllData();
 		List<MovieVO> actor=dao.movieCharData(Integer.parseInt(no));
 		
-		//Ãâ¿¬ÁøÀÌ ¾ø°Å³ª 1,2¸íÀÏ °æ¿ì
+		//ì¶œì—°ì§„ì´ ì—†ê±°ë‚˜ 1,2ëª…ì¼ ê²½ìš°
 		switch(actor.size()){
 		case 0:
 			actor.add(list.get(0));
@@ -211,11 +212,11 @@ public class AdminController{
 			actor.add(list.get(0));
 		}
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
-		model.addAttribute("i",0); //Ä«¿îÆÃ¿ë
+		model.addAttribute("i",0); //ì¹´ìš´íŒ…ìš©
 		model.addAttribute("actor",actor);
 		model.addAttribute("no",no);
 		model.addAttribute("type",type);
@@ -226,34 +227,34 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//¿µÈ­ º° Ä³¸¯ÅÍ ¼öÁ¤ OK
+	//ì˜í™” ë³„ ìºë¦­í„° ìˆ˜ì • OK
 	@RequestMapping("AcharUpdate_ok.do")
 	public String charUpdateOk(Model model, String sno, String actor, String type) {
 
 		int no = Integer.parseInt(sno);
-		// ¹è¿ì¹øÈ£ ³ª´©±â ÇöÀç actor=1,2,3
+		// ë°°ìš°ë²ˆí˜¸ ë‚˜ëˆ„ê¸° í˜„ì¬ actor=1,2,3
 		System.out.println(actor);
 		StringTokenizer st=new StringTokenizer(actor, ",");		
 		int actor1 = Integer.parseInt(st.nextToken());
 		int actor2 = Integer.parseInt(st.nextToken());
 		int actor3 = Integer.parseInt(st.nextToken());
 
-		// no=¿µÈ­¹øÈ£,actor=Ãâ¿¬Áø¹øÈ£
+		// no=ì˜í™”ë²ˆí˜¸,actor=ì¶œì—°ì§„ë²ˆí˜¸
 		List<MovieVO> beforeAL = dao.movieCharData(no);
 		int[] afterAL = { actor1, actor2, actor3 };
 		Map map = new HashMap();
 		
 		
-		//ÀÌÀü Ãâ¿¬Áø »èÁ¦
+		//ì´ì „ ì¶œì—°ì§„ ì‚­ì œ
 		for (MovieVO vo : beforeAL) {
 			map.put("cno", vo.getCno());
 			for (int j = 1; j < 6; j++) {
-				//mno1~mno5 °¡Á®¿À±â
+				//mno1~mno5 ê°€ì ¸ì˜¤ê¸°
 				String mno = "mno" + j;
 				map.put("mno", mno);
 				int db_mno = dao.AactorMno(map);
 				
-				//°¡Á®¿Â ¹øÈ£¶û ¿µÈ­¹øÈ£¶û °°À¸¸é »èÁ¦
+				//ê°€ì ¸ì˜¨ ë²ˆí˜¸ë‘ ì˜í™”ë²ˆí˜¸ë‘ ê°™ìœ¼ë©´ ì‚­ì œ
 				if (db_mno == no) {
 					dao.AactorDeleteMno(map);
 					break;
@@ -261,9 +262,9 @@ public class AdminController{
 			}
 		}
 		
-		//ÀÔ·Â¹ŞÀº Ãâ¿¬Áø ¾÷µ¥ÀÌÆ®
+		//ì…ë ¥ë°›ì€ ì¶œì—°ì§„ ì—…ë°ì´íŠ¸
 		for (int cno : afterAL) {
-			//Áßº¹Ã¼Å©¿ë
+			//ì¤‘ë³µì²´í¬ìš©
 			int check=0;
 			map.put("cno", cno);
 			for (int j = 1; j < 6; j++) {
@@ -271,7 +272,7 @@ public class AdminController{
 				map.put("mno", mno);
 				int db_mno = dao.AactorMno(map);
 				
-				//Ãâ¿¬ÁøÀÌ Áßº¹µÉ °æ¿ì break
+				//ì¶œì—°ì§„ì´ ì¤‘ë³µë  ê²½ìš° break
 				if(j==1){
 					List<MovieVO> mnoL=dao.AactorAllMno(cno);					
 					for(MovieVO vo:mnoL){
@@ -299,14 +300,14 @@ public class AdminController{
 		return "adminpage/station";
 	}
 	
-	//Ä³¸¯ÅÍ °ü¸® ¸®½ºÆ® ÆäÀÌÁö
+	//ìºë¦­í„° ê´€ë¦¬ ë¦¬ìŠ¤íŠ¸ í˜ì´ì§€
 	@RequestMapping("ACList.do")
 	public String charList(Model model, String page) {
 
-		//ÇØ´ç¹è¿ì Á¤º¸
+		//í•´ë‹¹ë°°ìš° ì •ë³´
 		List<MovieVO> list = dao.AcharAllData();
 		
-		// ÆäÀÌÁö Àç·áµé
+		// í˜ì´ì§€ ì¬ë£Œë“¤
 		if (page == null)
 			page = "1";
 		int ipage = Integer.parseInt(page);
@@ -323,7 +324,7 @@ public class AdminController{
 		if (toPage > totalPage)
 			toPage = totalPage;
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -341,16 +342,16 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//Ä³¸¯ÅÍ »ó¼¼ ³»¿ë º¸±â
+	//ìºë¦­í„° ìƒì„¸ ë‚´ìš© ë³´ê¸°
 	@RequestMapping("ACContent.do")
 	public String charContent(Model model, String cno) {
-		//ÇØ´ç Ä³¸¯ÅÍ Á¤º¸
+		//í•´ë‹¹ ìºë¦­í„° ì •ë³´
 		MovieVO vo = dao.AcharContent(Integer.parseInt(cno));
 		
-		//¿µÈ­Á¦¸ñµé
+		//ì˜í™”ì œëª©ë“¤
 		List<MovieVO> mList = dao.AmovieAllData();
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -362,11 +363,11 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//Ä³¸¯ÅÍ µî·Ï
+	//ìºë¦­í„° ë“±ë¡
 	@RequestMapping("ACharInsert.do")
 	public String charInsert(Model model){
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);		
@@ -374,7 +375,7 @@ public class AdminController{
 		return "main/main";
 	}
 	
-	//Ä³¸¯ÅÍ µî·Ï ok
+	//ìºë¦­í„° ë“±ë¡ ok
 	@RequestMapping("ACharInsert_ok.do")
 	public String charInsertOk(Model model, String name, String img){
 		Map map=new HashMap();
@@ -386,7 +387,7 @@ public class AdminController{
 		return "adminpage/station";
 	}	
 	
-	//Ä³¸¯ÅÍ »ó¼¼ ³»¿ë ¼öÁ¤ ÆäÀÌÁö
+	//ìºë¦­í„° ìƒì„¸ ë‚´ìš© ìˆ˜ì • í˜ì´ì§€
 	@RequestMapping("ACUpdate.do")
 	public String charUpdate(Model model, String name, String img,
 			String cno, String mno1, String mno2, 
@@ -403,10 +404,10 @@ public class AdminController{
 		map.put("cname", name);
 		map.put("img", img);
 		
-		//ÀÌ¸§,ÀÌ¹ÌÁö ¼öÁ¤
+		//ì´ë¦„,ì´ë¯¸ì§€ ìˆ˜ì •
 		dao.ACmodify(map);
 		
-		//ÀÌÀü mno1~mno5 »èÁ¦
+		//ì´ì „ mno1~mno5 ì‚­ì œ
 		for(int i=1 ; i<6 ; i++){
 			String mno="mno"+i;
 			map.put("mno", mno);
@@ -414,7 +415,7 @@ public class AdminController{
 		}
 		int i=0;
 		for(int t:title){
-			//ÀÌ¹Ì ¿µÈ­¹øÈ£°¡ µé¾î°¡ ÀÖÀ»¶§
+			//ì´ë¯¸ ì˜í™”ë²ˆí˜¸ê°€ ë“¤ì–´ê°€ ìˆì„ë•Œ
 			List<MovieVO> mnoList=dao.AactorAllMno(Integer.parseInt(cno));
 			int check=0;		
 			for(MovieVO vo:mnoList){
@@ -427,7 +428,7 @@ public class AdminController{
 				break;
 			}
 			i++;			
-			//¿µÈ­¸¦ ¾È°ñ¶úÀ»¶§
+			//ì˜í™”ë¥¼ ì•ˆê³¨ëì„ë•Œ
 			if(t==0){
 				break;
 			}
@@ -443,9 +444,9 @@ public class AdminController{
 	}
 	
 	
-	//¿¹¸Å ¸®½ºÆ® 
+	//ì˜ˆë§¤ ë¦¬ìŠ¤íŠ¸ 
 	@RequestMapping("aReserveList.do")
-	public String qnaList(Model model,String page){
+	public String qnaList(Model model, String page){
 		
 		if(page == null) page = "1";
 		int curpage = Integer.parseInt(page);
@@ -453,9 +454,9 @@ public class AdminController{
 		int start = (curpage*rowSize)-(rowSize-1);
 		int end = curpage*rowSize;
 		
-		//ÇÑ¹ø¿¡ ÃÖ´ë Ç¥½ÃÇÒ ÆäÀÌÁö ¼ö
+		//í•œë²ˆì— ìµœëŒ€ í‘œì‹œí•  í˜ì´ì§€ ìˆ˜
 		int block = 5;
-		//block¿¡ Ç¥½ÃµÈ ÆäÀÌÁö±îÁö °°Àº block Ç¥½Ã
+		//blockì— í‘œì‹œëœ í˜ì´ì§€ê¹Œì§€ ê°™ì€ block í‘œì‹œ
 		int fromPage = ((curpage-1)/block*block)+1;
 		int toPage = ((curpage-1)/block*block) + block;
 		
@@ -469,7 +470,7 @@ public class AdminController{
 		if(toPage > totalpage)
 			toPage = totalpage;
 		
-		//¸Ş´º ¼±ÅÃ ±¸ºĞÀÎÀÚ
+		//ë©”ë‰´ ì„ íƒ êµ¬ë¶„ì¸ì
 		String menuType="admin";
 		
 		model.addAttribute("menuType", menuType);
@@ -485,5 +486,25 @@ public class AdminController{
 		
 		return "main/main";
 	}
+	
+	@RequestMapping("reservecontent.do")
+ 	public String handlerRequest(Model model,String no,String page){
+		
+ 		ReserveListVO vo = dao.reserveContent(Integer.parseInt(no));
+
+		//Â¸ÃÂ´Âº Â¼Â±Ã…Ãƒ Â±Â¸ÂºÃÃ€ÃÃ€Ãš
+ 		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
+ 		model.addAttribute("no", no);
+ 		model.addAttribute("page", page);
+		model.addAttribute("vo", vo);
+		model.addAttribute("jsp","../mypage/mypage.jsp");
+		model.addAttribute("jsp2", "../adminpage/menubar.jsp");
+		model.addAttribute("jsp3", "../adminpage/reservecontent.jsp");
+ 		
+		return "main/main";
+ 		
+ 	}
 	
 }

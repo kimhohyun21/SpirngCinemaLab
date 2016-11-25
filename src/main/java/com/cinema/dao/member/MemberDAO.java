@@ -50,8 +50,8 @@ public class MemberDAO extends SqlSessionDaoSupport{
 		
 	}
 	
-	public void memberDelete(MemberVO vo){
-		int i=getSqlSession().delete("memberDelete",vo);
+	public void memberDelete(int no){
+		int i=getSqlSession().delete("memberDelete", no);
 	}
 	
 	public int memberOverlab(String id){

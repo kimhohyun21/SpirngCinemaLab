@@ -218,7 +218,7 @@ public class MyPageController {
 			int check=3;
 			
 			if(db_pwd.equals(pwd)){
-				dao.memberDelete(vo);
+				dao.memberDelete(no);
 				//历厘夌带 技记朝府扁
 				session.invalidate();
 				check=1;

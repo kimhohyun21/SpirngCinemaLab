@@ -31,7 +31,7 @@ function send(){
 		f.check_pwd.focus();
 		return;
 	}
-	if(f.check_pwd.value==f.change_pwd.value){
+	if(f.check_pwd.value!=f.change_pwd.value){
 		alert("비밀번호가 다릅니다");
 		f.check_pwd.focus();
 		return;

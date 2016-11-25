@@ -26,7 +26,7 @@
 	<select id="memberFindPwd" parameterType="member" resultType="String">
 		SELECT pwd FROM member WHERE name=#{name} AND id=#{id} AND phone=#{phone}  
 	</select>
-	<delete id="memberDelete" parameterType="member">
+	<delete id="memberDelete" parameterType="int">
 		DELETE FROM member WHERE no=#{no}
 	</delete>
 	<select id="memberOverlab" parameterType="String" resultType="int">
