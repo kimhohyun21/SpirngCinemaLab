@@ -12,8 +12,8 @@
 	<div align="center" id="theaterList">
 		<ul>
 			<c:forEach var="vo" items="${theaterList }">
-				<li>
-					<a href="theater.do?local=${local}&theater=${vo.theater}">${vo.theater }</a>
+				<li onclick="location.href='theater.do?local=${local}&theater=${vo.theater}'">
+					<span>${vo.theater }</span>
 				</li>
 			</c:forEach>
 		</ul>

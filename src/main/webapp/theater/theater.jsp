@@ -14,8 +14,8 @@
 		<div id="local">
 			<ul>
 				<c:forEach var="vo" items="${localList }">
-					<li>
-						<a href="theater.do?local=${vo.local }">${vo.local }</a>
+					<li onclick="location.href='theater.do?local=${vo.local }'">
+						<span>${vo.local }</span>
 					</li>
 				</c:forEach>
 			</ul>

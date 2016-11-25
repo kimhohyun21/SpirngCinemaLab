@@ -230,6 +230,12 @@ b{
 	text-align: center;
 	background-color: #cce6ff;
 }
-
+table.div2{
+	width: 786px;
+}
+table.type_0, table.type_1{
+	width: 786px;
+	text-align: right;
+}
 
 

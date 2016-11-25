@@ -25,11 +25,12 @@
  	height: 43px;
 }
 
-#local ul li:HOVER{
+#local ul li:HOVER {
 	background-color: #004d80;
+	color: white;
 } 
 
-#local ul li a{
+#local ul li span{
 	font-size: 17px;
 	font-weight: bold;
 	position: relative;
@@ -64,17 +65,21 @@
  	padding-left: 33px;
     padding-right: 33px;
  	height: 38px;
+ 	color: white;
+ 	vertical-align: middle;
 }
 
-#theaterList ul li a{
+#theaterList ul li span{
 	font-size: 17px;
+	font-weight: bold;
 	position: relative;
 	top: 8px;
+	
 }
 
-#theaterList ul li a:HOVER {
-	color: white;
-	text-decoration: underline;
+#theaterList ul li:HOVER {
+	color: black;
+	background: white;
 }
 
 .button1 {
