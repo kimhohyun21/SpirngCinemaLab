@@ -87,7 +87,7 @@
 	border-bottom: 1px solid gray;
 }
 
-.subject:HOVER{
+.list_tr:HOVER{
 	background-color: #e6e6ff;
 }
 

@@ -82,7 +82,8 @@
 </head>
 <body>
 	<div align="center" class="loginBg">
-		<h2>로그인</h2>
+		<h2 class="login"><a href="login.do">로그인</a></h2>
+		<h2 class="join" id=selectedBg><a href="join.do">회원가입</a></h2>
 		<div class="loginMain">
 			<form method="post" action="login_ok.do" name="frm" id="frm">
 				<div class="inputType">

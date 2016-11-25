@@ -16,7 +16,7 @@
 			<c:if test="${vo.grade=='0'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_all.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -24,7 +24,7 @@
 					<c:forEach var="vo2" items="${vo.timeList}">
 						<td align="center">
 							<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
-							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
+							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
 							&movietime=${vo2.movietime}&cType=theater#nav">
 								${vo2.movietime} 
 							</a>
@@ -35,7 +35,7 @@
 			<c:if test="${vo.grade=='12'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_12.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -43,7 +43,7 @@
 					<c:forEach var="vo2" items="${vo.timeList}">
 						<td align="center">
 							<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
-							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
+							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
 							&movietime=${vo2.movietime}&cType=theater#nav">
 								${vo2.movietime}
 							</a>
@@ -54,7 +54,7 @@
 			<c:if test="${vo.grade=='15'}">
 				<tr>
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 							<img src="image/bg_grade_15.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -62,7 +62,7 @@
 					<c:forEach var="vo2" items="${vo.timeList }">
 						<td align="center">
 							<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
-							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
+							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
 							&movietime=${vo2.movietime}&cType=theater#nav">
 								${vo2.movietime } 
 							</a>
@@ -73,7 +73,7 @@
 			<c:if test="${vo.grade=='18'}">
 				<tr class="movie_time_tr">
 					<td width="40%">
-						<a href="moviedetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }">
 					 		<img src="image/bg_grade_18.png">&nbsp;${vo.title}
 						</a>
 					</td>
@@ -81,7 +81,7 @@
 					<c:forEach var="vo2" items="${vo.timeList }">
 						<td align="center">
 							<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
-							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
+							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
 							&movietime=${vo2.movietime}&cType=theater#nav">
 								${vo2.movietime} 
 							</a>

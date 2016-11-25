@@ -11,7 +11,7 @@ public class SearchIdOkController {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("searchId_ok.do")
+	/*@RequestMapping("searchId_ok.do")
 	public String searchId_ok(Model model, String phone, String birth, String name){
 		
 			MemberVO vo=new MemberVO();
@@ -28,5 +28,5 @@ public class SearchIdOkController {
 			model.addAttribute("jsp", "../search/giveimpo.jsp");
 			
 		return "main/main";
-	}
+	}*/
 }

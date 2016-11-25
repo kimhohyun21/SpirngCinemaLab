@@ -10,15 +10,17 @@
 </head>
 <body>
 	<center>
-		<table width="700" class="type01">
-		<thead>
-			<tr class="nhover">
+		<table width="699" class="reg_btn">
+			<tr>
 				<td>
 					<a href="ACharInsert.do">
 						<button class="menu_insert">배우등록</button>						
 					</a>
 				</td>
 			</tr>
+		</table>
+		<table width="700" class="type01">
+		<thead>
 			<tr>
 				<th align="center">
 					이름
@@ -42,7 +44,7 @@
 						<a href="ACList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="ACList.do?page=${fromPage-1 }">
+						<a href="ACList.do?page=${fromPage-1 }" style="color: red">
 							이전
 						</a>&nbsp;
 					</c:if>
@@ -51,7 +53,7 @@
 						<a href="ACList.do?page=1">
 							처음
 						</a>&nbsp;
-						<a href="ACList.do?page=${page>1?page-1:page }">
+						<a href="ACList.do?page=${page>1?page-1:page }" style="color: red">
 							이전
 						</a>&nbsp;
 					</c:if>
@@ -64,11 +66,11 @@
 						<c:if test="${page!=i }">
 							<a href="ACList.do?page=${i }">${i }</a>
 						</c:if>
-						]
+						]&nbsp;
 					</c:forEach>
 					
 					<c:if test="${toPage<totalPage }">
-						<a href="ACList.do?page=${toPage+1 }">
+						<a href="ACList.do?page=${toPage+1 }" style="color: blue">
 							다음
 						</a>&nbsp;
 						<a href="ACList.do?page=${totalPage }">
@@ -77,7 +79,7 @@
 					</c:if>
 					
 					<c:if test="${toPage>=totalPage }">
-						<a href="ACList.do?page=${page<totalPage?page+1:page }">
+						<a href="ACList.do?page=${page<totalPage?page+1:page }" style="color: blue">
 							다음
 						</a>&nbsp;
 						<a href="ACList.do?page=${totalPage }">

@@ -12,9 +12,7 @@ public class CustomerUpdateController {
 	private CustomerDAO dao;
 	
 	@RequestMapping("update.do")
-	public String handlerRequest(Model model, String strPage, String strNo){
-		
-		int no=Integer.parseInt(strNo);
+	public String handlerRequest(Model model, String page, int no){
 		
 		CustomerVO vo=dao.customerUpdate(no);
 		

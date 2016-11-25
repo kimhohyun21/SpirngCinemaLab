@@ -28,13 +28,13 @@ public class MemberDAO extends SqlSessionDaoSupport{
 		return check;
 	}
 	
-	public MemberVO memberGetImfor(String id){
-		MemberVO list=getSqlSession().selectOne("memberImfor",id);		
+	public MemberVO memberGetInfo(String id){
+		MemberVO list=getSqlSession().selectOne("memberInfo",id);		
 		return list;		
 	}
 	
-	public MemberVO memberGetAllImfor(int no){
-		MemberVO list=getSqlSession().selectOne("memberAllImfor",no);		
+	public MemberVO memberGetAllInfo(int no){
+		MemberVO list=getSqlSession().selectOne("memberAllInfo",no);		
 		return list;		
 	}
 	
@@ -77,7 +77,7 @@ public class MemberDAO extends SqlSessionDaoSupport{
 		return list;		
 	}
 	
-	public List<MemberReserveListVO> memberReserveList(int no){//@@@@@@@@@@@
+	public List<MemberReserveListVO> memberReserveList(int no){
 		List<MemberReserveListVO> list=getSqlSession().selectList("memberReserveList",no);
 		return list;		
 	}

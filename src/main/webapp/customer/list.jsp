@@ -70,7 +70,25 @@
 				fs.pwd.focus();
 				return;
 			}
-			f.submit();
+			
+			$.ajax({
+				type: "POST",
+				url: "login_ok.do",
+				data:$('form').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.check=="ok"){
+						window.location.reload(true);
+					}else if(data.check=="pwdnot"){
+						$.jQueryAlert("패스워드가 잘못 되었습니다.");
+					}else if(data.check=="idnot"){
+						$.jQueryAlert("아이디가 잘못 되었습니다.");
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
 		}
 		
 		/* jQuery Alert 창 */
@@ -131,11 +149,10 @@
 				<th width="20%" align="center">작성일</th>
 				<th width="10%" align="center">조회수</th>
 			</tr>
-		<c:forEach var="vo" items="${list}">
-			<tr>
+			<c:forEach var="vo" items="${list}">
+			<tr class="list_tr">
 				<td width="10%" align="center">${vo.qno}</td>
 				<td width="45%" align="left" class="subject">
-					
 					<c:if test="${vo.group_tab!=0}">
 						<c:forEach var="i" begin="1" end="${vo.group_tab}">
 							&nbsp;&nbsp;

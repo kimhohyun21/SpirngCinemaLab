@@ -4,7 +4,47 @@
     height: 42px;
     background: url(../image/list_btn.gif) no-repeat center center;
     background-size: cover;
+    border: 1px solid rgba(123, 47, 46, 0.84);
+    margin: 1px;
 }
+.selectedBtn{
+	width: 143px;
+    height: 42px;
+    background: rgb(212, 212, 212);
+    border: 1px solid rgba(123, 47, 46, 0.84);
+    border-bottom: 1px solid rgb(212, 212, 212);;
+    margin: -3px;
+    color: black;
+}
+
+.movieBtn{
+   max-width: none;
+   position: relative;
+   top: 4px;
+}
+
+.list{
+   font-size:17px;
+   font-weight:bold;
+   color: white;
+}
+.selectedBtn .list{
+	color: black;
+}
+.movielist{
+   background-color: rgba(250,250,250,0.6);
+   width: 1000px;
+   margin: 10px;
+   padding: 10px;
+}
+.tb{
+   border-collapse: separate;
+   border-spacing: 30px;
+   border: 1px solid rgba(123, 47, 46, 0.84);
+   background: rgb(212, 212, 212);
+   margin: 10px;  
+}
+
 .reserve_btn{
     width: 210px;
     height: 42px;
@@ -15,22 +55,6 @@
     left: 0px;
     margin-top: 5px;
     border: 3px solid gray;
-}
-
-/* 영화 리스트 */
-.list{
-   font-size:17px;
-   font-weight:bold;
-   color: white;
-}
-.movielist{
-   background-color: rgba(250,250,250,0.9);
-   width: 1000px;
-   margin: 10px;
-}
-.tb{
-   border-collapse: separate;
-   border-spacing: 35px;
 }
 
 #cont td{
@@ -51,12 +75,6 @@ pre{
    width: 875px;
    margin-bottom: 9px;
 }
-.movieBtn{
-   max-width: none;
-}
-#youtube{
-   margin-bottom: 500px;
-}
 
 div.replydiv{
 	min-height: 230px;
@@ -73,7 +91,7 @@ div.replydiv{
    padding-bottom: 8px;
 }
 
-#cast_div span{
+#cast_div span.cast{
    font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -91,13 +109,13 @@ div.replydiv{
 
 /* 영화 리스트 */
 #movie{
-   border: 1px solid #9E9E9E;
+   border: 1px solid #848383;
    border-collapse: collapse;
    max-width: 200px;
 }
 .title{
-   border-bottom: 1px solid #9E9E9E;
-   border-top: 1px solid #9E9E9E;
+   border-bottom: 1px solid #848383;
+   border-top: 1px solid #848383;
    border-collapse: collapse;
 }
 
@@ -107,7 +125,7 @@ div.replydiv{
 }
 
 .td{
-   border-right: 1px solid #9E9E9E;
+   border-right: 1px solid #848383;
 }
 
 #poster_div{
@@ -260,20 +278,19 @@ div.detail{
    top:29px;
 }
 
-
 /* 별점 */
-.star-input>.input, .star-input>.input>label:hover, .star-input>.input>input:focus+label,
-   .star-input>.input>input:checked+label {
+.star_input>.input, .star_input>.input>label:hover, .star_input>.input>input:focus+label,
+   .star_input>.input>input:checked+label {
    display: inline-block;
    vertical-align: top;
    background: url(../image/star.png) no-repeat;
 }
 
-.star-input {
+.star_input {
    white-space: nowrap;
 }
 
-.star-input>.input {
+.star_input>.input {
    display: inline-block;
    width: 100px;
    background-size: 100px;
@@ -283,18 +300,18 @@ div.detail{
    position: relative;
 }
 
-.star-input>.input>input {
+.star_input>.input>input {
    position: absolute;
    width: 1px;
    height: 1px;
    opacity: 0;
 }
 
-.star-input>.input.focus {
+.star_input>.input.focus {
    outline: 1px dotted #ddd;
 }
 
-.star-input>.input>label {
+.star_input>.input>label {
    width: 10px;
    height: 0;
    padding: 19px 0 0 0;
@@ -306,73 +323,73 @@ div.detail{
    left: 0;
 }
 
-.star-input>.input>label:hover, .star-input>.input>input:focus+label,
-   .star-input>.input>input:checked+label {
+.star_input>.input>label:hover, .star_input>.input>input:focus+label,
+   .star_input>.input>input:checked+label {
    background-size: 100px;
    background-position: 0 bottom;
 }
 
-.star-input>.input>label:hover ~label{
+.star_input>.input>label:hover ~label{
    background-image: none;
 }
 
-.star-input>.input>label[for="p1"] {
+.star_input>.input>label[for="p1"] {
    width: 10px;
    z-index: 10;
 }
 
-.star-input>.input>label[for="p2"] {
+.star_input>.input>label[for="p2"] {
    width: 20px;
    z-index: 9;
 }
 
-.star-input>.input>label[for="p3"] {
+.star_input>.input>label[for="p3"] {
    width: 30px;
    z-index: 8;
 }
 
-.star-input>.input>label[for="p4"] {
+.star_input>.input>label[for="p4"] {
    width: 40px;
    z-index: 7;
 }
 
-.star-input>.input>label[for="p5"] {
+.star_input>.input>label[for="p5"] {
    width: 50px;
    z-index: 6;
 }
 
-.star-input>.input>label[for="p6"] {
+.star_input>.input>label[for="p6"] {
    width: 60px;
    z-index: 5;
 }
 
-.star-input>.input>label[for="p7"] {
+.star_input>.input>label[for="p7"] {
    width: 70px;
    z-index: 4;
 }
 
-.star-input>.input>label[for="p8"] {
+.star_input>.input>label[for="p8"] {
    width: 80px;
    z-index: 3;
 }
 
-.star-input>.input>label[for="p9"] {
+.star_input>.input>label[for="p9"] {
    width: 90px;
    z-index: 2;
 }
 
-.star-input>.input>label[for="p10"] {
+.star_input>.input>label[for="p10"] {
    width: 100px;
    z-index: 1;
 }
 
-.star-input>output {
+.star_input>output {
    display: inline-block;
    width: 36px;
    text-align: right;
 }
 
-.star-input>output>b {
+.star_input>output>b {
    font: bold 18px Helvetica, Arial, sans-serif;
    vertical-align: middle;
 }
@@ -381,8 +398,13 @@ div.detail{
    border: 1px solid;
 }
 
+table.btnArea{
+	position: relative;
+    top: 10px;
+}
+
 /* 관리자 수정하기 버튼 */
-.modify{
+span.modify{
 	position: relative;
 	left: 450px;
 	top: 10px;
@@ -394,8 +416,13 @@ div.detail{
 	background:#c0c0c0;
 	border-radius: 10px;
 	padding: 5px;
+	font-weight:bold;
 }
-.castmodify{
+span.modify:HOVER{
+	background: black;
+	color:white;
+}
+span.castmodify{
 	position: relative;
 	right: 10px;
     top: 5px;
@@ -407,13 +434,12 @@ div.detail{
 	background:#c0c0c0;
 	border-radius: 10px;
 	padding: 5px;
+	font-weight:bold;
 }
-table.btnArea{
-	position: relative;
-    top: 10px;
+span.castmodify:HOVER{
+	background: black;
+	color:white;
 }
-
-
 
 
 

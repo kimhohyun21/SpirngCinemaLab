@@ -12,9 +12,9 @@ public class SearchIdController {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("searchId.do")
+/*	@RequestMapping("searchId.do")
 	public String searchID(Model model){
 		model.addAttribute("jsp", "../search/searchid.jsp");
 		return "main/main";
-	}
+	}*/
 }

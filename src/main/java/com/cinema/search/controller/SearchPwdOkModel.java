@@ -11,7 +11,7 @@ public class SearchPwdOkModel {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("searchPwd_ok.do")
+	/*@RequestMapping("searchPwd_ok.do")
 	public String searchPwd_ok(Model model, String phone, String id, String name){
 		
 			MemberVO vo=new MemberVO();
@@ -28,5 +28,5 @@ public class SearchPwdOkModel {
 		
 		
 		return "main/main";
-	}
+	}*/
 }
