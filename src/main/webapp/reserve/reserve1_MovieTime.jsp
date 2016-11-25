@@ -18,7 +18,6 @@
 	
 	 	function timeSelect(no){	 		
 			$('.timeSelected').attr("class", "movietime");
-	 		$('p.movietime').not('#movietime'+no).css("background", "rgba(255,204,102,0.9)");
 			$('#movietime'+no).attr("class", "timeSelected");
 			
 			$.ajax({

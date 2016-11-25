@@ -46,25 +46,25 @@
 	</bean>
 	
 	<!-- DB에 연결할 DAO 등록 -->
-	<bean id="Main" class="com.cinema.main.dao.MainDAO"
+	<bean id="Main" class="com.cinema.dao.main.MainDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="member" class="com.cinema.member.dao.MemberDAO"
+	<bean id="member" class="com.cinema.dao.member.MemberDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="Reserve" class="com.cinema.reserve.dao.ReserveDAO"
+	<bean id="Reserve" class="com.cinema.dao.reserve.ReserveDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="movie" class="com.cinema.movieList.dao.MovieDAO"
+	<bean id="movie" class="com.cinema.dao.movieList.MovieDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="theater" class="com.cinema.theater.dao.TheaterDAO"
+	<bean id="theater" class="com.cinema.dao.theater.TheaterDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="customer" class="com.cinema.customer.dao.CustomerDAO"
+	<bean id="customer" class="com.cinema.dao.customer.CustomerDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="admin" class="com.cinema.admin.dao.AdminDAO"
+	<bean id="admin" class="com.cinema.dao.admin.AdminDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
 	

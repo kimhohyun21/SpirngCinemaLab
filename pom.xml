@@ -16,8 +16,8 @@
 	<repositories>
 	   <repository>
 	     <id>mesir-repo</id>
-	     <!-- <url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url> -->
-	     <url>http://maven.jahia.org/maven2</url>
+	     <url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
+	     <!-- <url>http://maven.jahia.org/maven2</url> -->
 	     <!-- <url>https://mvnrepository.com/artifact/cn.guoyukun.jdbc/oracle-ojdbc14</url> -->
 	   </repository>
 	</repositories>
@@ -79,11 +79,11 @@
 		   <version>10.2.0.4.0</version>
 		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/oracle/ojdbc14 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.4</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency>
 		   <groupId>cn.guoyukun.jdbc</groupId>
 		   <artifactId>oracle-ojdbc6</artifactId>

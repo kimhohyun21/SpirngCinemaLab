@@ -23,7 +23,6 @@
 		
 		function daySelect(no){
 			$('.daySelected').attr("class", "day");
-	 		$('p.day').not('#day'+no).css("background", "#fdedcc");
 			$('#day'+no).attr("class", "daySelected");
 			$.ajax({
 				type: "POST",

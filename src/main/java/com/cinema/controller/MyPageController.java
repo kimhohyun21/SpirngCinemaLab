@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cinema.member.dao.*;
+import com.cinema.dao.member.*;
 
 @Controller
 public class MyPageController {
