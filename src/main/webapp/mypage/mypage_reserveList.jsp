@@ -91,7 +91,7 @@
 	         			<table width="390" cellspacing="8">
 	         				<tr>
 			                  <td class="poster" width="150">
-			                     <a href="movieDetail.do?no=${vo.mno }">
+			                     <a href="movieDetail.do?no=${vo.mno }&type=1">
 			                        <img src="${vo.poster}" width="150" height="250">
 			                     </a>
 			                  </td>

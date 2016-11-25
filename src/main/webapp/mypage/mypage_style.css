@@ -1,10 +1,10 @@
 @CHARSET "EUC-KR";
 .bg{
-	background-color: rgba(250,250,250,0.9);
-	width: 1000px;
-	margin: 10px;
-	padding: 10px;
-	min-height: 586px;
+   background-color: rgba(250,250,250,0.9);
+   width: 1000px;
+   margin: 10px;
+   padding: 10px;
+   min-height: 586px;
 }
 
 .bg2{
@@ -15,220 +15,277 @@
     width: 732px;
     padding: 20px;
     min-height: 576px;
+    border: 1px solid rgba(18, 44, 90, 0.85);
 }
 
 .input{
-	height: 35px;
-	width: 200px;
-	font-size: 10pt;
-	position: relative;
-	left: 10px;
+   height: 35px;
+   width: 200px;
+   font-size: 10pt;
+   position: relative;
+   left: 10px;
 }
 
 form{
-	padding-top:50px;
+   padding-top:50px;
 }
 
 b{
-	color: black;
+   color: black;
 }
 
 /* 마이페이지-버튼들 */
 .btn {
-	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
-	box-shadow:inset 0px 1px 0px 0px #fff6af;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
-	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
-	background-color:#ffec64;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border-radius:10px;
-	border:1px solid #ffaa22;
-	display:inline-block;
-	cursor:pointer;
-	color:#333333;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 13px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
-	margin-top: 20px;
-	width: 60px;
-	text-align: center;
+   -moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
+   -webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
+   box-shadow:inset 0px 1px 0px 0px #fff6af;
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+   background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+   background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+   background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+   background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+   background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+   background-color:#ffec64;
+   -moz-border-radius:10px;
+   -webkit-border-radius:10px;
+   border-radius:10px;
+   border:1px solid #ffaa22;
+   display:inline-block;
+   cursor:pointer;
+   color:#333333;
+   font-family:Arial;
+   font-size:15px;
+   font-weight:bold;
+   padding:6px 13px;
+   text-decoration:none;
+   text-shadow:0px 1px 0px #ffee66;
+   margin-top: 20px;
+   width: 60px;
+   text-align: center;
 }
 .btn:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
-	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
-	background-color:#ffab23;
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+   background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+   background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+   background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+   background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+   background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+   background-color:#ffab23;
 }
 .btn:active {
-	position:relative;
-	top:1px;
+   position:relative;
+   top:1px;
 }
 
 /* 마이페이지 메뉴 바 */
 .menubar ul{
-	list-style: none outside none;
-	text-align: center;
-	width: 200px;
-	position: relative;
-	left: 10px;
-	top:-10px;
-	float: left;
-	
+   list-style: none outside none;
+   text-align: center;
+   width: 200px;
+   position: relative;
+   left: 10px;
+   top:-10px;
+   float: left;
+   
 }
 
 .menubar ul li{
-	display: block;
+   display: block;
     padding: 15px 45px 15px 45px;
     cursor: pointer;
     background-color: rgba(18, 44, 90, 0.85);
     text-align: center;
     border-bottom: 1px solid white;
     color: white;
+    position: relative;
+    left: 11px;
+    border-radius: 10px;
+    border: 1px solid rgba(18, 44, 90, 0.85);
 }
 
 /* 선택된 메뉴의 css*/
 .menubar ul li.liSelected{
-	background-color: white;
-	color: black;	
+   background-color: white;
+   color: black; 
+   border-right: 1px solid white; 
 }
 .menubar ul li:HOVER{
-	background-color: black;
-	color: white;
+   background-color: black;
+   color: white;
 }
 
 /*마이페이지 예매 / 관람 내역 */
 .mrList_btn {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
-	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
-	background-color:#7892c2;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:13px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:5px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;	
-   	position: relative;
-   	top: 20px;
-   	right: 35px;
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+   background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+   background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+   background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+   background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+   background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+   background-color:#7892c2;
+   -moz-border-radius:28px;
+   -webkit-border-radius:28px;
+   border-radius:13px;
+   border:1px solid #4e6096;
+   display:inline-block;
+   cursor:pointer;
+   color:#ffffff;
+   font-family:Arial;
+   font-size:17px;
+   padding:5px 10px;
+   text-decoration:none;
+   text-shadow:0px 1px 0px #283966;   
+      position: relative;
+      /*top: 20px; */
+      padding-bottom:10px;
+      right: 35px;
 }
 .mrList_btn:hover {
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
-	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
-	background-color:#476e9e;
+   background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+   background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+   background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+   background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+   background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+   background-color:#476e9e;
 }
 .mrList_btn:active {
     position:relative;
-	top:19px;
+   top:2px;
 }
 
-#lion_img img{
-	position: relative;
-	top: 66px;
-	right: 42px;
+.reserve_btn{
+   margin-top: 20px;
+   height: 42px;
+}
+
+#lion_img{
+   margin-top: 30px;
 }
 
 #lion_img p{
-	width:140px;
-	position:relative;
-	top: 90px;
-	left: 12px;
-	font-size: 18px;
-	font-weight: bold;
+   font-size: 18px;
+   font-weight: bold;
 }
-
-/* #type_0{
-	position: relative;
-	top: 120px;
-}
-
-#type_1{
-	position: relative;
-	bottom: 85px;
-} */
 
 .detail{
-	background-color: #e6f2ff;
-	border-radius: 10px;
-	padding-left: 5px;
+   background-color: #e6f2ff;
+   border-radius: 10px;
+   padding-left: 5px;
 }
 
 .detail_h3{
-	font-size: 25px;
+   font-size: 25px;
 }
 
 .detail h3{
-	text-align: center;
+   text-align: center;
 }
 
 .div1{
-	margin-top:50px;
-	position: relative;
-	right: 38px;
+   margin-top:18px;
+   margin-bottom: 20px;
+   position: relative;
+   right: 38px;
 }
 
 .reservelist{
-	position: relative;
-	right: 28px;
+   display: inline-table;
+   position: relative;
+   top:-38px;
+   right: 28px;
+   width: 786px;
+   height: 538px;
+}
+
+.div2{
+   display: table-footer-group;
+   position: relative;
+   bottom: 34px;
 }
 
 .page, .page1{
-	margin-top: 1px;
-	margin-bottom: 10px;
+   margin-top: 1px;
+   height: 27px;
+}
+
+.cancel{
+   height: 35px;
+}
+
+.reserve_cancel{
+   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+   box-shadow:inset 0px 1px 0px 0px #ffffff;
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+   background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+   background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+   background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+   background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+   background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+   background-color:#ffffff;
+   -moz-border-radius:6px;
+   -webkit-border-radius:6px;
+   border-radius:6px;
+   border:1px solid #dcdcdc;
+   display:inline-block;
+   cursor:pointer;
+   color:#666666;
+   font-family:Arial;
+   font-size:13px;
+   font-weight:bold;
+   padding:6px 10px;
+   text-decoration:none;
+   text-shadow:0px 1px 0px #ffffff;
+   position: relative;
+   right: 3px;
+   bottom: 41px;
+}
+
+.reserve_cancel:hover {
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+   background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+   background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+   background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+   background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+   background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+   background-color:#f6f6f6;
+}
+
+.reserve_cancel:active {
+   position:relative;
+   top:1px;
 }
 
 /* 마이페이지-회원정보 수정 */
 #notice{
-	position: relative;
-	top: 20px;
-	right: 33px;
-	color: red;
-	font-weight: bold;
+   position: relative;
+   top: 20px;
+   right: 33px;
+   color: red;
+   font-weight: bold;
 }
 
 #modify_table{
-	border-top: 2px solid #80c1ff;
-	border-collapse: collapse;
-	position: relative;
-	right: 41px;
+   border-top: 2px solid #80c1ff;
+   border-collapse: collapse;
+   position: relative;
+   right: 41px;
 }
 
 #modify_table td{
-	border-bottom: 1px solid #99ceff;
+   border-bottom: 1px solid #99ceff;
 }
 
 .modify_td{
-	text-align: center;
-	background-color: #cce6ff;
+   text-align: center;
+   background-color: #cce6ff;
 }
 table.div2{
 	width: 786px;
@@ -237,5 +294,6 @@ table.type_0, table.type_1{
 	width: 786px;
 	text-align: right;
 }
+
 
 
