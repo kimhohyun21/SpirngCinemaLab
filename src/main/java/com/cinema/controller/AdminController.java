@@ -323,6 +323,10 @@ public class AdminController{
 		if (toPage > totalPage)
 			toPage = totalPage;
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("page", ipage);
 		model.addAttribute("start", start);
 		model.addAttribute("end", end);
@@ -346,6 +350,10 @@ public class AdminController{
 		//영화제목들
 		List<MovieVO> mList = dao.AmovieAllData();
 		
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);
 		model.addAttribute("mList",mList);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
@@ -358,7 +366,10 @@ public class AdminController{
 	@RequestMapping("ACharInsert.do")
 	public String charInsert(Model model){
 		
-				
+		//메뉴 선택 구분인자
+		String menuType="admin";
+		
+		model.addAttribute("menuType", menuType);		
 		model.addAttribute("jsp","../adminpage/char/charInsert.jsp");
 		return "main/main";
 	}
