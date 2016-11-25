@@ -10,6 +10,50 @@
 <script type="text/javascript">
 	function send(){
 		var f=document.frm;
+		if(f.title.value==""){
+			$.jQueryAlert("제목을 입력 해 주세요");
+			return;
+		}
+		if(f.grade.value==4){
+			$.jQueryAlert("시청연령을 골라주세요");
+			return;
+		}
+		if(f.poster.value==""){
+			$.jQueryAlert("포스터URL을 입력 해 주세요");
+			return;
+		}
+		if(f.year.value=="" || f.month.value=="" || f.day.value==""){
+			$.jQueryAlert("상영일을 입력 해 주세요");
+			return;
+		}
+		if(f.type.value==4){
+			$.jQueryAlert("상영타입을 골라주세요");
+			return;
+		}
+		if(f.director.value==""){
+			$.jQueryAlert("감독님을 써주세요");
+			return;
+		}
+		if(f.runtime.value==""){
+			$.jQueryAlert("상영시간을 써주세요");
+			return;
+		}
+		if(f.genre.value==""){
+			$.jQueryAlert("장르를 써주세요");
+			return;
+		}		
+		if(f.trailer.value==""){
+			$.jQueryAlert("예고편URL을 써주세요");
+			return;
+		}
+		if(f.cast.value==""){
+			$.jQueryAlert("출연인물을 써주세요");
+			return;
+		}
+		if(f.content.value==""){
+			$.jQueryAlert("줄거리를 써주세요");
+			return;
+		}
 		
 		f.submit();
 	}
@@ -18,6 +62,25 @@
 			event.returnValue=false;
 		}
 	}
+	
+	/* jQuery Alert 창 */
+	jQuery.jQueryAlert = function (msg) {
+	    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+	    $("body").append($messageBox);
+	
+	    $($messageBox).dialog({
+	        open: $($messageBox).append(msg),
+	        autoOpen: true,
+	        modal: true,
+	        resizable:false, 
+			width: 400,
+	        buttons: {
+	            OK: function () {
+	                $(this).dialog("close");
+	            }
+	        }
+	    });
+	};	
 </script>
 </head>
 <body>
@@ -42,7 +105,7 @@
 				<th>시청연령</th>
 				<td align="left">
 					<select name="grade">
-						<option>선택</option>	
+						<option value="4">선택</option>	
 							<option value="12">12</option>
 							<option value="15">15</option>
 							<option value="18">18</option>						
@@ -71,7 +134,7 @@
 				<th>상영종류</th>
 				<td align="left">
 					<select name="type">
-						<option>선택</option>
+						<option value="4">선택</option>
 						<option value="0">상영종료</option>
 						<option value="1">상영중</option>
 						<option value="2">상영예정</option>						

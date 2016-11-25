@@ -20,7 +20,7 @@
 		<form method="post" action="AcharUpdate_ok.do?sno=${no }&type=${type }">		
 			<table width="700" class="type03">
 				<tr>
-					<th colspan="2" class="char_title">출연진 수정</th>
+					<th colspan="2" class="char_title">배우 수정</th>
 				</tr>
 				<c:forEach var="actor" items="${actor }">
 					<tr height="35">
