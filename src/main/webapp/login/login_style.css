@@ -79,7 +79,7 @@ div.inputType, div.buttonType{
 	display: inline-block;
 	float: left;
 }
-input#id, input#pwd, input[type=text]{
+input#id, input#pwd, input#pwd_check ,input[type=text]{
 	padding:0px;
 	height: 35px;
 	width: 200px;

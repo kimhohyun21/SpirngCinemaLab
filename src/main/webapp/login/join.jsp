@@ -36,9 +36,9 @@
 			}
 			if(f.pwd.value==""){
 				$.jQueryAlert("비밀번호를 입력하세요");
-				f.pwd.focus();
+				$('#pwd').focus();
 				return;
-			}
+			} 
 			var tp=/^[0-9a-zA-Z]*$/;
 			if(tp.test(f.pwd.value) || pwd.length<8){
 				$.jQueryAlert("비밀번호는 숫자, 영문, 특수문자를 조합해서\n8자리이상 쓰셔야 가능합니다");
@@ -163,7 +163,7 @@
 					<tr>
 						<td align="right">
 							<label for="pwd_check" class="inputlabel">비번확인 :</label>
-							<input type="password" placeholder="비밀번호 확인" id="pwd" name="pwd_check" onkeydown="NORTHFACE();enter();">
+							<input type="password" placeholder="비밀번호 확인" id="pwd_check" name="pwd_check" onkeydown="NORTHFACE();enter();">
 						</td>
 					</tr>
 					<tr>

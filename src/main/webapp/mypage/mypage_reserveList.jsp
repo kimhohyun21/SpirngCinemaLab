@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,7 +71,7 @@
 			</c:if>
 		</div>
 		
-		<c:if test="${list eq null }">
+		<c:if test="${list == '[]' }">
 			<div id="lion_img">
 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNHUKwbax2uYSi3cF5wrdrj5YNSLLx-xNQCj4aj1Ajn2duwk-tUw">
 				<p>내역이 없습니다.</p>
@@ -95,7 +96,7 @@
 			                  </td>
 			                  <td class="detail">
 			                     <h3>${vo.title }</h3> <br>
-			                     <b>상영날짜:</b> ${vo.listdate }<br>
+			                     <b>상영날짜:</b><fmt:formatDate value="${vo.rdate }" pattern="yyyy-MM-dd"/><br>
 			                     <b>상영시간:</b> ${vo.movietime }<br>
 			                     <b>상영장소:</b>${vo.local }&nbsp;${vo.theater }&nbsp;${vo.theaterno }관<br>
 			                     <b>좌석:</b> ${vo.seat }<br>
