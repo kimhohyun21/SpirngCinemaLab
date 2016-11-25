@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Map</title>
-	<link rel="stylesheet" type="text/css" href="theater/style.css">
+	<link rel="stylesheet" type="text/css" href="theater/theater_style.css">
 </head>
 <body>
 	<table width="1000" id="map_table">
