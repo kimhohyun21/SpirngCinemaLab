@@ -17,7 +17,6 @@
 		
 	 	function theaterSelect(no){
 			$('.theaterSelected').attr("class", "theater");
-	 		$('p.movietime').not('#movietime'+no).css("background", "rgba(255,204,102,0.9)");
 			$('#theater'+no).attr("class", "theaterSelected");
 			
 			$.ajax({

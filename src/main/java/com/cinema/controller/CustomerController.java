@@ -103,12 +103,12 @@ public class CustomerController {
 	
 	//QNA 답글 OK
 	@RequestMapping("qreply_ok.do")
-	public String qreply_ok(Model model, HttpSession session, String content, String strno, String subject){		
+	public String qreply_ok(Model model, HttpSession session, String content, String no, String subject){		
 		try {
-			int qno=Integer.parseInt(strno);
+			int qno=Integer.parseInt(no);
 			
 			MemberVO mvo=(MemberVO) session.getAttribute("mvo");
-			int no=mvo.getNo();
+			int mno=mvo.getNo();
 			CustomerVO pvo=dao.customerGroupData(qno);
 			dao.StepUpdate(pvo);
 			
@@ -116,7 +116,7 @@ public class CustomerController {
 			vo.setGroup_id(pvo.getGroup_id());
 			vo.setGroup_step(pvo.getGroup_step()+1);
 			vo.setGroup_tab(pvo.getGroup_tab()+1);
-			vo.setNo(no);
+			vo.setNo(mno);
 			vo.setRoot(qno);
 			vo.setQsubject(subject);
 			vo.setQcontent(content);
@@ -161,10 +161,8 @@ public class CustomerController {
 	
 	//QNA 삭제
 	@RequestMapping("delete.do")
-	public String delete(Model model, String strPage, String strNo, String subject, String content){
-		try{
-			int no=Integer.parseInt(strNo);
-			
+	public String delete(Model model, String strPage, int no, String subject, String content){
+		try{			
 			//vo 껍데기를 만들어 컬럼 넣기
 			CustomerVO vo = new CustomerVO();
 			vo.setQcontent(content);

@@ -18,7 +18,6 @@
 		
 	 	function movieSelect(no){
 			$('.movieSelected').attr("class", "movie");
-	 		$('p.movietime').not('#movietime'+no).css("background", "#fdedcc");
 			$('#movie'+no).attr("class", "movieSelected");
 			
 			$.ajax({

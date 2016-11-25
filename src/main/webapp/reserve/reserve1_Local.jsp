@@ -18,7 +18,6 @@
 		
 	 	function localSelect(no){
 			$('.localSelected').attr("class", "local");
-	 		$('p.local').not('#local'+no).css("background", "#fdedcc");
 			$('#local'+no).attr("class", "localSelected");
 			$.ajax({
 				type: "POST",
