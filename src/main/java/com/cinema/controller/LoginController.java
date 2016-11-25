@@ -125,4 +125,66 @@ public class LoginController {
 		
 		return "main/main";
 	}
+	
+	//회원 가입 화면으로
+	@RequestMapping("join.do") 
+	public String join(Model model){
+		
+		model.addAttribute("jsp", "../login/join.jsp");		
+		return "main/main";
+	}
+	
+	//회원 중복 여부 체크
+		@RequestMapping("idOverlab.do") 
+		public String idOverlab(Model model,String id, HttpServletRequest request){
+			HttpSession session=request.getSession();//이건어찌하죠
+			int check=dao.memberOverlab(id);
+			
+				if(check==0){
+					model.addAttribute("overCheckId", id);//중복아닌 ID저장
+					model.addAttribute("vvvv", "체크완료");	//체크완료값 없으면 버튼클릭x
+				}else{
+					check=1;
+			}
+			model.addAttribute("check", check);
+			return "login/join_ok";
+		}
+	
+	//회원 가입 OK 확인
+	@RequestMapping("join_ok.do") //회원등록
+	public String join_ok(Model model,String id, String pwd, String name,
+			String phone, String birth){
+		try{
+			//request.setCharacterEncoding("EUC-KR");
+			
+			//폰,생일 양식 맞추기  ex) 1984-11-29
+			phone=phone.substring(0, 3)+"-"+phone.substring(3,7)+"-"+phone.substring(7,11);
+			birth=birth.substring(0, 4)+"-"+birth.substring(4,6)+"-"+birth.substring(6,8);
+						
+			MemberVO vo=new MemberVO();
+			vo.setId(id);
+			vo.setPwd(pwd);
+			vo.setName(name);
+			vo.setPhone(phone);
+			vo.setBirth(birth);
+			
+			//한번더 중복체크
+			int check=dao.memberOverlab(id);
+			
+			//중복값없을경우
+			if(check==0){
+				dao.memberInsert(vo);
+				model.addAttribute("join", "가입성공");			
+			}else{
+				//중복일경우
+				model.addAttribute("join", "중복");
+			}
+			
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		model.addAttribute("jsp", "../login/login.jsp");
+
+		return "main/main";
+	}
 }

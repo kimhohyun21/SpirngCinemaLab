@@ -12,7 +12,7 @@ public class MemberJoinOkController {
 	@Autowired
 	MemberDAO dao;
 	
-	@RequestMapping("join_ok.do") //회원등록
+	/*@RequestMapping("join_ok.do") //회원등록
 	public String join_ok(Model model,String id, String pwd, String name,
 			String phone, String birth){
 		try{
@@ -47,5 +47,5 @@ public class MemberJoinOkController {
 		model.addAttribute("jsp", "../login/login.jsp");
 
 		return "main/main";
-	}
+	}*/
 }

@@ -16,7 +16,7 @@ public class MemberIDOverLabController {
 	@Autowired
 	MemberDAO dao;
 	
-	@RequestMapping("idOverlab.do") 
+	/*@RequestMapping("idOverlab.do") 
 	public String idOverlab(Model model,String id, HttpServletRequest request){
 		HttpSession session=request.getSession();//이건어찌하죠
 		int check=dao.memberOverlab(id);
@@ -29,5 +29,5 @@ public class MemberIDOverLabController {
 		}
 		model.addAttribute("check", check);
 		return "join/join_ok";
-	}
+	}*/
 }

@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MemberJoinController {
 	
-	@RequestMapping("join.do") //회원가입 뷰로~
+	/*@RequestMapping("join.do") //회원가입 뷰로~
 	public String join(Model model){
 		
 		model.addAttribute("jsp", "../join/memberjoin.jsp");		
 		return "main/main";
-	}
+	}*/
 }
