@@ -12,8 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cinema.member.dao.MemberVO;
-import com.cinema.reserve.dao.*;
+import com.cinema.dao.member.MemberVO;
+import com.cinema.dao.reserve.*;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.request.CancelData;
 import com.siot.IamportRestClient.response.AccessToken;

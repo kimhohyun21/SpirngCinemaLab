@@ -1,4 +1,4 @@
-package com.cinema.admin.dao;
+package com.cinema.dao.admin;
 
 import java.util.*;
 

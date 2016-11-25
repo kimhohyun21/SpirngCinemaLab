@@ -1,4 +1,4 @@
-package com.cinema.admin.dao;
+package com.cinema.dao.admin;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-import com.cinema.movieList.dao.MovieVO;
+import com.cinema.dao.movieList.MovieVO;
 
 public class AdminDAO extends SqlSessionDaoSupport{
 	

@@ -1,11 +1,11 @@
-package com.cinema.theater.dao;
+package com.cinema.dao.theater;
 
 import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-import com.cinema.reserve.dao.ReserveVO;
+import com.cinema.dao.reserve.ReserveVO;
 
 public class TheaterDAO extends SqlSessionDaoSupport{
 	public List<TheaterVO> localData2(){

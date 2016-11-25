@@ -1,10 +1,10 @@
-package com.cinema.member.dao;
+package com.cinema.dao.member;
 
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-import com.cinema.reserve.dao.ReserveVO;
+import com.cinema.dao.reserve.ReserveVO;
 
 /*import java.io.*;
 import java.util.*;

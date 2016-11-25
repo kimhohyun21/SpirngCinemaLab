@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cinema.admin.dao.*;
-import com.cinema.movieList.dao.MovieVO;
+import com.cinema.dao.admin.*;
+import com.cinema.dao.movieList.MovieVO;
 
 @Controller
 public class AdminController{

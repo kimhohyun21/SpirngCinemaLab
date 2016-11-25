@@ -1,4 +1,4 @@
-package com.cinema.reserve.dao;
+package com.cinema.dao.reserve;
 
 import java.util.List;
 import java.util.Map;

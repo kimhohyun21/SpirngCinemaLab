@@ -1,4 +1,4 @@
-package com.cinema.movieList.dao;
+package com.cinema.dao.movieList;
 
 import java.util.*;
 import org.mybatis.spring.support.*;

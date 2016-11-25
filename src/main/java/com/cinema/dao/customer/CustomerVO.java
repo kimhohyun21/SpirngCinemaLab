@@ -1,4 +1,4 @@
-package com.cinema.customer.dao;
+package com.cinema.dao.customer;
 
 import java.util.*;
 

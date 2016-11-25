@@ -9,8 +9,8 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.cinema.member.dao.MemberVO;
-import com.cinema.movieList.dao.*;
+import com.cinema.dao.member.MemberVO;
+import com.cinema.dao.movieList.*;
 
 @Controller
 public class MovieController {

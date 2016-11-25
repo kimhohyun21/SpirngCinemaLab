@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cinema.theater.dao.TheaterDAO;
-import com.cinema.theater.dao.TheaterVO;
+import com.cinema.dao.theater.TheaterDAO;
+import com.cinema.dao.theater.TheaterVO;
 
 @Controller
 public class TheaterController {
