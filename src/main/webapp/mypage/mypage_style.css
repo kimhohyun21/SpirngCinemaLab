@@ -258,11 +258,6 @@ b{
    background-color:#f6f6f6;
 }
 
-.reserve_cancel:active {
-   position:relative;
-   top:1px;
-}
-
 /* 마이페이지-회원정보 수정 */
 #notice{
    position: relative;
