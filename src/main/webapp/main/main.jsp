@@ -10,6 +10,7 @@
 	<title>Marvel Cinema</title>
 	<script type="text/javascript" src="jStyles/sliderengine/jquery.js"></script>
 	<script type="text/javascript" src="jStyles/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="jStyles/myJavascript.js"></script>
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>	
 	<link rel="stylesheet" type="text/css" href="jStyles/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="jStyles/jquery-ui.structure.css">

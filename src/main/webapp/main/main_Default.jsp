@@ -36,7 +36,7 @@
     </div>
     <!-- End of body section HTML codes -->
    	<div id="vertical-slider">
-   		<jsp:include page="Main_Slider.jsp"></jsp:include>
+   		<jsp:include page="main_Slider.jsp"></jsp:include>
    	</div>
 
 </body>

@@ -6,39 +6,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta content="BlendTrans(Duration=0.9) http-equiv="Page-Enter">
-	<meta content="BlendTrans(Duration=0.9)" http-equiv="Page-exit">
-	<title>Marvel Cinema</title>
-	<link rel="stylesheet" type="text/css" href="movie/movie_style.css">
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#btn${type }').attr("class", "selectedBtn");
-		});
-	</script>
+	<title>Movie List Content</title>
 </head>
 <body>	
-	<div class="movielist">   
-	<table class="btnArea">
-		<tr>
-			<td class="movieBtn">
-	      		<a href="movieList.do?type=0">
-	            	<button class="list_btn" id="btn0">
-						<span class="list">상영 종료 영화</span>
-					</button>
-				</a>
-				<a href="movieList.do?type=1">
-					<button class="list_btn" id="btn1">
-						<span class="list">현재 상영 영화</span>
-					</button>
-				</a>
-				<a href="movieList.do?type=2">
-					<button class="list_btn" id="btn2">
-						<span class="list">상영 예정 영화</span>
-					</button>
-		      	</a>
-		   </td>
-		</tr>
-	</table>   
 	<!-- 영화 리스트 4개씩 정렬 -->
 	<c:set var="i" value="1"/>
 	<c:set var="j" value="4" />
@@ -91,7 +61,6 @@
 	     </c:if>
 	     </c:forEach>
 	   </table>
-	</div>
 	</c:if>
 </body>
 </html>

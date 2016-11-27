@@ -29,7 +29,7 @@ public class MainController {
 		}
 		
 		model.addAttribute("plist2", plist2);
-		model.addAttribute("jsp", "Main_Default.jsp");
+		model.addAttribute("jsp", "main_Default.jsp");
 
 		
 		return "main/main";
