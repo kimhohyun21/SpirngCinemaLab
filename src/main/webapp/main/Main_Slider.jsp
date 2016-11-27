@@ -7,9 +7,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Main Slider</title>
 	 <!-- Insert to your webpage before the </head> -->
-    <script src="carouselengine/amazingcarousel.js"></script>
-    <link rel="stylesheet" type="text/css" href="carouselengine/initcarousel-1.css">
-    <script src="carouselengine/initcarousel-1.js"></script>
+    <script src="jStyles/carouselengine/amazingcarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="jStyles/carouselengine/initcarousel-1.css">
+    <script src="jStyles/carouselengine/initcarousel-1.js"></script>
     <!-- End of head section HTML codes -->
 </head>
 <body>

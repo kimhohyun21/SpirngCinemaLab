@@ -6,8 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Main Default</title>
 	<!-- Responsive Slider Library -->
-    <script src="sliderengine/amazingslider.js"></script>
-    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+    <script src="jStyles/sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="jStyles/sliderengine/amazingslider-1.css">
     <link rel="stylesheet" type="text/css" href="main/main_style.css">
     <script src="sliderengine/initslider-1.js"></script>
     <!-- End of Responsive Slider -->
