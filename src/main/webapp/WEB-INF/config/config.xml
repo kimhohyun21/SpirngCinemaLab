@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.cinema.dao.main.MainVO" alias="Main"/>
+		<typeAlias type="com.cinema.dao.main.MainVO" alias="main"/>
 		<typeAlias type="com.cinema.dao.member.MemberVO" alias="member"/>       
-        <typeAlias type="com.cinema.dao.reserve.ReserveVO" alias="Reserve"/>
-        <typeAlias type="com.cinema.dao.movieList.MovieVO" alias="movie"/>
+        <typeAlias type="com.cinema.dao.reserve.ReserveVO" alias="reserve"/>
+        <typeAlias type="com.cinema.dao.movie.MovieVO" alias="movie"/>
         <typeAlias type="com.cinema.dao.theater.TheaterVO" alias="theater"/>
         <typeAlias type="com.cinema.dao.customer.CustomerVO" alias="customer"/>
         <typeAlias type="com.cinema.dao.member.MemberReserveListVO" alias="memberReserve"/> 
@@ -17,7 +17,7 @@
 		<mapper resource="com/cinema/dao/main/main-mapper.xml"/>
 		<mapper resource="com/cinema/dao/member/member-mapper.xml"/>
         <mapper resource="com/cinema/dao/reserve/reserve-mapper.xml"/>
-        <mapper resource="com/cinema/dao/movieList/list-mapper.xml"/>
+        <mapper resource="com/cinema/dao/movie/movie-mapper.xml"/>
         <mapper resource="com/cinema/dao/customer/customer-mapper.xml"/>
         <mapper resource="com/cinema/dao/theater/theater-mapper.xml"/>
         <mapper resource="com/cinema/dao/admin/admin-mapper.xml"/>

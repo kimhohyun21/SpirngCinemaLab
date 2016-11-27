@@ -4,15 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.cinema.reserve.dao.reserve-mapper">
 
-	<select id="localData" resultType="Reserve">
+	<select id="localData" resultType="reserve">
 		SELECT tNo,local FROM theaterList WHERE tNo=1 OR tNo=82 OR tNo=163 OR tNo=244 OR tNo=352 ORDER BY tNo ASC
 	</select>
 		
-	<select id="theaterData" parameterType="String" resultType="Reserve">
+	<select id="theaterData" parameterType="String" resultType="reserve">
 		SELECT DISTINCT theater FROM theaterList WHERE local=#{local}
 	</select>
 	
-	<select id="movieData" parameterType="String"  resultType="Reserve">
+	<select id="movieData" parameterType="String"  resultType="reserve">
 		SELECT DISTINCT mNo, grade,title, poster FROM movieList NATURAL JOIN theaterList WHERE theater=#{tname } ORDER BY mNo ASC
 	</select>	
 	
@@ -20,11 +20,11 @@
 		SELECT DISTINCT theaterNo FROM theaterList NATURAL JOIN movieList WHERE theater=#{tname} AND title=#{title}
 	</select>
 	
-	<select id="timeData" parameterType="java.util.Map" resultType="Reserve">
+	<select id="timeData" parameterType="java.util.Map" resultType="reserve">
 		SELECT tNo, movietime FROM theaterList NATURAL JOIN movieList WHERE theater=#{tname} AND title=#{title}
 	</select>
 	
-	<select id="reserveData" parameterType="java.util.Map" resultType="Reserve">
+	<select id="reserveData" parameterType="java.util.Map" resultType="reserve">
 		SELECT seat FROM reserveList NATURAL JOIN theaterList NATURAL JOIN movieList
 		WHERE rDate=to_date(#{date}, 'YYYY-MM-DD HH24:MI') AND theater=#{theater} AND title=#{title}
 	</select>
@@ -53,7 +53,7 @@
 		UPDATE movieList SET rank=#{rank} WHERE title=#{title}
 	</update>
 	
-	<select id="getReserveData" parameterType="int" resultType="Reserve">
+	<select id="getReserveData" parameterType="int" resultType="reserve">
 		SELECT paymentId, shopId FROM reserveList WHERE rNo=#{rNo}
 	</select>
 	

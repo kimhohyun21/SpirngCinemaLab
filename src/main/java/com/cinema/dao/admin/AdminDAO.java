@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
-import com.cinema.dao.movieList.MovieVO;
+import com.cinema.dao.movie.MovieVO;
 
 public class AdminDAO extends SqlSessionDaoSupport{
 	

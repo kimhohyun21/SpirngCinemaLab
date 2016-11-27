@@ -67,7 +67,7 @@
 }
 pre{
    font-size: 12pt;
-    font-family: ¸¼Àº°íµñ;
+   font-family: ¸¼Àº°íµñ;
 }
 #cont{
    position:relative;
@@ -160,6 +160,10 @@ div.replydiv{
 }
 
 /* ´ñ±ÛºÎºÐ css */
+textarea {
+    resize: none;
+    width: 100%;
+}
 #reply_table{
    border: 1px solid #9E9E9E;
    border-collapse: collapse;

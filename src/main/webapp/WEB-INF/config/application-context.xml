@@ -55,7 +55,7 @@
 	<bean id="Reserve" class="com.cinema.dao.reserve.ReserveDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
-	<bean id="movie" class="com.cinema.dao.movieList.MovieDAO"
+	<bean id="movie" class="com.cinema.dao.movie.MovieDAO"
 		p:sqlSessionTemplate-ref="sst"
 	/>
 	<bean id="theater" class="com.cinema.dao.theater.TheaterDAO"

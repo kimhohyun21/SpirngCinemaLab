@@ -8,6 +8,101 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>Movie Detail</title>
    <link rel="stylesheet" type="text/css" href="movie/movie_style.css">
+   <script type="text/javascript">
+		//댓글 내용 입력할 때 로그인 했는지 체크 
+		function loginCheck(){
+			if(${mvo==null}){
+				$.jQueryLogin();
+				return;
+			}
+		}	
+		
+		 /* 별점 체크 했는지 확인 */
+	    function replycheck(){
+	    	/* 로그인 먼저 체크 */
+			if(${mvo==null}){
+				$.jQueryLogin();
+				return;
+			}else{
+				/*평점체크*/    	
+		    	var f=document.frm;
+		    	if($(':input[name=star_input]:radio:checked').val()==null){
+		    		$.jQueryAlert('평점을 체크해 주세요.');
+		    		return;
+		    	}
+		    	if(f.content.value==""){
+		    		$.jQueryAlert('내용을 입력해 주세요.');
+		    		return;
+		    	}else{
+		    		if(window.event.keyCode == 13){
+						return;
+					}
+		    	}
+		    	
+		    	$.ajax({
+					type: "POST",
+					url: "replyCheck.do",
+					data: $('#frm').serialize(),
+					success:function(data){
+						$('#reply').html(data);
+					},
+					error:function(data){
+						$.jQueryAlert("실패");
+					}
+				});
+			}			
+	    }
+		 
+	    /* 댓글 삭제 */ 
+	    function replydelete(reNo){
+	       	$.ajax({
+				type: "POST",
+				url: "replyCheck.do",
+				data: {
+					no : "${vo.mNo }",
+					reNo : reNo
+				},
+				success:function(data){
+					$('#reply').html(data);
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
+	    }
+	    
+	    /* 댓글 페이지 이동 */ 
+	    function replyPage(no, page){
+	       	$.ajax({
+				type: "POST",
+				url: "replyCheck.do",
+				data: {
+					no : no,
+					page : page
+				},
+				success:function(data){
+					$('#reply').html(data);
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
+	    }	
+
+		//엔터 로그인
+		function enter(){
+			if(window.event.keyCode == 13){
+				login();
+			}										  
+		}
+		
+		//엔터 댓글 입력
+		function replySubmit(){
+			if(window.event.keyCode == 13){
+				replycheck();
+			}	
+		}
+	</script>
 </head>
 <body>
 	<!-- 영화 상세 정보 불러오기 -->	
@@ -104,7 +199,7 @@
 	  </iframe>	  
       <!-- 댓글 페이지 --> 
       <div align="center" class="replydiv">
-         <jsp:include page="movieReply.jsp"></jsp:include>
+         <jsp:include page="movie_Reply.jsp"></jsp:include>
       </div>
    </div>
 </body>

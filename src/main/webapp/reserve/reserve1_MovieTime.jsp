@@ -43,6 +43,9 @@
 			<tr>
 				<td align="center" class="noborder">
 					<p id="theaterNo">${theaterNo2 } 관</p>
+					<c:if test="${timeList=='[]' }">
+						<p style="font-weight: bold;">상영 시간 종료</p>
+					</c:if>											
 					<c:forEach var="vo" items="${timeList }">
 						<form id="frm5_${vo.tNo }">
 							<input type="hidden" name="checkedYear" value="${checkedYear }">
@@ -57,7 +60,7 @@
 							<input type="hidden" name="theaterNo" value="${theaterNo2 }">
 							<input type="hidden" name="movietime" value="${vo.movietime }">
 							<input type="hidden" name="rType" value="timecheck">
-						</form>
+						</form>																
 						<a href="javascript:timeSelect('${vo.tNo }');">
 							<p id="movietime${vo.tNo }" class="movietime">${vo.movietime }</p>
 						</a>

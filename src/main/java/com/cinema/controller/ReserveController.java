@@ -132,8 +132,8 @@ public class ReserveController {
 		
 		List<ReserveVO> timeList=dao.timeData(map);
 		List<ReserveVO> timelist2=new ArrayList<>();
-		ReserveVO vo2=new ReserveVO();
 		
+		//지나간 상영시간 노출 제외
 		if(d==day){
 			for(ReserveVO vo:timeList){
 				String movietime2=vo.getMovietime();

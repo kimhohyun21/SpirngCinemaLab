@@ -9,7 +9,7 @@
     <script src="jStyles/sliderengine/amazingslider.js"></script>
     <link rel="stylesheet" type="text/css" href="jStyles/sliderengine/amazingslider-1.css">
     <link rel="stylesheet" type="text/css" href="main/main_style.css">
-    <script src="sliderengine/initslider-1.js"></script>
+    <script src="jStyles/sliderengine/initslider-1.js"></script>
     <!-- End of Responsive Slider -->
 </head>
 <body>

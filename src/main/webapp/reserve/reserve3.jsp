@@ -25,37 +25,41 @@
 		
 		/* 결제 모듈 호출*/
 		function payment(type){
-			IMP.request_pay({
-			    pg : 'html5_inicis',
-			    pay_method : type,
-			    merchant_uid : 'merchant_' + new Date().getTime(),
-			    name : 'Marvel Cinema ${title} 예매',
-			    amount : '${payment }',
-			    buyer_name : '${mvo.name }',
-			    buyer_email :''
-			}, function(rsp) {
-			    if ( rsp.success ) {
-			        var msg = '결제가 완료되었습니다.';
-			        /*
-			        	고유ID : rsp.imp_uid
-			        	상점 거래ID : rsp.merchant_uid	
-			       		결제 금액 : rsp.paid_amount
-			        	카드 승인번호 : rsp.apply_num
-			        */
-			        $.jQueryAlert(msg);
-			        var $frmBox = $.parseHTML('<input type="hidden" name="paymentId" value='+rsp.imp_uid+'>'
-			        						+'<input type="hidden" name="shopId" value='+rsp.merchant_uid+'>'
-			        						+'<input type="hidden" name="serverPay" value='+rsp.paid_amount+'>'
-			        						+'<input type="hidden" name="cardOkNum" value='+rsp.apply_num+'>'
-			        						+'<input type="hidden" name="paytype" value='+type+'>');
-			       	$('#paymentfrm').append($frmBox);
-			        $('#paymentfrm').submit();
-			    } else {
-			        var msg = '결제에 실패하였습니다.<br/>';
-			        msg += '에러내용 : ' + rsp.error_msg+'.';	
-			        $.jQueryAlert(msg);
-			    }			    
-			});
+			if(${mvo!=null}){
+				IMP.request_pay({
+				    pg : 'html5_inicis',
+				    pay_method : type,
+				    merchant_uid : 'merchant_' + new Date().getTime(),
+				    name : 'Marvel Cinema ${title} 예매',
+				    amount : '${payment }',
+				    buyer_name : '${mvo.name }',
+				    buyer_email :''
+				}, function(rsp) {
+				    if ( rsp.success ) {
+				        var msg = '결제가 완료되었습니다.';
+				        /*
+				        	고유ID : rsp.imp_uid
+				        	상점 거래ID : rsp.merchant_uid	
+				       		결제 금액 : rsp.paid_amount
+				        	카드 승인번호 : rsp.apply_num
+				        */
+				        $.jQueryAlert(msg);
+				        var $frmBox = $.parseHTML('<input type="hidden" name="paymentId" value='+rsp.imp_uid+'>'
+				        						+'<input type="hidden" name="shopId" value='+rsp.merchant_uid+'>'
+				        						+'<input type="hidden" name="serverPay" value='+rsp.paid_amount+'>'
+				        						+'<input type="hidden" name="cardOkNum" value='+rsp.apply_num+'>'
+				        						+'<input type="hidden" name="paytype" value='+type+'>');
+				       	$('#paymentfrm').append($frmBox);
+				        $('#paymentfrm').submit();
+				    } else {
+				        var msg = '결제에 실패하였습니다.<br/>';
+				        msg += '에러내용 : ' + rsp.error_msg+'.';	
+				        $.jQueryAlert(msg);
+				    }			    
+				});				
+			}else{
+				$.jQureyAlert("로그아웃 되었습니다.")	;
+			}
 		}
         
         function reback(){

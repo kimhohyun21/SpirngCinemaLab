@@ -233,7 +233,3 @@ div#find a{
 div#find a:HOVER {
 	color: #ea4d00;
 }
-textarea {
-    resize: none;
-    width: 100%;
-}

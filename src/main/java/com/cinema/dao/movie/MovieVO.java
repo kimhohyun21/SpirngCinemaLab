@@ -1,4 +1,4 @@
-package com.cinema.dao.movieList;
+package com.cinema.dao.movie;
 
 import java.util.Date;
 

@@ -10,6 +10,17 @@
 	<link rel="stylesheet" type="text/css" href="jStyles/easydropdown.css">
 	<script src="jStyles/jquery.easydropdown.js"></script>	
 	<script type="text/javascript">
+		$('document').ready(function(){
+			//티켓 선택하기 전에 로그인 체크
+			$('div.selectBox').click(function(){
+				if(${mvo==null}){
+					$.jQueryLogin();
+					return;
+				} 
+			});
+		});			
+	
+		//티켓 매수 반영
 		function select(){			
 			$.ajax({
 				type: "POST",
@@ -19,92 +30,16 @@
 					$('#result').html(data);
 				},
 				error:function(data){
-					alert("실패");
+					$.jQueryAlert("실패");
 				}
 			});
-		};	
-	
-		$('document').ready(function(){
-			 $('div.selectBox').click(function(){
-				if(${mvo==null}){
-					$.jQueryLogin();
-					return;
-				} 
-			});
-		});			
-				
-		/*jQuery Login*/
-		jQuery.jQueryLogin = function (){
-			var $loginform = $.parseHTML('<div id="logindiv">'
-											+'<form name="loginfrm" action="login_ok.do" method="post" "id="loginfrm">'
-											+'<div class="input">'
-											+'<label class="idlabel" for="id">ID</label>'
-											+'<input type="text" placeholder="아이디를 입력하세요." name="id" id="id" onkeydown="enter()">'
-											+'</div>'+'<div class="input">'
-											+'<label class="pwlabel" for="pwd">PW</label>'
-											+'<input type="password" placeholder="패스워드를 입력하세요." name="pwd" id="pwd" onkeydown="enter()">'
-											+'</div><input type="hidden" name="loginType" value="reserve">'
-											+'</form><div id="find">'
-											+'<a href="searchId.do">아이디 찾기</a>&nbsp;|&nbsp;'
-											+'<a href="searchPwd.do">비밀번호 찾기</a></div>');
-			$("body").append($loginform);
-			
-			$($loginform).dialog({
-			     autoOpen: true,
-			     width: 400,
-			     modal: true,
-			     resizable:false, 
-			     buttons: {	
-			       LOGIN : function() {
-				         login();
-				   },		 
-			       Cancel: function() {
-			         $(this).dialog("close");
-			       }
-			    }
-			});
-		}
+		};		
 		
 		//엔터 로그인
 		function enter(){
 			if(window.event.keyCode == 13){
 				login();
 			}
-		}
-		
-		//로그인 창 값입력 체크
-		function login(){
-			var id=$('#id').val();	
-			if(id==""){
-				$.jQueryAlert("아이디를 입력하세요");
-				$('#id').focus();
-				return;
-			}
-			var pwd=$('#pwd').val();
-			if(pwd==""){
-				$.jQueryAlert("비밀번호를 입력하세요");
-				$('#pwd').focus();
-				return;
-			}
-			
-			$.ajax({
-				type: "POST",
-				url: "login_ok.do",
-				data:$('form').serialize(),
-				dataType: "json",
-				success:function(data){
-					if(data.check=="ok"){
-						window.location.reload(true);
-					}else if(data.check=="pwdnot"){
-						$.jQueryAlert("패스워드가 잘못 되었습니다.");
-					}else if(data.check=="idnot"){
-						$.jQueryAlert("아이디가 잘못 되었습니다.");
-					}
-				},
-				error:function(data){
-					$.jQueryAlert("실패");
-				}
-			});
 		}
 		
 	    //선택 초기화
