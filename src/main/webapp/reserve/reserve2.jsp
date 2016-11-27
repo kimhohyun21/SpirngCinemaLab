@@ -7,7 +7,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Reserve2 Ticket and Seat</title>
 	<link rel="stylesheet" type="text/css" href="reserve/reserve_style.css">
-	<link rel="stylesheet" type="text/css" href="jStyles/easydropdown.css">	
+	<link rel="stylesheet" type="text/css" href="jStyles/easydropdown.css">
+	<script src="jStyles/jquery.easydropdown.js"></script>	
 	<script type="text/javascript">
 		function select(){			
 			$.ajax({
@@ -49,7 +50,6 @@
 			$("body").append($loginform);
 			
 			$($loginform).dialog({
-				 open: $($loginform),
 			     autoOpen: true,
 			     width: 400,
 			     modal: true,
@@ -107,31 +107,11 @@
 			});
 		}
 		
-		/* jQuery Alert 창 */
-		jQuery.jQueryAlert = function (msg) {
-	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-	        $("body").append($messageBox);
-			
-	        $($messageBox).dialog({
-	            open: $($messageBox).append(msg),
-	            autoOpen: true,
-	            modal: true,
-	            resizable:false, 
-				width: 400,
-	            buttons: {
-	                OK: function () {
-	                    $(this).dialog("close");
-	                }
-	            }
-	        });
-	    };
-	    
 	    //선택 초기화
 	    function reloadpage(){
 	    	window.location.reload(true);	
 	    }	    
-	</script>
-	<script src="jStyles/jquery.easydropdown.js"></script>
+	</script>	
 </head>
 <body>
 	<div align="center" class="reserve2">

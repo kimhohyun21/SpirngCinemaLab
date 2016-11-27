@@ -35,8 +35,7 @@
 					$.jQueryAlert("실패");
 				}
 			});
-		};
-		
+		};		
 	</script>
 </head>
 <body>

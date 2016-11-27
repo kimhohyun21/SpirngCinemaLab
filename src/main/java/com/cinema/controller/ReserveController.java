@@ -143,11 +143,9 @@ public class ReserveController {
 				String sibun=si+bun;
 				int sibun2=Integer.parseInt(sibun);
 
-				if(sibun2>700){
-					if(todayTime2<sibun2){
-						vo.setMovietime(movietime2);
-						timelist2.add(vo);
-					}
+				if(todayTime2<sibun2 || sibun2<200){
+					vo.setMovietime(movietime2);
+					timelist2.add(vo);
 				}
 			}
 			model.addAttribute("timeList", timelist2);

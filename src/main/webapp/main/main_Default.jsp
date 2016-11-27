@@ -38,6 +38,5 @@
    	<div id="vertical-slider">
    		<jsp:include page="main_Slider.jsp"></jsp:include>
    	</div>
-
 </body>
 </html>

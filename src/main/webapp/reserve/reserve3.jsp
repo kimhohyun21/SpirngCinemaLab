@@ -56,27 +56,7 @@
 			        $.jQueryAlert(msg);
 			    }			    
 			});
-		}	
-
-		/* jQuery Alert 창 */
-		jQuery.jQueryAlert = function (msg) {
-            var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-            $("body").append($messageBox);
-
-            $($messageBox).dialog({
-                open: $($messageBox).append(msg),
-                title: "처리 결과",
-                autoOpen: true,
-                modal: true,
-                resizable:false, 
-				width: 400,
-                buttons: {
-                    OK: function () {
-                        $(this).dialog("close");
-                    }
-                }
-            });
-        };
+		}
         
         function reback(){
 			location.href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}"
