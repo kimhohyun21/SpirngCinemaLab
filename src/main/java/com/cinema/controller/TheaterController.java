@@ -18,7 +18,7 @@ public class TheaterController {
 	
 	@RequestMapping("theater.do")
 	public String main(Model model, String local, String checkedDay, String checkedDay2, String title, String theater,
-						String grade, String theaterNo, String movietime, String click){
+						String grade, String theaterNo, String movietime, String click, String rType){
 		
 		//지역 선택
 		if(local==null) local="서울";
@@ -106,22 +106,29 @@ public class TheaterController {
 			title = "데드풀 Deadpool";
 		
 		// 영화 상영 시간 및 상영관
-	      List<TheaterVO> movieList2=new ArrayList<>();
-	      for(TheaterVO vo : movieList){
-	         title=vo.getTitle();
-	         Map map = new HashMap();
-	         map.put("theater", theater);
-	         map.put("title", title);
-	         List<TheaterVO> timeList = dao.timeData2(map);
-	         int theaterNo2 = dao.theaterNoData2(map);
-	         
-	         
-	         vo.setTheaterNo(theaterNo2);
-	         vo.setTimeList(timeList);
-	         
-	         movieList2.add(vo);
-	      }
-	      
+		List<TheaterVO> movieList2=new ArrayList<>();
+		for(TheaterVO vo : movieList){
+			title=vo.getTitle();
+		    Map map = new HashMap();
+		    map.put("theater", theater);
+		    map.put("title", title);
+		    List<TheaterVO> timeList = dao.timeData2(map);
+		    int theaterNo2 = dao.theaterNoData2(map);
+		    		     
+		    vo.setTheaterNo(theaterNo2);
+		    vo.setTimeList(timeList);
+		     
+		    movieList2.add(vo);
+		}
+	     
+		//Ajax 구분인자
+		String movePage="";
+		if(rType==null){
+			movePage="main/main";
+		}else if(rType.equals("daycheck")){
+			movePage="theater/theater_List";
+		}
+		
 		model.addAttribute("movieList2", movieList2);
 		model.addAttribute("movieList", movieList);
 		model.addAttribute("movietime", movietime);
@@ -143,6 +150,6 @@ public class TheaterController {
 		model.addAttribute("day", day);
 		model.addAttribute("jsp", "../theater/theater.jsp");
 		
-		return "main/main";
+		return movePage;
 	}
 }

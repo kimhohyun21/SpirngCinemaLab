@@ -16,7 +16,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td id="map" style="border: 1px solid #000; margin-top: 10px; margin-bottom: 10px;"></td>
+			<td id="map" style="border: 1px solid #9e9e9e; margin-top: 10px; margin-bottom: 10px;"></td>
 		</tr>
 		<tr>
 			<td id="addr">
