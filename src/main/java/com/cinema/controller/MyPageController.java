@@ -127,8 +127,9 @@ public class MyPageController {
 	
 	//회원 정보 수정 OK
 	@RequestMapping("modify_ok.do")
-	public String memberModify_Ok(Model model, String strno, String pwd, String name, 
-								  String phone, String birth, HttpSession session){
+	@ResponseBody
+	public boolean memberModify_Ok(Model model, String strno, String pwd, String name, 
+								  String phone, String birth){
 		int no=Integer.parseInt(strno);		
 		// DB값
 		MemberVO vo=dao.memberGetAllInfo(no);		
@@ -146,15 +147,12 @@ public class MyPageController {
 			vo.setBirth(birth);
 			vo.setNo(no);
 			dao.memberModify(vo);
-			//바뀐값 세션에 새로저장
-			session.removeAttribute("mvo");
-			session.setAttribute("mvo", vo);			
+	;			
 		}else{
 			pCheck=false;
 		}
-		model.addAttribute("pCheck", pCheck);
 		
-		return "mypage/mypage_modify_ok";
+		return pCheck;
 	}
 	
 	//회원 비밀번호 수정

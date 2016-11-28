@@ -70,14 +70,14 @@
 	        	<tr>
 	        </c:if>
 	         		<td>
-	         			<table width="390" cellspacing="8">
+	         			<table width="350" height="200" cellspacing="8">
 	         				<tr>
 			                  <td class="poster" width="150">
 			                     <a href="movieDetail.do?no=${vo.mno }&type=1">
-			                        <img src="${vo.poster}" width="150" height="250">
+			                        <img src="${vo.poster}" width="150" height="200">
 			                     </a>
 			                  </td>
-			                  <td class="detail" width="240">
+			                  <td class="detail" width="200">
 			                     <h3>${vo.title }</h3> <br>
 			                     <b>상영날짜:</b> <fmt:formatDate value="${vo.rdate }" pattern="yyyy-MM-dd"/><br>
 			                     <b>상영시간:</b> ${vo.movietime }<br>

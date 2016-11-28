@@ -10,18 +10,36 @@
 		//엔터 입력
 		function dUpdate(){
 			if(window.event.keyCode == 13){
-				send();
+				pDelete();
+				return false; // 엔터키 리프레쉬 방지
 			}
 		}
 		
-		function send(){
+		 function pDelete(){
 			var f = document.frm;
 			if(f.pwd.value==""){
 				$.jQueryAlert("비밀번호를 입력해주세요.");
 				f.pwd.focus();
 				return;
-			}	
-		}
+			}
+			
+			$.ajax({
+				type: "POST",
+				url: "delete_ok.do",
+				data:$('#deleteFrm').serialize(),
+				success:function(data){
+					if(data==true){
+						var func=function(){window.location.replace("main.do");};
+						$.jQueryAlertF('그동안 이용해주셔서 감사합니다.', func);						
+					}else{
+						$.jQueryAlert('비밀번호가 다릅니다.');						
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("통신실패");
+				}
+			});
+		} 
 	</script>
 </head>
 <body>
@@ -35,12 +53,12 @@
 							<b>비밀번호</b>
 						</td>
 						<td>
-							<input type="password" name="pwd" class="input" onkeydown="dUpdate()">
+							<input type="password" name="pwd" class="input" onkeypress="return dUpdate()">
 							<input type="hidden" name="strno" value="${mvo.no }">
 						</td>
 					</tr>
 				</table>
-				<input type="button" onclick="send()" value="삭제" class="btn" style="position: relative; right: 50px;">
+				<input type="button" onclick="pDelete()" value="삭제" class="btn" style="position: relative; right: 50px;">
 			</form>
 		</div>
 	</center>
