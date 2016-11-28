@@ -7,77 +7,63 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="login/login_style.css">
-		<c:if test="${join eq '가입성공' }">
-			<script type="text/javascript">
-				alert("회원가입이 완료되었습니다");
-			</script>
-		</c:if>
-		<c:if test="${join eq '중복' }">
-			<script type="text/javascript">
-				alert("중복된 아이디입니다");
-				history.back();
-			</script>
-		</c:if>
 	<script type="text/javascript">
-	function enter(){
-		if(window.event.keyCode == 13){
-			login();
-		}
-	}
-	
-	function login(){
-		var id=$('#id').val();	
-		if(id==""){
-			$.jQueryAlert("아이디를 입력하세요");
-			$('#id').focus();
-			return;
-		}
-		var pwd=$('#pwd').val();
-		if(pwd==""){
-			$.jQueryAlert("비밀번호를 입력하세요");
-			$('#pwd').focus();
-			return;
+		$(document).ready(function(){
+			joinCheck();
+		});
+		
+		//회원가입 성공 체크
+		function joinCheck(){
+			if(${join=='가입성공' }){
+				$.jQueryAlert("회원가입이 완료되었습니다");
+			}else if(${join eq '중복' }){
+				$.jQueryAlert("중복된 아이디입니다");
+				history.back();
+			}
 		}
 		
-	 	$.ajax({
-			type: "POST",
-			url: "login_ok.do",
-			data:$('#frm').serialize(),
-			dataType: "json",
-			success:function(data){
-				if(data.check=="ok"){
-					location.href="main.do";
-				}else if(data.check=="pwdnot"){
-					$.jQueryAlert("패스워드가 잘못 되었습니다.");
-				}else if(data.check=="idnot"){
-					$.jQueryAlert("아이디가 잘못 되었습니다.");
-				}
-			},
-			error:function(data){
-				$.jQueryAlert("실패");
+		//엔터키 로그인
+		function enter(){
+			if(window.event.keyCode == 13){
+				login();
 			}
-		});
-	 	
-	}
-	
-	/* jQuery Alert 창 */
-	jQuery.jQueryAlert = function (msg) {
-	    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-	    $("body").append($messageBox);
-	
-	    $($messageBox).dialog({
-	        open: $($messageBox).append(msg),
-	        autoOpen: true,
-	        modal: true,
-	        resizable:false, 
-			width: 400,
-	        buttons: {
-	            OK: function () {
-	                $(this).dialog("close");
-	            }
-	        }
-	    });
-	};
+		}
+		
+		//로그인 Ajax
+		function login(){
+			var id=$('#id').val();	
+			if(id==""){
+				$.jQueryAlert("아이디를 입력하세요");
+				$('#id').focus();
+				return;
+			}
+			var pwd=$('#pwd').val();
+			if(pwd==""){
+				$.jQueryAlert("비밀번호를 입력하세요");
+				$('#pwd').focus();
+				return;
+			}
+			
+		 	$.ajax({
+				type: "POST",
+				url: "login_ok.do",
+				data:$('#frm').serialize(),
+				dataType: "json",
+				success:function(data){
+					if(data.check=="ok"){
+						location.href="main.do";
+					}else if(data.check=="pwdnot"){
+						$.jQueryAlert("패스워드가 잘못 되었습니다.");
+					}else if(data.check=="idnot"){
+						$.jQueryAlert("아이디가 잘못 되었습니다.");
+					}
+				},
+				error:function(data){
+					$.jQueryAlert("실패");
+				}
+			});
+		 	
+		}
 	</script>
 </head>
 <body>

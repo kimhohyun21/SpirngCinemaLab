@@ -32,7 +32,7 @@ public class LoginController {
 	@RequestMapping("login_ok.do")
 	@ResponseBody
 	public Map login_Ok(HttpServletRequest request,Model model,String id,
-			String pwd, String referer){
+					 	String pwd, String referer){
 		String check="";
 		
 		int idcheck=dao.memberIdCheck(id);
@@ -90,9 +90,9 @@ public class LoginController {
 		vo.setName(name);
 		vo.setBirth(birth);
 		vo.setPhone(phone);
-		System.out.println(name+birth+phone);
+		
 		String id=dao.memberFindId(vo);
-		System.out.println(id);
+		
 		model.addAttribute("pwd", "패스");
 		model.addAttribute("id", id);
 		model.addAttribute("jsp", "../login/giveInfo.jsp");
@@ -135,20 +135,19 @@ public class LoginController {
 	}
 	
 	//회원 중복 여부 체크
-		@RequestMapping("idOverlab.do") 
-		public String idOverlab(Model model,String id, HttpServletRequest request){
-			HttpSession session=request.getSession();//이건어찌하죠
-			int check=dao.memberOverlab(id);
-			
-				if(check==0){
-					model.addAttribute("overCheckId", id);//중복아닌 ID저장
-					model.addAttribute("vvvv", "체크완료");	//체크완료값 없으면 버튼클릭x
-				}else{
-					check=1;
-			}
-			model.addAttribute("check", check);
-			return "login/join_ok";
-		}
+	@RequestMapping("idOverlab.do")
+	@ResponseBody
+	public Map idOverlab(Model model,String id, HttpServletRequest request){
+		int check=dao.memberOverlab(id);
+		Map map=new HashMap();
+		
+		if(check==0){
+			map.put("overCheckId", id);//중복아닌 ID저장
+		}			
+		map.put("check", check);
+		
+		return map;
+	}
 	
 	//회원 가입 OK 확인
 	@RequestMapping("join_ok.do") //회원등록

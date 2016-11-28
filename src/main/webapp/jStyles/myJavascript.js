@@ -123,7 +123,27 @@ jQuery.jQueryAlert = function (msg) {
             }
         }
     });
-};   
+};
+
+/* jQuery Alert 창 - 함수 활용 */
+jQuery.jQueryAlertF = function (msg, func) {
+    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+    $("body").append($messageBox);
+
+    $($messageBox).dialog({
+        open: $($messageBox).append(msg),
+        autoOpen: true,
+        modal: true,
+        resizable:false, 
+		width: 400,	
+		close: func,
+        buttons: {
+            OK: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+};
 
 /*jQuery Login*/
 jQuery.jQueryLogin = function (){

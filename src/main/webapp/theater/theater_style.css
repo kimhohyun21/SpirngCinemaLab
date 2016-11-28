@@ -41,7 +41,7 @@
 }
 #theaterList ul{
 	list-style: none outside none;
-	width: 375px;
+	width: 335px;
 }
 #theaterList ul li, .theaterSelected{
 	display: block;
