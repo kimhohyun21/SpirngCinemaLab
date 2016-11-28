@@ -17,95 +17,78 @@ public class TheaterController {
 	public TheaterDAO dao;
 	
 	@RequestMapping("theater.do")
-	public String main(Model model, String local, String checkedDay, String checkedDay2, String title, String theater,
-						String grade, String theaterNo, String movietime, String click, String rType){
-		
-		//지역 선택
-		if(local==null) local="서울";
-	
-		List<TheaterVO> localList = dao.localData2();
-
-		if(theater==null && local.equals("서울")) theater="신도림";
-		if(theater==null && local.equals("경기")) theater="용인";
-		if(theater==null && local.equals("인천")) theater="검단";
-		if(theater==null && local.equals("대구")) theater="율하";
-		if(theater==null && local.equals("부산")) theater="해운대";
-		
-		//극장 선택
-		List<TheaterVO> theaterList=dao.theaterData2(local);
-		
+	public String main(Model model, String local, String checkedDay, String checkedDay2, 
+					   String title, String theater, String grade, String theaterNo, 
+					   String movietime, String click, String cType){
 		//극장 사진
 		int num=(int) (Math.random()*4+1);
 		
-		//날짜 계산
-		int i, j, a, b;
-		int[] day7 = { 0, 0, 0, 0, 0, 0, 0 };
-		String[] strWeek2 = { "", "", "", "", "", "", "" };
-		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d-E");
-		String today = sdf.format(date);
-
-		StringTokenizer st = new StringTokenizer(today, "-");
-		String sy = st.nextToken();
-		String sm = st.nextToken();
-		String sd = st.nextToken();
-		String ss = st.nextToken();
-
-		int[] lastDay = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-		int lastDay2;
-
-		int year = Integer.parseInt(sy);
-		int month = Integer.parseInt(sm);
-		int day = Integer.parseInt(sd);
-		int day2 = day;
-
-		// 오늘의 요일부터 7일까지만 다른 배열에 넣어주기
-		String[] strWeek = { "일", "월", "화", "수", "목", "금", "토" };
-		for (i = 0; i <= 6; i++) {
-			if (ss.equals(strWeek[i])) {
+		//오늘 날짜 얻기
+		String today=new SimpleDateFormat("yyyy-M-d-E").format(new Date());
+		StringTokenizer st=new StringTokenizer(today,"-");
+		String sy=st.nextToken(); 
+		int year=Integer.parseInt(sy);   //년
+		String sm=st.nextToken(); 
+		int month=Integer.parseInt(sm);  //월
+		String sd=st.nextToken(); 
+		int day=Integer.parseInt(sd);    //일	
+		String ss=st.nextToken();        //요일
+		
+		//오늘 시간 얻기
+		String todayTime=new SimpleDateFormat("HHmm").format(new Date());
+		int todayTime2=Integer.parseInt(todayTime);
+		
+		//오늘의 요일부터 7일까지만 배열에 넣어주기
+		String[] strWeek={"일","월","화","수","목","금","토"}; //요일 배열
+		String[] strWeek2={"","","","","","",""}; 		   //사용할 요일 배열
+		for(int i=0; i<=6; i++){							   //오늘 요일을 비교하여 요일 배열에 넣기
+			if(ss.equals(strWeek[i])){ 
+				for(int a=0; a<=6; a++){
+					strWeek2[a]=strWeek[i];
+					i++;
+					if(i==7)i=0;
+				}
 				break;
 			}
 		}
-
-		for (b = 0; b <= 6; b++) {
-			strWeek2[b] = strWeek[i];
-			i++;
-			if (i == 7) {
-				i = 0;
-			}
-		}
-
-		// 오늘의 일부터 7일까지만 다른 배열에 따로 넣어주기
-		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-			lastDay[1] = 29;
-		else
-			lastDay[1] = 28;
-
-		a = 0;
-		while (a == month - 1) {
-			a++;
-		}
-		lastDay2 = lastDay[a];
-
-		for (j = 0; j <= 6; j++) {
-			day7[j] = day2;
-			day2++;
-			if (day2 > lastDay2)
-				day2 = 1;
-		}
-		int z = 0;
-
-		if(checkedDay==null)checkedDay=sd;
-		if(checkedDay2==null)checkedDay2=ss;
-	
-		//영화 선택
-		List<TheaterVO> movieList = dao.movieData2(theater);
+				
+		//월별 마지막 날짜 지정
+		int[] lastDay={31,28,31,30,31,30,31,31,30,31,30,31}; // 월별 마지막 날짜 배열 
+		if((year%4==0 && year%100!=0)||(year%400==0)){       // 윤달에 따른 2월 마지막 날 설정
+			lastDay[1]=29;
+		}else{
+			lastDay[1]=28;
+		}		
+		int lastDay2=lastDay[month-1];						// 해당 월의 마지막 날 값 지정
 		
-		// 영화 상영 시간 선택
-		if (title == null)
-			title = "데드풀 Deadpool";
+		//오늘 날짜부터 7일까지만 배열에 넣기
+		int[] day7={0,0,0,0,0,0,0};							 // 날짜 배열	
+		for(int j=0; j<=6; j++){							 		
+			day7[j]=day;
+			day++;
+			if(day>lastDay2) day=1;
+		}
+		day=Integer.parseInt(sd);
+		//날짜 출력을 위한 변수
+		int z=0;
+		
+		//선택된 날짜 및 요일 값 받기
+		if(checkedDay==null)checkedDay=sd; //선택이 없을 경우 초기값
+		if(checkedDay2==null)checkedDay2=ss; //선택이 없을 경우 초기값
+		
+		//지역 선택
+		List<TheaterVO> localList = dao.localData2();
+		if(local==null) local=localList.get(0).getLocal();		
+		
+		//극장 선택
+		List<TheaterVO> theaterList=dao.theaterData2(local);
+		if(theater==null) theater=theaterList.get(0).getTheater();		
+		
+		//영화 선택
+		List<TheaterVO> movieList = dao.movieData2(theater);		
 		
 		// 영화 상영 시간 및 상영관
+		if (title == null)title = movieList.get(0).getTitle();
 		List<TheaterVO> movieList2=new ArrayList<>();
 		for(TheaterVO vo : movieList){
 			title=vo.getTitle();
@@ -123,9 +106,9 @@ public class TheaterController {
 	     
 		//Ajax 구분인자
 		String movePage="";
-		if(rType==null){
+		if(cType==null){
 			movePage="main/main";
-		}else if(rType.equals("daycheck")){
+		}else{
 			movePage="theater/theater_List";
 		}
 		

@@ -60,7 +60,7 @@
 								<input type="hidden" name="local" value="${local }">
 								<input type="hidden" name="grade" value="${grade }">
 								<input type="hidden" name="title" value="${title }">
-								<input type="hidden" name="rType" value="daycheck">
+								<input type="hidden" name="cType" value="daycheck">
 							</form>	
 							<a href="javascript:daySelect('${day7[z]}');">
 								<c:choose>

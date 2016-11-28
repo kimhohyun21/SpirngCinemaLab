@@ -16,14 +16,14 @@
 	left: 1.5%;
 	width: 521px;
 }
-#local ul li{
+#local ul li, .localSelected{
 	display: block;
 	float: left;
  	padding-left: 32px;
     padding-right: 26px;
  	height: 43px;
 }
-#local ul li:HOVER {
+#local ul li:HOVER, .localSelected{
 	background-color: #004d80;
 	color: white;
 	cursor:pointer;
@@ -43,7 +43,7 @@
 	list-style: none outside none;
 	width: 375px;
 }
-#theaterList ul li{
+#theaterList ul li, .theaterSelected{
 	display: block;
 	float: left;
  	padding-left: 33px;
@@ -57,7 +57,7 @@
 	position: relative;
 	top: 8px;	
 }
-#theaterList ul li:HOVER {
+#theaterList ul li:HOVER, .theaterSelected, .theaterSelected span{
 	color: black;
 	background: white;
 	cursor:pointer;

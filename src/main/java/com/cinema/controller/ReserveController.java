@@ -51,7 +51,7 @@ public class ReserveController {
 		//오늘의 요일부터 7일까지만 배열에 넣어주기
 		String[] strWeek={"일","월","화","수","목","금","토"}; //요일 배열
 		String[] strWeek2={"","","","","","",""}; 		   //사용할 요일 배열
-		for(int i=0; i<=6; i++){							   //오늘 요일을 비교하여 요일 배열에 넣기
+		for(int i=0; i<=6; i++){						   //오늘 요일을 비교하여 요일 배열에 넣기
 			if(ss.equals(strWeek[i])){ 
 				for(int a=0; a<=6; a++){
 					strWeek2[a]=strWeek[i];
@@ -102,8 +102,20 @@ public class ReserveController {
 					m+=1;
 				}			
 				d=1;
+				for(int i=0;i<7;i++){
+					if(strWeek[i].equals(checkedDay2)){
+						checkedDay2=strWeek[i+1];
+						break;
+					}					
+				}				
 			}else if(time.equals("1")){
 				d+=1;
+				for(int i=0;i<7;i++){
+					if(strWeek[i].equals(checkedDay2)){
+						checkedDay2=strWeek[i+1];
+						break;
+					}					
+				}
 			}
 		}		
 		
@@ -213,6 +225,46 @@ public class ReserveController {
 							String adult, String senior, String junior, String[] seat, String rType,
 							String cType,HttpSession session, HttpServletRequest request){
 		
+		//월별 마지막 날짜 지정
+		int[] lastDay={31,28,31,30,31,30,31,31,30,31,30,31}; // 월별 마지막 날짜 배열 
+		if((year%4==0 && year%100!=0)||(year%400==0)){       // 윤달에 따른 2월 마지막 날 설정
+			lastDay[1]=29;
+		}else{
+			lastDay[1]=28;
+		}		
+		int lastDay2=lastDay[month-1];						// 해당 월의 마지막 날 값 지정
+		
+		String[] strWeek={"일","월","화","수","목","금","토"}; //요일 배열
+		
+		if(cType!=null){
+			//새벽 시간 날짜 설정
+			if(movietime!=null){
+				String time=movietime.substring(0, movietime.lastIndexOf(":"));	
+				if(lastDay2==checkedDay && time.equals("1")){
+					if(month==12){
+						year+=1;
+						month=1;
+					}else{
+						month+=1;
+					}			
+					checkedDay=1;
+					for(int i=0;i<7;i++){
+						if(strWeek[i].equals(checkedDay2)){
+							checkedDay2=strWeek[i+1];
+							break;
+						}					
+					}
+				}else if(time.equals("1")){
+					checkedDay+=1;					
+					for(int i=0;i<7;i++){
+						if(strWeek[i].equals(checkedDay2)){
+							checkedDay2=strWeek[i+1];
+							break;
+						}					
+					}
+				}
+			}		
+		}
 		//예매 시간
 		String date=year+"-"+month+"-"+checkedDay+" "+movietime;
 		

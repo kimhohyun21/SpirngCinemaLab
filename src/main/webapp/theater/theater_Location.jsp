@@ -67,9 +67,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 간선버스 (B) :261번(구 48번), 600 번(구123번), 605 번(구128번), 260번, 360번, 503번, 650번<br>
 						· 지선버스 (G) : 5614번(구94번), 5615번(구119번), 5616번(구120번), 5714번(구118번), 6211번(구211번), <br>
@@ -79,9 +79,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 5호선 영등포 시장역 : 영등포 시장에서 도보로 10~15분 거리<br>
 						· 1호선 영등포역 : 5번 출구 (롯데백화점 1층 > 엘리베이터 이용 7층)
@@ -91,17 +91,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%"> 
 						· 서울 영등포구 영등포동, 618-496 시네마동
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 주간/야간, 주말 및 공휴일 : 티켓 소지 시 3시간 무료 주차 (지상주차장)
 					</td>
@@ -113,9 +113,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 간선버스 (B) : 271번, 602번, 603번, 604번, 760번<br>
 						· 지선버스 (G) : 5712번, 5714번, 6712번, 6716번, 7016번, 7612번, 7711번<br>
@@ -123,9 +123,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 2호선 홍대입구역 : 8번 출구 (도보 직진 50미터 > 우측 건물 진입 > 엘리베이터 10층)
 					</td>
@@ -134,17 +134,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 서울 마포구 동교동 160-170
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 위치 : 롯데시네마 건물 지하주차장(건물뒷편 주차장입구)<br>
 						· 영화 관람시 요금<br>
@@ -165,9 +165,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 공영버스 : 6-1, 68, 69, 81, 82, 82-1, 86-2, 88<br>
 						· 도시형버스 : 2, 3, 7, 10, 10-5, 66, 66-1, 66-3, 66-4, 67, 820<br>
@@ -177,9 +177,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 		
 					</td>
@@ -188,9 +188,9 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 용인삼거리에서 처인구청 방향으로 800m 지점<br>
 						· 용인시장, 우리은행 맞은 편<br>
@@ -198,9 +198,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 영화 관람 시 3시간 무료주차 (지하주차장)<br>
 						· 3시간 이후 10분당 200원<br>
@@ -213,9 +213,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 수원시내버스 : 2-1, 5-1, 16, 16-3, 22-1, 32, 32-1, 35-1, 36, 37, 38, 40, 82, 82-1, 83, 83-1, 85, 311, 9996<br>
 						· 수원근접도시연계버스 : 24, 24-1, 25, 34, 46, 46-1, 300, 301, 305, 310, 707<br>
@@ -225,9 +225,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 1호선, 분당선 수원역 : 3번 출구 (도보 직진 200미터 > 건물 진입 후 엘리베이터 이용 5층)
 					</td>
@@ -236,9 +236,9 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 장안방면 - 팔달로, 팔달방면 - 매산로, 영통방면 - 권선로, 화성봉담 방면 - 매송고색로, 화성동탄 방면 - 덕영대로, <br>
 						&nbsp;&nbsp;용인기흥 방면- 세화로, 용인수지 방면 - 경수대로 이용하여 롯데몰 수원 주차장 진입<br>
@@ -246,9 +246,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 롯데시네마 이용 시 주차장 사전 예약 없이 입차 가능 <br>
 						· 영화관람 증빙(바로티켓 포함) 제시 시 주중/주말 3시간 30분 무료주차, 시간초과시 10분당 500원 ※ 내부/외부 주차장 이용 시 적용 <br>
@@ -263,9 +263,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						* 중앙역, 예술인아파트, 안산버스터미널 정류장<br>
 						· 시내버스 : 30, 30-2, 30-3, 30-7, 52, 62, 70, 77, 99, 99-1, 101<br>
@@ -273,9 +273,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 4호선 중앙역 : 1번출구 (도보 직진 250미터 > 전방 횡단보도 이용 > 도보 직진 250미터 > 전방 횡단보도 이용 ><br>
 						&nbsp;&nbsp;좌측 횡단보도 이용 > 도보 직진 200미터 > 우측 건물 진입 후 엘리베이터 이용 4층)
@@ -285,17 +285,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 안산시외버스터미널 옆 롯데마트 4층에 위치
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 영화 관람 시 무료주차 가능합니다. (요일무관)<br>
 						· 롯데마트 주차장은 주말에는 매우 혼잡하므로 영화관 방문에 시간적 여유를 두시거나, 대중교통 이용을 권장합니다.
@@ -308,9 +308,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 시외버스 : 1101번<br>
 						· 좌석버스 : 90번<br>
@@ -318,9 +318,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 검암역 하차(김포방면) 후 901, 66, 7, 1, 903, 17, 1번 버스 탑승 > 검단 농협 혹은 검단1동 주민센터 정류장에서 하차 > <br>
 						&nbsp;&nbsp;도보 직진 200미터 > 건물 진입 후 엘리베이터 이용 6층
@@ -330,18 +330,18 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 검암역에서 강화방면으로 직진, 완정사거리에서 좌회전, 원당대로에서 직진, 검단 금호 어울림아파트 좌측으로 둔 <br>
 						&nbsp;&nbsp;상태에서 우회전 완정로 에서 좌회전 후 검단사거리 까지 직진(택시비용 약 4~5,000원)
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 서울방면에서 오실경우 검단 사거리에서 좌회전 하신뒤 50m 진입 태백산 음식점으로 우회전 하신뒤 티티트리플 타워<br>
 					    &nbsp;&nbsp;뒷편으로 오시면 전용주차타워가 있습니다.<br>
@@ -356,9 +356,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						* 부평역 정류장<br>
 						· 시내버스 : 12, 30, 34, 67-1<br>
@@ -374,9 +374,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 1호선, 인천1호선 부평역
 						· 지하출구에서 지하상가를 따라 부평시장로터리 방향으로 직진 > 20번출구 > 도 보 직진 100미터 다운타운빌딩 6층
@@ -387,17 +387,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 인천광역시 부평구 대정로 66 (부평동)
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 부평역에서 부평시장로터리 방면으로 직진하면 우측에 다운타운빌딩(14층 건물) 지하 1층에서 지하 5층<br>
 						· 경인고속도로 부평IC 부평방면 출구에서 직진하여 시장로터리 진입 다운타운빌딩(14층 건물) 지하 1층에서 지하 5층<br>
@@ -411,9 +411,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 일반버스 : 3, 4, 6, 11, 13, 21, 21-1, 22, 27, 35, 36, 38<br>
 						· 좌석버스 : 111, 700<br>
@@ -425,9 +425,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 1호선 예술회관역 : 롯데백화점 방향<br>
 						· 1호선 예술회관역 : 5번출구<br>
@@ -438,9 +438,9 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 주말 및 공휴일에는 구월동 도로의 극심한 교통 체증으로 주차장 이용에 불편을 겪으실 수 있사오니 
 						&nbsp;&nbsp;대중교통의 이용을 적극 권장합니다.
@@ -448,9 +448,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 위치 : 롯데백화점 본관 주차장 B3 ~ B6<br>
 						· 요금 : 영화관람시 3시간 무료 주차 (영화 상영시간에 따라 탄력적 운용)<br>
@@ -465,17 +465,17 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 518, 618, 719번
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 1호선 율하역 : 3, 4번 출구 앞 (건물 진입 후 엘리베이터 이용 4층)
 					</td>
@@ -484,9 +484,9 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 수성IC -> 대구부산고속도로 -> 화랑로 동대구IC -> 범물/대구스타디움 방면(우회전) -> 롯데시네마 율하
 						· 동대구IC -> 화랑 동대구IC 방향 -> 대구 스타디움 방면 (우회전) -> 롯데시네마 율하
@@ -495,9 +495,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 총 : 1,127대 (무료주차)<br>
 						· 지하(2F) : 400대<br>
@@ -512,9 +512,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 성서우방타운건너편 : 305 ,405, 503, 521, 655, 달서 2번<br>
 						· 성서우체국 건너편 : 564번<br>
@@ -522,9 +522,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 2호선 성서산업단지역 : 7번 출구 (도보 직진 200미터 > 전방 횡단보도 이용 > 도보 직진 50미터 ><br>
 						&nbsp;&nbsp;우측 건물 진입 후 엘리베이터 이용 4층)
@@ -534,9 +534,9 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 시내 방면 : 반월당네거리 → 계산오거리 → 두류네거리 → 죽전네거리 → 성서네거리 우회전 → 롯데시네마 성서<br>
 						· 서부정류장 방면 : 서부정류장(성당네거리) → 본리네거리 → 성서 네거리 직진→ 롯데시네마 성서<br>
@@ -547,9 +547,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 출차시 주차권과 영화티켓 및 매점, 건물 내 타 이용시설 영수증을제시해 주시기 바랍니다.<br>
 						· 기본요금은 10분당 200원입니다.<br>
@@ -567,18 +567,18 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 일반버스 - 36, 38, 1001, 115-1번 장산역 하차<br>
 						· 마을버스 - 해운대2, 해운대8, 해운대9-1번 장산역 하차
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 2호선 장산역 : 7번,9번 출구 바로 연결 (건물 진입 후 엘리베이터 이용 7층)
 					</td>
@@ -587,17 +587,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%"> 
 						· 부산시 해운대구 해운대로 802 (네비게이션)
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 롯데시네마 지하주차장 340여대<br>
 						· 주차요금 당일 관람객에 한해 3시간 무료주차
@@ -610,17 +610,17 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 일반버스 : 5, 5-1, 10, 10-1, 17, 29-1, 35, 43, 52, 52-1, 57, 57-1, 67, 80, 80-1, 85, 86, 89, 98, 99, 103, 111, 111-2번
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 1, 2호선 서면역 : 8번 출구 (도보 직진 200미터 > 대각선 횡단보도 이용 > 건물 진입 후 엘리베이터 이용 6층)
 					</td>
@@ -629,17 +629,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 부산 부산진구 전포동,668-1번지
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 주차요금: 티켓 소지시 3시간 무료(초과시 10분당 500원)<br>
 						· 주차위치: NC백화점 서면점 건물 내 지하 1~2층 주차장 또는 건물외곽 타워 주차장 2 ~6층
@@ -652,9 +652,9 @@
 			<h3 align="left">대중교통 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_bus.png"><br>버스
-					</td>
+					</th>
 					<td width="90%">
 						· 김해공항 -> 롯데백화점 : 공항리무진(1시간 단위)<br>
 						· 사상방면 -> 롯데백화점 : 107번, 108번, 62번 등<br>
@@ -664,9 +664,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_subway.png"><br>지하철
-					</td>
+					</th>
 					<td>
 						· 서면역 1, 2호선 지하 롯데백화점과 바로 연결 (엘리베이터 이용 10층)
 					</td>
@@ -675,17 +675,17 @@
 			<h3 align="left">자가용 이용 시</h3>
 			<table width="1000" id="location_info">
 				<tr>
-					<td width="10%">
+					<th width="10%">
 						<img src="image/icon_car.png"><br>자가용
-					</td>
+					</th>
 					<td width="90%">
 						· 부산 부산진구 부전동,503-15
 					</td>
 				</tr>
 				<tr>
-					<td>
+					<th>
 						<img src="image/icon_pkLot.png"><br>주차안내
-					</td>
+					</th>
 					<td>
 						· 평일, 주말, 공휴일 : 3시간 무료
 						· 영화를 관람하신 후 주차하실 때 뽑으신 주차카드와 영화관람권을 영화관 매표소로 <br>
@@ -698,24 +698,3 @@
 	</center>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
