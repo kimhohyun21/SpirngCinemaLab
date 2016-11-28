@@ -4,50 +4,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
-<script src="sliderengine/jquery.js"></script>
-<script type="text/javascript">
-	function send(){
-		 var f=document.frm;	 
-		 var pwd=f.pwd.value;		 
-		if(f.name.value==""){
-			alert("이름을 입력하세요");
-			f.name.focus();
-			return;
-		}
-		var kor=/^[a-z A-Z 가-힝]*$/;
-		 if (!kor.test(f.name.value) ){
-		     alert("이름에 특수문자,숫자는 입력 할 수 없습니다. \n ex) HoHyunMansae");
-		     f.name.focus();
-		     return;
-		}
-		if(f.phone.value==""){
-			alert("전화번호를 입력하세요");
-			f.content.focus();
-			return;
-		}
-		 var number = /[^0-9]/;
-		 if (f.birth.value.search(number)!=-1 || f.birth.value.length != 8 || f.birth.value==""){
-		        alert("생년월일은 숫자만 8자리를 입력해 주시기 바랍니다 "
-		        		+"\n ex)20161018");	        
-		        f.birth.focus();
-		        return;
-		   }
-		 if (f.phone.value.search(number)!=-1 || f.phone.value.length == 0 || f.phone.value.length != 11){
-		        alert("전화번호는 '-'빼고 입력해주시기 바랍니다. \n전화번호는 숫자만 입력하실 수 있습니다 \n ex)01015771577");
-		        f.phone.focus();
-		        return;
-		   }
-		 if(f.pwd.value==""){
-				alert("비밀번호를 입력해주세요");
-				f.pwd.focus();
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Member Info Modify</title>
+	<link rel="stylesheet" type="text/css" href="mypage/mypage_style.css">
+	<script type="text/javascript">
+		function send(){
+			 var f=document.frm;	 
+			 var pwd=f.pwd.value;		 
+			if(f.name.value==""){
+				alert("이름을 입력하세요");
+				f.name.focus();
 				return;
 			}
-		f.submit();
-	}
-</script>	
+			var kor=/^[a-z A-Z 가-힝]*$/;
+			 if (!kor.test(f.name.value) ){
+			     alert("이름에 특수문자,숫자는 입력 할 수 없습니다. \n ex) HoHyunMansae");
+			     f.name.focus();
+			     return;
+			}
+			if(f.phone.value==""){
+				alert("전화번호를 입력하세요");
+				f.content.focus();
+				return;
+			}
+			 var number = /[^0-9]/;
+			 if (f.birth.value.search(number)!=-1 || f.birth.value.length != 8 || f.birth.value==""){
+			        alert("생년월일은 숫자만 8자리를 입력해 주시기 바랍니다 "
+			        		+"\n ex)20161018");	        
+			        f.birth.focus();
+			        return;
+			   }
+			 if (f.phone.value.search(number)!=-1 || f.phone.value.length == 0 || f.phone.value.length != 11){
+			        alert("전화번호는 '-'빼고 입력해주시기 바랍니다. \n전화번호는 숫자만 입력하실 수 있습니다 \n ex)01015771577");
+			        f.phone.focus();
+			        return;
+			   }
+			 if(f.pwd.value==""){
+					alert("비밀번호를 입력해주세요");
+					f.pwd.focus();
+					return;
+				}
+			f.submit();
+		}
+	</script>	
 </head>
 <body>
 	<center>

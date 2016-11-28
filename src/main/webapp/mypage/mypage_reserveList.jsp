@@ -17,11 +17,12 @@
 				dataType: "json",
 				success:function(data){
 					if(data.cancelCheck==true){
-						$.jQueryAlert("성공 : "+data.cancelMsg);
-						location.href="reserveList.do?no="+data.no;
+						var func=function(){location.replace("reserveList.do?no="+data.no);};
+						$.jQueryAlertF("성공 : "+data.cancelMsg, func);
+						
 					}else{
-						$.jQueryAlert("실패 : "+data.cancelMsg);
-						location.href="reserveList.do?no="+data.no;
+						var func=function(){location.replace("reserveList.do?no="+data.no);};
+						$.jQueryAlert("실패 : "+data.cancelMsg, func);
 					}
 				},
 				error:function(data){
@@ -29,25 +30,6 @@
 				}
 			});
 		}
-		
-		/* jQuery Alert 창 */
-		jQuery.jQueryAlert = function (msg) {
-	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-	        $("body").append($messageBox);
-			
-	        $($messageBox).dialog({
-	            open: $($messageBox).append(msg),
-	            autoOpen: true,
-	            modal: true,
-	            resizable:false, 
-				width: 400,
-	            buttons: {
-	                OK: function () {
-	                    $(this).dialog("close");
-	                }
-	            }
-	        });
-	    };
 	</script>
 </head>
 <body>

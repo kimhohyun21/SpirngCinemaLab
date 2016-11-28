@@ -145,6 +145,49 @@ jQuery.jQueryAlertF = function (msg, func) {
     });
 };
 
+jQuery.jQueryAlertY = function (msg) {
+    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+    $("body").append($messageBox);
+
+    $($messageBox).dialog({
+        open: $($messageBox).append(msg),
+        autoOpen: true,
+        modal: true,
+        resizable:false, 
+		width: 400,	
+        buttons: {
+            예: function () {
+                $(this).dialog("close");
+            },
+            아니오: function () {
+                $(this).dialog("close");
+                history.back();
+            }
+        }
+    });
+};
+
+jQuery.jQueryAlertE = function (msg) {
+    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
+    $("body").append($messageBox);
+
+    $($messageBox).dialog({
+        open: $($messageBox).append(msg),
+        autoOpen: true,
+        modal: true,
+        resizable:false, 
+		width: 400,	
+		close: function(){
+			location.href="main.do";
+		},
+        buttons: {
+            OK: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+};
+
 /*jQuery Login*/
 jQuery.jQueryLogin = function (){
 	var $loginform = $.parseHTML('<div id="logindiv">'

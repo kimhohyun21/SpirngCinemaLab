@@ -10,6 +10,10 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 	 		$(".menubar ul li#${menuType }").attr("class", "liSelected");
+	 		//로그아웃 된 경우 메인 페이지로
+	 		if(${mvo==null}){
+	 			location.href="main.do";
+	 		}
 	 	});		
 	</script>
 </head>

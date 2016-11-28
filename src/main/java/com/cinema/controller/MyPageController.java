@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cinema.dao.member.*;
 
@@ -171,7 +172,8 @@ public class MyPageController {
 	
 	//비밀 번호 수정 OK
 	@RequestMapping("MemeberChangePwd_ok.do")
-	public String ChangePwdOk(Model model, String strno, String pwd, String change_pwd) {
+	@ResponseBody
+	public boolean ChangePwdOk(Model model, String strno, String pwd, String change_pwd) {
 		int no=Integer.parseInt(strno);
 		MemberVO vo=dao.memberGetAllInfo(no);
 
@@ -188,9 +190,8 @@ public class MyPageController {
 		} else {
 			pCheck = false;
 		}
-		model.addAttribute("pCheck", pCheck);
 
-		return "mypage/mypage_change_pwd_ok";
+		return pCheck;
 	}
 	
 	//회원 탈퇴
@@ -208,29 +209,24 @@ public class MyPageController {
 	
 	//회원 탈퇴 OK
 	@RequestMapping("delete_ok.do")
-	public String delete_ok(Model model, String strno, String pwd, HttpSession session){
-		try{
-			int no=Integer.parseInt(strno);
-			MemberVO vo=dao.memberGetAllInfo(no);
-			//DB값
-			String db_pwd=vo.getPwd();			
-			
-			int check=3;
-			
-			if(db_pwd.equals(pwd)){
-				dao.memberDelete(no);
-				//저장됬던 세션날리기
-				session.invalidate();
-				check=1;
-			}else{
-				check=0;
-			}
-			model.addAttribute("check", check);
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}
+	@ResponseBody
+	public int delete_ok(Model model, String strno, String pwd, HttpSession session){
+		int no=Integer.parseInt(strno);
+		MemberVO vo=dao.memberGetAllInfo(no);
+		//DB값
+		String db_pwd=vo.getPwd();			
 		
+		int check=3;
 		
-		return "mypage/mypage_delete_ok";
+		if(db_pwd.equals(pwd)){
+			dao.memberDelete(no);
+			//저장됬던 세션날리기
+			session.invalidate();
+			check=1;
+		}else{
+			check=0;
+		}		
+		
+		return check;
 	}
 }

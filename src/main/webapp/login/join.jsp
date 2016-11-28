@@ -98,7 +98,7 @@
 			}
 			var pwd=f.pwd.value;	
 			var pwdCheck=f.pwd_check.value;
-			if(pwd!=pwdCheck){
+			if(pwd != pwdCheck){
 				$.jQueryAlert("비밀번호가 맞지 않습니다");
 				return;
 			}
