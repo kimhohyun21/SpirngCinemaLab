@@ -184,7 +184,6 @@ b{
 
 .detail{
    background-color: #e6f2ff;
-   border-radius: 10px;
    padding-left: 5px;
 }
 
@@ -204,25 +203,38 @@ b{
 }
 
 .reservelist{
-   display: inline-table;
-   position: relative;
-   top:-38px;
-   right: 28px;
-   width: 786px;
-   height: 538px;
+    display: inline-table;
+    position: relative;
+    top: -40px;
+    right: 20px;
+    width: 780px;
+    height: 540px;
 }
 
 .div2{
    display: table-footer-group;
    position: relative;
    bottom: 34px;
+   width: 780px;  
 }
 
+table.inside{
+	border: 1px solid #c7c7c7;
+  	-moz-border-radius:5px;
+  	-webkit-border-radius:5px;
+    border-radius:5px;	
+}
+
+.div2 td{
+	max-width: none;
+}
 .page, .page1{
    margin-top: 1px;
    height: 27px;
 }
-
+.page td, .page1 td{
+	max-width: none;
+}
 .cancel{
    height: 35px;
 }
@@ -291,13 +303,6 @@ b{
 .modify_td{
    text-align: center;
    background-color: #cce6ff;
-}
-table.div2{
-	width: 786px;
-}
-table.type_0, table.type_1{
-	width: 786px;
-	text-align: right;
 }
 
 
