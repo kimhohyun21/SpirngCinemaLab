@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.cinema.dao.reserve.ReserveVO;
 import com.cinema.dao.theater.TheaterDAO;
 import com.cinema.dao.theater.TheaterVO;
 
@@ -74,6 +75,7 @@ public class TheaterController {
 		
 		//선택된 날짜 및 요일 값 받기
 		if(checkedDay==null)checkedDay=sd; //선택이 없을 경우 초기값
+		int d=Integer.parseInt(checkedDay);
 		if(checkedDay2==null)checkedDay2=ss; //선택이 없을 경우 초기값
 		
 		//지역 선택
@@ -95,11 +97,37 @@ public class TheaterController {
 		    Map map = new HashMap();
 		    map.put("theater", theater);
 		    map.put("title", title);
-		    List<TheaterVO> timeList = dao.timeData2(map);
+		    
+		    //상영관
 		    int theaterNo2 = dao.theaterNoData2(map);
-		    		     
 		    vo.setTheaterNo(theaterNo2);
-		    vo.setTimeList(timeList);
+		    
+		    //영화 시간
+		    List<TheaterVO> timeList = dao.timeData2(map);
+		    List<TheaterVO> timeList2=new ArrayList<>();
+		    
+		    //지나간 상영시간 노출 제외
+			if(d==day){
+				for(TheaterVO vo2:timeList){
+					String movietime2=vo2.getMovietime();
+					StringTokenizer time=new StringTokenizer(movietime2,":");
+					String si=time.nextToken();
+					String bun=time.nextToken();
+					String sibun=si+bun;
+					int sibun2=Integer.parseInt(sibun);
+
+					if(todayTime2<sibun2 || sibun2<200){
+						vo2.setMovietime(movietime2);						
+					}else{
+						vo2.setMovietime("");
+					}
+					timeList2.add(vo2);
+				}
+				vo.setTimeList(timeList2);
+			}
+			else{
+				vo.setTimeList(timeList);
+			}
 		     
 		    movieList2.add(vo);
 		}

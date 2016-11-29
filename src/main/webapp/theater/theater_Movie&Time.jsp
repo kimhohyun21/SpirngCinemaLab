@@ -33,11 +33,16 @@
 					<td width="10%" align="center">${vo.theaterNo }관</td>
 					<c:forEach var="vo2" items="${vo.timeList}">
 						<td align="center">
-							<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
-							&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
-							&movietime=${vo2.movietime}&cType=theater#nav">
+							<c:if test="${vo2.movietime!=''}">
+								<a href="reserve2.do?year=${year }&month=${month }&checkedDay=${checkedDay}&checkedDay2=${checkedDay2}
+								&poster=${vo.poster }&local=${local }&tname=${theater }&grade=${vo.grade }&title=${vo.title}&theaterNo=${vo.theaterNo}
+								&movietime=${vo2.movietime}&cType=theater#nav">
+									${vo2.movietime} 
+								</a>
+							</c:if>
+							<c:if test="${vo2.movietime==''}">
 								${vo2.movietime} 
-							</a>
+							</c:if>
 						</td>
 					</c:forEach>
 				</tr>

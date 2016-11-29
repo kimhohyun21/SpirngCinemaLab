@@ -1,6 +1,6 @@
 @CHARSET "EUC-KR";
 .bg{
-	background-color: rgba(250,250,250,0.9);
+	background-color: rgba(250,250,250,0.6);
 	width: 1000px;
 	margin: 10px;
 	padding: 10px;
@@ -11,7 +11,7 @@
     position: relative;
     left: 98px;
     top: -31px;
-    background-color: white;
+    background-color: #f2f2f2;
     width: 732px;
     padding: 20px;
     min-height: 576px;
@@ -73,7 +73,7 @@ button.menubar:hover {
 }
 button.menubar:active {
 	position:relative;
-	top:1px;
+	top:11px;
 }
 
 /* 영화등록 버튼 */
@@ -95,7 +95,7 @@ button.menubar:active {
 	border:2px solid #bdb2bd;
 	display:inline-block;
 	cursor:pointer;
-	color:#3a8a9e;
+	color:#3F51B5;
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -123,14 +123,14 @@ button.menubar:active {
 .reg_btn{
 	position: relative;
 	bottom: 129px;
-	background-color: #dcdcd1;
 	height: 50px;
-	border-top: 2px solid white;
+/* 	background-color: #b6becd;	
+	border-top: 2px solid white; */
 }
 
 /* 영화리스트 테이블 */
 table.type01 {
-	background-color: #dcdcd1;
+	background-color: #b6becd;
     border-collapse: collapse;
     text-align: left;
     line-height: 1.5;
@@ -143,8 +143,8 @@ table.type01 {
 table.type01 thead th {
     padding: 10px;
     font-weight: bold;
-    border-bottom: 2px solid #c00;
-    background: #dcdcd1;
+    border-bottom: 2px solid #476e9e;
+    background: #b6becd;
     text-align: center;
 }
 table.type01 tbody th {
@@ -160,7 +160,7 @@ table.type01 td {
 }
 
 table.type01 tr:HOVER{
-	background-color:#d8d3d8;
+	background-color:#476e9e;
 }
 
 /* 영화등록 페이지 */
@@ -168,7 +168,7 @@ table.type01 tr:HOVER{
 	padding: 7px;
 }
 .type02 {
-	background-color: #dcdcd1;
+	background-color: #b6becd;
     border-collapse: collapse;
     line-height: 1.5;
     border-left: 1px solid white;
@@ -184,7 +184,7 @@ table.type01 tr:HOVER{
 }
 
 .type02 th{
-	background-color: #c8c8b6;
+	background-color: #8595b4;
 	border-bottom: 1px solid white;
 	height: 55px;
 }
@@ -210,40 +210,40 @@ table.type01 tr:HOVER{
 
 
 .table_btn {
-	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbe6c4), color-stop(1, #9ba892));
-	background:-moz-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-webkit-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-o-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-ms-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbe6c4', endColorstr='#9ba892',GradientType=0);
-	background-color:#dbe6c4;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #b2b8ad;
-	display:inline-block;
-	cursor:pointer;
-	color:#757d6f;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ced9bf;
+	    -moz-box-shadow: inset 0px 0px 14px -3px #f2fadc;
+    -webkit-box-shadow: inset 0px 0px 14px -3px #f7f7f7;
+    box-shadow: inset 0px 0px 14px -3px #f7f7f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aeb9d2), color-stop(1, #454c71));
+    background: -moz-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+    background: -webkit-linear-gradient(top, #aeb9d2 5%, #454c71 100%);
+    background: -o-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+    background: -ms-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+    background: linear-gradient(to bottom, #aeb9d2 5%, #454c71 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbe6c4', endColorstr='#9ba892',GradientType=0);
+    background-color: #aeb9d2;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #aeb9d2;
+    display: inline-block;
+    cursor: pointer;
+    color: #e1e1e1;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #bbbfd5;
 }
 .table_btn:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9ba892), color-stop(1, #dbe6c4));
-	background:-moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-webkit-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-o-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-ms-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ba892', endColorstr='#dbe6c4',GradientType=0);
-	background-color:#9ba892;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3f638b), color-stop(1, #dbdeef));
+    background: -moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+    background: -webkit-linear-gradient(top, #3f638b 5%, #dbdeef 100%);
+    background: -o-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+    background: -ms-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+    background: linear-gradient(to bottom, #3f638b 5%, #dbdeef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ba892', endColorstr='#dbe6c4',GradientType=0);
+    background-color: #3f638b;
 }
 .table_btn:active {
 	position:relative;
@@ -279,7 +279,7 @@ table.type01 tr:HOVER{
 /* 출연진 수정 페이지 */
 
 .type03 {
-	background-color: #dcdcd1;
+	background-color: #b6becd;
     border-collapse: collapse;
     line-height: 1.5;
     border-left: 1px solid white;
@@ -303,7 +303,7 @@ table.type01 tr:HOVER{
 }
 
 .type03 th{
-	background-color: #c8c8b6;
+	background-color: #8595b4;
 	border-bottom: 1px solid white;
 	height: 55px;
 }
@@ -321,7 +321,7 @@ table.type01 tr:HOVER{
 
 /* 예매내역 상세 */
 .type04 {
-	background-color: #dcdcd1;
+	background-color: #b6becd;
     border-collapse: collapse;
     line-height: 1.5;
     border-left: 1px solid white;
@@ -339,7 +339,7 @@ table.type01 tr:HOVER{
 }
 
 .type04 th{
-	background-color: #c8c8b6;
+	background-color: #8595b4;
 	border-bottom: 1px solid white;
 	height: 55px;
 }
@@ -354,7 +354,7 @@ table.type01 tr:HOVER{
 	padding: 7px;
 }
 .type05 {
-	background-color: #dcdcd1;
+	background-color: #b6becd;
     border-collapse: collapse;
     line-height: 1.5;
     border-left: 1px solid white;
@@ -371,7 +371,7 @@ table.type01 tr:HOVER{
 }
 
 .type05 th{
-	background-color: #c8c8b6;
+	background-color: #8595b4;
 	border-bottom: 1px solid white;
 	height: 55px;
 }
@@ -385,8 +385,10 @@ table.type01 tr:HOVER{
 	width: 211px;
 	height: 30px;
 }
-
-
+table.type01 td.page_td, td.page_td:HOVER{
+	background: #f2f2f2;
+	border: 1px solid #f2f2f2;
+}
 
 
 

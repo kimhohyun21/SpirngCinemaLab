@@ -4,28 +4,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
-<script type="text/javascript">
-	function send(){
-		var f=document.frm;
-		
-		f.submit();
-}
-	function num(){
-		if( (event.keyCode<48)||(event.keyCode>57) ){
-			event.returnValue=false;
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Movie Modify</title>
+	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<script type="text/javascript">
+		function send(){
+			var f=document.frm;
+			
+			f.submit();
 		}
-	}
-	function re(){
-		top.document.location.reload();
-	}
-</script>
+		function num(){
+			if( (event.keyCode<48)||(event.keyCode>57) ){
+				event.returnValue=false;
+			}
+		}
+		function re(){
+			top.document.location.reload();
+		}
+	</script>
 </head>
 <body>
 	<div align="center">
-	<form action="Amodify_Ok.do" name="frm" method="post">
+	<form action="aModify_Ok.do" name="frm" method="post">
 		<table width="700" height="280" class="type02">
 			<thead>
 				<tr>

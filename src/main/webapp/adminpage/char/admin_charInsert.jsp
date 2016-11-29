@@ -5,40 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
-<script type="text/javascript">
-	function send(){
-		var f=document.frm;
-		if(f.name.value==""){
-			$.jQueryAlert("이름을 입력해주세요");
-			return;
+	<title>Admin Character Insert</title>
+	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<script type="text/javascript">
+		function send(){
+			var f=document.frm;
+			if(f.name.value==""){
+				$.jQueryAlert("이름을 입력해주세요");
+				return;
+			}
+			if(f.img.value==""){
+				$.jQueryAlert("이미지URL을 입력해주세요");
+				return;
+			}
+			f.submit();
 		}
-		if(f.img.value==""){
-			$.jQueryAlert("이미지URL을 입력해주세요");
-			return;
-		}
-		f.submit();
-}
-	/* jQuery Alert 창 */
-	jQuery.jQueryAlert = function (msg) {
-	    var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-	    $("body").append($messageBox);
-	
-	    $($messageBox).dialog({
-	        open: $($messageBox).append(msg),
-	        autoOpen: true,
-	        modal: true,
-	        resizable:false, 
-			width: 400,
-	        buttons: {
-	            OK: function () {
-	                $(this).dialog("close");
-	            }
-	        }
-	    });
-	};
-</script>
+	</script>
 </head>
 <body>
 	<div align="center">

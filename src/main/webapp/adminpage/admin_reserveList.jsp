@@ -5,9 +5,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Reserve List</title>
+	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
 </head>
 <body>
 	<div class="reserve_list">
@@ -33,7 +33,7 @@
 						</c:if>
 						
 						<c:if test="${msg ne vo.title}">
-							<a href="reservecontent.do?no=${vo.rno}&page=${curpage }">${vo.title}</a>
+							<a href="reserveContent.do?no=${vo.rno}&page=${page }">${vo.title}</a>
 						</c:if>
 					</td>
 					<td align="center">
@@ -45,7 +45,7 @@
 			</c:forEach>
 		</tbody>
 			<tr>
-				<td align="right" colspan="6">
+				<td align="right" colspan="6" class="page_td">
 					<a href="aReserveList.do?page=${page>1?page-1:page}" style="color: red">
 						이전
 					</a>&nbsp;

@@ -4,16 +4,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Movie List</title>
+	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
 </head>
 <body>
 	<center>
 		<table width="699" class="reg_btn">
 			<tr>
 				<td>
-					<a href="AmovieInsert.do">
+					<a href="aMovieInsert.do">
 						<button class="menu_insert">영화등록</button>						
 					</a>
 				</td>
@@ -55,7 +55,7 @@
 			</c:forEach>
 		</tbody>
 			<tr>
-				<td colspan="5" align="right">
+				<td colspan="5" align="right" class="page_td">
 					<a href="aMovieList.do?page=${page>1?page-1:page}" style="color: red">
 						이전
 					</a>&nbsp;

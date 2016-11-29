@@ -4,9 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="adminpage/astyle.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Character List</title>
+	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
 </head>
 <body>
 	<center>
@@ -39,7 +39,7 @@
 			</c:forEach>
 		</tbody>
 			<tr class="nhover">
-				<td colspan="5" align="right">
+				<td colspan="5" align="right" class="page_td">
 					<c:if test="${page>block }">
 						<a href="ACList.do?page=1">
 							처음

@@ -109,7 +109,7 @@
    <div class="detail">
    <!-- 관리자로 로그인했을 시 영화 정보 수정하기 버튼 띄우기 -->
 	<c:if test="${mvo.admin eq '1' }">
-		<a href="Amodifymovielist.do?no=${no }">
+		<a href="aModifyMovielist.do?no=${no }">
 			<span class="modify">영화 수정 </span>
 		</a>
 	</c:if>
@@ -178,7 +178,7 @@
                <td><span class="cast" >출연진</span></td>
                <td colspan="10" align="right">
                		<c:if test="${mvo.admin eq '1' }">
-						<a href="AcharUpdate.do?no=${no }&type=${type }">
+						<a href="aCharUpdate.do?no=${no }&type=${type }">
 							<span class="castmodify">배우 수정</span>
 						</a>
 					</c:if>
