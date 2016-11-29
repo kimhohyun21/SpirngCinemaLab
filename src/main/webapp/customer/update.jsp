@@ -4,9 +4,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="customer/style.css">
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+	<title>Q&A Update</title>
+	<link rel="stylesheet" type="text/css" href="customer/customer_style.css">
 	<script type="text/javascript">
 		$(function(){
 			$('#sendBtn').click(function(){
@@ -22,14 +21,14 @@
 				var subject=$('#subject').val();
 				if(subject.trim()==""){
 					$('#subject').focus();
-					alert('제목을 입력하세요.');
+					$.jQueryAlert('제목을 입력하세요.');
 					$('#subject').val("");
 					return;
 				}
 				var content=$('#content').val();
 				if(content.trim()==""){
 					$('#content').focus();
-					alert('내용을 입력하세요.');
+					$.jQueryAlert('내용을 입력하세요.');
 					$('#content').val("");
 					return;
 				}	

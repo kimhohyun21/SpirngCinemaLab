@@ -6,8 +6,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>QNA List</title>
-	<link rel="stylesheet" type="text/css" href="customer/style.css">
+	<title>Q&A List</title>
+	<link rel="stylesheet" type="text/css" href="customer/customer_style.css">
 	<script type="text/javascript">
 		function qnainsert(){
 			if(${mvo==null}){
@@ -15,40 +15,7 @@
 				return;
 			}
 			location.href='insert.do';
-		}
-		
-		/*jQuery Login*/
-		jQuery.jQueryLogin = function (){
-			var $loginform = $.parseHTML('<div id="logindiv">'
-											+'<form name="loginfrm" action="login_ok.do" method="post" "id="loginfrm">'
-											+'<div class="input">'
-											+'<label class="idlabel" for="id">ID</label>'
-											+'<input type="text" placeholder="아이디를 입력하세요." name="id" id="id" onkeydown="enter()">'
-											+'</div>'+'<div class="input">'
-											+'<label class="pwlabel" for="pwd">PW</label>'
-											+'<input type="password" placeholder="패스워드를 입력하세요." name="pwd" id="pwd" onkeydown="enter()">'
-											+'</div><input type="hidden" name="loginType" value="reserve">'
-											+'</form><div id="find">'
-											+'<a href="searchId.do">아이디 찾기</a>&nbsp;|&nbsp;'
-											+'<a href="searchPwd.do">비밀번호 찾기</a></div>');
-			$("body").append($loginform);
-			
-			$($loginform).dialog({
-				 open: $($loginform),
-			     autoOpen: true,
-			     width: 400,
-			     modal: true,
-			     resizable:false, 
-			     buttons: {	
-			       LOGIN : function() {
-				         login();
-				   },		 
-			       Cancel: function() {
-			         $(this).dialog("close");
-			       }
-			     }
-			 });
-		}
+		}		
 		
 		//엔터 로그인
 		function enter(){
@@ -89,27 +56,7 @@
 					$.jQueryAlert("실패");
 				}
 			});
-		}
-		
-		/* jQuery Alert 창 */
-		jQuery.jQueryAlert = function (msg) {
-	        var $messageBox = $.parseHTML('<div id="alertBox"></div>');
-	        $("body").append($messageBox);
-
-	        $($messageBox).dialog({
-	            open: $($messageBox).append(msg),
-	            autoOpen: true,
-	            modal: true,
-	            resizable:false, 
-				width: 400,
-	            buttons: {
-	                OK: function () {
-	                    $(this).dialog("close");
-	                }
-	            }
-	        });
-	    }  
-	
+		}	
 	</script>
 </head>
 <body>
@@ -118,16 +65,12 @@
 			<tr id="sub">
 				<td>
 					<a href="customer.do">
-						<button class="list_btn">
-							<span>QnA</span>
-						</button>
+						<button class="list_btn">QnA</button>
 					</a>
 				</td>
 				<td>
 					<a href="faq.do">
-						<button class="list_btn">
-							<span>FAQ</span>
-						</button>
+						<button class="list_btn">FAQ</button>
 					</a>
 				</td>
 			</tr>
@@ -153,23 +96,21 @@
 			<tr class="list_tr">
 				<td width="10%" align="center">${vo.qno}</td>
 				<td width="45%" align="left" class="subject">
+					<fmt:formatDate var="qday" value="${vo.qregdate}" pattern="yyyy-MM-dd"/>
 					<c:if test="${vo.group_tab!=0}">
 						<c:forEach var="i" begin="1" end="${vo.group_tab}">
 							&nbsp;&nbsp;							
 						</c:forEach>
-						<img alt="reply" src="customer/img/icon_reply.gif">
+						<img alt="reply" src="image/icon_reply.gif">
 					</c:if>
-					<c:if test="${msg eq vo.qsubject}">
-					<span>${vo.qsubject}</span>
-					</c:if>
-					
-					<c:if test="${msg ne vo.qsubject}">
-						<a href="content.do?no=${vo.qno}&page=${page }">${vo.qsubject}</a>
+					<a href="content.do?no=${vo.qno}&page=${page }">${vo.qsubject}</a>					
+					<c:if test="${qday==today}">
+						<sup><img alt="new" src="image/icon_new (2).gif"></sup>
 					</c:if>
 				</td>
 				<td width="15%" align="center">${vo.name}</td>
 				<td width="20%" align="center">
-					<fmt:formatDate value="${vo.qregdate}" pattern="yyyy-MM-dd"/>
+					${qday }
 				</td>
 				<td width="10%" align="center">${vo.qhit}</td>
 			</tr>

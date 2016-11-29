@@ -1,5 +1,6 @@
 package com.cinema.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.servlet.http.HttpSession;
@@ -34,6 +35,10 @@ public class CustomerController {
 		List<CustomerVO> list = dao.getcustomerList(map);
 		int totalpage = dao.customerTotal();
 		
+		//날짜 비교용
+		String today=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		
+		model.addAttribute("today", today);
 		model.addAttribute("list", list);
 		model.addAttribute("page", curpage);
 		model.addAttribute("totalpage", totalpage);

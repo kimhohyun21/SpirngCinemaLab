@@ -3,27 +3,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="customer/style.css">
-<script type="text/javascript">		
-	function send(){
-		var f=document.frm;
-		
-		if(f.subject.value==""){
-			alert("제목을 입력하시오");
-			f.subject.focus();
-			return;
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Q&A Insert</title>
+	<link rel="stylesheet" type="text/css" href="customer/customer_style.css">
+	<script type="text/javascript">		
+		function send(){
+			var f=document.frm;
+			
+			if(f.subject.value==""){
+				alert("제목을 입력하시오");
+				f.subject.focus();
+				return;
+			}
+			
+			if(f.content.value==""){
+				alert("내용을 입력하시오");
+				f.content.focus();
+				return;
+			}
+			f.submit();
 		}
-		
-		if(f.content.value==""){
-			alert("내용을 입력하시오");
-			f.content.focus();
-			return;
-		}
-		f.submit();
-	}
-</script>
+	</script>
 </head>
 <body>
 	<div align="center" class="bg">

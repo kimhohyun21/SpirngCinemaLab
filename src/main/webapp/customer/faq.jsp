@@ -5,9 +5,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="customer/table.css">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="customer/customer_style.css">
+	<title>FAQ</title>
 </head>
 <body>
 	<div align="center" class="bg">
@@ -16,16 +16,12 @@
 			<tr id="sub">
 				<td>
 					<a href="customer.do">
-						<button class="list_btn">
-							<span>QnA</span>
-						</button>
+						<button class="list_btn">QnA</button>
 					</a>
 				</td>
 				<td>
 					<a href="faq.do">
-						<button class="list_btn">
-							<span>FAQ</span>
-						</button>
+						<button class="list_btn">FAQ</button>
 					</a>
 				</td>
 			</tr>
