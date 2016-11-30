@@ -27,34 +27,40 @@
 </head>
 <body>
 	<div align="center" class="bg">
-		<h3>글쓰기</h3>
+		<table width="600px" class="button_table">
+			<tr>
+				<td align="center">
+					<span class="btn_title">글쓰기</span>
+				</td>
+			</tr>
+		</table>
 		<form action="insert_ok.do" method="post" name="frm">
-			<table width="600" id="insert_table">
-				<tr height="27">
-					<th width="20%" align="center">이름</th>
-					<td width="80%" align="left">
-						<input type="text" name="name" value="${mvo.name}">
+			<table id="insert_table" width="600px">
+				<tr>
+					<th width="20%">이름</th>
+					<td>
+						<input type="text" size="15" name="name" value="${mvo.name}" readonly="readonly">
 						<input type="hidden" name="no" value="${mvo.no}">
 					</td>
 				</tr>
-				<tr height="27">
-					<th width="20%" align="center">제목</th>
-					<td width="80%" align="left">
-						<input type="text" name="subject">
+				<tr>
+					<th width="20%">제목</th>
+					<td>
+						<input type="text" size="50" name="subject">
 					</td>
 				</tr>
-				<tr height="27">
-					<th width="20%" align="center">내용</th>
-					<td width="80%" align="left">
-						<textarea rows="8" cols="50" name="content" class="content"></textarea>
+				<tr >
+					<th width="20%">내용</th>
+					<td>
+						<textArea cols="70" rows="20" name="content"></textArea>
 					</td>
 				</tr>
 			</table>
-			<table width="500">
+			<table class="button_table" width="600px">
 				<tr>
-					<td colspan="2" align="center">
-						<input type="button" value="글쓰기" onclick="send()" class="insert_btn">
-						<input type="button" value="취소" onclick="javascript:history.back()" class="cancel_btn">
+					<td align="center">
+						<input type="button" value="글쓰기" class="btn_normal2" onclick="send()">
+						<input type="reset" value="취소" onclick="javascript:history.back()" class="btn_normal2">
 					</td>
 				</tr>
 			</table>

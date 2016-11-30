@@ -14,16 +14,6 @@
     border: 1px solid rgba(123, 47, 46, 0.84);
     color: black;
 }
-
-.tb{
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-collapse: collapse;
-}
-.tb th, .tb td{
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-}
 .bg{
 	background-color: rgba(250,250,250,0.6);
 	width: 1000px;
@@ -31,7 +21,199 @@
 	padding: 10px;
 	min-height: 565px;
 }
+#list_table, #content_table, .button_table, #insert_table, .del_table {
+	border-collapse: collapse;
+	position : relative;
+	top: 20px;
+}
+#list_table, #content_table, #insert_table, .del_table {
+	border-bottom: 2px solid gray;
+	border-top: 2px solid gray;
+	margin: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+}
+#list_table th, #content_table th, #insert_table th, .del_table th{
+	border-bottom: 2px solid gray;
+	background-color: #e3e3e3;
+	color: black;	
+	text-align: center;	
+	font-weight: bolder;
+	height: 44px;
+}
+#insert_table td {
+	border-bottom: 1px solid #cfcfcf;
+	padding: 5px 15px 5px 15px;
+}
+#list_table td, #insert_table th, #content_table th, #content_table td, .del_table td{
+	border-bottom: 1px solid #cfcfcf;
+	text-align: center;
+	height: 44px;
+}
+#list_table tr:HOVER {
+	background-color: #cfcfcf;
+}
+#content_table tr, #insert_table tr {
+	border-bottom: 1px solid #cfcfcf;
+	background-color: #f2f2f2;
+	height: 44px;	
+	overflow: hidden;
+}
+#list_table #cont, #content_table #cont {
+	background-color: white;
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+	height: 300px;
+}
+#list_table #left_td, #content_table .left_td {
+	text-align: left;
+	padding-left: 10px;
+}
+#content_table .right_td {
+	text-align: right;
+	padding-right: 10px;
+}
+.button_table .right_td {
+	text-align: right;
+	padding-top: 5px;
+}
+.del_align {
+	text-align: center;
+	position: relative;
+	top: 150px;
+} 
+form, select, option{
+	font-weight: bolder;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a.h3{
+	color: white;
+}
+a:HOVER, a.h3:HOVER{
+	color: orange;
+}
+.btn_icon:HOVER, #button:HOVER {
+	opacity: 0.5;
+}
+.btn_list {
+	border: 1px solid gray;
+	background-color: white;
+	font-size: 11pt;
+	padding: 2px 15px 2px 15px;
+}
 
+.btn_title {
+	font-size: 15pt;
+	font-weight: bolder;
+	font-style: italic;
+	border: 1px solid gray;
+	background-color: white;
+	-webkit-border-radius: 20px;
+	-mox-border-radius: 20px;
+	border-radius: 20px;
+	padding: 6px 30px 6px 30px;
+}
+.find_td {
+	text-align: right;
+	height: 36px;
+}
+.find_td select#fs, .find_td input#sendBtn {
+	width: auto;
+	height: 34px;
+	font-size: 12pt;
+	font-weight: bolder;
+	padding: 2px 10px 2px 10px;
+}
+.find_td input#fi {
+	vertical-align: top;
+	height: 32px;
+	padding: 0px;
+}
+.click, .btn_title {
+	box-shadow:1px 1px 5px 2px gray inset;
+}
+.btn_icon{
+	width: 25px;
+	height: 25px;
+}
+.btn_normal, .btn_normal2, .btn_select{
+	width: auto;
+	height: auto;
+	background-color: gray;
+	border: 1px solid gray;
+	color: white;
+	padding: 5px 15px 5px 15px;
+	font-size: 15pt
+}
+.btn_select{
+	background-color: #ff3939;
+	border: 1px solid #ff3939;
+}
+.btn_normal2{
+	background-color: white;
+	border: 3px solid gray;
+	color: black;
+	font-size: 10pt;
+	font-weight: bolder;
+	font-style: italic;
+}
+.btn_normal:HOVER, .btn_select:HOVER, .btn_normal2:HOVER, .btn_list:HOVER{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
+}
+.btn_normal2:HOVER{
+	background-color: gray;
+	color: white;
+}
+.text_block{
+	width: auto;
+	height: auto;
+	font-weight: bolder;
+	font-style: italic;
+}
+.valign{
+	vertical-align: super;
+}
+#delete_tr{
+	color: red;
+	text-decoration: line-through;
+	background-color: #f2f2f2;
+}
+div#star_rating{
+	height: 65%;
+	width: 70%;
+	background: url("img/star.png");
+	background-position-x: left;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	left: 15%;
+}
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="text"],
+input[type="password"],
+select, textarea, button{
+	-webkit-border-radius: 5px;
+	-mox-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px #CCC solid;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"]{
+	font-size: 13pt;
+	border: 2px solid gray;
+}
+input[type="text"],
+input[type="password"]{
+	height: 25px;
+}
+/* 
 .insert {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -245,7 +427,7 @@ a:hover{
 	margin-bottom:10px;
 	font-size: 27px;
 	font-weight: bold;
-}
+} */
 
 /* FAQ */
 table{

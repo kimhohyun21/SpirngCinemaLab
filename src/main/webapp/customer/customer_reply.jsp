@@ -26,33 +26,39 @@
 </head>
 <body>
 	<div align="center" class="bg">
-		<h3>답글쓰기</h3>
-		<form action="qreply_ok.do?page=${page }&no=${no }" method="post" name="frm">
-			<table width="500" id="insert_table">
-				<tr height="27">
-					<th width="20%" align="center">이름</th>
-					<td width="80%" align="left">
-						<input type="text" size="10" name="name" value="${mvo.name}">
+		<table width="600px" class="button_table">
+			<tr>
+				<td align="center">
+					<span class="btn_title">답글쓰기</span>
+				</td>
+			</tr>
+		</table>
+		<form action="reply_ok.do?page=${page }&no=${no }" method="post" name="frm">
+			<table id="insert_table" width="600px">
+				<tr>
+					<th width="20%">이름</th>
+					<td>
+						<input type="text" size="15" name="name" value="${mvo.name}" readonly="readonly">
 					</td>
 				</tr>
-				<tr height="27">
-					<th width="20%" align="center">제목</th>
-					<td width="80%" align="left">
-						<input type="text" size="45" value="${vo.qsubject }" name="subject">
+				<tr>
+					<th width="20%">제목</th>
+					<td>
+						<input type="text" size="50" name="subject">
 					</td>
 				</tr>
-				<tr height="27">
-					<th width="20%" align="center">내용</th>
-					<td width="80%" align="left">
-						<textarea rows="8" cols="50" name="content"></textarea>
+				<tr>
+					<th width="20%">내용</th>
+					<td>
+						<textArea cols="70" rows="20" name="content"></textArea>
 					</td>
 				</tr>
 			</table>
-			<table width="500">
+			<table class="button_table" width="600px">
 				<tr>
-					<td colspan="2" align="center">
-						<input type="button" value="댓글달기" onclick="send()" class="insert_btn">
-						<input type="button" value="취소" onclick="javascript:history.back()" class="cancel_btn">
+					<td align="center">
+						<input type="button" value="글쓰기" class="btn_normal2" onclick="send()">
+						<input type="reset" value="취소" onclick="javascript:history.back()" class="btn_normal2">
 					</td>
 				</tr>
 			</table>
