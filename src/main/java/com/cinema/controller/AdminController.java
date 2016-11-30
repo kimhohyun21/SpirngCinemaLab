@@ -59,8 +59,8 @@ public class AdminController{
 		model.addAttribute("toPage",toPage);
 		model.addAttribute("list",list);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-		model.addAttribute("jsp3", "../adminpage/admin_movieList.jsp");
+		model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+		model.addAttribute("jsp3", "../admin/admin_movieList.jsp");
 		
 		return "main/main";
 	}
@@ -74,8 +74,8 @@ public class AdminController{
 		
 		model.addAttribute("menuType", menuType);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-	    model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-	    model.addAttribute("jsp3", "../adminpage/admin_movieInsert.jsp");
+	    model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+	    model.addAttribute("jsp3", "../admin/admin_movieInsert.jsp");
 		return "main/main";
 	}
 	
@@ -112,7 +112,7 @@ public class AdminController{
 		
 		model.addAttribute("go","AML");
 		
-		return "adminpage/admin_station";
+		return "admin/admin_station";
 	}
 	
 	//영화 정보 수정
@@ -148,8 +148,8 @@ public class AdminController{
 		model.addAttribute("day", day);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-		model.addAttribute("jsp3", "../adminpage/admin_movieModify.jsp");
+		model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+		model.addAttribute("jsp3", "../admin/admin_movieModify.jsp");
 		return "main/main";
 	}
 	
@@ -191,7 +191,7 @@ public class AdminController{
 		
 		model.addAttribute("go","AML");
 		
-		return "adminpage/admin_station";
+		return "admin/admin_station";
 	}
 	
 	//영화 별 캐릭터 수정
@@ -221,8 +221,8 @@ public class AdminController{
 		model.addAttribute("type",type);
 		model.addAttribute("list", list);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-		model.addAttribute("jsp3", "../adminpage/admin_charUpdate.jsp");
+		model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+		model.addAttribute("jsp3", "../admin/admin_charUpdate.jsp");
 		return "main/main";
 	}
 	
@@ -296,7 +296,7 @@ public class AdminController{
 		model.addAttribute("type", type);
 		model.addAttribute("go", "MD");
 
-		return "adminpage/admin_station";
+		return "admin/admin_station";
 	}
 	
 	//캐릭터 관리 리스트 페이지
@@ -336,8 +336,8 @@ public class AdminController{
 		model.addAttribute("toPage", toPage);
 		model.addAttribute("list", list);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-	    model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-	    model.addAttribute("jsp3", "../adminpage/char/admin_charList.jsp");
+	    model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+	    model.addAttribute("jsp3", "../admin/char/admin_charList.jsp");
 		return "main/main";
 	}
 	
@@ -357,8 +357,8 @@ public class AdminController{
 		model.addAttribute("mList",mList);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-	    model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-	    model.addAttribute("jsp3", "../adminpage/char/admin_charContent.jsp");
+	    model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+	    model.addAttribute("jsp3", "../admin/char/admin_charContent.jsp");
 		return "main/main";
 	}
 	
@@ -371,8 +371,8 @@ public class AdminController{
 		
 		model.addAttribute("menuType", menuType);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-	    model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-		model.addAttribute("jsp3","../adminpage/char/admin_charInsert.jsp");
+	    model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+		model.addAttribute("jsp3","../admin/char/admin_charInsert.jsp");
 		return "main/main";
 	}
 	
@@ -385,7 +385,7 @@ public class AdminController{
 		
 		dao.ACharInsert(map);
 		model.addAttribute("go","ACL");
-		return "adminpage/admin_station";
+		return "admin/admin_station";
 	}	
 	
 	//캐릭터 상세 내용 수정 페이지
@@ -441,7 +441,7 @@ public class AdminController{
 		
 		
 		model.addAttribute("go","ACL");
-		return "adminpage/admin_station";
+		return "admin/admin_station";
 	}
 	
 	
@@ -482,8 +482,8 @@ public class AdminController{
 		model.addAttribute("page", curpage);
 		model.addAttribute("totalpage", totalpage);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-	    model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-	    model.addAttribute("jsp3", "../adminpage/admin_reserveList.jsp");
+	    model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+	    model.addAttribute("jsp3", "../admin/admin_reserveList.jsp");
 		
 		return "main/main";
 	}
@@ -501,8 +501,8 @@ public class AdminController{
  		model.addAttribute("page", page);
 		model.addAttribute("vo", vo);
 		model.addAttribute("jsp","../mypage/mypage.jsp");
-		model.addAttribute("jsp2", "../adminpage/admin_menuBar.jsp");
-		model.addAttribute("jsp3", "../adminpage/admin_reserveContent.jsp");
+		model.addAttribute("jsp2", "../admin/admin_menuBar.jsp");
+		model.addAttribute("jsp3", "../admin/admin_reserveContent.jsp");
  		
 		return "main/main";
  		
