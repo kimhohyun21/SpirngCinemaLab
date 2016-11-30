@@ -39,15 +39,24 @@
 </head>
 <body>
 	<div align="center" class="bg">
-		<table width="600px" class="button_table">
-			<tr>
-				<td align="center">
-					<span class="btn_title">수정하기</span>
+		<table>
+			<tr id="sub">
+				<td>
+					<a href="customer.do">
+						<button class="list_btn">QnA</button>
+					</a>
+				</td>
+				<td>
+					<a href="faq.do">
+						<button class="list_btn">FAQ</button>
+					</a>
 				</td>
 			</tr>
 		</table>
+		<div id="qna_title">QnA</div>
+		<hr>
 		<form action="update_ok.do" method="post" name="frm" id="frm">
-			<table id="insert_table" width="600px">
+			<table id="insert_table" width="800px">
 				<tr>
 					<th width="20%">이름</th>
 					<td>
@@ -69,7 +78,7 @@
 					</td>
 				</tr>
 			</table>
-			<table class="button_table" width="600px">
+			<table class="button_table" width="800px">
 				<tr>
 					<td align="center">
 						<input type="button" value="글쓰기" id="sendBtn" class="btn_normal2">

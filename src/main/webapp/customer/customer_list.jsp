@@ -96,7 +96,7 @@
 					<img src="image/icon_reply.gif">
 				</c:if>
 				<a href="content.do?no=${vo.qno }&page=${curPage}">
-					${vo.subject }
+					${vo.qsubject }
 				</a>
 				<fmt:formatDate var="qday" value="${vo.qregdate}" pattern="yyyy-MM-dd"/>
 				<c:if test="${qday==today }">
@@ -116,17 +116,17 @@
 				  [1][2][3][4][5][6]
 				  fp         tp   
 				-->
-				<a href="list.do?page=1">
+				<a href="customer.do?page=1">
 				   <button class="btn_normal2">&lt;&lt; first</button>  
 				</a>
 				<!-- 기본적으로는 5페이지 단위로 페이지 이동, 처음 블록과 마지막 블록에서만 1페이지씩 이동 -->
 				<c:if test="${curPage>block }">
-				<a href="list.do?page=${fromPage-1}">
+				<a href="customer.do?page=${fromPage-1}">
 				  	 <button class="btn_normal2">&lt; prev</button>                    
 				  </a>
 				</c:if>   
 				<c:if test="${curPage<=block }">
-				  <a href="list.do?page=${curPage>1 ? curPage-1 : 1 }">
+				  <a href="customer.do?page=${curPage>1 ? curPage-1 : 1 }">
 				     <button class="btn_normal2">&lt; prev</button>                   
 				  </a>
 				</c:if>
@@ -135,22 +135,22 @@
 				     <button class="btn_select">${i }</button>               
 				  </c:if>
 				  <c:if test="${curPage!=i }">
-				     	<a href="list.do?page=${i }">
+				     	<a href="customer.do?page=${i }">
 				     		<button class="btn_normal">${i }</button>
 				     	</a>
 				  </c:if>   
 				</c:forEach>
 				<c:if test="${toPage<totalPage }">
-				  <a href="list.do?page=${toPage+1 }">
+				  <a href="customer.do?page=${toPage+1 }">
 				  	<button class="btn_normal2">next &gt;</button>                    
 				  </a>
 				</c:if>
 				<c:if test="${toPage>=totalPage }">
-				  <a href="list.do?page=${curPage<totalPage ? curPage+1 : totalPage }">
+				  <a href="customer.do?page=${curPage<totalPage ? curPage+1 : totalPage }">
 				  	<button class="btn_normal2">next &gt;</button>                  
 				  </a>
 				</c:if>
-				<a href="list.do?page=${totalPage }">
+				<a href="customer.do?page=${totalPage }">
 				  	<button class="btn_normal2">last &gt;&gt;</button>   
 				</a>
 				&nbsp;

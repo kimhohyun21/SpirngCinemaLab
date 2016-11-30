@@ -12,14 +12,23 @@
 </head>
 <body>
 	<div align="center" class="bg">
-		<table width="600px" class="button_table">
-			<tr>
-				<td align="center">
-					<span class="btn_title">상세보기</span>
+		<table>
+			<tr id="sub">
+				<td>
+					<a href="customer.do">
+						<button class="list_btn">QnA</button>
+					</a>
+				</td>
+				<td>
+					<a href="faq.do">
+						<button class="list_btn">FAQ</button>
+					</a>
 				</td>
 			</tr>
 		</table>
-		<table id="content_table" width="600px">
+		<div id="qna_title">QnA</div>
+		<hr>
+		<table id="content_table" width="800px">
 			<tr>
 				<th width="20%">번호</th>
 				<td width="30%">${vo.qno }</td>
@@ -61,13 +70,13 @@
 					</a>						
 					&nbsp;&nbsp;
 					<a href="delete.do?no=${vo.qno }&page=${page }">
-						<img src="humor/img/btn_delete.png" title="삭제" class="btn_icon">
+						<img src="image/btn_delete.png" title="삭제" class="btn_icon">
 						<span class="text_block valign">삭제</span>
 					</a>
 					&nbsp;&nbsp;
 					</c:if>
 					<a href="customer.do">						
-						<img src="humor/img/btn_list.png" title="리스트" class="btn_icon">
+						<img src="image/btn_list.png" title="리스트" class="btn_icon">
 						<span class="text_block valign">리스트</span>
 					</a>
 				</td>

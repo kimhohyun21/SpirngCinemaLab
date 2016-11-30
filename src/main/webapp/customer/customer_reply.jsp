@@ -26,15 +26,24 @@
 </head>
 <body>
 	<div align="center" class="bg">
-		<table width="600px" class="button_table">
-			<tr>
-				<td align="center">
-					<span class="btn_title">답글쓰기</span>
+		<table>
+			<tr id="sub">
+				<td>
+					<a href="customer.do">
+						<button class="list_btn">QnA</button>
+					</a>
+				</td>
+				<td>
+					<a href="faq.do">
+						<button class="list_btn">FAQ</button>
+					</a>
 				</td>
 			</tr>
 		</table>
+		<div id="qna_title">QnA</div>
+		<hr>
 		<form action="reply_ok.do?page=${page }&no=${no }" method="post" name="frm">
-			<table id="insert_table" width="600px">
+			<table id="insert_table" width="800px">
 				<tr>
 					<th width="20%">이름</th>
 					<td>
@@ -50,11 +59,11 @@
 				<tr>
 					<th width="20%">내용</th>
 					<td>
-						<textArea cols="70" rows="20" name="content"></textArea>
+						<textArea cols="70" rows="16" name="content"></textArea>
 					</td>
 				</tr>
 			</table>
-			<table class="button_table" width="600px">
+			<table class="button_table" width="800px">
 				<tr>
 					<td align="center">
 						<input type="button" value="글쓰기" class="btn_normal2" onclick="send()">
