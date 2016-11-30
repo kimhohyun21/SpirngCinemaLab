@@ -74,7 +74,7 @@
 				<tr >
 					<th width="20%">내용</th>
 					<td>
-						<textArea cols="70" rows="20" name="content" id="content">${vo.qcontent }</textArea>
+						<textArea cols="70" rows="17" name="content" id="content">${vo.qcontent }</textArea>
 					</td>
 				</tr>
 			</table>

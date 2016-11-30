@@ -11,13 +11,13 @@
 			var f=document.frm;
 			
 			if(f.subject.value==""){
-				alert("제목을 입력하시오");
+				$.jQueryAlert("제목을 입력하시오");
 				f.subject.focus();
 				return;
 			}
 			
 			if(f.content.value==""){
-				alert("내용을 입력하시오");
+				$.jQueryAlert("내용을 입력하시오");
 				f.content.focus();
 				return;
 			}
@@ -61,7 +61,7 @@
 				<tr >
 					<th width="20%">내용</th>
 					<td>
-						<textArea cols="70" rows="16" name="content"></textArea>
+						<textArea cols="70" rows="17" name="content"></textArea>
 					</td>
 				</tr>
 			</table>
