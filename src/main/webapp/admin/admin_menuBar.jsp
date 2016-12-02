@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Admin Menu Bar</title>
-	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<link rel="stylesheet" type="text/css" href="admin/admin_style.css">
 </head>
 <body>
 	<center>

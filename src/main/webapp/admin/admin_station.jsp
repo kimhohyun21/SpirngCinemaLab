@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:if test="${go eq 'AML' }">
-	<c:redirect url="Amovielist.do"/>
+	<c:redirect url="aMovieList.do"/>
 </c:if>
 <c:if test="${go eq 'MD' }">
 	<c:redirect url="movieDetail.do?no=${no }&type=${type }"/>

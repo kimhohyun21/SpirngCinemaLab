@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Admin Movie List</title>
-	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<link rel="stylesheet" type="text/css" href="admin/admin_style.css">
 </head>
 <body>
 	<center>
@@ -33,7 +33,7 @@
 			<c:forEach items="${list }" var="vo" begin="${start }" end="${end }">
 				<tr>
 					<td align="left">
-						<a href="movieDetail.do?no=${vo.mNo }">
+						<a href="movieDetail.do?no=${vo.mNo }&type=${vo.type}">
 							${vo.title }
 						</a>						
 					</td>

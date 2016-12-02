@@ -7,7 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Admin Reserve List</title>
-	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<link rel="stylesheet" type="text/css" href="admin/admin_style.css">
 </head>
 <body>
 	<div class="reserve_list">

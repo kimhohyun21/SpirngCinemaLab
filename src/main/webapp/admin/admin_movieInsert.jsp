@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Admin Movie Insert</title>
-	<link rel="stylesheet" type="text/css" href="adminpage/admin_style.css">
+	<link rel="stylesheet" type="text/css" href="admin/admin_style.css">
 	<script type="text/javascript">
 		//엔터키 입력
 		function enter(){
